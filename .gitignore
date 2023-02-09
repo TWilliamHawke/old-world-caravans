@@ -1,0 +1,4 @@
+bundle.lua
+lib/**
+other/**
+*.txt

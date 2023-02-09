@@ -1,0 +1,43 @@
+{
+  "Lua.diagnostics.globals": [
+    "cm",
+    "core",
+    "UIComponent",
+    "vfs",
+    "is_uicomponent",
+    "find_uicomponent",
+    "effect",
+    "mct",
+    "common",
+    "uic_pairs",
+    "get_mct",
+    "safe_get_saved_value_ivory_road_demand",
+    "adjust_end_node_value",
+    "generate_event",
+    "random_army_manager",
+    "uim",
+    "kill_faction"
+  ],
+  "hint.semicolon": "All",
+  "diagnostics.disable": [
+    "cast-local-type",
+    "lowercase-global"
+  ],
+  "diagnostics.ignoredFiles": "Disable",
+  "workspace.ignoreDir": [
+    ".vscode",
+    "src/lua/db/**",
+    "src/unused/**",
+    "./bundle.lua",
+    "lib/**/**.lua"
+  ],
+  "workspace.library": [
+    "lib",
+    "${3rd}/love2d/library"
+  ],
+  "workspace.useGitIgnore": true,
+  "runtime.version": "LuaJIT",
+  "runtime.special": {
+    "love.filesystem.load": "loadfile"
+  }
+}
