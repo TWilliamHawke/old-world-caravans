@@ -4,7 +4,7 @@ function Old_world_caravans:mct_init(context)
   local settings = fluc_mct:get_settings();
 
   self.default_enemy_culture = settings.default_enemy;
-
-  self:logCore(self.default_enemy_culture)
+  self.override_encounters = not not settings.override_encounters
+  self.default_difficult = tonumber(settings.default_difficult)
 
 end

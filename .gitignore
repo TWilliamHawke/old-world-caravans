@@ -2,3 +2,4 @@ bundle.lua
 lib/**
 other/**
 *.txt
+nod.js

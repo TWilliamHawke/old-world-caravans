@@ -11,12 +11,12 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
   if enemy_culture == "wh_main_sc_teb_teb" then
     enemy_culture = "wh_main_sc_emp_empire"
   end
-
   self:start_callback_race()
 
-  -- if self.default_enemy_culture then
-  --   enemy_culture = self.default_enemy_culture;
-  -- end
+  if self.override_encounters and self.default_enemy_culture then
+    enemy_culture = self.default_enemy_culture;
+    encounter_dif = self.default_difficult;
+  end
 
   local enemy_faction = self.culture_to_enemy_faction[enemy_culture] or "wh_main_grn_greenskins_qb1";
 
