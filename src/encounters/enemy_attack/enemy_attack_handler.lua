@@ -7,8 +7,8 @@ function Old_world_caravans:enemy_attack_handler(context, event_string)
   function ()
     return self:get_enemy_by_regions(context)
   end,
-  function (encounter_army)
-    encounter_army:apply_effect("wh2_dlc16_bundle_scripted_wood_elf_encounter", 0);
+  function (enemy_force_cqi)
+    cm:apply_effect_bundle_to_force("wh2_dlc16_bundle_scripted_wood_elf_encounter", enemy_force_cqi, 0)
   end);
 
   self:create_dilemma_with_cargo(context, dilemma_name, enemy_cqi);

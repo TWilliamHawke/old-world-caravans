@@ -3,16 +3,16 @@
 function Old_world_caravans:local_trouble_handler(context, event_string)
   local caravan = context:caravan();
   local caravan_culture = context:faction():subculture();
-  local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_1A";
 
   local function get_weight_for_node(region)
     local region_culture = self:get_culture_of_node(region);
+    local dilemma_name = self.db.local_trouble_dilemmas[region_culture];
     local culture_weight = self.node_culture_to_event_weight[caravan_culture] and
         self.node_culture_to_event_weight[caravan_culture][region_culture];
 
         self:logCore("node culture is "..region_culture)
 
-    if region_culture == "wh_main_sc_dwf_dwarfs" or not culture_weight then
+    if not dilemma_name or not culture_weight then
       return 0, region_culture
     end
 
@@ -39,12 +39,16 @@ function Old_world_caravans:local_trouble_handler(context, event_string)
 
   self:logCore("selected culture is "..enemy_culture)
 
+  local dilemma_name = self.db.local_trouble_dilemmas[enemy_culture] or "wh3_main_dilemma_cth_caravan_battle_1A";
 
-  local enemy_cqi = self:prepare_forces_for_battle(context, function ()
+
+  local enemy_cqi = self:prepare_forces_for_battle(context,
+  function ()
     return enemy_culture, target_region, encounter_diff;
   end,
-  function (encounter_army)
-    encounter_army:apply_effect("wh2_dlc16_bundle_scripted_wood_elf_encounter", 0);
+  function (enemy_force_cqi)
+    cm:apply_effect_bundle_to_force("wh2_dlc16_bundle_scripted_wood_elf_encounter", tostring(enemy_force_cqi), 0)
+    self:logCore("apply_effect_bundle_to_force")
   end)
 
   self:create_dilemma_with_cargo(context, dilemma_name, enemy_cqi);

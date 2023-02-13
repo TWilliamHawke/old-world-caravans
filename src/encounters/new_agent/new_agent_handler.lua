@@ -1,11 +1,21 @@
 ---@param context CaravanWaylaid | CaravanMoved |QueryShouldWaylayCaravan
----@param event_string string
-function Old_world_caravans:new_agent_handler(context, event_string)
+function Old_world_caravans:new_agent_handler(context)
   -- local event_data = event_string.
   local faction = context:faction();
-  self:logCore("dilemma_name is "..event_string)
+  local caravan = context:caravan();
 
-  local hero_unit = read_out_event_params(event_string)[1];
+  local start_node_agent, start_node_weight = self:get_agent_from_region(context:from(),caravan);
+  local end_node_agent, end_node_weight = self:get_agent_from_region(context:to(), caravan);
+
+  local weight_table = {
+    [start_node_agent] = start_node_weight,
+    [end_node_agent] = end_node_weight
+  }
+
+  local hero_unit = self:select_random_key_by_weight(weight_table, function (val)
+    return val;
+  end) or "wh3_main_ogr_cha_hunter_0";
+
   local caravan_force = context:caravan():caravan_force();
   self:logCore("hero_unit is "..hero_unit)
 

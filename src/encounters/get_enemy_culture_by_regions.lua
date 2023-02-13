@@ -5,7 +5,7 @@
 function Old_world_caravans:get_enemy_by_regions(context)
   local caravan = context:caravan();
   local caravan_faction = context:faction();
-  local list_of_regions = self:get_regions_list_from_context(context) or {};
+  local list_of_regions = self:get_regions_list(context) or {};
   local start_region = self:get_region_by_node(caravan, context:from())
   table.insert(list_of_regions, start_region:name());
   local bandit_threat = self:calculate_bandit_threat(list_of_regions);

@@ -1,6 +1,8 @@
+---@diagnostic disable: missing-return-value
 ---@param context CaravanWaylaid
 ---@return nil | string[]
-function Old_world_caravans:get_regions_list_from_context(context)
+---@return REGION_DATA_LIST_SCRIPT_INTERFACE
+function Old_world_caravans:get_regions_list(context)
   if context:from():is_null_interface() or context:to():is_null_interface() then
     return nil;
   end
@@ -19,7 +21,7 @@ function Old_world_caravans:get_regions_list_from_context(context)
 
   local list_of_regions = route_segment:regions();
 	if list_of_regions:is_empty() then
-    self:logCore("No Regions in an Ivory Road segment - Need to fix data in DaVE: campaign_map_route_segments")
+    out("No Regions in an Ivory Road segment - Need to fix data in DaVE: campaign_map_route_segments")
     return nil;
   end
 
@@ -28,6 +30,6 @@ function Old_world_caravans:get_regions_list_from_context(context)
     table.insert(regions, region_name);
   end
 
-  return regions;
+  return regions, list_of_regions;
 
 end

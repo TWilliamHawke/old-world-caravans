@@ -1,12 +1,11 @@
 ---@param context CaravanWaylaid
 ---@param enemy_data_callback enemy_data_callback
----@param invasion_callback fun(encounter_army: invasion) | nil
+---@param invasion_callback fun(enemy_force_cqi: number) | nil
 ---@return integer
 function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callback, invasion_callback)
   local caravan = context:caravan();
   local enemy_culture, target_region, encounter_dif = enemy_data_callback();
-  local caravan_master = caravan:caravan_master():character()
-  local caravan_faction = context:faction():name()
+  local caravan_faction_key = context:faction():name()
 
   if enemy_culture == "wh_main_sc_teb_teb" then
     enemy_culture = "wh_main_sc_emp_empire"
@@ -22,39 +21,44 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
 
   local force_key = enemy_culture .. "_" .. tostring(encounter_dif);
   local army_string = self:generate_army(force_key);
-  local x, y = find_battle_coords_from_region(caravan_faction, target_region)
-
-  local encounter_army = invasion_manager:new_invasion(
-    self.invasion_key,
-    enemy_faction,
-    army_string,
-    { x, y }
-  )
-  encounter_army:set_target("CHARACTER", caravan_master:command_queue_index(), caravan_faction);
-
-  if self.enemy_forces[force_key] and self.enemy_forces[force_key].general then
-    ---@diagnostic disable-next-line: missing-parameter
-    encounter_army:create_general(false, self.enemy_forces[force_key].general);
-  end
-
-  if invasion_callback then
-    invasion_callback(encounter_army)
-  end
-
-  local enemy_cqi = 0;
+  local x, y = self:find_position_for_spawn(caravan_faction_key, target_region)
+  local general = self.enemy_forces[force_key] and self.enemy_forces[force_key].general;
   cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
   cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
+  local enemy_cqi = 0;
 
-  encounter_army:start_invasion(
-  ---@param encounter_army invasion
-    function(encounter_army)
-      enemy_cqi = encounter_army:get_force():command_queue_index();
-      cm:force_declare_war(enemy_faction, caravan_faction, false, false);
+  if general then
+    self:logCore("create_force_with_general")
+    cm:create_force_with_general(enemy_faction, army_string, target_region,
+        x, y, "general", general, "", "", "", "", false,
+        function(enemy_char_cqi, enemy_force_cqi)
+          cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
+          cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
+          enemy_cqi = enemy_force_cqi;
+        end);
+  else
+    self:logCore("create_force_without general")
+
+    cm:create_force(enemy_faction, army_string, target_region, x, y, true,
+        function(enemy_char_cqi, enemy_force_cqi)
+          cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
+          cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
+          enemy_cqi = enemy_force_cqi;
+        end);
+  end
+
+
+  if enemy_cqi ~= 0 then
+    if invasion_callback then
+      invasion_callback(enemy_cqi);
     end
-  )
+
+    cm:set_saved_value(self.encounter_faction_save_key, enemy_faction);
+  end
+
 
   ---@diagnostic disable-next-line: param-type-mismatch
   self:teleport_caravan_to_position(caravan, x, y);
 
   return enemy_cqi;
-end;
+end

@@ -21,8 +21,9 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
 
       cm:force_attack_of_opportunity(enemy_cqi, caravan_cqi, false);
     else
+      self:cleanup_encounter();
       if callback then
-        callback()
+        callback();
       end
       ---@diagnostic disable-next-line: undefined-field
       cm:move_caravan(caravan);

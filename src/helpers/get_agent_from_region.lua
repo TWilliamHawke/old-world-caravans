@@ -1,8 +1,10 @@
----@param region REGION_SCRIPT_INTERFACE
----@param caravan_master CHARACTER_SCRIPT_INTERFACE
+---@param node ROUTE_POSITION_SCRIPT_INTERFACE
+---@param caravan CARAVAN_SCRIPT_INTERFACE
 ---@return string
 ---@return integer
-function Old_world_caravans:get_agent_from_region(region, caravan_master)
+function Old_world_caravans:get_agent_from_region(node, caravan)
+  local region = self:get_region_by_node(caravan, node);
+  local caravan_master = caravan:caravan_master():character();
   local caravan_culture = caravan_master:faction():subculture();
   local region_culture = self:get_culture_of_node(region);
   local culture_weight = self:get_culture_weight(region_culture, caravan_culture);
