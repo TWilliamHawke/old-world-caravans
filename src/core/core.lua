@@ -8,6 +8,9 @@ Old_world_caravans = {
   override_encounters = false,
   default_enemy_culture = nil, ---@type nil | string
   default_difficult = 1,
-  helpers = {},
   db = {},
+  encounter_budget_1 = 3500,
+  encounter_budget_2 = 5000,
+  encounter_budget_3 = 6500,
+  filler_unit_weight = 1.5,
 }

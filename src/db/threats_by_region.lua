@@ -157,7 +157,6 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_bechafen"] = {
     wh_dlc03_sc_bst_beastmen = 2,
   },
-
   --sylvania
   ["wh3_main_combi_region_swartzhafen"] = {
     wh_main_sc_vmp_vampire_counts = 2,
@@ -183,7 +182,6 @@ Old_world_caravans.threats = {
     wh_main_sc_vmp_vampire_counts = 2,
     wh_dlc03_sc_bst_beastmen = 1,
   },
-
   --south lands
   ["wh3_main_combi_region_bilbali"] = {
     wh2_main_sc_skv_skaven = 2,
@@ -353,6 +351,10 @@ Old_world_caravans.threats = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 3,
   },
+  ["wh3_main_combi_region_valayas_sorrow"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh2_main_sc_skv_skaven = 3,
+  },
   ["wh3_main_combi_region_black_iron_mine"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 1,
@@ -451,6 +453,13 @@ Old_world_caravans.threats = {
     wh2_main_sc_skv_skaven = 1,
   },
   --dark lands
+  ["wh3_main_combi_region_ash_ridge_mountains"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
+  ["wh3_main_combi_region_the_fortress_of_vorag"] = {
+    wh_main_sc_vmp_vampire_counts = 3,
+  },
   ["for wh3_main_combi_region_mount_silverspear"] = {
     wh2_main_sc_skv_skaven = 3,
   },
@@ -458,27 +467,46 @@ Old_world_caravans.threats = {
     wh_main_sc_grn_greenskins = 3,
   },
   ["for wh3_main_combi_region_the_gates_of_zharr"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
   },
   ["for wh3_main_combi_region_crookback_mountain"] = {
     wh2_main_sc_skv_skaven = 3,
   },
   ["for wh3_main_combi_region_mount_grey_hag"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
   },
   ["for wh3_main_combi_region_the_daemons_stump"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
   },
   ["for wh3_main_combi_region_karak_azorn"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
   },
   ["for wh3_main_combi_region_the_sentinels"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
+  ["wh3_main_combi_region_mount_silverspear"] = {
+    wh2_main_sc_skv_skaven = 3,
+  },
+  ["wh3_main_combi_region_tower_of_gorgoth"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
+  ["wh3_main_combi_region_the_gates_of_zharr"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
+  ["wh3_main_combi_region_the_daemons_stump"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
+  ["wh3_main_combi_region_karak_azorn"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
   },
   --bretonnia
   ["wh3_main_combi_region_castle_carcassonne"] = {
@@ -590,7 +618,6 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_novchozy"] = {
     wh_dlc08_sc_nor_norsca = 3,
   },
-
   --wastes
   ["wh3_main_combi_region_varenka_hills"] = {
     wh_main_sc_grn_greenskins = 2,
@@ -658,6 +685,12 @@ Old_world_caravans.threats = {
     wh2_main_sc_skv_skaven = 2,
     wh_dlc08_sc_nor_norsca = 3,
   },
+  ["wh3_main_combi_region_temple_of_heimkel"] = {
+    wh_dlc08_sc_nor_norsca = 3,
+  },
+  ["wh3_main_combi_region_frozen_landing"] = {
+    wh_dlc08_sc_nor_norsca = 3,
+  },
   --vcoast
   ["wh3_main_combi_region_the_galleons_graveyard"] = {
     wh2_dlc11_sc_cst_vampire_coast = 3,
@@ -673,7 +706,9 @@ Old_world_caravans.threats = {
     wh2_main_sc_lzd_lizardmen = 3,
   },
   --Ulthuan
-  ["wh3_main_combi_region_shrine_of_khaine"] = {},
+  ["wh3_main_combi_region_shrine_of_khaine"] = {
+    wh2_main_sc_def_dark_elves = 2,
+  },
   ["wh3_main_combi_region_lothern"] = {
     wh2_dlc11_sc_cst_vampire_coast = 1,
   },
@@ -721,6 +756,10 @@ Old_world_caravans.threats = {
     wh2_dlc09_sc_tmb_tomb_kings = 3,
   },
   ["wh3_main_combi_region_khemri"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 5,
+    wh2_dlc09_sc_tmb_tomb_kings = 3,
+  },
+  ["wh3_main_combi_region_lahmia"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 2,
+    wh_main_sc_vmp_vampire_counts = 2,
   },
 }

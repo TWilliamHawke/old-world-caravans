@@ -1,0 +1,18 @@
+Old_world_caravans.pooled_resource_to_region = {
+  ["dwf_caravan_marienburg"] = "wh3_main_combi_region_marienburg",
+  ["dwf_caravan_reikland"] = "wh3_main_combi_region_altdorf",
+  ["dwf_caravan_massif_orcal"] = "wh3_main_combi_region_massif_orcal",
+  ["dwf_caravan_karak_dum"] = "wh3_main_combi_region_karak_dum",
+  ["dwf_caravan_karak_ziflin"] = "wh3_main_combi_region_karak_ziflin",
+  ["dwf_caravan_karak_azorn"] = "wh3_main_combi_region_karak_azorn",
+  ["dwf_caravan_karak_zorn"] = "wh3_main_combi_region_karak_zorn",
+  ["dwf_caravan_vulture_mountain"] = "wh3_main_combi_region_vulture_mountain",
+  ["dwf_caravan_kraka_drak"] = "wh3_main_combi_region_kraka_drak",
+  ["dwf_caravan_karak_krakaten"] = "wh3_main_combi_region_karak_krakaten",
+  ["dwf_caravan_khemri"] = "wh3_main_combi_region_khemri",
+  ["dwf_caravan_lahmia"] = "wh3_main_combi_region_lahmia",
+  ["dwf_caravan_bordeleaux"] = "wh3_main_combi_region_bordeleaux",
+  ["dwf_caravan_tilea"] = "wh3_main_combi_region_miragliano",
+  ["dwf_caravan_erengrad"] = "wh3_main_combi_region_erengrad",
+  ["dwf_caravan_kislev"] = "wh3_main_combi_region_kislev",
+}

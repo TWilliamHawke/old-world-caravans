@@ -1,5 +1,4 @@
 function Old_world_caravans:add_caravan_listeners()
-
   core:add_listener(
     "add_inital_force",
     "CaravanRecruited",
@@ -53,14 +52,14 @@ function Old_world_caravans:add_caravan_listeners()
     ---comment
     ---@param context CaravanMoved
     function(context)
-      self:generate_caravan_event(context)
+      --self:generate_caravan_event(context)
       self:logCore("My handler for CaravanMoved")
     end,
     true
   );
 
   core:add_listener(
-    "progressive_ai_MctFinalized",
+    "SettlementSelected_caravan_test",
     "SettlementSelected",
     function()
       return self.debug_mode
@@ -68,23 +67,40 @@ function Old_world_caravans:add_caravan_listeners()
     ---comment
     ---@param context SettlementSelected
     function(context)
-      local settlement = context:garrison_residence():region():name();
-      local player_faction = cm:get_local_faction();
+      local ok, err = pcall(function()
+        local settlement = context:garrison_residence():region():name();
+        local player_faction = cm:get_local_faction();
 
-      local caravan_system = cm:model():world():caravans_system():faction_caravans(player_faction)
+        local player_faction_sc = player_faction:subculture();
+        local award = self.awards[player_faction_sc] and self.awards[player_faction_sc][settlement];
+        self:logCore("award for " .. player_faction_sc .. " in " .. settlement .. " is " .. tostring(award));
+        
+        -- if award and not player_faction:ancillary_exists(award) then
+        --   local incident_payload = cm:create_payload();
+        --   incident_payload:faction_ancillary_gain(player_faction, award);
+  
+        --   cm:trigger_custom_incident(player_faction:name(), "emp_caravan_completed", true, incident_payload)
+        --   --cm:faction_add_pooled_resource(player_faction:name(), award, "missions", 1)
+        -- end
 
-      if not caravan_system:is_null_interface() then
-        local active_caravans = caravan_system:active_caravans()
-        if active_caravans:is_empty() then return end
+        local caravan_system = cm:model():world():caravans_system():faction_caravans(player_faction)
 
-        ---@diagnostic disable-next-line: undefined-field
-        cm:move_caravan(active_caravans:item_at(0))
+        if not caravan_system:is_null_interface() then
+          local active_caravans = caravan_system:active_caravans()
+          if active_caravans:is_empty() then return end
 
+          ---@diagnostic disable-next-line: undefined-field
+          cm:move_caravan(active_caravans:item_at(0))
+        end
+
+        local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
+
+        self:logCore("banditry_level for " .. settlement .. " is " .. banditry_level);
+      end);
+
+      if not ok then
+        self:logCore(tostring(err));
       end
-
-      local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
-
-      self:logCore("banditry_level for " .. settlement .. " is " .. banditry_level)
     end,
     true
   )
@@ -134,7 +150,6 @@ function Old_world_caravans:add_caravan_listeners()
 
       if not faction:has_effect_bundle(effect_key) then
         cm:apply_effect_bundle(effect_key, faction:name(), 0)
-
       end
     end,
     true
@@ -184,7 +199,4 @@ function Old_world_caravans:add_caravan_listeners()
   --   end,
   --   true
   -- );
-
-
-
 end
