@@ -1,8 +1,8 @@
 ---@param context CaravanWaylaid
 ---@param enemy_data_callback enemy_data_callback
----@param invasion_callback fun(enemy_force_cqi: number) | nil
+---@param effect_bundle string | nil
 ---@return integer
-function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callback, invasion_callback)
+function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callback, effect_bundle)
   local caravan = context:caravan();
   local enemy_culture, target_region, encounter_dif = enemy_data_callback();
   local caravan_faction_key = context:faction():name()
@@ -12,7 +12,7 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
   end
   self:start_callback_race()
 
-  if self.override_encounters and self.default_enemy_culture then
+  if self.override_enemy and self.default_enemy_culture then
     enemy_culture = self.default_enemy_culture;
     encounter_dif = self.default_difficult;
   end
@@ -20,7 +20,7 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
   local enemy_faction = self.culture_to_enemy_faction[enemy_culture] or "wh_main_grn_greenskins_qb1";
 
   local force_key = enemy_culture .. "_" .. tostring(encounter_dif);
-  local force_budget = self["encounter_budget_"..tostring(encounter_dif)];
+  local force_budget = self.encounter_budgets[encounter_dif];
   local army_string = self:generate_army(force_key, force_budget);
   local x, y = self:find_position_for_spawn(caravan_faction_key, target_region)
   local general = self.enemy_forces[force_key] and self.enemy_forces[force_key].general;
@@ -50,8 +50,8 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
 
 
   if enemy_cqi ~= 0 then
-    if invasion_callback then
-      invasion_callback(enemy_cqi);
+    if effect_bundle then
+      cm:apply_effect_bundle_to_force(effect_bundle, tostring(enemy_cqi), 0)
     end
 
     cm:set_saved_value(self.encounter_faction_save_key, enemy_faction);

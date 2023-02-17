@@ -1,6 +1,5 @@
 ---@param context CaravanWaylaid
----@param event_string string
-function Old_world_caravans:cargo_replenish_handler(context, event_string)
+function Old_world_caravans:cargo_replenish_handler(context)
   local dilemma_name = "wh3_main_dilemma_cth_caravan_2B";
   local caravan = context:caravan();
 

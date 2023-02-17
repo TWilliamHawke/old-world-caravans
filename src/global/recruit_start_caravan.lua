@@ -12,7 +12,6 @@ function Old_world_caravans:recruit_start_caravan()
       and not caravans_list:is_null_interface();
 
     if faction_is_sutable then
-      cm:instantly_research_all_technologies(faction:name())
       local available_caravans = caravans_list:available_caravan_recruitment_items();
 
       if not available_caravans:is_empty() then

@@ -1249,7 +1249,7 @@ core:add_listener(
     cm:set_saved_value("caravans_completed_" .. faction_key, num_caravans_completed + 1);
     core:trigger_event("ScriptEventCaravanCompleted", context);
 
-    if faction:is_human() then
+    if faction:is_human() and faction:subculture() == "wh3_main_sc_cth_cathay" then
       reward_item_check(faction, region_name, context:caravan_master())
     end
 
@@ -1299,7 +1299,9 @@ core:add_listener(
 core:add_listener(
   "caravan_master_heal",
   "CaravanMoved",
-  true,
+  function(context)
+    return not context:caravan():is_null_interface();
+  end,
   function(context)
     --Heal Lord
     local caravan_force_list = context:caravan_master():character():military_force():unit_list();

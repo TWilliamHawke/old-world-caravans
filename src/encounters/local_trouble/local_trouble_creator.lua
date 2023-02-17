@@ -52,7 +52,6 @@ function Old_world_caravans:local_trouble_creator(context)
   end
 
   local regions_count = context.list_of_regions:num_items();
-  self:logCore(tostring(unfriendly_regions_count).." of "..tostring(regions_count).. " are unfriendly")
 
   local probability_mult = regions_count > 0
       and unfriendly_regions_count / regions_count or 1;

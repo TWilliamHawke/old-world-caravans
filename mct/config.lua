@@ -34,9 +34,20 @@ local unit_caps_size_options = {
   { key = "wh3_main_sc_nur_nurgle",         text = "nurgle",         tt = "", default = false },
 }
 
+local encounters = {
+  { key = "nothing",         text = "nothing",         tt = "", default = false },
+  { key = "ambush",          text = "ambush",          tt = "", default = false },
+  { key = "cargo_replenish", text = "cargo_replenish", tt = "", default = false },
+  { key = "enemy_attack",    text = "enemy_attack",    tt = "", default = true },
+  { key = "local_trouble",   text = "local_trouble",   tt = "", default = false },
+  { key = "new_agent",       text = "new_agent",       tt = "", default = false },
+  { key = "new_units",       text = "new_units",       tt = "", default = false },
+  { key = "shortcut",        text = "shortcut",        tt = "", default = false },
+}
 
-local first_section = old_world_caravans:get_section_by_key ("default");
-first_section:set_localised_text ("Encounters Difficulty", false);
+
+local first_section = old_world_caravans:get_section_by_key("default");
+first_section:set_localised_text("Encounters Difficulty", false);
 
 local encounter_budget_1 = old_world_caravans:add_new_option("encounter_budget_1", "slider");
 encounter_budget_1:set_text("Easy Encounters")
@@ -56,20 +67,34 @@ encounter_budget_3:slider_set_min_max(5000, 10000)
 encounter_budget_3:set_default_value(7000)
 encounter_budget_3:slider_set_step_size(500)
 
-local filler_unit_weight = old_world_caravans:add_new_option("filler_unit_weight", "slider");
-filler_unit_weight:set_text("Filler units weight")
-filler_unit_weight:slider_set_min_max(10, 20)
-filler_unit_weight:set_default_value(15)
-filler_unit_weight:slider_set_step_size(1)
+-- local filler_unit_weight = old_world_caravans:add_new_option("filler_unit_weight", "slider");
+-- filler_unit_weight:set_text("Filler units weight")
+-- filler_unit_weight:slider_set_min_max(10, 20)
+-- filler_unit_weight:set_default_value(15)
+-- filler_unit_weight:slider_set_step_size(1)
 
-local unit_caps_section = old_world_caravans:add_new_section("n_debug")
-unit_caps_section:set_localised_text("Debug Section")
+local scale_difficulty_cargo = old_world_caravans:add_new_option("scale_difficulty_cargo", "checkbox")
+scale_difficulty_cargo:set_text("Scale difficulty with caravan cargo")
 
+local scale_difficulty_strenght = old_world_caravans:add_new_option("scale_difficulty_strenght", "checkbox")
+scale_difficulty_strenght:set_text("Scale difficulty with caravan size")
+
+local no_encounter_weight = old_world_caravans:add_new_option("no_encounter_weight", "slider")
+no_encounter_weight:set_text("Probability of no encounter")
+no_encounter_weight:slider_set_min_max(0, 50)
+no_encounter_weight:set_default_value(50)
+no_encounter_weight:slider_set_step_size(10)
+
+
+local debug_section = old_world_caravans:add_new_section("n_debug")
+debug_section:set_localised_text("Debug Section")
+
+local override_enemy = old_world_caravans:add_new_option("override_enemy", "checkbox")
+override_enemy:set_text("Override Enemy")
 
 local default_enemy = old_world_caravans:add_new_option("default_enemy", "dropdown")
 default_enemy:set_text("Default Enemy")
 default_enemy:add_dropdown_values(unit_caps_size_options)
-default_enemy:set_default_value("100")
 
 local default_difficult = old_world_caravans:add_new_option("default_difficult", "slider")
 default_difficult:set_text("Default Difficult")
@@ -77,5 +102,10 @@ default_difficult:slider_set_min_max(1, 3)
 default_difficult:set_default_value(1)
 default_difficult:slider_set_step_size(1)
 
+
 local override_encounters = old_world_caravans:add_new_option("override_encounters", "checkbox")
 override_encounters:set_text("Override Encounters")
+
+local default_encounter = old_world_caravans:add_new_option("default_encounter", "dropdown")
+default_encounter:set_text("Default Encounter")
+default_encounter:add_dropdown_values(encounters)

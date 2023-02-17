@@ -1,5 +1,5 @@
 ---@diagnostic disable: missing-return-value
----@param context CaravanWaylaid
+---@param context CaravanWaylaid | QueryShouldWaylayCaravan
 ---@return nil | string[]
 ---@return REGION_DATA_LIST_SCRIPT_INTERFACE
 function Old_world_caravans:get_regions_list(context)

@@ -1,5 +1,5 @@
----@param context QueryShouldWaylayCaravan | CaravanMoved | CaravanWaylaid
-function Old_world_caravans:generate_caravan_event(context)
+---@param context QueryShouldWaylayCaravan
+function Old_world_caravans:generate_caravan_encounter(context)
   local region_names, list_of_regions = self:get_regions_list(context);
   if not region_names then return end
   local caravan = context:caravan();
@@ -20,22 +20,45 @@ function Old_world_caravans:generate_caravan_event(context)
     to = end_region,
   };
 
-  local event = "new_agent_creator"
-  local probability, event_string = self:local_trouble_creator(conditions);
-  
-  local ok, err = pcall(function()
-    self:local_trouble_handler(context, event_string)
+  local weight_table = {
+    nothing = self.no_encounter_weight / 2,
+  }
 
-    if probability > 0 then
-      self:logCore("probability is "..probability)
+  for _, encounter in ipairs(self.encounters) do
+    local encounter_creator = encounter .. "_creator";
+    local encounter_handler = encounter .. "_handler";
+
+    if type(self[encounter_handler]) == "function" then
+    else
+      self:logCore(encounter_handler .. " is not a function")
     end
-  end);
 
-  if not ok then
-    self:logCore(tostring(err));
+    if type(self[encounter_creator]) == "function" then
+      local probability = self[encounter_creator](self, conditions)
+      self:logCore("probability for " .. encounter .. " is " .. probability);
+      weight_table[encounter] = probability;
+    else
+      self:logCore(encounter_creator .. " is not a function")
+    end
   end
 
+  local selected_encounter = self:select_random_key_by_weight(weight_table, function(val)
+        return val;
+      end, true) or "nothing";
 
+  if self.override_encounters then
+    selected_encounter = self.default_encounter
+  end
 
+  self:logCore("selected_encounter is " .. selected_encounter)
+  if selected_encounter == "nothing" then return end
 
+  ---@diagnostic disable-next-line: redundant-parameter
+  context:flag_for_waylay(selected_encounter)
+  -- local handler = selected_encounter.."_handler"
+  -- if type(self[handler]) =="function" then
+  --   self[handler](self, context);
+  -- else
+  --   self:logCore(handler .. " is not a function")
+  -- end
 end

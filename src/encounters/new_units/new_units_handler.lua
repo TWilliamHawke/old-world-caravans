@@ -1,6 +1,5 @@
 ---@param context CaravanWaylaid
----@param event_string string
-function Old_world_caravans:new_units_handler(context, event_string)
+function Old_world_caravans:new_units_handler(context)
   local caravan = context:caravan();
   local caravan_master = caravan:caravan_master():character();
   local caravan_force = context:caravan():caravan_force();
@@ -44,7 +43,7 @@ function Old_world_caravans:new_units_handler(context, event_string)
 
   local suffix = (force_strenght == "strong" or cm:random_number(2) > 1) and "A" or "B";
 
-  local dilemma_name = "wh3_main_dilemma_cth_caravan_4"..suffix;
+  local dilemma_name = "wh3_main_dilemma_cth_caravan_4" .. suffix;
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
 
@@ -56,6 +55,8 @@ function Old_world_caravans:new_units_handler(context, event_string)
   dilemma_builder:add_choice_payload("SECOND", payload_builder);
 
   dilemma_builder:add_target("default", caravan_force);
+
+  attach_battle_to_dilemma(dilemma_name, caravan);
 
   cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_faction);
 end

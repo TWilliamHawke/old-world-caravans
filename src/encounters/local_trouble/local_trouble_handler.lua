@@ -1,6 +1,5 @@
 ---@param context CaravanWaylaid
----@param event_string string
-function Old_world_caravans:local_trouble_handler(context, event_string)
+function Old_world_caravans:local_trouble_handler(context)
   local caravan = context:caravan();
   local caravan_culture = context:faction():subculture();
 
@@ -9,8 +8,6 @@ function Old_world_caravans:local_trouble_handler(context, event_string)
     local dilemma_name = self.db.local_trouble_dilemmas[region_culture];
     local culture_weight = self.node_culture_to_event_weight[caravan_culture] and
         self.node_culture_to_event_weight[caravan_culture][region_culture];
-
-        self:logCore("node culture is "..region_culture)
 
     if not dilemma_name or not culture_weight then
       return 0, region_culture
@@ -35,7 +32,8 @@ function Old_world_caravans:local_trouble_handler(context, event_string)
   end) or culture_from;
 
   local target_region = weight_table[enemy_culture][2];
-  local encounter_diff = 1;
+  local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(target_region);
+  local encounter_diff = self:get_event_difficulty(banditry_level, caravan);
 
   self:logCore("selected culture is "..enemy_culture)
 
@@ -45,11 +43,7 @@ function Old_world_caravans:local_trouble_handler(context, event_string)
   local enemy_cqi = self:prepare_forces_for_battle(context,
   function ()
     return enemy_culture, target_region, encounter_diff;
-  end,
-  function (enemy_force_cqi)
-    cm:apply_effect_bundle_to_force("wh2_dlc16_bundle_scripted_wood_elf_encounter", tostring(enemy_force_cqi), 0)
-    self:logCore("apply_effect_bundle_to_force")
-  end)
+  end, "wh2_dlc16_bundle_scripted_wood_elf_encounter")
 
   self:create_dilemma_with_cargo(context, dilemma_name, enemy_cqi);
 end

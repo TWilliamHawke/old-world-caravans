@@ -9,7 +9,7 @@ function Old_world_caravans:get_enemy_by_regions(context)
   local start_region = self:get_region_by_node(caravan, context:from())
   table.insert(list_of_regions, start_region:name());
   local bandit_threat = self:calculate_bandit_threat(list_of_regions);
-  local encounter_dif = self:get_event_difficulty(bandit_threat);
+  local encounter_dif = self:get_event_difficulty(bandit_threat, caravan);
 
 
   local threat_list, threated_regions = self:calculate_evil_faction_threat(list_of_regions, caravan_faction);

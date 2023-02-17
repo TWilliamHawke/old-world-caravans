@@ -1,4 +1,4 @@
----@param context CaravanWaylaid | CaravanMoved |QueryShouldWaylayCaravan
+---@param context CaravanWaylaid
 function Old_world_caravans:new_agent_handler(context)
   -- local event_data = event_string.
   local faction = context:faction();
@@ -19,7 +19,6 @@ function Old_world_caravans:new_agent_handler(context)
   local caravan_force = context:caravan():caravan_force();
   self:logCore("hero_unit is "..hero_unit)
 
-  --ternary operator
   local choice = cm:random_number(2) > 1 and "A" or "B";
   local dilemma_name = "wh3_main_dilemma_cth_caravan_3"..choice;
   self:logCore("dilemma_name is "..dilemma_name)
@@ -37,6 +36,9 @@ function Old_world_caravans:new_agent_handler(context)
   payload_builder:clear();
 
   dilemma_builder:add_target("default", caravan_force);
+
+  attach_battle_to_dilemma(dilemma_name, caravan);
+
   cm:launch_custom_dilemma_from_builder(dilemma_builder, faction);
 
 end

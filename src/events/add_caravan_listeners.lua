@@ -25,7 +25,7 @@ function Old_world_caravans:add_caravan_listeners()
     ---comment
     ---@param context QueryShouldWaylayCaravan
     function(context)
-      self:generate_caravan_event(context)
+      self:generate_caravan_encounter(context)
       self:logCore("My handler for QueryShouldWaylayCaravan")
     end,
     true
@@ -38,22 +38,8 @@ function Old_world_caravans:add_caravan_listeners()
       return context:caravan():caravan_force():faction():subculture() ~= "wh3_main_sc_cth_cathay";
     end,
     function(context)
+      self:handle_caravan_encounter(context)
       self:logCore("My handler for CaravanWaylaid")
-    end,
-    true
-  );
-
-  core:add_listener(
-    "caravan_moved_no_cathay",
-    "CaravanMoved",
-    function(context)
-      return context:caravan():caravan_force():faction():subculture() ~= "wh3_main_sc_cth_cathay";
-    end,
-    ---comment
-    ---@param context CaravanMoved
-    function(context)
-      --self:generate_caravan_event(context)
-      self:logCore("My handler for CaravanMoved")
     end,
     true
   );
@@ -64,74 +50,35 @@ function Old_world_caravans:add_caravan_listeners()
     function()
       return self.debug_mode
     end,
-    ---comment
     ---@param context SettlementSelected
     function(context)
-      local ok, err = pcall(function()
-        local settlement = context:garrison_residence():region():name();
-        local player_faction = cm:get_local_faction();
+      local settlement = context:garrison_residence():region():name();
 
-        local player_faction_sc = player_faction:subculture();
-        local award = self.awards[player_faction_sc] and self.awards[player_faction_sc][settlement];
-        self:logCore("award for " .. player_faction_sc .. " in " .. settlement .. " is " .. tostring(award));
-        
-        -- if award and not player_faction:ancillary_exists(award) then
-        --   local incident_payload = cm:create_payload();
-        --   incident_payload:faction_ancillary_gain(player_faction, award);
-  
-        --   cm:trigger_custom_incident(player_faction:name(), "emp_caravan_completed", true, incident_payload)
-        --   --cm:faction_add_pooled_resource(player_faction:name(), award, "missions", 1)
-        -- end
+      local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
 
-        local caravan_system = cm:model():world():caravans_system():faction_caravans(player_faction)
-
-        if not caravan_system:is_null_interface() then
-          local active_caravans = caravan_system:active_caravans()
-          if active_caravans:is_empty() then return end
-
-          ---@diagnostic disable-next-line: undefined-field
-          cm:move_caravan(active_caravans:item_at(0))
-        end
-
-        local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
-
-        self:logCore("banditry_level for " .. settlement .. " is " .. banditry_level);
-      end);
-
-      if not ok then
-        self:logCore(tostring(err));
-      end
+      self:logCore("banditry_level for " .. settlement .. " is " .. banditry_level);
     end,
     true
   )
 
   core:add_listener(
-    "owc_encounter_faction_cleanup",
-    "BattleCompleted",
-    function()
-      return cm:get_saved_value(self.encounter_faction_save_key);
+    "SettlementSelected_caravan_test",
+    "CaravanCompleted",
+    ---@param context CaravanCompleted
+    function(context)
+      return context:faction():is_human();
     end,
-    function()
-      cm:callback(
-        function()
-          self:cleanup_encounter()
-        end, 0.5, self.cleaup_encounter_debounce_key
-      )
+    ---@param context CaravanCompleted
+    function(context)
+      local faction = context:faction()
+      local node = context:complete_position():node()
+      local region_name = node:region_key()
+      self:give_caravan_award(faction, region_name);
     end,
     true
-  );
+  )
 
-  core:add_listener(
-    "owc_EndOfRound_encounter_faction_cleanup",
-    "EndOfRound",
-    function()
-      return cm:get_saved_value(self.encounter_faction_save_key);
-    end,
-    function()
-      self:cleanup_encounter();
-    end,
-    true
-  );
+  
 
 
   core:add_listener(
@@ -140,7 +87,8 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context FactionTurnStart
     ---@return boolean
     function(context)
-      return context:faction():culture() == "wh_main_sc_emp_empire"
+      local subculture = context:faction():subculture();
+      return self.culture_to_trait[subculture] ~= nil;
     end,
     ---@param context FactionTurnStart
     function(context)
@@ -154,49 +102,4 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     true
   );
-
-
-
-  -- core:add_listener(
-  --   "caravan_waylaid_replacer",
-  --   "CaravanWaylaid",
-  --   true,
-  --   ---@param context CaravanWaylaid
-  --   function(context)
-  --     local caravan_subculture = context:caravan():caravan_force():faction():subculture();
-  --     if caravan_subculture ~= "wh3_main_sc_cth_cathay" then
-  --       local event_name_formatted = context:context();
-  --       self:logCore("my event handler for "..event_name_formatted)
-  --       waylaid_caravan_handler(context);
-  --       self:logCore(" not my event handler ")
-  --     else
-
-  --       local caravan_handle = context:caravan();
-  --       local AorB = { "A", "B" };
-  --       local choice = AorB[cm:random_number(#AorB, 1)]
-
-  --       local dilemma_name = "wh3_main_dilemma_cth_caravan_3" .. choice;
-
-  --       local hero_list = { "wh3_main_ogr_cha_hunter_0", "wh_main_emp_cha_captain_0", "wh2_main_hef_cha_noble_0" };
-
-  --       local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
-  --       local payload_builder = cm:create_payload();
-
-  --       dilemma_builder:add_choice_payload("FIRST", payload_builder);
-
-  --       if choice == "B" then
-  --         payload_builder:treasury_adjustment(-500);
-  --       end
-  --       payload_builder:add_unit(caravan_handle:caravan_force(), hero_list[cm:random_number(#hero_list, 1)], 1, 0);
-  --       dilemma_builder:add_choice_payload("SECOND", payload_builder);
-  --       payload_builder:clear();
-
-  --       dilemma_builder:add_target("default", caravan_handle:caravan_force());
-
-  --       out.design("Triggering dilemma:" .. dilemma_name)
-  --       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-  --     end
-  --   end,
-  --   true
-  -- );
 end
