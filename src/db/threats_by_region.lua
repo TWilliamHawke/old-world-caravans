@@ -627,7 +627,6 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_barak_varr"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
   },
   ["wh3_main_combi_region_the_sentinels"] = {
     wh_main_sc_grn_greenskins = 2,

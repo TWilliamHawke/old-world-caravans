@@ -7,9 +7,6 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
   local enemy_culture, target_region, encounter_dif = enemy_data_callback();
   local caravan_faction_key = context:faction():name()
 
-  if enemy_culture == "wh_main_sc_teb_teb" then
-    enemy_culture = "wh_main_sc_emp_empire"
-  end
   self:start_callback_race()
 
   if self.override_enemy and self.default_enemy_culture then
@@ -51,7 +48,7 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
 
   if enemy_cqi ~= 0 then
     if effect_bundle then
-      cm:apply_effect_bundle_to_force(effect_bundle, tostring(enemy_cqi), 0)
+      cm:apply_effect_bundle_to_force(effect_bundle, enemy_cqi, 0)
     end
 
     cm:set_saved_value(self.encounter_faction_save_key, enemy_faction);

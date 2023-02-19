@@ -13,12 +13,11 @@ Old_world_caravans.node_culture_to_event_weight = {
   wh_main_sc_dwf_dwarfs = {
     wh_main_sc_dwf_dwarfs = 8,
     wh_main_sc_teb_teb = 150,
-    wh3_main_sc_ogr_ogre_kingdoms = 125,
-    wh_main_sc_emp_empire = 25,
-    wh3_main_sc_ksl_kislev = 70,
+    wh3_main_sc_ogr_ogre_kingdoms = 65,
+    wh_main_sc_emp_empire = 35,
+    wh3_main_sc_ksl_kislev = 95,
     wh2_dlc09_sc_tmb_tomb_kings = 150,
-    wh_main_sc_brt_bretonnia = 125
+    wh_main_sc_brt_bretonnia = 150
   }
 }
 
---TODO recalculate weights for dwarfs

@@ -8,7 +8,6 @@ Old_world_caravans.threat_weight_by_culture = {
   wh2_main_sc_def_dark_elves = 3,
   wh2_main_sc_lzd_lizardmen = 1,
   wh3_main_sc_ogr_ogre_kingdoms = 1,
-  wh_main_sc_teb_teb = 1,
   wh2_main_sc_skv_skaven = 2,
   wh2_dlc09_sc_tmb_tomb_kings = 1,
   wh3_main_sc_kho_khorne = 3,

@@ -1367,5 +1367,76 @@ Old_world_caravans.enemy_forces = {
       wh2_dlc15_hef_inf_silverin_guard_0 = 1,
       wh2_main_hef_inf_white_lions_of_chrace_0 = 1,
     },
-  }
+  },
+  wh_main_sc_teb_teb_1 = {
+    general = "teb_merc_general",
+    filler_units = {
+      teb_militia_spearmen = 1,
+      teb_billmen = 1,
+    },
+    {
+      teb_half_pikes = 1,
+      teb_pikemen = 1,
+      teb_conqui_lancers = 1,
+      teb_militia_knights = 1,
+    },
+    {
+      teb_militia_archers = 1,
+      teb_xbowmen = 1,
+      teb_handgunners = 1,
+    },
+  },
+  wh_main_sc_teb_teb_2 = {
+    general = "teb_merc_general",
+    filler_units = {
+      teb_half_pikes = 1,
+      teb_pikemen = 1,
+      teb_billmen = 1,
+    },
+    {
+      teb_duellists = 1,
+      teb_conqui_adventurers = 1,
+    },
+    {
+      teb_conqui_lancers = 1,
+      teb_militia_knights = 1,
+      teb_broken_lances = 1,
+    },
+    {
+      teb_xbowmen = 1,
+      teb_handgunners = 1,
+      teb_border_rangers = 1,
+      teb_pavisiers = 1,
+      teb_irrana = 1,
+    },
+  },
+  wh_main_sc_teb_teb_3 = {
+    general = "teb_merc_general",
+    filler_units = {
+      teb_pikemen = 1,
+      teb_billmen = 1,
+    },
+    {
+      teb_duellists = 1,
+      teb_conqui_adventurers = 1,
+      teb_republican_guard = 1,
+    },
+    {
+      teb_militia_knights = 1,
+      teb_broken_lances = 1,
+    },
+    {
+      teb_light_cannon = 1,
+      teb_galloper = 1,
+      teb_carabiniers = 2,
+    },
+    {
+      teb_xbowmen = 1,
+      teb_handgunners = 1,
+      teb_border_rangers = 1,
+      teb_pavisiers = 1,
+      teb_irrana = 1,
+    },
+  },
+
 }

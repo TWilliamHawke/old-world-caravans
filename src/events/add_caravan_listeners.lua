@@ -14,7 +14,22 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     true
   );
-
+  core:add_listener(
+    "owc_antiupkeep",
+    "CaravanSpawned",
+    ---@param context CaravanSpawned
+    function(context)
+      return context:faction():is_human();
+    end,
+    ---@param context CaravanSpawned
+    function(context)
+      local caravan_focre = context:caravan():caravan_force();
+      self:remove_caravan_upkeep(caravan_focre);
+    end,
+    true
+  );
+  
+  
   core:add_listener(
     "caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",

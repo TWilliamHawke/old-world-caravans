@@ -32,6 +32,7 @@ function Old_world_caravans:new_units_handler(context)
   local strong_units_border = cm:turn_number() > 50 and 3 or 4;
   local force_strenght = cm:random_number(4) > strong_units_border and "strong" or "weak";
   self:logCore("selected force strenght is " .. force_strenght)
+  local suffix = (force_strenght == "strong" or cm:random_number(2) > 1) and "A" or "B";
 
   local unitsA, unitsA_count = self:select_unit(selected_cultureA, force_strenght .. "A");
   local unitsB, unitsB_count = self:select_unit(selected_cultureB, force_strenght .. "B");
@@ -41,17 +42,16 @@ function Old_world_caravans:new_units_handler(context)
     return;
   end
 
-  local suffix = (force_strenght == "strong" or cm:random_number(2) > 1) and "A" or "B";
 
   local dilemma_name = "wh3_main_dilemma_cth_caravan_4" .. suffix;
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
 
-  payload_builder:add_unit(caravan_force, unitsB, unitsB_count, 0);
+  payload_builder:add_unit(caravan_force, unitsA, unitsA_count, 0);
   dilemma_builder:add_choice_payload("FIRST", payload_builder);
   payload_builder:clear();
 
-  payload_builder:add_unit(caravan_force, unitsA, unitsA_count, 0);
+  payload_builder:add_unit(caravan_force, unitsB, unitsB_count, 0);
   dilemma_builder:add_choice_payload("SECOND", payload_builder);
 
   dilemma_builder:add_target("default", caravan_force);

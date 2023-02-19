@@ -1233,6 +1233,7 @@ core:add_listener(
   "caravan_finished",
   "CaravanCompleted",
   true,
+  ---@param context CaravanCompleted
   function(context)
     -- store a total value of goods moved for this faction and then trigger an onwards event, narrative scripts use this
     local node = context:complete_position():node()
@@ -1278,6 +1279,10 @@ core:add_listener(
     --Reduce demand
     local cargo = context:caravan():cargo()
     local value = math.floor(-cargo / 18);
+    
+    if not faction:is_human() then
+      value = value / 2;
+    end
     out.design("Reduce " .. region_name)
 
     cm:callback(function() adjust_end_node_value(region_name, value, "add") end, 5);
