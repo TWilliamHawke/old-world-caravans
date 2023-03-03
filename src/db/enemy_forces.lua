@@ -1049,15 +1049,18 @@ Old_world_caravans.enemy_forces = {
   },
   wh_main_sc_emp_empire_1 = {
     filler_units = {
+    },
+      wh_main_emp_inf_swordsmen = 3,
+      wh_dlc04_emp_inf_flagellants_0 = 1,
+    {
       wh_main_emp_inf_spearmen_0 = 1,
       wh_main_emp_inf_spearmen_1 = 1,
-      wh_main_emp_inf_swordsmen = 1,
+      wh_main_emp_inf_halberdiers = 1,
     },
     {
       wh2_dlc13_emp_inf_archers_0 = 1,
       wh_main_emp_inf_crossbowmen = 1,
       wh_dlc04_emp_inf_free_company_militia_0 = 1,
-      wh2_dlc13_emp_inf_huntsmen_0 = 1,
     },
   },
   wh_main_sc_emp_empire_2 = {

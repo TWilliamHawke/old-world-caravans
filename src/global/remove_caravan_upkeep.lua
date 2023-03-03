@@ -6,9 +6,7 @@ function Old_world_caravans:remove_caravan_upkeep(force)
     cm:remove_effect_bundle_from_force(bundle_key, force:command_queue_index());
   end
 
-  if vfs.exist("script/campaign/mod/flexible_unit_caps.lua") then
-    self:logCore("Flexible_unit_caps")
-    return end
+  if vfs.exist("script/campaign/mod/flexible_unit_caps.lua") then return end
 
   local difficulty = cm:model():combined_difficulty_level();
 

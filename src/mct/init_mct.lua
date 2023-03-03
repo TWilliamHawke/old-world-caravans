@@ -15,5 +15,5 @@ function Old_world_caravans:mct_init(context)
   self.encounter_budgets[3] = tonumber(settings.encounter_budget_3)
   --self.filler_unit_weight = tonumber(settings.filler_unit_weight) / 10
   self.no_encounter_weight = settings.no_encounter_weight;
-
+  self.debug_mode = settings.enable_log;
 end

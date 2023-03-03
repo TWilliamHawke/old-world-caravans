@@ -41,7 +41,7 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context QueryShouldWaylayCaravan
     function(context)
       self:generate_caravan_encounter(context)
-      self:logCore("My handler for QueryShouldWaylayCaravan")
+      self:log("My handler for QueryShouldWaylayCaravan")
     end,
     true
   );
@@ -54,7 +54,7 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     function(context)
       self:handle_caravan_encounter(context)
-      self:logCore("My handler for CaravanWaylaid")
+      self:log("My handler for CaravanWaylaid")
     end,
     true
   );
@@ -68,10 +68,9 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context SettlementSelected
     function(context)
       local settlement = context:garrison_residence():region():name();
-
       local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
 
-      self:logCore("banditry_level for " .. settlement .. " is " .. banditry_level);
+      self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
     end,
     true
   )

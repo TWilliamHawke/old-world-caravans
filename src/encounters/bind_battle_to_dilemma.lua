@@ -15,7 +15,7 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
     local choice = context:choice();
 
     if choice == 0 then
-      self:logCore("Start battle");
+      self:log("Start battle");
       cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");
       cm:disable_event_feed_events(true, "", "", "character_dies_battle");
 
@@ -27,7 +27,7 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
       end
       ---@diagnostic disable-next-line: undefined-field
       cm:move_caravan(caravan);
-      self:logCore("Apply callback");
+      self:log("Apply callback");
     end
   end
 

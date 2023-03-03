@@ -1,9 +1,9 @@
 ---comment
 ---@param table table | string
----@param eneble_log boolean | nil
+---@param enable_log boolean | nil
 ---@param weigth_selector fun(val): integer
 ---@return string | nil key
-function Old_world_caravans:select_random_key_by_weight(table, weigth_selector, eneble_log)
+function Old_world_caravans:select_random_key_by_weight(table, weigth_selector, enable_log)
   if not table or type(table) ~= "table" then return nil end
   local total_weight = 0;
 
@@ -14,16 +14,16 @@ function Old_world_caravans:select_random_key_by_weight(table, weigth_selector, 
 
   if total_weight == 0 then return nil end
 
-  if eneble_log then
-    self:logCore("total weight is "..total_weight)
+  if enable_log then
+    self:log("total weight is "..total_weight)
   end;
 
   local random_number = cm:random_number(total_weight, 1);
   total_weight = 0;
   local random_key = "";
 
-  if eneble_log then
-    self:logCore("random_number is "..random_number)
+  if enable_log then
+    self:log("random_number is "..random_number)
   end;
 
 

@@ -53,19 +53,22 @@ Old_world_caravans.culture_to_units = {
   wh3_main_sc_ksl_kislev = {
     weakA = {
       ["wh3_main_ksl_inf_armoured_kossars_0"] = { 3, 2, 3 },
-      ["wh3_main_ksl_cav_winged_lancers_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_cav_horse_raiders_0"] = { 1, 2, 2 },
     },
     weakB = {
-      ["wh3_main_ksl_inf_kossars_1"] = { 3, 2, 3 },
+      ["wh3_main_ksl_inf_kossars_0"] = { 2, 2, 3 },
+      ["wh3_main_ksl_inf_kossars_1"] = { 1, 2, 3 },
       ["wh3_main_ksl_inf_streltsi_0"] = { 1, 2, 2 },
     },
     strongA = {
-      ["wh3_main_pro_ksl_inf_tzar_guard_0"] = { 2, 2, 2 },
+      ["wh3_main_ksl_inf_tzar_guard_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_inf_tzar_guard_1"] = { 1, 2, 2 },
       ["wh3_main_ksl_inf_ice_guard_0"] = { 1, 2, 2 },
       ["wh3_main_ksl_inf_ice_guard_1"] = { 1, 2, 2 },
     },
     strongB = {
       ["wh3_main_ksl_cav_winged_lancers_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_veh_light_war_sled_0"] = { 1, 2, 2 },
     },
   },
   wh_main_sc_dwf_dwarfs = {

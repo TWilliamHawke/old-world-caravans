@@ -9,10 +9,9 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
 
   self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, function()
     cm:set_caravan_cargo(caravan, cargo_amount - 200);
-    self:logCore("Caravan cargo has been reduced by 200")
   end);
 
-  self:logCore("battle has attached, goto dilemma builder")
+  self:log("battle has attached, goto dilemma builder")
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
@@ -29,7 +28,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
   dilemma_builder:add_target("default", cm:get_military_force_by_cqi(enemy_cqi));
   dilemma_builder:add_target("target_military_1", caravan_force);
 
-  self:logCore("dilemma_builder is finished, launch the dilemma")
+  self:log("dilemma_builder is finished, launch the dilemma")
 
   cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_faction);
 

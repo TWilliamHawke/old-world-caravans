@@ -35,7 +35,7 @@ function Old_world_caravans:local_trouble_handler(context)
   local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(target_region);
   local encounter_diff = self:get_event_difficulty(banditry_level, caravan);
 
-  self:logCore("selected culture is "..enemy_culture)
+  self:log("selected culture is "..enemy_culture)
 
   local dilemma_name = self.db.local_trouble_dilemmas[enemy_culture] or "wh3_main_dilemma_cth_caravan_battle_1A";
 
@@ -43,7 +43,7 @@ function Old_world_caravans:local_trouble_handler(context)
   local enemy_cqi = self:prepare_forces_for_battle(context,
   function ()
     return enemy_culture, target_region, encounter_diff;
-  end, "wh2_dlc16_bundle_scripted_wood_elf_encounter")
+  end, "wh2_dlc16_bundle_scripted_wood_elf_encounter", "owc_caravan_no_menace_bellow")
 
   self:create_dilemma_with_cargo(context, dilemma_name, enemy_cqi);
 end

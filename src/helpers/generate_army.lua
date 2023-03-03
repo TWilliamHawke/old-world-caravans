@@ -57,7 +57,7 @@ function Old_world_caravans:generate_army(army_key, budget)
 
     units_count = math.min(units_count, unit_cap);
     add_units_in_list(unit_key, units_count);
-    self:logCore(unit_key..": x"..units_count)
+    self:log(unit_key..": x"..units_count)
 
     return local_budget - unit_cost * units_count;
   end

@@ -8,6 +8,11 @@ function Old_world_caravans:logCore(text)
   logFile:close();
 end
 
+function Old_world_caravans:log(text)
+  if not self.debug_mode then return end
+  self:logCore(text)
+end
+
 function Old_world_caravans:create_new_log()
   local logTimeStamp = os.date("%d, %m %Y %X");
 

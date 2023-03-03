@@ -19,24 +19,27 @@ function Old_world_caravans:add_specific_faction_listeners()
   );
 
   core:add_listener(
-    "karak_faction_joins_confederation",
+    "belegar_joins_confederation_caravan",
     "FactionJoinsConfederation",
     function(context)
       local faction_name = context:faction():name();
-      local confederation_name = context:confederation():name();
 
-      return faction_name == self.belegar_faction or confederation_name == self.belegar_faction;
+      return faction_name == self.belegar_faction;
     end,
     ---@param context FactionJoinsConfederation
     function(context)
+      local faction = context:faction();
       if not cm:get_local_faction():name() == self.belegar_faction then return end
 
       local region = cm:get_region(self.k8p_region_name)
-      if not region or region:is_abandoned() then return end
+      if not region or region:is_null_interface()then return end
 
       local region_owner = region:owning_faction();
-      if region_owner == self.belegar_faction then
+
+      if not region:is_abandoned() and region_owner == self.belegar_faction then
         self:show_caravan_button()
+      else
+        self:disband_all_caravans(faction)
       end
     end,
     true);

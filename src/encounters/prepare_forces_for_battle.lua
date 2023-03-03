@@ -1,8 +1,8 @@
 ---@param context CaravanWaylaid
 ---@param enemy_data_callback enemy_data_callback
----@param effect_bundle string | nil
+---@param ... string effects
 ---@return integer
-function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callback, effect_bundle)
+function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callback, ...)
   local caravan = context:caravan();
   local enemy_culture, target_region, encounter_dif = enemy_data_callback();
   local caravan_faction_key = context:faction():name()
@@ -26,31 +26,31 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
   local enemy_cqi = 0;
 
   if general then
-    self:logCore("create_force_with_general")
+    self:log("create_force_with_general")
+
     cm:create_force_with_general(enemy_faction, army_string, target_region,
-        x, y, "general", general, "", "", "", "", false,
-        function(enemy_char_cqi, enemy_force_cqi)
-          cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
-          cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
-          enemy_cqi = enemy_force_cqi;
-        end);
+      x, y, "general", general, "", "", "", "", false,
+      function(enemy_char_cqi, enemy_force_cqi)
+        cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
+        cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
+        enemy_cqi = enemy_force_cqi;
+      end);
   else
-    self:logCore("create_force_without general")
+    self:log("create_force_without general")
 
     cm:create_force(enemy_faction, army_string, target_region, x, y, true,
-        function(enemy_char_cqi, enemy_force_cqi)
-          cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
-          cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
-          enemy_cqi = enemy_force_cqi;
-        end);
+      function(enemy_char_cqi, enemy_force_cqi)
+        cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
+        cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
+        enemy_cqi = enemy_force_cqi;
+      end);
   end
 
 
   if enemy_cqi ~= 0 then
-    if effect_bundle then
-      cm:apply_effect_bundle_to_force(effect_bundle, enemy_cqi, 0)
+    for _, effect_bundle in pairs(arg) do
+      cm:apply_effect_bundle_to_force(effect_bundle, enemy_cqi, 0);
     end
-
     cm:set_saved_value(self.encounter_faction_save_key, enemy_faction);
   end
 

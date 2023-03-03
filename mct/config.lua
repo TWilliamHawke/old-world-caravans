@@ -9,12 +9,16 @@ old_world_caravans:set_title("Caravans of the Old World", false)
 old_world_caravans:set_log_file_path("Old_world_caravans_log.txt")
 old_world_caravans:set_author("TWilliam")
 
-local unit_caps_size_options = {
-  { key = "wh_main_sc_emp_empire",          text = "empire",          tt = "", default = true },
+if old_world_caravans.set_workshop_id then
+  old_world_caravans:set_main_image("ui/mct/twill_old_world_caravans.png", 300, 300)
+end
+
+local enemy_forces_options = {
+  { key = "wh_main_sc_emp_empire",          text = "empire",          tt = "", default = false },
   { key = "wh_main_sc_brt_bretonnia",       text = "bretonnia",       tt = "", default = false },
   { key = "wh3_main_sc_ksl_kislev",         text = "kislev",          tt = "", default = false },
   { key = "wh_main_sc_dwf_dwarfs",          text = "dwarfs",          tt = "", default = false },
-  { key = "wh3_main_sc_ogr_ogre_kingdoms",  text = "ogre_kingdoms",   tt = "", default = false },
+  { key = "wh3_main_sc_ogr_ogre_kingdoms",  text = "ogre_kingdoms",   tt = "", default = true },
   { key = "wh_main_sc_teb_teb",             text = "southern_realms", tt = "", default = false },
   { key = "wh2_main_sc_hef_high_elves",     text = "high_elves",      tt = "", default = false },
   { key = "wh_dlc05_sc_wef_wood_elves",     text = "wood_elves",      tt = "", default = false },
@@ -49,19 +53,22 @@ local first_section = old_world_caravans:get_section_by_key("default");
 first_section:set_localised_text("Encounters Difficulty", false);
 
 local encounter_budget_1 = old_world_caravans:add_new_option("encounter_budget_1", "slider");
-encounter_budget_1:set_text("Easy Encounters")
+encounter_budget_1:set_text("owc_mct_encounter_budget_1", true);
+encounter_budget_1:set_tooltip_text("owc_mct_encounter_budget_tooltip", true);
 encounter_budget_1:slider_set_min_max(2000, 5000)
 encounter_budget_1:set_default_value(3500)
 encounter_budget_1:slider_set_step_size(500)
 
 local encounter_budget_2 = old_world_caravans:add_new_option("encounter_budget_2", "slider");
-encounter_budget_2:set_text("Medium Encounters")
+encounter_budget_2:set_text("owc_mct_encounter_budget_2", true)
+encounter_budget_2:set_tooltip_text("owc_mct_encounter_budget_tooltip", true);
 encounter_budget_2:slider_set_min_max(3000, 7000)
 encounter_budget_2:set_default_value(5000)
 encounter_budget_2:slider_set_step_size(500)
 
 local encounter_budget_3 = old_world_caravans:add_new_option("encounter_budget_3", "slider");
-encounter_budget_3:set_text("Hard Encounters")
+encounter_budget_3:set_text("owc_mct_encounter_budget_3", true)
+encounter_budget_3:set_tooltip_text("owc_mct_encounter_budget_tooltip", true);
 encounter_budget_3:slider_set_min_max(5000, 10000)
 encounter_budget_3:set_default_value(7000)
 encounter_budget_3:slider_set_step_size(500)
@@ -73,13 +80,16 @@ encounter_budget_3:slider_set_step_size(500)
 -- filler_unit_weight:slider_set_step_size(1)
 
 local scale_difficulty_cargo = old_world_caravans:add_new_option("scale_difficulty_cargo", "checkbox")
-scale_difficulty_cargo:set_text("Scale difficulty with caravan cargo")
+scale_difficulty_cargo:set_text("owc_mct_scale_difficulty_cargo", true)
+scale_difficulty_cargo:set_tooltip_text("owc_mct_scale_difficulty_cargo_tooltip", true);
 
 local scale_difficulty_strenght = old_world_caravans:add_new_option("scale_difficulty_strenght", "checkbox")
-scale_difficulty_strenght:set_text("Scale difficulty with caravan size")
+scale_difficulty_strenght:set_text("owc_mct_scale_difficulty_strenght", true)
+scale_difficulty_strenght:set_tooltip_text("owc_mct_scale_difficulty_strenght_tooltip", true);
 
 local no_encounter_weight = old_world_caravans:add_new_option("no_encounter_weight", "slider")
-no_encounter_weight:set_text("Probability of no encounter")
+no_encounter_weight:set_text("owc_mct_no_encounter_weight", true)
+no_encounter_weight:set_tooltip_text("owc_mct_no_encounter_weight_tooltip", true)
 no_encounter_weight:slider_set_min_max(0, 50)
 no_encounter_weight:set_default_value(50)
 no_encounter_weight:slider_set_step_size(10)
@@ -87,27 +97,40 @@ no_encounter_weight:slider_set_step_size(10)
 
 local debug_section = old_world_caravans:add_new_section("n_debug")
 debug_section:set_localised_text("Debug Section")
-debug_section:set_visibility(false)
 
 local override_encounters = old_world_caravans:add_new_option("override_encounters", "checkbox")
-override_encounters:set_text("Override Encounters")
+override_encounters:set_text("owc_mct_override_encounters", true)
+override_encounters:set_tooltip_text("owc_mct_override_encounters_tooltip", true)
 
 local default_encounter = old_world_caravans:add_new_option("default_encounter", "dropdown")
-default_encounter:set_text("Default Encounter")
+default_encounter:set_text("owc_mct_default_encounter", true)
 default_encounter:add_dropdown_values(encounters)
 
 local enable_log = old_world_caravans:add_new_option("enable_log", "checkbox")
-enable_log:set_text("Enable Logging")
+enable_log:set_text("owc_mct_enable_log", true)
+enable_log:set_tooltip_text("owc_mct_enable_log_tooltip", true)
 
 local override_enemy = old_world_caravans:add_new_option("override_enemy", "checkbox")
-override_enemy:set_text("Override Enemy")
+override_enemy:set_text("owc_mct_override_enemy", true)
+override_enemy:set_tooltip_text("owc_mct_override_enemy_tooltip", true)
 
 local default_enemy = old_world_caravans:add_new_option("default_enemy", "dropdown")
-default_enemy:set_text("Default Enemy")
-default_enemy:add_dropdown_values(unit_caps_size_options)
+default_enemy:set_text("owc_mct_default_enemy", true)
+default_enemy:add_dropdown_values(enemy_forces_options)
 
 local default_difficult = old_world_caravans:add_new_option("default_difficult", "slider")
-default_difficult:set_text("Default Difficult")
+default_difficult:set_text("owc_mct_default_difficult", true)
 default_difficult:slider_set_min_max(1, 3)
 default_difficult:set_default_value(1)
 default_difficult:slider_set_step_size(1)
+
+if encounter_budget_1.set_is_global then
+  encounter_budget_1:set_is_global(true);
+  encounter_budget_2:set_is_global(true);
+  encounter_budget_3:set_is_global(true);
+  scale_difficulty_cargo:set_is_global(true);
+  scale_difficulty_strenght:set_is_global(true);
+  no_encounter_weight:set_is_global(true);
+else
+  debug_section:set_visibility(false)
+end

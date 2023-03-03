@@ -1281,7 +1281,7 @@ core:add_listener(
     local value = math.floor(-cargo / 18);
     
     if not faction:is_human() then
-      value = value / 2;
+      value = value / 3;
     end
     out.design("Reduce " .. region_name)
 

@@ -30,15 +30,15 @@ function Old_world_caravans:generate_caravan_encounter(context)
 
     if type(self[encounter_handler]) == "function" then
     else
-      self:logCore(encounter_handler .. " is not a function")
+      self:log(encounter_handler .. " is not a function")
     end
 
     if type(self[encounter_creator]) == "function" then
       local probability = self[encounter_creator](self, conditions)
-      self:logCore("probability for " .. encounter .. " is " .. probability);
+      self:log("probability for " .. encounter .. " is " .. probability);
       weight_table[encounter] = probability;
     else
-      self:logCore(encounter_creator .. " is not a function")
+      self:log(encounter_creator .. " is not a function")
     end
   end
 
@@ -50,15 +50,9 @@ function Old_world_caravans:generate_caravan_encounter(context)
     selected_encounter = self.default_encounter
   end
 
-  self:logCore("selected_encounter is " .. selected_encounter)
+  self:log("selected_encounter is " .. selected_encounter)
   if selected_encounter == "nothing" then return end
 
   ---@diagnostic disable-next-line: redundant-parameter
   context:flag_for_waylay(selected_encounter)
-  -- local handler = selected_encounter.."_handler"
-  -- if type(self[handler]) =="function" then
-  --   self[handler](self, context);
-  -- else
-  --   self:logCore(handler .. " is not a function")
-  -- end
 end

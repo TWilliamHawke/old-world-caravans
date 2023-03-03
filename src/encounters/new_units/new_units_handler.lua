@@ -24,14 +24,14 @@ function Old_world_caravans:new_units_handler(context)
   end);
 
   if not selected_cultureA or not selected_cultureB then
-    self:logCore("for sone reason culture_selector returned nill");
+    self:logCore("for sone reason culture_selector in new_units_handler returned nill");
     return;
   end
 
 
   local strong_units_border = cm:turn_number() > 50 and 3 or 4;
   local force_strenght = cm:random_number(4) > strong_units_border and "strong" or "weak";
-  self:logCore("selected force strenght is " .. force_strenght)
+  self:log("selected force strenght is " .. force_strenght)
   local suffix = (force_strenght == "strong" or cm:random_number(2) > 1) and "A" or "B";
 
   local unitsA, unitsA_count = self:select_unit(selected_cultureA, force_strenght .. "A");

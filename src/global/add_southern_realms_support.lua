@@ -1,6 +1,6 @@
 function Old_world_caravans:add_southern_realms_support()
   if vfs.exists("script/frontend/mod/cataph_teb.lua") then
-    self:logCore("add_southern_realms_support")
+    self:log("add_southern_realms_support")
 
     self.culture_to_agent_subtype.wh_main_sc_teb_teb = "teb_duellist_hero";
 
@@ -34,7 +34,7 @@ function Old_world_caravans:add_southern_realms_support()
       },
     }
   else
-    self:logCore("replace teb with empire");
+    self:log("replace teb with empire");
 
     self.enemy_forces.wh_main_sc_teb_teb_1 = self.enemy_forces.wh_main_sc_emp_empire_1;
     self.enemy_forces.wh_main_sc_teb_teb_2 = self.enemy_forces.wh_main_sc_emp_empire_2;

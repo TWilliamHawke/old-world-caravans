@@ -17,11 +17,10 @@ function Old_world_caravans:new_agent_handler(context)
   end) or "wh3_main_ogr_cha_hunter_0";
 
   local caravan_force = context:caravan():caravan_force();
-  self:logCore("hero_unit is "..hero_unit)
+  self:log("hero_unit is "..hero_unit)
 
   local choice = cm:random_number(2) > 1 and "A" or "B";
   local dilemma_name = "wh3_main_dilemma_cth_caravan_3"..choice;
-  self:logCore("dilemma_name is "..dilemma_name)
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
