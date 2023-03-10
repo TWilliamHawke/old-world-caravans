@@ -22,7 +22,6 @@ function Old_world_caravans:recruit_start_caravan()
 
         cm:recruit_caravan(faction, temp_caravan);
         CampaignUI.ClearSelection();
-        break;
       end
     end
   end

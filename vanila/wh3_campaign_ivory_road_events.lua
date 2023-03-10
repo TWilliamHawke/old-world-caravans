@@ -2033,7 +2033,7 @@ function adjust_end_node_value(region_name, value, operation)
 
   elseif operation == "add" then
     local temp_end_nodes = safe_get_saved_value_ivory_road_demand()
-    local old_value = temp_end_nodes[region_name];
+    local old_value = temp_end_nodes[region_name] or 0;
 
     if old_value == nil then
       out.design("*******   Error in ivory road script    *********")

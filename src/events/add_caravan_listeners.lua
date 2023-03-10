@@ -1,6 +1,6 @@
 function Old_world_caravans:add_caravan_listeners()
   core:add_listener(
-    "add_inital_force",
+    "owc_add_inital_force",
     "CaravanRecruited",
     ---@param context CaravanRecruited
     ---@return boolean
@@ -31,7 +31,7 @@ function Old_world_caravans:add_caravan_listeners()
   
   
   core:add_listener(
-    "caravan_waylay_query_no_cathay",
+    "owc_caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",
     function(context)
       return context:faction():is_human() and
@@ -47,7 +47,7 @@ function Old_world_caravans:add_caravan_listeners()
   );
 
   core:add_listener(
-    "caravan_waylaid_no_cathay",
+    "owc_caravan_waylaid_no_cathay",
     "CaravanWaylaid",
     function(context)
       return context:caravan():caravan_force():faction():subculture() ~= "wh3_main_sc_cth_cathay";
@@ -60,7 +60,7 @@ function Old_world_caravans:add_caravan_listeners()
   );
 
   core:add_listener(
-    "SettlementSelected_caravan_test",
+    "owc_SettlementSelected_caravan_test",
     "SettlementSelected",
     function()
       return self.debug_mode
@@ -76,7 +76,7 @@ function Old_world_caravans:add_caravan_listeners()
   )
 
   core:add_listener(
-    "SettlementSelected_caravan_test",
+    "owc_CaravanCompleted",
     "CaravanCompleted",
     ---@param context CaravanCompleted
     function(context)

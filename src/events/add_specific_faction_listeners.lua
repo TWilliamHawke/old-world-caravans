@@ -29,7 +29,7 @@ function Old_world_caravans:add_specific_faction_listeners()
     ---@param context FactionJoinsConfederation
     function(context)
       local faction = context:faction();
-      if not cm:get_local_faction():name() == self.belegar_faction then return end
+      if not cm:get_faction(self.belegar_faction):is_human() then return end
 
       local region = cm:get_region(self.k8p_region_name)
       if not region or region:is_null_interface()then return end
