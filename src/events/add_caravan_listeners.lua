@@ -34,8 +34,7 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",
     function(context)
-      return context:faction():is_human() and
-          context:caravan():caravan_force():faction():subculture() ~= "wh3_main_sc_cth_cathay";
+      return context:faction():is_human() and cm:get_campaign_name() ~= "wh3_main_chaos";
     end,
     ---comment
     ---@param context QueryShouldWaylayCaravan
@@ -50,7 +49,7 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_caravan_waylaid_no_cathay",
     "CaravanWaylaid",
     function(context)
-      return context:caravan():caravan_force():faction():subculture() ~= "wh3_main_sc_cth_cathay";
+      return cm:get_campaign_name() ~= "wh3_main_chaos"
     end,
     function(context)
       self:handle_caravan_encounter(context)

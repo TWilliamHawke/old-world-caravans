@@ -1176,8 +1176,7 @@ core:add_listener(
   "caravan_waylay_query",
   "QueryShouldWaylayCaravan",
   function(context)
-    return context:faction():is_human() and
-        context:caravan():caravan_force():faction():subculture() == "wh3_main_sc_cth_cathay";
+    return context:faction():is_human() and cm:get_campaign_name() == "wh3_main_chaos";
   end,
   function(context)
     out.design("Roll for Ivory Road Event");
@@ -1192,7 +1191,7 @@ core:add_listener(
   "caravan_waylaid",
   "CaravanWaylaid",
   function(context)
-    return context:caravan():caravan_force():faction():subculture() == "wh3_main_sc_cth_cathay";
+    return cm:get_campaign_name() == "wh3_main_chaos";
   end,
   function(context)
     out.design("Handle a waylaid caravan");

@@ -5,6 +5,8 @@ function Old_world_caravans:recruit_start_caravan()
   for i = 0, faction_list:num_items() - 1 do
     local faction = faction_list:item_at(i)
     local subculture = faction:subculture();
+    if subculture == "wh3_main_sc_cth_cathay" then return end
+
     local caravans_list = model:world():caravans_system():faction_caravans(faction);
     local faction_is_sutable = faction:is_human()
       and self.culture_to_trait[subculture]

@@ -3,3 +3,4 @@ lib/**
 other/**
 *.txt
 nod.js
+clearNod.js

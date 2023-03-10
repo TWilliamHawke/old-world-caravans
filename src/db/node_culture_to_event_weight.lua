@@ -18,6 +18,14 @@ Old_world_caravans.node_culture_to_event_weight = {
     wh3_main_sc_ksl_kislev = 95,
     wh2_dlc09_sc_tmb_tomb_kings = 150,
     wh_main_sc_brt_bretonnia = 150
+  },
+  wh3_main_sc_cth_cathay = {
+    wh_main_sc_dwf_dwarfs = 35,
+    wh_main_sc_teb_teb = 200,
+    wh3_main_sc_ogr_ogre_kingdoms = 25,
+    wh_main_sc_emp_empire = 30,
+    wh3_main_sc_ksl_kislev = 30,
+    wh3_main_sc_cth_cathay = 15,
   }
 }
 

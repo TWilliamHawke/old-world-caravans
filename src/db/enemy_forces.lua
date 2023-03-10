@@ -1441,5 +1441,59 @@ Old_world_caravans.enemy_forces = {
       teb_irrana = 1,
     },
   },
+  wh3_main_sc_cth_cathay_1 = {
+    filler_units = {
+      wh3_main_cth_inf_peasant_spearmen_1 = 3,
+    },
+    {
+      wh3_main_cth_inf_peasant_archers_0 = 2,
+      wh3_main_cth_inf_iron_hail_gunners_0 = 1,
+      wh3_main_cth_inf_jade_warrior_crossbowmen_0 = 1,
+      wh3_main_cth_cav_peasant_horsemen_0 = 2,
+    },
+    {
+      wh3_main_cth_inf_jade_warriors_0 = 1,
+      wh3_main_cth_inf_jade_warriors_1 = 1,
+    },
+  },
+  wh3_main_sc_cth_cathay_2 = {
+    filler_units = {
+      wh3_main_cth_inf_peasant_spearmen_1 = 2,
+      wh3_main_cth_inf_jade_warriors_0 = 2,
+      wh3_main_cth_inf_jade_warriors_1 = 1,
+    },
+    {
+      wh3_main_cth_inf_peasant_archers_0 = 2,
+      wh3_main_cth_inf_iron_hail_gunners_0 = 1,
+      wh3_main_cth_inf_jade_warrior_crossbowmen_0 = 1,
+      wh3_main_cth_inf_jade_warrior_crossbowmen_1 = 1,
+    },
+    {
+      wh3_main_cth_cav_peasant_horsemen_0 = 2,
+      wh3_main_cth_cav_jade_lancers_0 = 2,
+    },
+  },
+  wh3_main_sc_cth_cathay_3 = {
+    filler_units = {
+      wh3_main_cth_inf_jade_warriors_0 = 2,
+      wh3_main_cth_inf_jade_warriors_1 = 1,
+    },
+    {
+      wh3_main_cth_inf_iron_hail_gunners_0 = 1,
+      wh3_main_cth_inf_jade_warrior_crossbowmen_0 = 1,
+      wh3_main_cth_inf_jade_warrior_crossbowmen_1 = 1,
+      wh3_main_cth_inf_crane_gunners_0 = 1,
+    },
+    {
+      wh3_main_cth_cav_jade_lancers_0 = 2,
+      wh3_main_cth_cav_jade_longma_riders_0 = 2,
+    },
+    {
+      wh3_main_cth_inf_dragon_guard_0 = 2,
+      wh3_main_cth_mon_terracotta_sentinel_0 = 1,
+      wh3_main_cth_art_fire_rain_rocket_battery_0 = 1,
+      wh3_main_cth_art_grand_cannon_0 = 1,
+    },
+  },
 
 }

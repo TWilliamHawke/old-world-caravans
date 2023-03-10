@@ -1,6 +1,6 @@
 function Old_world_caravans:add_mct_listeners()
   core:add_listener(
-    "supply_lines_mct",
+    "owc_mct_init",
     "MctInitialized",
     true,
     function(context)
@@ -11,7 +11,7 @@ function Old_world_caravans:add_mct_listeners()
   )
 
   core:add_listener(
-    "supply_lines_MctFinalized",
+    "owc_MctFinalized",
     "MctFinalized",
     true,
     function(context)

@@ -6,4 +6,5 @@ Old_world_caravans.encounters = {
   "new_agent",
   "new_units",
   "shortcut",
+  "giftFromInd",
 }

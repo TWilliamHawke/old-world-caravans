@@ -9,7 +9,7 @@ function Old_world_caravans:add_cleanup_listeners()
       cm:callback(
         function()
           self:cleanup_encounter()
-        end, 0.5, self.cleaup_encounter_debounce_key
+        end, 0.5, self.cleanup_encounter_debounce_key
       )
     end,
     true

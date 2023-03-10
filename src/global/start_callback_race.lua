@@ -11,7 +11,7 @@ function Old_world_caravans:start_callback_race()
     function()
       cm:callback(
         function()
-          cm:remove_callback(self.cleaup_encounter_debounce_key);
+          cm:remove_callback(self.cleanup_encounter_debounce_key);
           core:remove_listener("owc_callback_war");
         end, 0.2
       )

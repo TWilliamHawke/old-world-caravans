@@ -1,14 +1,14 @@
 ---comment
 ---@param table table | string
 ---@param enable_log boolean | nil
----@param weigth_selector fun(val): integer
----@return string | nil key
-function Old_world_caravans:select_random_key_by_weight(table, weigth_selector, enable_log)
+---@param weight_selector fun(val): integer
+---@return string | nil random_key
+function Old_world_caravans:select_random_key_by_weight(table, weight_selector, enable_log)
   if not table or type(table) ~= "table" then return nil end
   local total_weight = 0;
 
   for _, val in pairs(table) do
-    local weight = val and weigth_selector(val) or 0;
+    local weight = val and weight_selector(val) or 0;
     total_weight = total_weight + tonumber(weight);
   end
 
@@ -29,7 +29,7 @@ function Old_world_caravans:select_random_key_by_weight(table, weigth_selector, 
 
   for key, val in pairs(table) do
     random_key = key;
-    local weight = val and weigth_selector(val) or 0;
+    local weight = val and weight_selector(val) or 0;
 
     total_weight = total_weight + tonumber(weight);
     if total_weight >= random_number then break end

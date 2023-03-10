@@ -12,6 +12,10 @@ Old_world_caravans.culture_to_trait = {
   wh_main_sc_dwf_dwarfs = {
     wh_main_sc_emp_empire = "dwf_caravan_skill_innate_empire",
     wh3_main_sc_ksl_kislev = "dwf_caravan_skill_innate_kislev",
-  }
+  },
+  wh3_main_sc_cth_cathay = {
+    wh3_main_sc_ogr_ogre_kingdoms = "wh3_main_skill_innate_cth_caravan_master_Ogre-Ally",
+    wh_main_sc_emp_empire = "wh3_main_skill_innate_cth_caravan_master_Western-Idealist",
+  },
 
 }

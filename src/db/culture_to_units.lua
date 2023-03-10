@@ -1,5 +1,30 @@
 --unit_key = { weight, min_count, max_count }
 Old_world_caravans.culture_to_units = {
+  wh3_main_sc_cth_cathay = {
+    weakA = {
+      ["wh3_main_cth_inf_jade_warriors_0"] = { 1, 2, 3 },
+      ["wh3_main_cth_inf_jade_warriors_1"] = { 2, 2, 2 },
+      ["wh3_main_cth_inf_peasant_spearmen_1"] = { 2, 2, 3 },
+      ["wh3_main_cth_cav_peasant_horsemen_0"] = { 1, 2, 2 },
+    },
+    weakB = {
+      ["wh3_main_cth_inf_jade_warrior_crossbowmen_0"] = { 1, 2, 2 },
+      ["wh3_main_cth_inf_jade_warrior_crossbowmen_1"] = { 1, 2, 2 },
+      ["wh3_main_cth_inf_peasant_archers_0"] = { 2, 2, 3 },
+    },
+    strongA = {
+      ["wh3_main_cth_inf_jade_warriors_1"] = { 3, 1, 2 },
+      ["wh3_main_cth_inf_dragon_guard_0"] = { 3, 2, 3 },
+      ["wh3_main_cth_art_fire_rain_rocket_battery_0"] = { 1, 1, 1 },
+      ["wh3_main_cth_art_grand_cannon_0"] = { 1, 1, 1 },
+    },
+    strongB = {
+      ["wh3_main_cth_cav_jade_lancers_0"] = { 3, 2, 2 },
+      ["wh3_main_cth_cav_jade_longma_riders_0"] = { 2, 2, 2 },
+      ["wh3_main_cth_veh_sky_lantern_0"] = { 1, 1, 1 },
+      ["wh3_main_cth_veh_sky_junk_0"] = { 1, 1, 1 },
+    },
+  },
   wh_main_sc_emp_empire = {
     weakA = {
       ["wh_main_emp_inf_swordsmen"] = { 2, 2, 3 },

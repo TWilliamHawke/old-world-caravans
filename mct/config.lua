@@ -35,6 +35,7 @@ local enemy_forces_options = {
   { key = "wh3_main_sc_sla_slaanesh",       text = "slaanesh",        tt = "", default = false },
   { key = "wh3_main_sc_tze_tzeentch",       text = "tzeentch",        tt = "", default = false },
   { key = "wh3_main_sc_nur_nurgle",         text = "nurgle",          tt = "", default = false },
+  { key = "wh3_main_sc_cth_cathay",         text = "cathay",          tt = "", default = false },
 }
 
 local encounters = {
@@ -46,6 +47,8 @@ local encounters = {
   { key = "new_agent",       text = "new_agent",       tt = "", default = false },
   { key = "new_units",       text = "new_units",       tt = "", default = false },
   { key = "shortcut",        text = "shortcut",        tt = "", default = false },
+  { key = "giftFromInd",     text = "giftFromInd",     tt = "", default = false },
+
 }
 
 

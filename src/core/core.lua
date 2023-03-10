@@ -1,7 +1,7 @@
 Old_world_caravans = {
   is_init_save_key = "owc_mod_is_init",
   encounter_faction_save_key = "owc_encounter_faction",
-  cleaup_encounter_debounce_key = "owc_kill_key",
+  cleanup_encounter_debounce_key = "owc_kill_key",
   debug_mode = true,
   invasion_key = "owc_encounter",
   belegar_faction = "wh_main_dwf_karak_izor",

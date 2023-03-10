@@ -542,9 +542,6 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_black_fang"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
-  ["wh3_main_chaos_region_black_fang"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
   ["wh3_main_combi_region_vale_of_titans"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
@@ -557,9 +554,6 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_icespewer"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
-  ["wh3_main_chaos_region_icespewer"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
   ["wh3_main_combi_region_blizzardpeak"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
@@ -567,9 +561,6 @@ Old_world_caravans.threats = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
   ["wh3_main_combi_region_sabre_mountain"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_sabre_mountain"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
   ["wh3_main_combi_region_gorger_rock"] = {
@@ -838,234 +829,5 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_lahmia"] = {
     wh2_dlc09_sc_tmb_tomb_kings = 2,
     wh_main_sc_vmp_vampire_counts = 2,
-  },
-  ["wh3_main_chaos_region_shattered_stone_bay"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_tower_of_grief"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_gorger_rock"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_karak_vrag"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_eagle_eyries"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_the_falls_of_doom"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_black_fortress"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_skrap_towers"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_gerslev"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_igerov"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_volksgrad"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_karak_kadrin"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_chaos_region_karak_raziak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_chaos_region_altdorf"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_chaos_region_grissenwald"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_chaos_region_ubersreik"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_chaos_region_delberz"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_chaos_region_krudenwald"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_chaos_region_marienburg"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc08_sc_nor_norsca = 1,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_chaos_region_rosche"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_chaos_region_frozen_landing"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_ice_caverns_of_ymirdrak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_temple_of_heimkel"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_uzkulak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_the_daemons_stump"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_bohsenfels"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_chaos_region_bolgasgrad"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_erengrad"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_zoishenk"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_kislev"] = {
-    wh_dlc08_sc_nor_norsca = 1,
-  },
-  ["wh3_main_chaos_region_vale_of_titans"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_karak_azorn"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_castle_drakenhof"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_chaos_region_bechafen"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_chaos_region_fortenhof"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_chaos_region_hergig"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_chaos_region_kusel"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_chaos_region_osterwald"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_chaos_region_talabheim"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_chaos_region_fallen_city"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_mount_thug"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_qiang"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_shambletown"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_fort_jakova"] = {
-    wh_dlc08_sc_nor_norsca = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_chaos_region_karak_ungor"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_chaos_region_khazid_irkulaz"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_chaos_region_bloodpeak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_mist_gorge"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_tower_of_ashshair"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_yhetee_peak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_gnashraks_lair"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_chaos_region_mount_grey_hag"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_mount_gunbad"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_chaos_region_the_tower_of_gorgoth"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_karak_vlag"] = {
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_kraz_und"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc08_sc_nor_norsca = 2,
-  },
-  ["wh3_main_chaos_region_novchozy"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_chaos_region_the_gates_of_zharr"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_the_silver_pinnacle"] = {
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_chaos_region_howling_rock"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_uzkulany"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_zharr_naggrund"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_chaos_region_amblepeak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_great_hall_of_greasus"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_grimtop"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-  },
-  ["wh3_main_chaos_region_karak_krakaten"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
   },
 }
