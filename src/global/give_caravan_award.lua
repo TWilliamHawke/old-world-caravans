@@ -4,7 +4,6 @@
 function Old_world_caravans:give_caravan_award(faction, region_name)
   local faction_sc = faction:subculture();
   local award = self.awards[faction_sc] and self.awards[faction_sc][region_name];
-  self:log("award is "..award)
 
   if not award then return end
 
@@ -20,4 +19,5 @@ function Old_world_caravans:give_caravan_award(faction, region_name)
     self:log("award for dwarfs ")
     cm:faction_add_pooled_resource(faction:name(), award, "missions", 1);
   end
+  self:log("award is " .. award)
 end
