@@ -323,7 +323,7 @@ local event_table = {
 
     local enemy_faction_name = enemy_faction:name();
     if enemy_faction_name == "rebels" then
-      enemy_faction_name = "wh3_main_sc_ogr_ogre_kingdoms_qb1";
+      enemy_faction_name = "wh3_main_ogr_ogre_kingdoms_qb1";
     end
 
     local eventname = "banditExtort" .. "?"
@@ -400,7 +400,7 @@ local event_table = {
       payload_builder:effect_bundle_to_force(caravan_handle:caravan_force(), cargo_bundle);
       local own_faction = caravan_handle:caravan_force():faction();
       if target_faction_object:subculture() == "wh3_main_sc_ogr_ogre_kingdoms" and
-          not target_faction_object:name() == "wh3_main_sc_ogr_ogre_kingdoms_qb1" then
+          not target_faction_object:name() == "wh3_main_ogr_ogre_kingdoms_qb1" then
         --for anyone searching for diplomatic_attitude_adjustment: the int ranges from -6 -> 6, and selects a value set in the DC
         payload_builder:diplomatic_attitude_adjustment(target_faction_object, 6);
       else
@@ -427,7 +427,7 @@ local event_table = {
 
     local enemy_faction_name = enemy_faction:name();
     if enemy_faction_name == "rebels" then
-      enemy_faction_name = "wh3_main_sc_ogr_ogre_kingdoms_qb1";
+      enemy_faction_name = "wh3_main_ogr_ogre_kingdoms_qb1";
     end
 
     local eventname = "banditAmbush" .. "?"
@@ -518,7 +518,7 @@ local event_table = {
     local enemy_faction_name = event_region:owning_faction():name();
 
     if enemy_faction_name == "rebels" then
-      enemy_faction_name = "wh3_main_sc_ogr_ogre_kingdoms_qb1";
+      enemy_faction_name = "wh3_main_ogr_ogre_kingdoms_qb1";
     end
     local enemy_faction = cm:get_faction(enemy_faction_name);
 
@@ -621,7 +621,7 @@ local event_table = {
       local target_faction_object = cm:get_faction(target_faction);
       local own_faction = caravan_handle:caravan_force():faction();
       if target_faction_object:subculture() == "wh3_main_sc_ogr_ogre_kingdoms" and
-          not target_faction_object:name() == "wh3_main_sc_ogr_ogre_kingdoms_qb1" then
+          not target_faction_object:name() == "wh3_main_ogr_ogre_kingdoms_qb1" then
         --for anyone searching for diplomatic_attitude_adjustment: the int ranges from -6 -> 6, and selects a value set in the DC
         payload_builder:diplomatic_attitude_adjustment(target_faction_object, 6);
       else
@@ -1333,7 +1333,7 @@ core:add_listener(
   "clean_up_attacker",
   "FactionTurnStart",
   function(context)
-    return context:faction():name() == "wh3_main_sc_ogr_ogre_kingdoms_qb1"
+    return context:faction():name() == "wh3_main_ogr_ogre_kingdoms_qb1"
   end,
   function(context)
     cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");
@@ -1374,7 +1374,7 @@ core:add_listener(
   "reenable_event_feed_post_caravan_battle",
   "BattleCompleted",
   function()
-    return cm:pending_battle_cache_faction_is_involved("wh3_main_sc_ogr_ogre_kingdoms_qb1")
+    return cm:pending_battle_cache_faction_is_involved("wh3_main_ogr_ogre_kingdoms_qb1")
   end,
   function()
     cm:callback(
@@ -1607,7 +1607,7 @@ function spawn_caravan_battle_force(caravan, attacking_force, region, is_ambush,
 
   out.design("Battle created");
 
-  local enemy_faction = optional_faction or "wh3_main_sc_ogr_ogre_kingdoms_qb1"
+  local enemy_faction = optional_faction or "wh3_main_ogr_ogre_kingdoms_qb1"
   local caravan_faction = caravan:caravan_force():faction();
   local enemy_force_cqi = 0;
 
@@ -2181,7 +2181,7 @@ function get_random_ogre_faction()
     out.design("list is not empty")
     for i = 0, factions:num_items() - 1 do
       faction = factions:item_at(i);
-      if faction:subculture() == "wh3_main_sc_ogr_ogre_kingdoms" and faction:name() ~= "wh3_main_sc_ogr_ogre_kingdoms_qb1" then
+      if faction:subculture() == "wh3_main_sc_ogr_ogre_kingdoms" and faction:name() ~= "wh3_main_ogr_ogre_kingdoms_qb1" then
         return faction
       end
     end
@@ -2202,7 +2202,7 @@ function get_best_ogre_faction(self_faction)
   if not factions:is_empty() then
     for i = 0, factions:num_items() - 1 do
       faction = factions:item_at(i);
-      if faction:subculture() == "wh3_main_sc_ogr_ogre_kingdoms" and faction:name() ~= "wh3_main_sc_ogr_ogre_kingdoms_qb1" then
+      if faction:subculture() == "wh3_main_sc_ogr_ogre_kingdoms" and faction:name() ~= "wh3_main_ogr_ogre_kingdoms_qb1" then
         if faction:diplomatic_standing_with(self_faction) > high_score and
             faction:diplomatic_standing_with(self_faction) <= max_score then
           high_score = faction:diplomatic_standing_with(self_faction);
