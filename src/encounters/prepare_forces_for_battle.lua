@@ -7,7 +7,7 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
   local enemy_culture, target_region, encounter_dif = enemy_data_callback();
   local caravan_faction_key = context:faction():name()
 
-  self:start_callback_race()
+  --self:start_callback_race()
 
   if self.override_enemy and self.default_enemy_culture then
     enemy_culture = self.default_enemy_culture;

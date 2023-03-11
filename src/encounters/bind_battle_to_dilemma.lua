@@ -11,7 +11,9 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
   ---@param context DilemmaChoiceMadeEvent
   local function encounterDilemmaChoice(context)
     local dilemma = context:dilemma();
+
     if dilemma_name ~= dilemma then return end
+    core:remove_listener(dilemma_listener_key);
     local choice = context:choice();
 
     if choice == 0 then

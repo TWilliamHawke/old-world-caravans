@@ -3,7 +3,7 @@ function Old_world_caravans:add_cleanup_listeners()
     "owc_encounter_faction_cleanup",
     "BattleCompleted",
     function()
-      return cm:get_saved_value(self.encounter_faction_save_key);
+      return not not cm:get_saved_value(self.encounter_faction_save_key);
     end,
     function()
       cm:callback(
@@ -19,7 +19,7 @@ function Old_world_caravans:add_cleanup_listeners()
     "owc_EndOfRound_encounter_faction_cleanup",
     "EndOfRound",
     function()
-      return cm:get_saved_value(self.encounter_faction_save_key);
+      return not not cm:get_saved_value(self.encounter_faction_save_key);
     end,
     function()
       self:cleanup_encounter();
