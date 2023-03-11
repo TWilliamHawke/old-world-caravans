@@ -44,9 +44,11 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_krugenheim"] = {
     wh_dlc03_sc_bst_beastmen = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 1,
   },
   ["wh3_main_combi_region_kappelburg"] = {
     wh_dlc03_sc_bst_beastmen = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 1,
   },
   ["wh3_main_combi_region_gryphon_wood"] = {
     wh_dlc05_sc_wef_wood_elves = 1,
@@ -209,26 +211,32 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_zvorak"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_matorca"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_karak_angazhar"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_myrmidens"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_verdanos"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh_main_sc_grn_greenskins = 2,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_argalis"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh_main_sc_grn_greenskins = 2,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_akendorf"] = {
     wh_main_sc_grn_greenskins = 3,
@@ -240,10 +248,12 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_luccini"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh2_dlc11_sc_cst_vampire_coast = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_riffraffa"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh2_dlc11_sc_cst_vampire_coast = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_miragliano"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 1,
@@ -298,6 +308,7 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_karag_dromar"] = {
     wh_main_sc_grn_greenskins = 3,
     wh2_main_sc_skv_skaven = 3,
+    wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_grom_peak"] = {
     wh_main_sc_grn_greenskins = 2,
@@ -410,14 +421,17 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_karag_orrud"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 1,
+    wh2_dlc09_sc_tmb_tomb_kings = 1,
   },
   ["wh3_main_combi_region_mount_arachnos"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 1,
+    wh2_dlc09_sc_tmb_tomb_kings = 1,
   },
   ["wh3_main_combi_region_lost_plateau"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 1,
+    wh2_dlc09_sc_tmb_tomb_kings = 1,
   },
   ["wh3_main_combi_region_karak_zorn"] = {
     wh_main_sc_grn_greenskins = 2,
@@ -451,6 +465,7 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_karak_ziflin"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 1,
+    wh_main_sc_vmp_vampire_counts = 1,
   },
   --dark lands
   ["wh3_main_combi_region_ash_ridge_mountains"] = {
@@ -500,6 +515,7 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_uzkulak"] = {
     wh_main_sc_grn_greenskins = 2,
     wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh_dlc08_sc_nor_norsca = 1,
   },
   ["wh3_main_combi_region_zharr_naggrund"] = {
     wh_main_sc_grn_greenskins = 2,
@@ -508,10 +524,12 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_pigbarter"] = {
     wh_main_sc_grn_greenskins = 2,
     wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_skrap_towers"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh_dlc03_sc_bst_beastmen = 2,
+    wh2_main_sc_lzd_lizardmen = 3,
+    wh2_main_sc_skv_skaven = 2,
   },
   ["wh3_main_combi_region_great_skull_lakes"] = {
     wh_main_sc_grn_greenskins = 2,
@@ -528,6 +546,7 @@ Old_world_caravans.threats = {
   --mountains of moon
   ["wh3_main_combi_region_karak_krakaten"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_karak_azorn"] = {
     wh_main_sc_grn_greenskins = 2,
@@ -535,51 +554,74 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_valley_of_horns"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_flayed_rock"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh_dlc03_sc_bst_beastmen = 2,
+    wh2_main_sc_skv_skaven = 1,
   },
   ["wh3_main_combi_region_black_fang"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_vale_of_titans"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_fire_mouth"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_bloodpeak"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_icespewer"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_main_sc_grn_greenskins = 2,
+    wh_dlc08_sc_nor_norsca = 2,
   },
   ["wh3_main_combi_region_blizzardpeak"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_main_sc_grn_greenskins = 2,
+    wh_dlc08_sc_nor_norsca = 2,
   },
   ["wh3_main_combi_region_the_maw_gate"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_sabre_mountain"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_main_sc_grn_greenskins = 2,
   },
   ["wh3_main_combi_region_gorger_rock"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_great_hall_of_greasus"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_hanyu_port"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh2_main_sc_skv_skaven = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_qiang"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh2_main_sc_skv_skaven = 2,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_shang_yang"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh2_main_sc_skv_skaven = 1,
+    wh_main_sc_grn_greenskins = 1,
   },
   ["wh3_main_combi_region_xen_wu"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh2_main_sc_skv_skaven = 1,
+    wh_main_sc_grn_greenskins = 1,
   },
   --bretonnia
   ["wh3_main_combi_region_castle_carcassonne"] = {
@@ -694,42 +736,53 @@ Old_world_caravans.threats = {
   --wastes
   ["wh3_main_combi_region_varenka_hills"] = {
     wh_main_sc_grn_greenskins = 2,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_barag_dawazbag"] = {
-    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_barak_varr"] = {
     wh_main_sc_grn_greenskins = 2,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_dok_karaz"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 1,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_stonemine_tower"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 3,
   },
   ["wh3_main_combi_region_bitterstone_mine"] = {
-    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
   },
   ["wh3_main_combi_region_ekrund"] = {
     wh_main_sc_grn_greenskins = 2,
     wh2_main_sc_skv_skaven = 3,
   },
   ["wh3_main_combi_region_dragonhorn_mines"] = {
-    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_gronti_mingol"] = {
-    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_galbaraz"] = {
-    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_stormhenge"] = {
-    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_gor_gazan"] = {
     wh_main_sc_grn_greenskins = 1,
+    wh2_dlc09_sc_tmb_tomb_kings = 1,
   },
   ["wh3_main_combi_region_forest_of_gloom"] = {
     wh_main_sc_grn_greenskins = 3,
