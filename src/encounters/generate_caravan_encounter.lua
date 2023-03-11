@@ -8,6 +8,7 @@ function Old_world_caravans:generate_caravan_encounter(context)
   local start_region = self:get_region_by_node(caravan, context:from());
   local end_region = self:get_region_by_node(caravan, context:to());
   local bandit_threat = self:calculate_bandit_threat(region_names);
+  self:cleanup_encounter();
 
   ---@type Encounter_creator_context
   local conditions = {

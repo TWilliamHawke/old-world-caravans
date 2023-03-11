@@ -3,7 +3,6 @@ function Old_world_caravans:shortcut_handler(context)
   local type = cm:random_number(2) > 1 and "A" or "B";
   local dilemma_name = "wh3_main_dilemma_cth_caravan_1" .. type;
   self:log("dilemma_name is "..dilemma_name)
-  core:remove_listener("caravan_moved_no_cathay");
 
   local caravan = context:caravan();
 
