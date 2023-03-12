@@ -245,4 +245,23 @@ Old_world_caravans.start_units = {
     "wh_main_dwf_inf_quarrellers_0",
     "wh_main_dwf_inf_quarrellers_0",
   },
+  dwf_caravan_skill_innate_irondrakes = {
+    "wh_main_dwf_inf_longbeards",
+    "wh_main_dwf_inf_dwarf_warrior_0",
+    "wh_main_dwf_inf_dwarf_warrior_0",
+    "wh_main_dwf_inf_dwarf_warrior_0",
+    "wh_main_dwf_inf_quarrellers_0",
+    "wh_main_dwf_inf_quarrellers_0",
+    "wh_main_dwf_inf_irondrakes_0",
+    "wh_main_dwf_inf_irondrakes_2",
+  },
+  dwf_caravan_skill_innate_ogres = {
+    "wh_main_dwf_inf_longbeards",
+    "wh_main_dwf_inf_dwarf_warrior_0",
+    "wh_main_dwf_inf_dwarf_warrior_0",
+    "wh_main_dwf_inf_quarrellers_0",
+    "wh_main_dwf_inf_quarrellers_0",
+    "wh3_main_ogr_inf_maneaters_2",
+    "wh3_main_ogr_inf_maneaters_1",
+  },
 }

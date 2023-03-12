@@ -97,4 +97,8 @@ Old_world_caravans.trade_nodes_to_culture = {
   ["wh3_main_combi_region_novchozy"] = "wh3_main_sc_ksl_kislev",
   ["wh3_main_combi_region_silver_pinnacle"] = "wh3_main_sc_ogr_ogre_kingdoms",
   ["wh3_main_combi_region_uzkulak"] = "wh3_main_sc_ogr_ogre_kingdoms",
+  ["wh3_main_combi_region_luccini"] = "wh_main_sc_teb_teb",
+  ["wh3_main_combi_region_zandri"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_sudenburg"] = "wh_main_sc_emp_empire",
+  ["wh3_main_combi_region_dietershafen"] = "wh_main_sc_emp_empire",
 }

@@ -20,12 +20,14 @@ Old_world_caravans.node_culture_to_event_weight = {
     wh_main_sc_brt_bretonnia = 150
   },
   wh3_main_sc_cth_cathay = {
-    wh_main_sc_dwf_dwarfs = 35,
-    wh_main_sc_teb_teb = 200,
-    wh3_main_sc_ogr_ogre_kingdoms = 25,
-    wh_main_sc_emp_empire = 30,
-    wh3_main_sc_ksl_kislev = 30,
-    wh3_main_sc_cth_cathay = 15,
+    wh_main_sc_emp_empire = 24,
+    wh3_main_sc_cth_cathay = 200,
+    wh3_main_sc_ogr_ogre_kingdoms = 35,
+    wh3_main_sc_ksl_kislev = 40,
+    wh_main_sc_dwf_dwarfs = 30,
+    wh_main_sc_teb_teb = 100,
+    wh_main_sc_brt_bretonnia = 200,
+    wh_dlc05_sc_wef_wood_elves = 200,
   }
 }
 

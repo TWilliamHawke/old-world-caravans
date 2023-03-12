@@ -23,8 +23,8 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     ---@param context CaravanSpawned
     function(context)
-      local caravan_focre = context:caravan():caravan_force();
-      self:remove_caravan_upkeep(caravan_focre);
+      local caravan_force = context:caravan():caravan_force();
+      self:remove_caravan_upkeep(caravan_force);
     end,
     true
   );
@@ -68,6 +68,15 @@ function Old_world_caravans:add_caravan_listeners()
     function(context)
       local settlement = context:garrison_residence():region():name();
       local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
+      local faction = cm:get_local_faction()
+      local faction_sc = faction:subculture();
+      local award = self.awards[faction_sc] and self.awards[faction_sc][settlement];
+
+      if award then
+        cm:add_ancillary_to_faction(faction, award, true)
+      end
+    
+      --cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0))
 
       self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
     end,

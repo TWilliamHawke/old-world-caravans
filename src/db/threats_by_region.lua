@@ -883,4 +883,24 @@ Old_world_caravans.threats = {
     wh2_dlc09_sc_tmb_tomb_kings = 2,
     wh_main_sc_vmp_vampire_counts = 2,
   },
+  ["wh3_main_combi_region_el_kalabad"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 3,
+  },
+  ["wh3_main_combi_region_sudenburg"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 3,
+  },
+  ["wh3_main_combi_region_agrul_migdhal"] = {
+    wh_main_sc_grn_greenskins = 3,
+    wh_dlc03_sc_bst_beastmen = 1,
+    wh2_dlc09_sc_tmb_tomb_kings = 2,
+  },
+  ["wh3_main_combi_region_floating_village"] = {
+    wh_main_sc_vmp_vampire_counts = 3,
+  },
+  ["wh3_main_combi_region_numas"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 3,
+  },
+  ["wh3_main_combi_region_yetchitch"] = {
+    wh_dlc08_sc_nor_norsca = 3,
+  },
 }

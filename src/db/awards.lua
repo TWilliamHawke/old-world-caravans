@@ -13,6 +13,8 @@ Old_world_caravans.awards = {
     ["wh3_main_combi_region_karak_kadrin"] = "owc_main_anc_rune_master_rune_of_battle",
     ["wh3_main_combi_region_karaz_a_karak"] = "owc_main_anc_rune_master_rune_of_valaya",
     ["wh3_main_combi_region_zhufbar"] = "owc_dlc10_dwf_anc_enchanted_item_ironwardens_tankard",
+    ["wh3_main_combi_region_sudenburg"] = "owc_dlc09_anc_talisman_collar_of_shakkara",
+    ["wh3_main_combi_region_khemri"] = "owc_dlc09_anc_enchanted_item_vambraces_of_the_sun",
   },
   wh_main_sc_dwf_dwarfs = {
     ["wh3_main_combi_region_marienburg"] = "dwf_caravan_marienburg",
@@ -31,6 +33,16 @@ Old_world_caravans.awards = {
     ["wh3_main_combi_region_miragliano"] = "dwf_caravan_tilea",
     ["wh3_main_combi_region_erengrad"] = "dwf_caravan_erengrad",
     ["wh3_main_combi_region_kislev"] = "dwf_caravan_kislev",
+
+  },
+  wh3_main_sc_cth_cathay = {
+    ["wh3_main_combi_region_couronne"] = "owc_dlc07_anc_magic_standard_errantry_banner",
+    ["wh3_main_combi_region_castle_carcassonne"] = "owc_anc_follower_strange_bretonnian_peasant",
+    ["wh3_main_combi_region_khemri"] = "owc_dlc09_anc_enchanted_item_vambraces_of_the_sun",
+    ["wh3_main_combi_region_miragliano"] = "owc_main_anc_follower_empire_estalian_diestro",
+    ["wh3_main_combi_region_kraka_drak"] = "owc_main_anc_rune_master_rune_of_valaya",
+    ["wh3_main_combi_region_bordeleaux"] = "owc_dlc07_anc_enchanted_item_mane_of_the_purebreed",
+    ["wh3_main_combi_region_gaean_vale"] = "owc_dlc16_anc_armour_dragon_cuirass_3",
 
   }
 }

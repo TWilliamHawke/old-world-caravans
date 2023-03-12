@@ -5,10 +5,10 @@ function Old_world_caravans:recruit_start_caravan()
   for i = 0, faction_list:num_items() - 1 do
     local faction = faction_list:item_at(i)
     local subculture = faction:subculture();
-    if subculture == "wh3_main_sc_cth_cathay" then return end
 
     local caravans_list = model:world():caravans_system():faction_caravans(faction);
     local faction_is_sutable = faction:is_human()
+      and subculture ~= "wh3_main_sc_cth_cathay"
       and self.culture_to_trait[subculture]
       and faction:name() ~= "wh_main_dwf_karak_izor"
       and not caravans_list:is_null_interface();
@@ -24,6 +24,7 @@ function Old_world_caravans:recruit_start_caravan()
 
         cm:recruit_caravan(faction, temp_caravan);
         CampaignUI.ClearSelection();
+
       end
     end
   end
