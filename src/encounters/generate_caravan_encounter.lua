@@ -24,8 +24,12 @@ function Old_world_caravans:generate_caravan_encounter(context)
     to = end_region,
   };
 
-  local no_encounter_weight = cm:get_saved_value(self.encounter_was_canceled_key) and 1 or (self.no_encounter_weight / 2);
-  cm:set_saved_value(self.encounter_was_canceled_key, false)
+  local no_encounter_weight = self.no_encounter_weight / 2;
+
+  if cm:get_saved_value(self.encounter_was_canceled_key) then
+    no_encounter_weight = 0;
+    cm:set_saved_value(self.encounter_was_canceled_key, false)
+  end
 
   local weight_table = {
     nothing = no_encounter_weight,

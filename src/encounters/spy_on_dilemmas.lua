@@ -11,11 +11,11 @@ function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
     "DilemmaIssuedEvent",
     true,
     function()
+      cm:move_caravan(caravan);
       cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
       cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
       cm:remove_callback(self.dilemma_callback_key);
       self:cleanup_encounter();
-      cm:move_caravan(caravan);
       cm:set_saved_value(self.encounter_was_canceled_key, true)
       self:log("encounter was canceled")
     end,

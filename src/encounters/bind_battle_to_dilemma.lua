@@ -18,8 +18,9 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
 
     if choice == 0 then
       self:log("Start battle");
-      cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");
       cm:disable_event_feed_events(true, "", "", "character_dies_battle");
+      cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
+      cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
 
       cm:force_attack_of_opportunity(enemy_cqi, caravan_cqi, false);
     else
@@ -46,9 +47,7 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
         self:logCore(tostring(err));
         self:cleanup_encounter();
       end
-
     end,
     false
   );
-
 end
