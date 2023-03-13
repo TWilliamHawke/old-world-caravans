@@ -1,7 +1,8 @@
 Old_world_caravans = {
   is_init_save_key = "owc_mod_is_init",
   encounter_faction_save_key = "owc_encounter_faction",
-  cleanup_encounter_debounce_key = "owc_kill_key",
+  cleaup_encounter_debounce_key = "owc_kill_key",
+  dilemma_callback_key = "dilemma_callback_key",
   debug_mode = true,
   invasion_key = "owc_encounter",
   belegar_faction = "wh_main_dwf_karak_izor",
@@ -22,4 +23,5 @@ Old_world_caravans = {
   override_encounters = false,
   default_encounter = "",
   no_encounter_weight = 50,
+  encounter_was_canceled_key = "owc_encounter_was_canceled",
 }

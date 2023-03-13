@@ -8,7 +8,10 @@ function Old_world_caravans:generate_caravan_encounter(context)
   local start_region = self:get_region_by_node(caravan, context:from());
   local end_region = self:get_region_by_node(caravan, context:to());
   local bandit_threat = self:calculate_bandit_threat(region_names);
-  self:cleanup_encounter();
+
+  if not cm:is_multiplayer() then
+    self:cleanup_encounter();
+  end
 
   ---@type Encounter_creator_context
   local conditions = {
@@ -21,8 +24,15 @@ function Old_world_caravans:generate_caravan_encounter(context)
     to = end_region,
   };
 
+  local no_encounter_weight = self.no_encounter_weight / 2;
+
+  if cm:get_saved_value(self.encounter_was_canceled_key) then
+    no_encounter_weight = 0;
+    cm:set_saved_value(self.encounter_was_canceled_key, false)
+  end
+
   local weight_table = {
-    nothing = self.no_encounter_weight / 2,
+    nothing = no_encounter_weight,
   }
 
   for _, encounter in ipairs(self.encounters) do

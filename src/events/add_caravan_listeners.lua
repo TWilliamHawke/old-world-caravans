@@ -19,7 +19,7 @@ function Old_world_caravans:add_caravan_listeners()
     "CaravanSpawned",
     ---@param context CaravanSpawned
     function(context)
-      return context:faction():is_human();
+      return context:faction():is_human() and context:faction():subculture() ~= "wh3_main_sc_cth_cathay";
     end,
     ---@param context CaravanSpawned
     function(context)

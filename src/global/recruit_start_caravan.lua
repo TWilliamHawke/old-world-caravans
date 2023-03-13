@@ -23,6 +23,7 @@ function Old_world_caravans:recruit_start_caravan()
         end
 
         cm:recruit_caravan(faction, temp_caravan);
+        cm:treasury_mod(faction:name(), 800);
         CampaignUI.ClearSelection();
 
       end
