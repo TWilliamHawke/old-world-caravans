@@ -7,13 +7,13 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
   local caravan_faction = caravan:caravan_force():faction():name();
   local caravan_cqi = caravan:caravan_force():command_queue_index();
   local dilemma_listener_key = "owc_dilemma_" .. caravan_faction;
+  core:remove_listener(dilemma_listener_key);
 
   ---@param context DilemmaChoiceMadeEvent
   local function encounterDilemmaChoice(context)
     local dilemma = context:dilemma();
 
     if dilemma_name ~= dilemma then return end
-    core:remove_listener(dilemma_listener_key);
     local choice = context:choice();
 
     if choice == 0 then

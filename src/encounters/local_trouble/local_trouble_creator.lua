@@ -2,6 +2,10 @@
 ---@param context Encounter_creator_context
 ---@return integer encounter_probability
 function Old_world_caravans:local_trouble_creator(context)
+  if cm:is_multiplayer() and cm:get_saved_value(self.encounter_faction_save_key) then
+    return 0
+  end
+
   local caravan_master = context.caravan:caravan_master():character();
   local caravan_faction = context.faction;
 

@@ -4,5 +4,9 @@ function Old_world_caravans:ambush_creator(context)
   local cargo_factor = math.floor(context.caravan:cargo() * self.cargo_threat_mult);
   local probability = math.ceil((context.bandit_threat + cargo_factor) / 20) + 3;
 
+  if cm:is_multiplayer() and cm:get_saved_value(self.encounter_faction_save_key) then
+    return 0
+  end
+
   return probability;
-end;
+end
