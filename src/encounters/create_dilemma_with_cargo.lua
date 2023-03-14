@@ -8,7 +8,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
   local caravan_force = caravan:caravan_force();
 
   self:spy_on_dilemmas(caravan, function()
-    self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, function()
+    self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, false, function()
       cm:set_caravan_cargo(caravan, cargo_amount - 200);
     end);
 

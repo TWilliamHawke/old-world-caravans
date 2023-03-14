@@ -2,8 +2,9 @@
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 ---@param enemy_cqi number
 ---@param dilemma_name string
+---@param is_ambush boolean
 ---@param callback function | nil
-function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, callback)
+function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, is_ambush, callback)
   local caravan_faction = caravan:caravan_force():faction():name();
   local caravan_cqi = caravan:caravan_force():command_queue_index();
   local dilemma_listener_key = "owc_dilemma_" .. caravan_faction;
@@ -22,7 +23,7 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
       cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
       cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
 
-      cm:force_attack_of_opportunity(enemy_cqi, caravan_cqi, false);
+      cm:force_attack_of_opportunity(enemy_cqi, caravan_cqi, is_ambush);
     else
       self:cleanup_encounter();
       if callback then

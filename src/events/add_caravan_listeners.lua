@@ -28,8 +28,8 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     true
   );
-  
-  
+
+
   core:add_listener(
     "owc_caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",
@@ -72,10 +72,10 @@ function Old_world_caravans:add_caravan_listeners()
       local faction_sc = faction:subculture();
       local award = self.awards[faction_sc] and self.awards[faction_sc][settlement];
 
-      if award then
-        cm:add_ancillary_to_faction(faction, award, true)
-      end
-    
+      -- if award then
+      --   cm:add_ancillary_to_faction(faction, award, true)
+      -- end
+
       --cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0))
 
       self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
@@ -100,7 +100,7 @@ function Old_world_caravans:add_caravan_listeners()
     true
   )
 
-  
+
 
 
   core:add_listener(

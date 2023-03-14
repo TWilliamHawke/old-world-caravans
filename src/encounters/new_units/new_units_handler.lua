@@ -16,16 +16,15 @@ function Old_world_caravans:new_units_handler(context)
   }
 
   local selected_cultureA = self:select_random_key_by_weight(regions_weight, function(val)
-    return val;
-  end);
+        return val;
+      end) or end_region_culture;
 
   local selected_cultureB = self:select_random_key_by_weight(regions_weight, function(val)
-    return val;
-  end);
+        return val;
+      end) or start_region_culture;
 
   if not selected_cultureA or not selected_cultureB then
     self:logCore("for sone reason culture_selector in new_units_handler returned nill");
-    return;
   end
 
 
@@ -37,9 +36,11 @@ function Old_world_caravans:new_units_handler(context)
   local unitsA, unitsA_count = self:select_unit(selected_cultureA, force_strenght .. "A");
   local unitsB, unitsB_count = self:select_unit(selected_cultureB, force_strenght .. "B");
 
-  if unitsA_count < 0 or unitsB_count < 0 then
+  if unitsA_count < 1 or unitsB_count < 1 then
     self:logCore("cannot select units");
-    return;
+    ---@diagnostic disable-next-line: undefined-field
+    cm:move_caravan(caravan);
+    return
   end
 
 

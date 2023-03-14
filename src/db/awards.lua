@@ -42,7 +42,7 @@ Old_world_caravans.awards = {
     ["wh3_main_combi_region_miragliano"] = "owc_main_anc_follower_empire_estalian_diestro",
     ["wh3_main_combi_region_kraka_drak"] = "owc_main_anc_rune_master_rune_of_valaya",
     ["wh3_main_combi_region_bordeleaux"] = "owc_dlc07_anc_enchanted_item_mane_of_the_purebreed",
-    ["wh3_main_combi_region_gaean_vale"] = "owc_dlc16_anc_armour_dragon_cuirass_3",
+    ["wh3_main_combi_region_lothern"] = "owc_main_anc_talisman_diamond_guardian_phoenix",
 
   }
 }

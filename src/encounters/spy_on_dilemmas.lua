@@ -25,6 +25,13 @@ function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
     cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
     cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
     core:remove_listener("owc_any_dilemma_triggered");
-    encounter_callback();
+    local ok, err = pcall(function()
+      encounter_callback();
+    
+    end);
+    
+    if not ok then
+      self:logCore(tostring(err));
+    end
   end, 1, self.dilemma_callback_key)
 end

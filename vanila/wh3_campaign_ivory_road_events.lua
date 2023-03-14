@@ -1983,6 +1983,10 @@ function initalise_end_node_values()
       ["wh3_main_combi_region_massif_orcal"]             = 75 - cm:random_number(50, 0),
       ["wh3_main_combi_region_bordeleaux"]             = cm:random_number(150, 60),
       ["wh3_main_combi_region_karak_ziflin"]             = cm:random_number(150, 60),
+      ["wh3_main_combi_region_sudenburg"] = cm:random_number(150, 60),
+      ["wh3_main_combi_region_couronne"] = cm:random_number(150, 60),
+      ["wh3_main_combi_region_castle_carcassonne"] = cm:random_number(150, 60),
+  
     };
   elseif cm:get_campaign_name() == "wh3_main_chaos" then
     end_nodes = {

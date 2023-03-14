@@ -9,11 +9,12 @@ function Old_world_caravans:add_first_tick_callbacks()
   cm:add_first_tick_callback(
     function()
       Old_world_caravans:hide_caravan_button_for_belegar();
-  
-      cm:restrict_technologies_for_faction(cm:get_local_faction():name(), {"owc_emp_defended_caravans"}, true)
-      if cm:is_new_game() or cm:get_saved_value(self.is_init_save_key) then return end
+
+      if cm:is_new_game() then return end
 
       self:set_starting_endpoints_values();
+
+      if cm:get_saved_value(self.is_init_save_key) then return end
 
       local human_factions = cm:get_human_factions();
 

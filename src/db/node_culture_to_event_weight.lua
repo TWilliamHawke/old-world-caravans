@@ -28,6 +28,7 @@ Old_world_caravans.node_culture_to_event_weight = {
     wh_main_sc_teb_teb = 100,
     wh_main_sc_brt_bretonnia = 200,
     wh_dlc05_sc_wef_wood_elves = 200,
+    wh2_main_sc_hef_high_elves = 200,
   }
 }
 
