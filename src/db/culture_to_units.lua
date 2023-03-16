@@ -2,9 +2,9 @@
 Old_world_caravans.culture_to_units = {
   wh3_main_sc_cth_cathay = {
     weakA = {
-      ["wh3_main_cth_inf_jade_warriors_0"] = { 1, 2, 3 },
-      ["wh3_main_cth_inf_jade_warriors_1"] = { 2, 2, 2 },
-      ["wh3_main_cth_inf_peasant_spearmen_1"] = { 2, 2, 3 },
+      ["wh3_main_cth_inf_jade_warriors_0"] = { 2, 2, 3 },
+      ["wh3_main_cth_inf_jade_warriors_1"] = { 4, 2, 2 },
+      ["wh3_main_cth_inf_peasant_spearmen_1"] = { 4, 2, 3 },
       ["wh3_main_cth_cav_peasant_horsemen_0"] = { 1, 2, 2 },
     },
     weakB = {

@@ -5,6 +5,7 @@
 ---@field to REGION_SCRIPT_INTERFACE
 ---@field list_of_regions REGION_DATA_LIST_SCRIPT_INTERFACE
 ---@field bandit_threat integer
+---@field ownership_mult number
 
 ---@alias enemy_data_callback fun() : string, string, 1|2|3
 

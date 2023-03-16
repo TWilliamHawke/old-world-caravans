@@ -1,31 +1,91 @@
 function Old_world_caravans:add_cleanup_listeners()
   core:add_listener(
-    "owc_encounter_faction_cleanup",
+    "owc_postbattle_faction_cleanup",
     "BattleCompleted",
-    function()
-      return not not cm:get_saved_value(self.encounter_faction_save_key);
+    ---@param context BattleCompleted
+    function(context)
+      local pb = context:model():pending_battle();
+      local attacker
+
+      if pb:has_been_fought() then
+				local attacker_name = cm:pending_battle_cache_get_attacker_faction_name(1);
+        attacker = cm:get_faction(attacker_name)
+      else
+        attacker = pb:attacker():faction();
+      end
+
+      if attacker:is_null_interface() then return false end
+
+      local faction_sc = attacker:subculture();
+      return self.culture_to_enemy_faction[faction_sc] == attacker:name();
     end,
-    function()
-      cm:callback(
-        function()
-          self:cleanup_encounter()
-        end, 0.5, self.cleanup_encounter_debounce_key
-      )
+    ---@param context BattleCompleted
+    function(context)
+      local pb = context:model():pending_battle();
+      local defender
+
+      if pb:has_been_fought() then
+				local defender_name = cm:pending_battle_cache_get_defender_faction_name(1);
+        defender = cm:get_faction(defender_name)
+      else
+        defender = pb:defender():faction();
+      end
+
+      if defender:is_null_interface() then return end
+      local defender_sc = defender:subculture();
+      if self.culture_to_trait[defender_sc] == nil then return end
+
+      self:cleanup_encounter_for_faction(defender:name());
+
+      if cm:get_saved_value(self.encounter_faction_save_key) then
+        self:cleanup_encounter();
+      end
     end,
     true
   );
 
   core:add_listener(
     "owc_EndOfRound_encounter_faction_cleanup",
-    "EndOfRound",
-    function()
-      return not not cm:get_saved_value(self.encounter_faction_save_key);
+    "FactionTurnEnd",
+    ---@param context FactionTurnEnd
+    function(context)
+      local subculture = context:faction():subculture();
+      return self.culture_to_trait[subculture] ~= nil and context:faction():is_human();
     end,
-    function()
-      self:cleanup_encounter();
+    ---@param context FactionTurnEnd
+    function(context)
+      local faction_name = context:faction():name();
+      self:cleanup_encounter_for_faction(faction_name);
     end,
     true
   );
+
+  core:add_listener(
+  "owc_clean_up_attacker",
+  "FactionTurnStart",
+  ---@param context FactionTurnStart
+  ---@return boolean
+  function(context)
+    local faction_name = context:faction():name();
+    local faction_sc = context:faction():subculture();
+    return self.culture_to_enemy_faction[faction_sc] == faction_name;
+  end,
+  ---@param context FactionTurnStart
+  function(context)
+    cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");
+
+    local human_factions = cm:get_human_factions();
+
+    for _, faction in ipairs(human_factions) do
+      if cm:get_saved_value(self.encounter_faction_save_key..faction) then
+        self:cleanup_encounter_for_faction(faction);
+      end
+    end
+
+  end,
+  true
+);
+
 
 
 end;

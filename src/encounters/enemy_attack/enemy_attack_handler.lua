@@ -1,6 +1,7 @@
 ---@param context CaravanWaylaid
 function Old_world_caravans:enemy_attack_handler(context)
-  local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_1A";
+  local suffix = cm:random_number(2) > 1 and "A" or "B";
+  local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_1" .. suffix;
 
   local enemy_cqi = self:prepare_forces_for_battle(context,
     function()

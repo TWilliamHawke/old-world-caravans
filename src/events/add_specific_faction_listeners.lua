@@ -19,6 +19,27 @@ function Old_world_caravans:add_specific_faction_listeners()
   );
 
   core:add_listener(
+    "owc_belegar_turn_start",
+    "FactionTurnStart",
+    ---@param context FactionTurnStart
+    ---@return boolean
+    function(context)
+      local faction_name = context:faction():name();
+      return faction_name == self.belegar_faction;
+    end,
+    ---@param context FactionTurnStart
+    function(context)
+      local faction = context:faction()
+      if not faction:is_human() then return end
+      if faction:has_effect_bundle("wh_dlc06_belegar_karak_owned_false_first") then return end
+
+      self:show_caravan_button();
+    end,
+    true
+  );
+
+
+  core:add_listener(
     "belegar_joins_confederation_caravan",
     "FactionJoinsConfederation",
     function(context)
@@ -32,7 +53,7 @@ function Old_world_caravans:add_specific_faction_listeners()
       if not cm:get_faction(self.belegar_faction):is_human() then return end
 
       local region = cm:get_region(self.k8p_region_name)
-      if not region or region:is_null_interface()then return end
+      if not region or region:is_null_interface() then return end
 
       local region_owner = region:owning_faction();
 
@@ -54,7 +75,7 @@ function Old_world_caravans:add_specific_faction_listeners()
       local crafting_panel_close = find_uicomponent("mortuary_cult", "button_ok")
 
       if not crafting_panel_close then return end
-        
+
       crafting_panel_close:SimulateLClick()
       local region = cm:get_region(self.pooled_resource_to_region[context.string])
 

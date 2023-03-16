@@ -25,13 +25,17 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
 
       cm:force_attack_of_opportunity(enemy_cqi, caravan_cqi, is_ambush);
     else
-      self:cleanup_encounter();
+      self:cleanup_encounter_for_faction(caravan_faction);
       if callback then
         callback();
+        self:log("Apply callback");
       end
       ---@diagnostic disable-next-line: undefined-field
       cm:move_caravan(caravan);
-      self:log("Apply callback");
+
+      if cm:model():combined_difficulty_level() == -3 then
+        cm:save();
+      end
     end
   end
 
@@ -40,14 +44,7 @@ function Old_world_caravans:bind_battle_to_dilemma(caravan, dilemma_name, enemy_
     "DilemmaChoiceMadeEvent",
     true,
     function(context)
-      local ok, err = pcall(function()
-        encounterDilemmaChoice(context)
-      end);
-
-      if not ok then
-        self:logCore(tostring(err));
-        self:cleanup_encounter();
-      end
+      encounterDilemmaChoice(context)
     end,
     false
   );

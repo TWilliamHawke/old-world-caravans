@@ -17,6 +17,7 @@ function Old_world_caravans:ambush_handler(context)
   local units_count = caravan_force:unit_list():num_items();
 
   if units_count - agents_count < 1 then
+    self:log("not enough units for ambush event")
     cm:move_caravan(caravan);
     return
   end

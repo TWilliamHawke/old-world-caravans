@@ -8,10 +8,7 @@ function Old_world_caravans:generate_caravan_encounter(context)
   local start_region = self:get_region_by_node(caravan, context:from());
   local end_region = self:get_region_by_node(caravan, context:to());
   local bandit_threat = self:calculate_bandit_threat(region_names);
-
-  if not cm:is_multiplayer() then
-    self:cleanup_encounter();
-  end
+  local ownership_mult = self:calculate_ownership_mult(list_of_regions, faction)
 
   ---@type Encounter_creator_context
   local conditions = {
@@ -22,6 +19,7 @@ function Old_world_caravans:generate_caravan_encounter(context)
     faction = faction,
     from = start_region,
     to = end_region,
+    ownership_mult = ownership_mult,
   };
 
   local no_encounter_weight = self.no_encounter_weight / 2;

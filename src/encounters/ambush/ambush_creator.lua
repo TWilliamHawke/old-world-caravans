@@ -1,9 +1,6 @@
 ---@param context Encounter_creator_context
 ---@return integer encounter_probability
 function Old_world_caravans:ambush_creator(context)
-  if cm:is_multiplayer() and cm:get_saved_value(self.encounter_faction_save_key) then
-    return 0
-  end
   local caravan_force = context.caravan:caravan_force();
   local agents_count = caravan_force:character_list():num_items();
   local units_count = caravan_force:unit_list():num_items();
@@ -13,8 +10,10 @@ function Old_world_caravans:ambush_creator(context)
   local cargo_factor = math.floor(context.caravan:cargo() * self.cargo_threat_mult);
   local probability = math.ceil((context.bandit_threat + cargo_factor) / 20) + 3;
 
-  if context.caravan:caravan_master():character_details():has_skill("wh3_main_skill_cth_caravan_master_scouts") then
+  if context.caravan:caravan_master():character():has_skill("wh3_main_skill_cth_caravan_master_scouts") then
     probability = math.floor(probability / 2)
   end;
-  return math.min(probability, 10);
+  local max_probability = math.floor(10 * context.ownership_mult)
+
+  return math.min(probability, max_probability);
 end

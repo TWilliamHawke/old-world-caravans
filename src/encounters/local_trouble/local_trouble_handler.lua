@@ -37,7 +37,9 @@ function Old_world_caravans:local_trouble_handler(context)
 
   self:log("selected culture is "..enemy_culture)
 
-  local dilemma_name = self.db.local_trouble_dilemmas[enemy_culture] or "wh3_main_dilemma_cth_caravan_battle_1A";
+  --local dilemma_name = self.db.local_trouble_dilemmas[enemy_culture] or "wh3_main_dilemma_cth_caravan_battle_1A";
+  local suffix = cm:random_number(2) > 1 and "A" or "B";
+  local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_1" .. suffix;
 
 
   local enemy_cqi = self:prepare_forces_for_battle(context,

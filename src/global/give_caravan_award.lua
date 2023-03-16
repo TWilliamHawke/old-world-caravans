@@ -7,7 +7,7 @@ function Old_world_caravans:give_caravan_award(faction, region_name)
 
   if not award then return end
 
-  if faction_sc == "wh_main_sc_emp_empire" then
+  if faction_sc == "wh_main_sc_emp_empire" or faction_sc == "wh3_main_sc_cth_cathay" then
     self:log("award for empire ")
 
     if faction:ancillary_exists(award) then return end
