@@ -17,7 +17,7 @@ Old_world_caravans = {
     6500
   },
   filler_unit_weight = 1.5,
-  cargo_threat_mult = 0.02,
+  cargo_threat_mult = 0.015,
   scale_difficulty_cargo = false,
   scale_difficulty_strenght = false,
   override_encounters = false,

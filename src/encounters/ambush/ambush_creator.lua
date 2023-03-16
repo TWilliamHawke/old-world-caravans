@@ -8,5 +8,5 @@ function Old_world_caravans:ambush_creator(context)
     return 0
   end
 
-  return probability;
+  return math.min(probability, 10);
 end
