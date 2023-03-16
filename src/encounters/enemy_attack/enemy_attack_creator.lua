@@ -7,5 +7,6 @@ function Old_world_caravans:enemy_attack_creator(context)
 
   local cargo_factor = math.floor(context.caravan:cargo() * self.cargo_threat_mult);
   local probability = math.ceil((context.bandit_threat + cargo_factor) / 6) + 5;
-  return probability;
+  return math.min(probability, 20);
+
 end

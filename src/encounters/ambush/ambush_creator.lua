@@ -16,5 +16,5 @@ function Old_world_caravans:ambush_creator(context)
   if context.caravan:caravan_master():character_details():has_skill("wh3_main_skill_cth_caravan_master_scouts") then
     probability = math.floor(probability / 2)
   end;
-  return probability;
+  return math.min(probability, 10);
 end
