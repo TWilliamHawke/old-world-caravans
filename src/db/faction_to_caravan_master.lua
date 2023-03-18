@@ -18,4 +18,12 @@ Old_world_caravans.faction_to_caravan_master = {
   wh_main_emp_stirland = "wh_main_emp_caravan_master",
   wh_main_emp_talabecland = "wh_main_emp_caravan_master",
   wh_main_emp_wissenland = "wh_main_emp_caravan_master",
+  wh3_main_brt_aquitaine = "wh_main_brt_caravan_master",
+  wh_main_brt_artois = "wh_main_brt_caravan_master",
+  wh_main_brt_bastonne = "wh_main_brt_caravan_master",
+  wh_main_brt_bordeleaux = "wh_main_brt_caravan_master",
+  wh_main_brt_bretonnia = "wh_main_brt_caravan_master",
+  wh_main_brt_carcassonne = "wh_main_brt_caravan_master",
+  wh_main_brt_lyonesse = "wh_main_brt_caravan_master",
+  wh_main_brt_parravon = "wh_main_brt_caravan_master",
 }

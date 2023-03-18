@@ -1986,7 +1986,10 @@ function initalise_end_node_values()
       ["wh3_main_combi_region_sudenburg"] = cm:random_number(150, 60),
       ["wh3_main_combi_region_couronne"] = cm:random_number(150, 60),
       ["wh3_main_combi_region_castle_carcassonne"] = cm:random_number(150, 60),
-  
+      ["wh3_main_combi_region_waterfall_palace"] = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_copher"] = cm:random_number(150, 60),
+      ["wh3_main_combi_region_zandri"] = cm:random_number(150, 60),
+      ["wh3_main_combi_region_temple_of_tlencan"] = 75 - cm:random_number(50, 0),
     };
   elseif cm:get_campaign_name() == "wh3_main_chaos" then
     end_nodes = {

@@ -8,8 +8,8 @@ function Old_world_caravans:recruit_start_caravan()
 
     local caravans_list = model:world():caravans_system():faction_caravans(faction);
     local faction_is_sutable = faction:is_human()
-      and subculture ~= "wh3_main_sc_cth_cathay"
       and self.culture_to_trait[subculture]
+      and subculture ~= "wh3_main_sc_cth_cathay"
       and faction:name() ~= "wh_main_dwf_karak_izor"
       and not caravans_list:is_null_interface();
 

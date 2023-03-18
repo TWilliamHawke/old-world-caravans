@@ -5,10 +5,13 @@ function Old_world_caravans:unlock_caravan_recruitment(faction_name)
   local agent_subtype = self.faction_to_caravan_master[faction_name];
   if not agent_subtype then return end
 
+  local faction = cm:get_faction(faction_name);
+  local caravans_list = cm:model():world():caravans_system():faction_caravans(faction);
+  if caravans_list:is_null_interface() then return end
+
   self:logCore("unlock caravans for "..faction_name)
 
   local region = "wh3_main_combi_region_altdorf"
-  local faction = cm:get_faction(faction_name);
   local faction_regions = faction:region_list();
 
   --avoid the trespassing

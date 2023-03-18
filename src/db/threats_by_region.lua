@@ -903,4 +903,13 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_yetchitch"] = {
     wh_dlc08_sc_nor_norsca = 3,
   },
+  ["wh3_main_combi_region_temple_of_tlencan"] = {
+    wh2_main_sc_lzd_lizardmen = 3,
+  },
+  ["wh3_main_combi_region_copher"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 3,
+  },
+  ["wh3_main_combi_region_waterfall_palace"] = {
+    wh_dlc05_sc_wef_wood_elves = 3,
+  },
 }

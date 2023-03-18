@@ -10,6 +10,16 @@ Old_world_caravans.node_culture_to_event_weight = {
     wh_dlc05_sc_wef_wood_elves = 60,
     wh2_main_sc_lzd_lizardmen = 200
   },
+  wh_main_sc_brt_bretonnia = {
+    wh_main_sc_emp_empire = 15,
+    wh_main_sc_brt_bretonnia = 20,
+    wh3_main_sc_ksl_kislev = 125,
+    wh_main_sc_dwf_dwarfs = 70,
+    wh_main_sc_teb_teb = 40,
+    wh2_main_sc_hef_high_elves = 50,
+    wh_dlc05_sc_wef_wood_elves = 200,
+    wh2_main_sc_lzd_lizardmen = 200
+  },
   wh_main_sc_dwf_dwarfs = {
     wh_main_sc_dwf_dwarfs = 8,
     wh_main_sc_teb_teb = 150,

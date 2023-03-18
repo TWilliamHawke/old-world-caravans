@@ -101,4 +101,10 @@ Old_world_caravans.trade_nodes_to_culture = {
   ["wh3_main_combi_region_zandri"] = "wh_main_sc_brt_bretonnia",
   ["wh3_main_combi_region_sudenburg"] = "wh_main_sc_emp_empire",
   ["wh3_main_combi_region_dietershafen"] = "wh_main_sc_emp_empire",
+  ["wh3_main_combi_region_castle_bastonne"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_the_black_pit"] = "wh_main_sc_emp_empire",
+  ["wh3_main_combi_region_temple_of_tlencan"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_castle_artois"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_copher"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_waterfall_palace"] = "wh_dlc05_sc_wef_wood_elves",
 }

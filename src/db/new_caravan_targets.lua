@@ -23,4 +23,8 @@ Old_world_caravans.new_caravan_targets = {
   "wh3_main_combi_region_sudenburg",
   "wh3_main_combi_region_couronne",
   "wh3_main_combi_region_castle_carcassonne",
+  "wh3_main_combi_region_waterfall_palace",
+  "wh3_main_combi_region_copher",
+  "wh3_main_combi_region_zandri",
+  "wh3_main_combi_region_temple_of_tlencan"
 }

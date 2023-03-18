@@ -7,16 +7,16 @@ function Old_world_caravans:give_caravan_award(faction, region_name)
 
   if not award then return end
 
-  if faction_sc == "wh_main_sc_emp_empire" or faction_sc == "wh3_main_sc_cth_cathay" then
-    self:log("award for empire ")
+  if self.award_types[faction_sc] == "item" then
+    self:log("get item ")
 
     if faction:ancillary_exists(award) then return end
 
     local incident_payload = cm:create_payload();
     incident_payload:faction_ancillary_gain(faction, award);
     cm:trigger_custom_incident(faction:name(), "emp_caravan_completed", true, incident_payload);
-  elseif faction_sc == "wh_main_sc_dwf_dwarfs" then
-    self:log("award for dwarfs ")
+  elseif self.award_types[faction_sc] == "resource" then
+    self:log("get resource ")
     cm:faction_add_pooled_resource(faction:name(), award, "missions", 1);
   end
   self:log("award is " .. award)
