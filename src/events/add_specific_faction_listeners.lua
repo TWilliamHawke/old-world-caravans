@@ -43,13 +43,13 @@ function Old_world_caravans:add_specific_faction_listeners()
     "belegar_joins_confederation_caravan",
     "FactionJoinsConfederation",
     function(context)
-      local faction_name = context:faction():name();
+      local faction_name = context:confederation():name();
 
       return faction_name == self.belegar_faction;
     end,
     ---@param context FactionJoinsConfederation
     function(context)
-      local faction = context:faction();
+      local faction = context:confederation();
       if not cm:get_faction(self.belegar_faction):is_human() then return end
 
       local region = cm:get_region(self.k8p_region_name)
@@ -66,7 +66,31 @@ function Old_world_caravans:add_specific_faction_listeners()
     true);
 
   core:add_listener(
-    "CaravanTargetClick",
+    "owc_joins_confederation_caravan",
+    "FactionJoinsConfederation",
+    ---@param context FactionJoinsConfederation
+    function(context)
+      return context:confederation():is_human();
+    end,
+    ---@param context FactionJoinsConfederation
+    function(context)
+      local faction = context:confederation();
+      if not self:faction_has_caravans(faction) then return end
+      if self:caravan_button_should_be_visible(faction) then return end
+      if faction:name() == self.belegar_faction then return end
+
+      local other_name = context:faction():name();
+
+      if self.access_to_caravans_on_first_turn[other_name] then
+        self:show_caravan_button()
+        cm:set_saved_value(self.is_init_save_key..faction:name(), true)
+      end
+    end,
+    true);
+
+
+  core:add_listener(
+    "owc_CaravanTargetClick",
     "ComponentLClickUp",
     function(context)
       return not not self.pooled_resource_to_region[context.string];

@@ -4,13 +4,11 @@ function Old_world_caravans:recruit_start_caravan()
   local faction_list = model:world():faction_list();
   for i = 0, faction_list:num_items() - 1 do
     local faction = faction_list:item_at(i)
-    local subculture = faction:subculture();
+    local faction_name = faction:name();
 
     local caravans_list = model:world():caravans_system():faction_caravans(faction);
     local faction_is_sutable = faction:is_human()
-      and self.culture_to_trait[subculture]
-      and subculture ~= "wh3_main_sc_cth_cathay"
-      and faction:name() ~= "wh_main_dwf_karak_izor"
+      and self.access_to_caravans_on_first_turn[faction_name]
       and not caravans_list:is_null_interface();
 
     if faction_is_sutable then

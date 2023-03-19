@@ -55,18 +55,20 @@ Old_world_caravans.culture_to_units = {
   },
   wh_main_sc_brt_bretonnia = {
     weakA = {
-      ["wh_main_brt_inf_spearmen_at_arms"] = { 2, 2, 3 },
-      ["wh_main_brt_inf_men_at_arms"] = { 2, 2, 3 },
-      ["wh_dlc07_brt_inf_men_at_arms_2"] = { 2, 2, 3 },
+      ["owc_main_brt_inf_spearmen_at_arms"] = { 2, 2, 3 },
+      ["owc_main_brt_inf_men_at_arms"] = { 2, 2, 3 },
+      ["owc_dlc07_brt_inf_men_at_arms_2"] = { 2, 2, 3 },
       ["wh_dlc07_brt_cav_knights_errant_0"] = { 2, 2, 2 },
     },
     weakB = {
-      ["wh_dlc07_brt_inf_peasant_bowmen_1"] = { 1, 2, 3 },
-      ["wh_dlc07_brt_inf_peasant_bowmen_2"] = { 1, 2, 3 },
+      ["owc_dlc07_brt_inf_peasant_bowmen_2"] = { 1, 2, 3 },
+      ["owc_dlc07_brt_inf_peasant_bowmen_1"] = { 1, 2, 3 },
+      ["owc_main_brt_inf_peasant_bowmen"] = { 1, 2, 3 },
     },
     strongA = {
-      ["wh_dlc07_brt_inf_battle_pilgrims_0"] = { 1, 2, 3 },
-      ["wh_dlc07_brt_inf_foot_squires_0"] = { 1, 2, 3 },
+      ["owc_dlc07_brt_inf_battle_pilgrims_0"] = { 2, 2, 3 },
+      ["owc_dlc07_brt_inf_foot_squires_0"] = { 2, 2, 3 },
+      ["owc_dlc07_brt_art_blessed_field_trebuchet_0"] = { 1, 2, 3 },
     },
     strongB = {
       ["wh_dlc07_brt_cav_knights_errant_0"] = { 5, 2, 2 },

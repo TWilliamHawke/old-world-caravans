@@ -1,16 +1,15 @@
 function Old_world_caravans:hide_caravan_button_for_belegar()
-  local player_faction = cm:get_local_faction();
-  if player_faction:name() ~= self.belegar_faction then return end
-  self:log("first tick for belegar")
-  if player_faction:has_effect_bundle("wh_dlc06_belegar_karak_owned_false_first") then
-    --hide caravan button
-    local caravan_button = find_uicomponent(core:get_ui_root(), "hud_campaign", "faction_buttons_docker",
-      "button_caravan")
+  local faction = cm:get_local_faction();
+  if not self:faction_has_caravans(faction) then return end
+  if self:caravan_button_should_be_visible(faction) then return end
 
-    if not caravan_button then
-      self:log("caravan_button not found")
-    else
-      caravan_button:SetVisible(false)
-    end
+  local caravan_button = find_uicomponent(core:get_ui_root(),
+  "hud_campaign", "faction_buttons_docker", "button_caravan")
+
+  if not caravan_button then
+    self:log("caravan_button not found")
+  else
+    caravan_button:SetVisible(false)
+    self:log("hide caravan button")
   end
 end
