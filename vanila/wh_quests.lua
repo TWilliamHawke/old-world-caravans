@@ -14,114 +14,114 @@ function q_setup()
 		------- EMPIRE -------
 		----------------------	
 		["wh_main_emp_karl_franz"] = {			
-			{"mission", "wh2_dlc13_anc_weapon_runefang_drakwald", "wh3_main_ie_qb_emp_karl_franz_reikland_runefang", 7, nil, nil, 342, 585},
-			{"mission", "wh_main_anc_weapon_ghal_maraz", "wh3_main_ie_qb_emp_karl_franz_ghal_maraz", 12, nil, nil, 440, 439},
-			{"mission", "wh_main_anc_talisman_the_silver_seal", "wh3_main_ie_qb_emp_karl_franz_silver_seal", 17, nil, nil, 431, 496},
+			{"mission", "wh2_dlc13_anc_weapon_runefang_drakwald", "wh3_main_ie_qb_emp_karl_franz_reikland_runefang", 7},
+			{"mission", "wh_main_anc_weapon_ghal_maraz", "wh3_main_ie_qb_emp_karl_franz_ghal_maraz", 12},
+			{"mission", "wh_main_anc_talisman_the_silver_seal", "wh3_main_ie_qb_emp_karl_franz_silver_seal", 17},
 		},
 		["wh_main_emp_balthasar_gelt"] = {			
-			{"mission", "wh_main_anc_enchanted_item_cloak_of_molten_metal", "wh3_main_ie_qb_emp_balthasar_gelt_cloak_of_molten_metal", 7, nil, nil, 347, 544},
-			{"mission", "wh_main_anc_talisman_amulet_of_sea_gold", "wh3_main_ie_qb_emp_balthasar_gelt_amulet_of_sea_gold", 12, nil, nil, 267, 339},
-			{"mission", "wh_main_anc_arcane_item_staff_of_volans", "wh3_main_ie_qb_emp_balthasar_gelt_staff_of_volans", 17, nil, nil, 367, 498},
+			{"mission", "wh_main_anc_enchanted_item_cloak_of_molten_metal", "wh3_main_ie_qb_emp_balthasar_gelt_cloak_of_molten_metal", 7},
+			{"mission", "wh_main_anc_talisman_amulet_of_sea_gold", "wh3_main_ie_qb_emp_balthasar_gelt_amulet_of_sea_gold", 12},
+			{"mission", "wh_main_anc_arcane_item_staff_of_volans", "wh3_main_ie_qb_emp_balthasar_gelt_staff_of_volans", 17},
 		},		
 		["wh_dlc04_emp_volkmar"] = {			
-			{"mission", "wh_dlc04_anc_talisman_jade_griffon", "wh3_main_ie_qb_emp_volkmar_the_grim_jade_griffon", 7, nil, nil, 465, 502},
-			{"mission", "wh_dlc04_anc_weapon_staff_of_command", "wh3_main_ie_qb_emp_volkmar_the_grim_staff_of_command", 12, nil, nil, 343, 496},
+			{"mission", "wh_dlc04_anc_talisman_jade_griffon", "wh3_main_ie_qb_emp_volkmar_the_grim_jade_griffon", 7},
+			{"mission", "wh_dlc04_anc_weapon_staff_of_command", "wh3_main_ie_qb_emp_volkmar_the_grim_staff_of_command", 12},
 		},
 		["wh2_dlc13_emp_cha_markus_wulfhart"] = {			
-			{"mission", "wh2_dlc13_anc_weapon_amber_bow", "wh3_main_ie_qb_emp_wulfhart_amber_bow", 7, nil, nil, 118, 258},
+			{"mission", "wh2_dlc13_anc_weapon_amber_bow", "wh3_main_ie_qb_emp_wulfhart_amber_bow", 7},
 		},
 		
 		----------------------
 		------- DWARFS -------
 		----------------------	
 		["wh_dlc06_dwf_belegar"] = {			
-			{"mission", "wh_dlc06_anc_weapon_the_hammer_of_angrund", "wh3_main_ie_qb_dwf_belegar_ironhammer_hammer_of_angrund", 12, nil, nil, 510, 348},
-			{"mission", "wh_dlc06_anc_armour_shield_of_defiance", "wh3_main_ie_qb_dwf_belegar_ironhammer_shield_of_defiance", 7, nil, nil, 531, 373},
+			{"mission", "wh_dlc06_anc_weapon_the_hammer_of_angrund", "wh3_main_ie_qb_dwf_belegar_ironhammer_hammer_of_angrund", 12},
+			{"mission", "wh_dlc06_anc_armour_shield_of_defiance", "wh3_main_ie_qb_dwf_belegar_ironhammer_shield_of_defiance", 7},
 		},
 		["wh_pro01_dwf_grombrindal"] = {			
-			{"mission", "wh_pro01_anc_armour_armour_of_glimril_scales", "wh3_main_ie_qb_dwf_grombrindal_armour_of_glimril", 7, nil, nil, 337, 525},
-			{"mission", "wh_pro01_anc_weapon_the_rune_axe_of_grombrindal", "wh3_main_ie_qb_dwf_grombrindal_rune_axe_of_grombrindal", 12, nil, nil, 422, 628},
-			{"mission", "wh_pro01_anc_talisman_cloak_of_valaya", "wh3_main_ie_qb_dwf_grombrindal_rune_cloak_of_valaya", 17, nil, nil, 545, 588},
-			{"mission", "wh_pro01_anc_enchanted_item_rune_helm_of_zhufbar", "wh3_main_ie_qb_dwf_grombrindal_rune_helm_of_zhufbar", 22, nil, nil, 531, 408},
+			{"mission", "wh_pro01_anc_armour_armour_of_glimril_scales", "wh3_main_ie_qb_dwf_grombrindal_armour_of_glimril", 7},
+			{"mission", "wh_pro01_anc_weapon_the_rune_axe_of_grombrindal", "wh3_main_ie_qb_dwf_grombrindal_rune_axe_of_grombrindal", 12},
+			{"mission", "wh_pro01_anc_talisman_cloak_of_valaya", "wh3_main_ie_qb_dwf_grombrindal_rune_cloak_of_valaya", 17},
+			{"mission", "wh_pro01_anc_enchanted_item_rune_helm_of_zhufbar", "wh3_main_ie_qb_dwf_grombrindal_rune_helm_of_zhufbar", 22},
 		},
 		["wh_main_dwf_thorgrim_grudgebearer"] = {			
-			{"mission", "wh_main_anc_armour_the_armour_of_skaldour", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_armour_of_skaldour", 12, nil, nil, 434, 622},
-			{"mission", "wh_main_anc_weapon_the_axe_of_grimnir", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_axe_of_grimnir", 7, nil, nil, 467, 277},
-			{"mission", "wh_main_anc_enchanted_item_the_great_book_of_grudges", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_book_of_grudges", 22, nil, nil, 470, 498},
-			{"mission", "wh_main_anc_talisman_the_dragon_crown_of_karaz", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_dragon_crown_of_karaz", 17, nil, nil, 440, 439},
+			{"mission", "wh_main_anc_armour_the_armour_of_skaldour", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_armour_of_skaldour", 12},
+			{"mission", "wh_main_anc_weapon_the_axe_of_grimnir", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_axe_of_grimnir", 7},
+			{"mission", "wh_main_anc_enchanted_item_the_great_book_of_grudges", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_book_of_grudges", 22},
+			{"mission", "wh_main_anc_talisman_the_dragon_crown_of_karaz", "wh3_main_ie_qb_dwf_thorgrim_grudgebearer_dragon_crown_of_karaz", 17},
 		},
 		["wh_main_dwf_ungrim_ironfist"] = {			
-			{"mission", "wh_main_anc_weapon_axe_of_dargo", "wh3_main_ie_qb_dwf_ungrim_ironfist_axe_of_dargo", 17, nil, nil, 542, 593},
-			{"mission", "wh_main_anc_talisman_dragon_cloak_of_fyrskar", "wh3_main_ie_qb_dwf_ungrim_ironfist_dragon_cloak_of_fyrskar", 12, nil, nil, 506, 510},
-			{"mission", "wh_main_anc_armour_the_slayer_crown", "wh3_main_ie_qb_dwf_ungrim_ironfist_slayer_crown", 7, nil, nil, 353, 542},
+			{"mission", "wh_main_anc_weapon_axe_of_dargo", "wh3_main_ie_qb_dwf_ungrim_ironfist_axe_of_dargo", 17},
+			{"mission", "wh_main_anc_talisman_dragon_cloak_of_fyrskar", "wh3_main_ie_qb_dwf_ungrim_ironfist_dragon_cloak_of_fyrskar", 12},
+			{"mission", "wh_main_anc_armour_the_slayer_crown", "wh3_main_ie_qb_dwf_ungrim_ironfist_slayer_crown", 7},
 		},
 		["wh2_dlc17_dwf_thorek"] = {			
 			{"mission", "wh2_dlc17_anc_armour_thoreks_rune_armour", "wh3_main_ie_qb_dwf_thorek_rune_armour_quest", 7},
-			{"mission", "wh2_dlc17_anc_weapon_klad_brakak", "wh3_main_ie_qb_dwf_thorek_klad_brakak", 12, nil, nil, 481, 156},
+			{"mission", "wh2_dlc17_anc_weapon_klad_brakak", "wh3_main_ie_qb_dwf_thorek_klad_brakak", 12},
 		},
 		----------------------
 		----- GREENSKINS -----
 		----------------------	
 		["wh2_dlc15_grn_grom_the_paunch"] = {			
-			{"mission", "wh2_dlc15_anc_weapon_axe_of_grom", "wh3_main_ie_qb_grn_grom_axe_of_grom", 12, nil, nil, 409, 214},
+			{"mission", "wh2_dlc15_anc_weapon_axe_of_grom", "wh3_main_ie_qb_grn_grom_axe_of_grom", 12},
 			{"mission", "wh2_dlc15_anc_enchanted_item_lucky_banner", "wh3_main_ie_qb_grn_grom_lucky_banner", 7},
 		},
 		["wh_dlc06_grn_skarsnik"] = {			
-			{"mission", "wh_dlc06_anc_weapon_skarsniks_prodder", "wh3_main_ie_qb_grn_skarsnik_skarsniks_prodder", 7, nil, nil, 512, 346},
+			{"mission", "wh_dlc06_anc_weapon_skarsniks_prodder", "wh3_main_ie_qb_grn_skarsnik_skarsniks_prodder", 7},
 		},
 		["wh_dlc06_grn_wurrzag_da_great_prophet"] = {			
-			{"mission", "wh_dlc06_anc_enchanted_item_baleful_mask", "wh3_main_ie_qb_grn_wurrzag_da_great_green_prophet_baleful_mask", 7, nil, nil, 416, 253},
-			{"mission", "wh_dlc06_anc_arcane_item_squiggly_beast", "wh3_main_ie_qb_grn_wurrzag_da_great_green_prophet_squiggly_beast", 12, nil, nil, 364, 433},
-			{"mission", "wh_dlc06_anc_weapon_bonewood_staff", "wh3_main_ie_qb_grn_wurrzag_da_great_green_prophet_bonewood_staff", 17, nil, nil, 475, 402},
+			{"mission", "wh_dlc06_anc_enchanted_item_baleful_mask", "wh3_main_ie_qb_grn_wurrzag_da_great_green_prophet_baleful_mask", 7},
+			{"mission", "wh_dlc06_anc_arcane_item_squiggly_beast", "wh3_main_ie_qb_grn_wurrzag_da_great_green_prophet_squiggly_beast", 12},
+			{"mission", "wh_dlc06_anc_weapon_bonewood_staff", "wh3_main_ie_qb_grn_wurrzag_da_great_green_prophet_bonewood_staff", 17},
 		},
 		["wh_main_grn_azhag_the_slaughterer"] = {			
-			{"mission", "wh_main_anc_enchanted_item_the_crown_of_sorcery", "wh3_main_ie_qb_grn_azhag_the_slaughterer_crown_of_sorcery", 7, nil, nil, 563, 601},
-			{"mission", "wh_main_anc_armour_azhags_ard_armour", "wh3_main_ie_qb_grn_azhag_the_slaughterer_azhags_ard_armour", 12, nil, nil, 338, 361},
-			{"mission", "wh_main_anc_weapon_slaggas_slashas", "wh3_main_ie_qb_grn_azhag_the_slaughterer_slaggas_slashas", 17, nil, nil, 416, 253},
+			{"mission", "wh_main_anc_enchanted_item_the_crown_of_sorcery", "wh3_main_ie_qb_grn_azhag_the_slaughterer_crown_of_sorcery", 7},
+			{"mission", "wh_main_anc_armour_azhags_ard_armour", "wh3_main_ie_qb_grn_azhag_the_slaughterer_azhags_ard_armour", 12},
+			{"mission", "wh_main_anc_weapon_slaggas_slashas", "wh3_main_ie_qb_grn_azhag_the_slaughterer_slaggas_slashas", 17},
 		},
 		["wh_main_grn_grimgor_ironhide"] = {			
-			{"mission", "wh_main_anc_armour_blood-forged_armour", "wh3_main_ie_qb_grn_grimgor_ironhide_blood_forged_armour", 12, nil, nil, 542, 593},
-			{"mission", "wh_main_anc_weapon_gitsnik", "wh3_main_ie_qb_grn_grimgor_ironhide_gitsnik", 7, nil, nil, 450, 420},
+			{"mission", "wh_main_anc_armour_blood-forged_armour", "wh3_main_ie_qb_grn_grimgor_ironhide_blood_forged_armour", 12},
+			{"mission", "wh_main_anc_weapon_gitsnik", "wh3_main_ie_qb_grn_grimgor_ironhide_gitsnik", 7},
 		},
 
 		----------------------
 		--- VAMPIRE COUNTS ---
 		----------------------	
 		["wh_main_vmp_mannfred_von_carstein"] = {			
-			{"mission", "wh_main_anc_armour_armour_of_templehof", "wh3_main_ie_qb_vmp_mannfred_von_carstein_armour_of_templehof", 12, nil, nil, 336, 367},
-			{"mission", "wh_main_anc_weapon_sword_of_unholy_power", "wh3_main_ie_qb_vmp_mannfred_von_carstein_sword_of_unholy_power", 7, nil, nil, 467, 277},
+			{"mission", "wh_main_anc_armour_armour_of_templehof", "wh3_main_ie_qb_vmp_mannfred_von_carstein_armour_of_templehof", 12},
+			{"mission", "wh_main_anc_weapon_sword_of_unholy_power", "wh3_main_ie_qb_vmp_mannfred_von_carstein_sword_of_unholy_power", 7},
 		},
 		["wh_dlc04_vmp_helman_ghorst"] = {			
-			{"mission", "wh_dlc04_anc_arcane_item_the_liber_noctus", "wh3_main_ie_qb_vmp_helman_ghorst_liber_noctus", 7, nil, nil, 356, 357},
+			{"mission", "wh_dlc04_anc_arcane_item_the_liber_noctus", "wh3_main_ie_qb_vmp_helman_ghorst_liber_noctus", 7},
 		},
 		["wh_main_vmp_heinrich_kemmler"] = {			
-			{"mission", "wh_main_anc_arcane_item_skull_staff", "wh3_main_ie_qb_vmp_heinrich_kemmler_skull_staff", 17, nil, nil, 337, 438},
-			{"mission", "wh_main_anc_enchanted_item_cloak_of_mists_and_shadows", "wh3_main_ie_qb_vmp_heinrich_kemmler_cloak_of_mists", 12, nil, nil, 362, 499},
-			{"mission", "wh_main_anc_weapon_chaos_tomb_blade", "wh3_main_ie_qb_vmp_heinrich_kemmler_chaos_tomb_blade", 7, nil, nil, 356, 357},
+			{"mission", "wh_main_anc_arcane_item_skull_staff", "wh3_main_ie_qb_vmp_heinrich_kemmler_skull_staff", 17},
+			{"mission", "wh_main_anc_enchanted_item_cloak_of_mists_and_shadows", "wh3_main_ie_qb_vmp_heinrich_kemmler_cloak_of_mists", 12},
+			{"mission", "wh_main_anc_weapon_chaos_tomb_blade", "wh3_main_ie_qb_vmp_heinrich_kemmler_chaos_tomb_blade", 7},
 		},
 		["wh_dlc04_vmp_vlad_con_carstein"] = {			
-			{"mission", "wh_dlc04_anc_talisman_the_carstein_ring", "wh3_main_ie_qb_vmp_vlad_von_carstein_the_carstein_ring", 12, nil, nil, 533, 314},
-			{"mission", "wh_dlc04_anc_weapon_blood_drinker", "wh3_main_ie_qb_vmp_vlad_von_carstein_blood_drinker", 7, nil, nil, 482, 505},
+			{"mission", "wh_dlc04_anc_talisman_the_carstein_ring", "wh3_main_ie_qb_vmp_vlad_von_carstein_the_carstein_ring", 12},
+			{"mission", "wh_dlc04_anc_weapon_blood_drinker", "wh3_main_ie_qb_vmp_vlad_von_carstein_blood_drinker", 7},
 		},
 		["wh_pro02_vmp_isabella_von_carstein"] = {			
-			{"mission", "wh_pro02_anc_enchanted_item_blood_chalice_of_bathori", "wh3_main_ie_qb_vmp_isabella_von_carstein_blood_chalice_of_bathori", 8, nil, nil, 478, 467},
+			{"mission", "wh_pro02_anc_enchanted_item_blood_chalice_of_bathori", "wh3_main_ie_qb_vmp_isabella_von_carstein_blood_chalice_of_bathori", 8},
 		},
 		
 		----------------------
 		-------- CHAOS -------
 		----------------------	
 		["wh_main_chs_archaon"] = {			
-			{"mission", "wh_main_anc_armour_the_armour_of_morkar", "wh3_main_ie_qb_chs_archaon_armour_of_morkar", 12, nil, nil, 576, 617},
-			{"mission", "wh_main_anc_enchanted_item_the_crown_of_domination", "wh3_main_ie_qb_chs_archaon_crown_of_domination", 22, nil, nil, 470, 701},
-			{"mission", "wh_main_anc_talisman_the_eye_of_sheerian", "wh3_main_ie_qb_chs_archaon_eye_of_sheerian", 17, nil, nil, 596, 660},
-			{"mission", "wh_main_anc_weapon_the_slayer_of_kings", "wh3_main_ie_qb_chs_archaon_slayer_of_kings", 7, nil, nil, 543, 593},
+			{"mission", "wh_main_anc_armour_the_armour_of_morkar", "wh3_main_ie_qb_chs_archaon_armour_of_morkar", 12},
+			{"mission", "wh_main_anc_enchanted_item_the_crown_of_domination", "wh3_main_ie_qb_chs_archaon_crown_of_domination", 22},
+			{"mission", "wh_main_anc_talisman_the_eye_of_sheerian", "wh3_main_ie_qb_chs_archaon_eye_of_sheerian", 17},
+			{"mission", "wh_main_anc_weapon_the_slayer_of_kings", "wh3_main_ie_qb_chs_archaon_slayer_of_kings", 7},
 		},
 		["wh_dlc01_chs_prince_sigvald"] = {			
-			{"mission", "wh_main_anc_armour_auric_armour", "wh3_main_ie_qb_chs_prince_sigvald_auric_armour", 12, nil, nil, 434, 622},
-			{"mission", "wh_main_anc_weapon_sliverslash", "wh3_main_ie_qb_chs_prince_sigvald_sliverslash", 7, nil, nil, 522, 649},
+			{"mission", "wh_main_anc_armour_auric_armour", "wh3_main_ie_qb_chs_prince_sigvald_auric_armour", 12},
+			{"mission", "wh_main_anc_weapon_sliverslash", "wh3_main_ie_qb_chs_prince_sigvald_sliverslash", 7},
 		},
 		["wh_dlc01_chs_kholek_suneater"] = {			
-			{"mission", "wh_main_anc_weapon_starcrusher", "wh3_main_ie_qb_chs_kholek_suneater_starcrusher", 7, nil, nil, 565, 575},
+			{"mission", "wh_main_anc_weapon_starcrusher", "wh3_main_ie_qb_chs_kholek_suneater_starcrusher", 7},
 		},
 		["wh3_dlc20_sla_azazel"] = {
 			{"mission", "wh3_dlc20_anc_weapon_daemonblade", "wh3_dlc20_ie_qb_chs_azazel_daemonblade", 15, nil, "wh3_dlc20_azazel_cam_quest_mission_001", 315, 729}
@@ -144,64 +144,64 @@ function q_setup()
 		------ BEASTMEN ------
 		----------------------	
 		["wh_dlc03_bst_khazrak"] = {			
-			{"mission", "wh_dlc03_anc_armour_the_dark_mail", "wh3_main_ie_qb_bst_khazrak_one_eye_the_dark_mail", 12, nil, nil, 418, 553},
-			{"mission", "wh_dlc03_anc_weapon_scourge", "wh3_main_ie_qb_bst_khazrak_one_eye_scourge", 7, nil, nil, 360, 544},
+			{"mission", "wh_dlc03_anc_armour_the_dark_mail", "wh3_main_ie_qb_bst_khazrak_one_eye_the_dark_mail", 12},
+			{"mission", "wh_dlc03_anc_weapon_scourge", "wh3_main_ie_qb_bst_khazrak_one_eye_scourge", 7},
 		},
 		["wh_dlc03_bst_malagor"] = {			
-			{"mission", "wh_dlc03_anc_enchanted_item_icons_of_vilification", "wh3_main_ie_qb_bst_malagor_the_dark_omen_the_icons_of_vilification", 7, nil, nil, 389, 490},
+			{"mission", "wh_dlc03_anc_enchanted_item_icons_of_vilification", "wh3_main_ie_qb_bst_malagor_the_dark_omen_the_icons_of_vilification", 7},
 		},
 		["wh_dlc05_bst_morghur"] = {			
-			{"mission", "wh_main_anc_weapon_stave_of_ruinous_corruption", "wh3_main_ie_qb_bst_morghur_stave_of_ruinous_corruption", 7, nil, nil, 276, 483},
+			{"mission", "wh_main_anc_weapon_stave_of_ruinous_corruption", "wh3_main_ie_qb_bst_morghur_stave_of_ruinous_corruption", 7},
 		},
 		["wh2_dlc17_bst_taurox"] = {			
-			{"mission", "wh2_dlc17_anc_weapon_rune_tortured_axes", "wh3_main_ie_qb_bst_taurox_rune_tortured_axes", 7, nil, nil, 108, 637},
+			{"mission", "wh2_dlc17_anc_weapon_rune_tortured_axes", "wh3_main_ie_qb_bst_taurox_rune_tortured_axes", 7},
 		},
 		
 		---------------------
 		----- WOOD ELVES -----
 		----------------------	
 		["wh_dlc05_wef_orion"] = {
-			{"mission", "wh_dlc05_anc_enchanted_item_horn_of_the_wild_hunt", "wh3_main_ie_qb_wef_orion_the_horn_of_the_wild", 7, nil, nil, 334, 427},
-			{"mission", "wh_dlc05_anc_talisman_cloak_of_isha", "wh3_main_ie_qb_wef_orion_the_cloak_of_isha", 12, nil, nil, 335, 414},
-			{"mission", "wh_dlc05_anc_weapon_spear_of_kurnous", "wh3_main_ie_qb_wef_orion_the_spear_of_kurnous", 17, nil, nil, 335, 397},
+			{"mission", "wh_dlc05_anc_enchanted_item_horn_of_the_wild_hunt", "wh3_main_ie_qb_wef_orion_the_horn_of_the_wild", 7},
+			{"mission", "wh_dlc05_anc_talisman_cloak_of_isha", "wh3_main_ie_qb_wef_orion_the_cloak_of_isha", 12},
+			{"mission", "wh_dlc05_anc_weapon_spear_of_kurnous", "wh3_main_ie_qb_wef_orion_the_spear_of_kurnous", 17},
 		},
 		["wh_dlc05_wef_durthu"] = {
-			{"mission", "wh_dlc05_anc_weapon_daiths_sword", "wh3_main_ie_qb_wef_durthu_daiths_sword", 7, nil, nil, 335, 397},
+			{"mission", "wh_dlc05_anc_weapon_daiths_sword", "wh3_main_ie_qb_wef_durthu_daiths_sword", 7},
 		},
 		["wh2_dlc16_wef_sisters_of_twilight"] = {
-			{"mission", "wh2_dlc16_anc_mount_wef_cha_sisters_of_twilight_forest_dragon", "wh3_main_ie_qb_wef_sisters_dragon", 12, nil, nil, 58, 489},
+			{"mission", "wh2_dlc16_anc_mount_wef_cha_sisters_of_twilight_forest_dragon", "wh3_main_ie_qb_wef_sisters_dragon", 12},
 		},
 		["wh2_dlc16_wef_drycha"] = {
-			{"mission", "wh2_dlc16_anc_enchanted_item_fang_of_taalroth", "wh3_main_ie_qb_wef_drycha_coeddil_unchained", 7, nil, nil, 348, 404},
+			{"mission", "wh2_dlc16_anc_enchanted_item_fang_of_taalroth", "wh3_main_ie_qb_wef_drycha_coeddil_unchained", 7},
 		},
 
 		----------------------
 		------ BRETONNIA -----
 		----------------------	
 		["wh_main_brt_louen_leoncouer"] = {			
-			{"mission", "wh_main_anc_weapon_the_sword_of_couronne", "wh3_main_ie_qb_brt_louen_sword_of_couronne", 12, nil, nil, 276, 483},
+			{"mission", "wh_main_anc_weapon_the_sword_of_couronne", "wh3_main_ie_qb_brt_louen_sword_of_couronne", 12},
 			{"mission", "wh2_dlc12_anc_armour_brt_armour_of_brilliance", "wh3_main_ie_qb_brt_louen_armour_of_brilliance", 3},
 		},
 		["wh_dlc07_brt_fay_enchantress"] = {			
-			{"mission", "wh_dlc07_anc_arcane_item_the_chalice_of_potions", "wh3_main_ie_qb_brt_fay_enchantress_chalice_of_potions", 12, nil, nil, 258, 535},
+			{"mission", "wh_dlc07_anc_arcane_item_the_chalice_of_potions", "wh3_main_ie_qb_brt_fay_enchantress_chalice_of_potions", 12},
 			{"mission", "wh2_dlc12_anc_enchanted_item_brt_morgianas_mirror", "wh3_main_ie_qb_brt_fay_morgianas_mirror", 3},
 		},
 		["wh_dlc07_brt_alberic"] = {			
-			{"mission", "wh_dlc07_anc_weapon_trident_of_manann", "wh3_main_ie_qb_brt_alberic_trident_of_bordeleaux", 7, nil, nil, 264, 347},
+			{"mission", "wh_dlc07_anc_weapon_trident_of_manann", "wh3_main_ie_qb_brt_alberic_trident_of_bordeleaux", 7},
 			{"mission", "wh2_dlc12_anc_enchanted_item_brt_braid_of_bordeleaux", "wh3_main_ie_qb_brt_alberic_braid_of_bordeleaux", 12},
 		},
 		["wh2_dlc14_brt_repanse"] = {			
-			{"mission", "wh2_dlc14_anc_weapon_sword_of_lyonesse", "wh3_main_ie_qb_brt_repanse_sword_of_lyonesse", 7, nil, nil, 325, 237},
+			{"mission", "wh2_dlc14_anc_weapon_sword_of_lyonesse", "wh3_main_ie_qb_brt_repanse_sword_of_lyonesse", 7},
 		},
 		
 		----------------------
 		------- NORSCA -------
 		----------------------
 		["wh_dlc08_nor_wulfrik"] = {
-			{"mission", "wh_dlc08_anc_weapon_sword_of_torgald", "wh3_main_ie_qb_nor_wulfrik_the_wanderer_sword_of_torgald", 7, nil, nil, 251, 500},
+			{"mission", "wh_dlc08_anc_weapon_sword_of_torgald", "wh3_main_ie_qb_nor_wulfrik_the_wanderer_sword_of_torgald", 7},
 		},
 		["wh_dlc08_nor_throgg"] = {
-			{"mission", "wh_dlc08_anc_enchanted_item_wintertooth_crown", "wh3_main_ie_qb_nor_throgg_wintertooth_crown", 7, nil, nil, 502, 509},
+			{"mission", "wh_dlc08_anc_enchanted_item_wintertooth_crown", "wh3_main_ie_qb_nor_throgg_wintertooth_crown", 7},
 		},
 		
 		----------------------
@@ -220,19 +220,19 @@ function q_setup()
 		},
 		["wh2_dlc10_hef_alarielle"] = {
 			{"mission", "wh2_dlc10_anc_talisman_shieldstone_of_isha", "wh3_main_ie_qb_hef_alarielle_shieldstone_of_isha", 7},
-			{"mission", "wh2_dlc10_anc_enchanted_item_star_of_avelorn", "wh3_main_ie_qb_hef_alarielle_star_of_avelorn", 12, nil, nil, 260, 601},
+			{"mission", "wh2_dlc10_anc_enchanted_item_star_of_avelorn", "wh3_main_ie_qb_hef_alarielle_star_of_avelorn", 12},
 		},
 		["wh2_dlc10_hef_alith_anar"] = {
 			{"mission", "wh2_dlc10_anc_enchanted_item_the_shadow_crown", "wh3_main_ie_qb_hef_alith_anar_the_shadow_crown", 4},
-			{"mission", "wh2_dlc10_anc_weapon_moonbow", "wh3_main_ie_qb_hef_alith_anar_the_moonbow", 7, nil, nil, 43, 421},
+			{"mission", "wh2_dlc10_anc_weapon_moonbow", "wh3_main_ie_qb_hef_alith_anar_the_moonbow", 7},
 		},
 		["wh2_dlc15_hef_eltharion"] = {
-			{"mission", "wh2_dlc15_anc_talisman_talisman_of_hoeth", "wh3_main_ie_qb_hef_eltharion_talisman_of_hoeth", 7, nil, nil, 213, 420},
+			{"mission", "wh2_dlc15_anc_talisman_talisman_of_hoeth", "wh3_main_ie_qb_hef_eltharion_talisman_of_hoeth", 7},
 			{"mission", "wh2_dlc15_anc_armour_helm_of_yvresse", "wh3_main_ie_qb_hef_eltharion_helm_of_yvresse", 12},
 			{"mission", "wh2_dlc15_anc_weapon_fangsword_of_eltharion", "wh3_main_ie_qb_hef_eltharion_fangsword_of_eltharion", 17},
 		},
 		["wh2_dlc15_hef_imrik"] = {
-			{"mission", "wh2_dlc15_anc_armour_armour_of_caledor", "wh3_main_ie_qb_hef_imrik_armour_of_caledor", 8, nil, nil, 164, 509},
+			{"mission", "wh2_dlc15_anc_armour_armour_of_caledor", "wh3_main_ie_qb_hef_imrik_armour_of_caledor", 8},
 		},
 		
 		----------------------
@@ -250,7 +250,7 @@ function q_setup()
 			{"mission", "wh2_main_anc_talisman_amber_amulet", "wh3_main_ie_qb_def_morathi_amber_amulet", 4},
 		},
 		["wh2_dlc10_def_crone_hellebron"] = {
-			{"mission", "wh2_dlc10_anc_weapon_deathsword_and_the_cursed_blade", "wh3_main_ie_qb_def_hellebron_deathsword_and_the_cursed_blade", 12, nil, nil, 37, 643},
+			{"mission", "wh2_dlc10_anc_weapon_deathsword_and_the_cursed_blade", "wh3_main_ie_qb_def_hellebron_deathsword_and_the_cursed_blade", 12},
 			{"mission", "wh2_dlc10_anc_talisman_amulet_of_dark_fire", "wh3_main_ie_qb_def_hellebron_amulet_of_dark_fire", 7},
 		},
 		["wh2_dlc11_def_lokhir"] = {
@@ -258,10 +258,10 @@ function q_setup()
 			{"mission", "wh2_dlc11_anc_weapon_red_blades", "wh3_main_ie_qb_def_lokhir_red_blades", 3},
 		},
 		["wh2_dlc14_def_malus_darkblade"] = {
-			{"mission", "wh2_dlc14_anc_weapon_warpsword_of_khaine", "wh3_main_ie_qb_def_malus_warpsword_of_khaine", 7, nil, nil, 492, 128},
+			{"mission", "wh2_dlc14_anc_weapon_warpsword_of_khaine", "wh3_main_ie_qb_def_malus_warpsword_of_khaine", 7},
 		},
 		["wh2_twa03_def_rakarth"] = {
-			{"mission", "wh2_twa03_anc_weapon_whip_of_agony", "wh3_main_ie_qb_def_rakarth_whip_of_agony", 7, nil, nil, 238, 557},
+			{"mission", "wh2_twa03_anc_weapon_whip_of_agony", "wh3_main_ie_qb_def_rakarth_whip_of_agony", 7},
 		},
 
 		----------------------
@@ -276,21 +276,21 @@ function q_setup()
 			{"mission", "wh2_main_anc_weapon_revered_spear_of_tlanxla", "wh3_main_ie_qb_liz_kroq_gar_revered_spear_of_tlanxla", 7, nil, "war.camp.advice.quest.kroqgar.revered_spear_of_tlanxla.001", 153, 229},
 		},
 		["wh2_dlc12_lzd_tehenhauin"] = {
-			{"mission", "wh2_dlc12_anc_enchanted_item_plaque_of_sotek", "wh3_main_ie_qb_lzd_tehenhauin_plaque_of_sotek", 7, nil, nil, 107, 201},
+			{"mission", "wh2_dlc12_anc_enchanted_item_plaque_of_sotek", "wh3_main_ie_qb_lzd_tehenhauin_plaque_of_sotek", 7},
 		},
 		["wh2_dlc12_lzd_tiktaqto"] = {
-			{"mission", "wh2_dlc12_anc_enchanted_item_mask_of_heavens", "wh3_main_ie_qb_lzd_tiktaqto_mask_of_heavens", 7, nil, nil, 331, 191},
+			{"mission", "wh2_dlc12_anc_enchanted_item_mask_of_heavens", "wh3_main_ie_qb_lzd_tiktaqto_mask_of_heavens", 7},
 		},
 		["wh2_dlc13_lzd_nakai"] = {
-			{"mission", "wh2_dlc13_anc_enchanted_item_golden_tributes", "wh3_main_ie_qb_lzd_nakai_golden_tributes", 7, nil, nil, 105, 195},
-			{"mission", "wh2_dlc13_talisman_the_ogham_shard", "wh3_main_ie_qb_lzd_nakai_the_ogham_shard", 10, nil, nil, 227, 566},
+			{"mission", "wh2_dlc13_anc_enchanted_item_golden_tributes", "wh3_main_ie_qb_lzd_nakai_golden_tributes", 7},
+			{"mission", "wh2_dlc13_talisman_the_ogham_shard", "wh3_main_ie_qb_lzd_nakai_the_ogham_shard", 10},
 		},
 		["wh2_dlc13_lzd_gor_rok"] = {
-			{"mission", "wh2_dlc13_anc_armour_the_shield_of_aeons", "wh3_main_ie_qb_lzd_gorrok_the_shield_of_aeons", 7, nil, nil, 107, 201},
+			{"mission", "wh2_dlc13_anc_armour_the_shield_of_aeons", "wh3_main_ie_qb_lzd_gorrok_the_shield_of_aeons", 7},
 			{"mission", "wh2_dlc13_anc_weapon_mace_of_ulumak", "wh3_main_ie_qb_lzd_the_mace_of_ulumak", 3}
 		},
 		["wh2_dlc17_lzd_oxyotl"] = {
-			{"mission", "wh2_dlc17_anc_weapon_the_golden_blowpipe_of_ptoohee", "wh3_main_ie_qb_lzd_oxyotl_the_golden_blowpipe_of_ptoohee", 7, nil, nil, 248, 679},
+			{"mission", "wh2_dlc17_anc_weapon_the_golden_blowpipe_of_ptoohee", "wh3_main_ie_qb_lzd_oxyotl_the_golden_blowpipe_of_ptoohee", 7},
 		},
 		
 		----------------------
@@ -308,14 +308,14 @@ function q_setup()
 			{"mission", "wh2_dlc09_anc_enchanted_item_lucky_skullhelm", "wh3_main_ie_qb_skv_tretch_lucky_skullhelm", 7, nil, "dlc09.camp.advice.quest.tretch.lucky_skullhelm.001", 75, 523},
 		},
 		["wh2_dlc12_skv_ikit_claw"] = {
-			{"mission", "wh2_dlc12_anc_weapon_storm_daemon", "wh3_main_ie_qb_ikit_claw_storm_daemon", 7, nil, nil, 97, 270},
+			{"mission", "wh2_dlc12_anc_weapon_storm_daemon", "wh3_main_ie_qb_ikit_claw_storm_daemon", 7},
 		},
 		["wh2_dlc14_skv_deathmaster_snikch"] = {
-			{"mission", "wh2_dlc14_anc_armour_the_cloak_of_shadows", "wh3_main_ie_qb_skv_snikch_the_cloak_of_shadows", 7, nil, nil, 546, 278},
+			{"mission", "wh2_dlc14_anc_armour_the_cloak_of_shadows", "wh3_main_ie_qb_skv_snikch_the_cloak_of_shadows", 7},
 			{"mission", "wh2_dlc14_anc_weapon_whirl_of_weeping_blades", "wh3_main_ie_qb_skv_snikch_whirl_of_weeping_blades", 3},
 		},
 		["wh2_dlc16_skv_throt_the_unclean"] = {
-			{"mission", "wh2_dlc16_anc_enchanted_item_whip_of_domination", "wh3_main_ie_qb_skv_throt_main_whip_of_domination", 7, nil, nil, 462, 618},
+			{"mission", "wh2_dlc16_anc_enchanted_item_whip_of_domination", "wh3_main_ie_qb_skv_throt_main_whip_of_domination", 7},
 			{"mission", "wh2_dlc16_anc_weapon_creature_killer", "wh3_main_ie_qb_skv_throt_main_creature_killer", 3},
 		},
 

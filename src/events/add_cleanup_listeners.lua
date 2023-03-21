@@ -32,6 +32,8 @@ function Old_world_caravans:add_cleanup_listeners()
       end
 
       if defender:is_null_interface() then return end
+      if self:faction_is_modded(defender) then return end
+
       local defender_sc = defender:subculture();
       if self.culture_to_trait[defender_sc] == nil then return end
 
@@ -55,6 +57,7 @@ function Old_world_caravans:add_cleanup_listeners()
     ---@param context FactionTurnEnd
     function(context)
       local faction_name = context:faction():name();
+      if self:faction_is_modded(context:faction()) then return end
       self:cleanup_encounter_for_faction(faction_name);
     end,
     true
@@ -86,6 +89,14 @@ function Old_world_caravans:add_cleanup_listeners()
   true
 );
 
+core:add_listener("owc_any_mission_triggered",
+"ScriptEventQuestCharacterTurnStart",
+true,
+function()
+  self:log("ScriptEventQuestCharacterTurnStart")
+  self.encounter_should_be_canceled = true
+end,
+false);
 
 
 end;

@@ -2,6 +2,9 @@
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 ---@param encounter_callback fun()
 function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
+  core:remove_listener("owc_any_dilemma_triggered");
+  core:remove_listener("owc_dillemma_choice_spy_on");
+
   if cm:is_multiplayer() then
     encounter_callback();
     return
@@ -11,38 +14,50 @@ function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
     "DilemmaIssuedEvent",
     true,
     function()
-      cm:move_caravan(caravan);
-      cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
-      cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
+      core:remove_listener("owc_dillemma_choice_spy_on")
       cm:remove_callback(self.dilemma_callback_key);
-      self:cleanup_encounter_for_faction(caravan:caravan_force():faction():name());
-      cm:set_saved_value(self.encounter_was_canceled_key, true)
+      --self:cleanup_encounter_for_faction(caravan:caravan_force():faction():name());
+      --cm:set_saved_value(self.encounter_was_canceled_key, true)
       self:log("encounter was canceled")
+
+      core:add_listener(
+        "owc_dillemma_choice_spy_on",
+        "DilemmaChoiceMadeEvent",
+        true,
+        function()
+          self:spy_on_dilemmas(caravan, encounter_callback)
+        end,
+        false
+      );
     end,
     false);
-    core:add_listener("owc_any_dilemma_triggered",
-    "MissionIssued",
-    true,
-    function()
-      cm:move_caravan(caravan);
-      cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
-      cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
-      cm:remove_callback(self.dilemma_callback_key);
-      self:cleanup_encounter_for_faction(caravan:caravan_force():faction():name());
-      cm:set_saved_value(self.encounter_was_canceled_key, true)
-      self:log("encounter was canceled")
-    end,
-    false);
+
+
+  -- core:add_listener("owc_any_mission_triggered",
+  --   "MissionIssued",
+  --   true,
+  --   function()
+  --     core:remove_listener("owc_any_dilemma_triggered");
+  --     core:remove_listener("owc_dillemma_choice_spy_on")
+  --     cm:move_caravan(caravan);
+  --     cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
+  --     cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
+  --     cm:remove_callback(self.dilemma_callback_key);
+  --     self:cleanup_encounter_for_faction(caravan:caravan_force():faction():name());
+  --     cm:set_saved_value(self.encounter_was_canceled_key, true)
+  --     self:log("encounter was canceled")
+  --   end,
+  --   false);
 
   cm:callback(function()
     cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
     cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
     core:remove_listener("owc_any_dilemma_triggered");
+    core:remove_listener("owc_dillemma_choice_spy_on");
     local ok, err = pcall(function()
       encounter_callback();
-    
     end);
-    
+
     if not ok then
       self:logCore(tostring(err));
     end

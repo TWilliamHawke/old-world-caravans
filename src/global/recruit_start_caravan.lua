@@ -8,8 +8,9 @@ function Old_world_caravans:recruit_start_caravan()
 
     local caravans_list = model:world():caravans_system():faction_caravans(faction);
     local faction_is_sutable = faction:is_human()
-      and self.access_to_caravans_on_first_turn[faction_name]
-      and not caravans_list:is_null_interface();
+        and not self:faction_is_modded(faction)
+        and self.access_to_caravans_on_first_turn[faction_name]
+        and not caravans_list:is_null_interface();
 
     if faction_is_sutable then
       local available_caravans = caravans_list:available_caravan_recruitment_items();
@@ -23,9 +24,7 @@ function Old_world_caravans:recruit_start_caravan()
         cm:recruit_caravan(faction, temp_caravan);
         cm:treasury_mod(faction:name(), 800);
         CampaignUI.ClearSelection();
-
       end
     end
   end
-
 end

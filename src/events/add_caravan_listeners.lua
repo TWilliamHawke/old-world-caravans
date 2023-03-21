@@ -5,41 +5,62 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context CaravanRecruited
     ---@return boolean
     function(context)
-      return context:caravan():caravan_force():faction():subculture() ~= "wh3_main_sc_cth_cathay";
+      local faction = context:faction()
+      return not self:faction_is_modded(faction);
     end,
     ---@param context CaravanRecruited
     function(context)
       local caravan = context:caravan();
-      self:add_start_force(caravan);
+      local subculture = context:caravan():caravan_force():faction():subculture()
+      ---@diagnostic disable-next-line: undefined-field
+      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
+
+      if subculture ~= "wh3_main_sc_cth_cathay" then
+        self:add_start_force(caravan);
+      else
+        add_inital_force(caravan);
+      end
     end,
     true
   );
   core:add_listener(
-    "owc_antiupkeep",
+    "owc_caravan_spawned",
     "CaravanSpawned",
     ---@param context CaravanSpawned
     function(context)
-      return context:faction():is_human() and context:faction():subculture() ~= "wh3_main_sc_cth_cathay";
+      local faction = context:faction()
+      return not self:faction_is_modded(faction);
     end,
     ---@param context CaravanSpawned
     function(context)
-      local caravan_force = context:caravan():caravan_force();
-      self:remove_caravan_upkeep(caravan_force);
+      if context:faction():subculture() ~= "wh3_main_sc_cth_cathay" then
+        local caravan_force = context:caravan():caravan_force();
+        self:remove_caravan_upkeep(caravan_force);
+      end
+
+      local caravan = context:caravan();
+      cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
+      local caravan_master_lookup = cm:char_lookup_str(caravan:caravan_force():general_character():command_queue_index())
+      cm:force_character_force_into_stance(caravan_master_lookup, "MILITARY_FORCE_ACTIVE_STANCE_TYPE_FIXED_CAMP");
     end,
     true
   );
 
-
+  
   core:add_listener(
     "owc_caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",
     function(context)
-      return context:faction():is_human() and cm:get_campaign_name() ~= "wh3_main_chaos";
+      return context:faction():is_human() and not self:faction_is_modded(context:faction());
     end,
     ---comment
     ---@param context QueryShouldWaylayCaravan
     function(context)
-      self:generate_caravan_encounter(context)
+      if cm:get_campaign_name() ~= "wh3_main_chaos" then
+        self:generate_caravan_encounter(context)
+      else
+        ivory_road_event_handler(context)
+      end
       self:log("My handler for QueryShouldWaylayCaravan")
     end,
     true
@@ -49,10 +70,14 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_caravan_waylaid_no_cathay",
     "CaravanWaylaid",
     function(context)
-      return cm:get_campaign_name() ~= "wh3_main_chaos"
+      return not self:faction_is_modded(context:faction())
     end,
     function(context)
-      self:handle_caravan_encounter(context)
+      if cm:get_campaign_name() ~= "wh3_main_chaos" then
+        self:handle_caravan_encounter(context);
+      else
+        waylaid_caravan_handler(context);
+      end
       self:log("My handler for CaravanWaylaid")
     end,
     true
@@ -79,11 +104,14 @@ function Old_world_caravans:add_caravan_listeners()
     "CaravanCompleted",
     ---@param context CaravanCompleted
     function(context)
-      return context:faction():is_human();
+      return not self:faction_is_modded(context:faction());
     end,
     ---@param context CaravanCompleted
     function(context)
+      self:complete_caravans(context)
       local faction = context:faction()
+
+      if not faction:is_human() then return end
       local node = context:complete_position():node()
       local region_name = node:region_key()
       self:give_caravan_award(faction, region_name);
@@ -91,8 +119,17 @@ function Old_world_caravans:add_caravan_listeners()
     true
   )
 
-
-
+  core:add_listener(
+    "owc_caravan_moved",
+    "CaravanMoved",
+    function(context)
+      return not context:caravan():is_null_interface() and not self:faction_is_modded(context:faction());
+    end,
+    function(context)
+      self:teleport_caravan(context)
+    end,
+    true
+  );
 
   core:add_listener(
     "OWC_add_ai_effect",

@@ -1,0 +1,12 @@
+---comment
+---@param faction FACTION_SCRIPT_INTERFACE
+function Old_world_caravans:faction_is_modded(faction)
+  local faction_name = faction:name();
+  local mod = self.other_mods[faction_name];
+
+  if not mod then
+    return false
+  else
+    return vfs.exists(mod)
+  end
+end

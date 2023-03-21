@@ -24,4 +24,5 @@ Old_world_caravans = {
   default_encounter = "",
   no_encounter_weight = 50,
   encounter_was_canceled_key = "owc_encounter_was_canceled",
+  encounter_should_be_canceled = false,
 }
