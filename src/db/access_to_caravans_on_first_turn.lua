@@ -14,6 +14,7 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   wh_main_emp_nordland = true,
   wh_main_emp_ostermark = true,
   wh_main_emp_ostland = true,
+  mixer_emp_sylvania = true,
   wh_main_emp_empire = true,
   wh_main_emp_stirland = true,
   wh_main_emp_talabecland = true,
@@ -28,4 +29,5 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   wh_main_brt_parravon = true,
   wh3_main_emp_cult_of_sigmar = false,
   wh3_main_dwf_the_ancestral_throng = false,
+  wh2_dlc14_brt_chevaliers_de_lyonesse = false,
 }

@@ -3,6 +3,11 @@ function Old_world_caravans:add_first_tick_callbacks()
     function()
       self:recruit_start_caravan();
       cm:set_saved_value(self.is_init_save_key, true);
+
+      if vfs.exists("text/twill_old_world_caravans_brt.loc") then
+        self:log("bretonnia init")
+        cm:set_saved_value(self.is_init_save_key .. "brt", true);
+      end
     end
   );
 
@@ -21,15 +26,33 @@ function Old_world_caravans:add_first_tick_callbacks()
 
       self:set_starting_endpoints_values();
 
-      if cm:get_saved_value(self.is_init_save_key) then return end
+      if not cm:get_saved_value(self.is_init_save_key) then
+        local human_factions = cm:get_human_factions();
 
-      local human_factions = cm:get_human_factions();
+        for i = 1, #human_factions do
+          self:unlock_caravan_recruitment(human_factions[i]);
+        end
 
-      for i = 1, #human_factions do
-        self:unlock_caravan_recruitment(human_factions[i]);
+        cm:set_saved_value(self.is_init_save_key, true);
+        if vfs.exists("text/twill_old_world_caravans_brt.loc") then
+          cm:set_saved_value(self.is_init_save_key .. "brt", true);
+        end
+        return
       end
 
-      cm:set_saved_value(self.is_init_save_key, true);
+      if vfs.exists("text/twill_old_world_caravans_brt.loc") and not cm:get_saved_value(self.is_init_save_key .. "brt") then
+        local human_factions = cm:get_human_factions();
+
+        for i = 1, #human_factions do
+          local faction = cm:get_faction(human_factions[i])
+          if faction and faction:subculture() == "wh_main_sc_brt_bretonnia" then
+            self:unlock_caravan_recruitment(human_factions[i]);
+          end
+        end
+
+        cm:set_saved_value(self.is_init_save_key .. "brt", true);
+        return
+      end
     end
   );
 end

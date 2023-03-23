@@ -25,5 +25,8 @@ function Old_world_caravans:add_start_force(caravan)
   elseif faction:has_technology("wh2_dlc13_tech_emp_economy_3") then
     cm:grant_unit_to_character(lord_str, "wh_main_emp_inf_greatswords");
     cm:grant_unit_to_character(lord_str, "wh_main_emp_inf_greatswords");
+  elseif faction:has_technology("wh_dlc07_tech_brt_economy_other_draft") then
+    cm:grant_unit_to_character(lord_str, "owc_dlc07_brt_inf_foot_squires_0");
+    cm:grant_unit_to_character(lord_str, "owc_dlc07_brt_inf_foot_squires_0");
   end
 end

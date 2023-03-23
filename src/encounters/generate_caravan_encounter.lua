@@ -1,7 +1,16 @@
 ---@param context QueryShouldWaylayCaravan
 function Old_world_caravans:generate_caravan_encounter(context)
+  if self.encounter_should_be_canceled then
+    cm:set_saved_value(self.encounter_was_canceled_key, true)
+    self.encounter_should_be_canceled = false;
+    self:log("encounter was canceled")
+    return
+  end
+
   local region_names, list_of_regions = self:get_regions_list(context);
   if not region_names then return end
+
+
   local caravan = context:caravan();
   local caravan_master = context:caravan_master():character();
   local faction = context:faction();

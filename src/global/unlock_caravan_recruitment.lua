@@ -6,7 +6,7 @@ function Old_world_caravans:unlock_caravan_recruitment(faction_name)
   if not agent_subtype then return end
 
   local faction = cm:get_faction(faction_name);
-  if not self:faction_has_caravans(faction) then return end
+  if not faction or not self:faction_has_caravans(faction) then return end
 
   self:logCore("unlock caravans for "..faction_name)
 

@@ -3,7 +3,7 @@ function Old_world_caravans:cleanup_encounter()
     local faction_key = cm:get_saved_value(self.encounter_faction_save_key);
     if not faction_key then return end
     local faction = cm:get_faction(faction_key);
-    if faction:is_null_interface() then return end
+    if not faction or faction:is_null_interface() then return end
     cm:kill_all_armies_for_faction(faction);
     self:log("encounter faction has been killed")
   end);

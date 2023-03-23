@@ -14,7 +14,7 @@ function Old_world_caravans:add_cleanup_listeners()
         attacker = pb:attacker():faction();
       end
 
-      if attacker:is_null_interface() then return false end
+      if not attacker or attacker:is_null_interface() then return false end
 
       local faction_sc = attacker:subculture();
       return self.culture_to_enemy_faction[faction_sc] == attacker:name();
@@ -31,7 +31,7 @@ function Old_world_caravans:add_cleanup_listeners()
         defender = pb:defender():faction();
       end
 
-      if defender:is_null_interface() then return end
+      if not defender or defender:is_null_interface() then return end
       if self:faction_is_modded(defender) then return end
 
       local defender_sc = defender:subculture();
@@ -89,14 +89,14 @@ function Old_world_caravans:add_cleanup_listeners()
   true
 );
 
-core:add_listener("owc_any_mission_triggered",
-"ScriptEventQuestCharacterTurnStart",
+core:add_listener("owc_quest_item_triggered",
+"ScriptEventTriggerQuestChain",
 true,
 function()
-  self:log("ScriptEventQuestCharacterTurnStart")
+  self:log("ScriptEventTriggerQuestChain")
   self.encounter_should_be_canceled = true
 end,
-false);
+true);
 
 
 end;
