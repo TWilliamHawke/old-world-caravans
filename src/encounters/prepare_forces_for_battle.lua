@@ -31,6 +31,10 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
       function(enemy_char_cqi, enemy_force_cqi)
         cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
         cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
+        for _, effect_bundle in pairs(arg) do
+          cm:apply_effect_bundle_to_force(effect_bundle, enemy_force_cqi, 0);
+        end
+
         enemy_cqi = enemy_force_cqi;
       end);
   else
@@ -40,17 +44,16 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
       function(enemy_char_cqi, enemy_force_cqi)
         cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
         cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
+        for _, effect_bundle in pairs(arg) do
+          cm:apply_effect_bundle_to_force(effect_bundle, enemy_force_cqi, 0);
+        end
         enemy_cqi = enemy_force_cqi;
       end);
   end
 
 
   if enemy_cqi ~= 0 then
-    for _, effect_bundle in pairs(arg) do
-      cm:apply_effect_bundle_to_force(effect_bundle, enemy_cqi, 0);
-    end
     cm:set_saved_value(self.encounter_faction_save_key..caravan_faction_key, enemy_cqi);
-    cm:set_saved_value(self.encounter_faction_save_key, enemy_cqi);
   end
 
 

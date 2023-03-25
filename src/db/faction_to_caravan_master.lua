@@ -30,5 +30,5 @@ Old_world_caravans.faction_to_caravan_master = {
   wh2_dlc14_brt_chevaliers_de_lyonesse = "wh_main_brt_caravan_master",
   wh3_main_emp_cult_of_sigmar = "wh_main_emp_caravan_master",
   wh3_main_dwf_the_ancestral_throng = "wh_main_dwf_caravan_master",
-
+  wh2_dlc17_dwf_thorek_ironbrow = "wh_main_dwf_caravan_master",
 }

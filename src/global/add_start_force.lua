@@ -1,7 +1,7 @@
 ---comment
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 function Old_world_caravans:add_start_force(caravan)
-  local force_list = {};
+  local force_list = self.start_units.brt_caravan_skill_innate_empire;
   local caravan_master = caravan:caravan_force():general_character();
   local faction = caravan_master:faction();
 
