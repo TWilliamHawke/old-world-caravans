@@ -12,6 +12,10 @@ function Old_world_caravans:caravan_button_should_be_visible(faction)
   if access_on_first_turn == true then
     return true
   elseif access_on_first_turn == false then
+    if self.force_enable then
+      return true
+    end
+
     if faction_name == self.belegar_faction then
       return not not cm:get_saved_value(self.is_init_save_key..faction_name) or not faction:has_effect_bundle("wh_dlc06_belegar_karak_owned_false_first")
     else

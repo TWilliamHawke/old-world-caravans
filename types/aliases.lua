@@ -19,9 +19,11 @@
 ---@field scale_difficulty_cargo boolean
 ---@field scale_difficulty_strenght boolean
 ---@field enable_log boolean
+---@field force_enable boolean
 ---@field default_difficult 1 | 2 | 3
 ---@field encounter_budget_1 integer
 ---@field encounter_budget_2 integer
 ---@field encounter_budget_3 integer
 ---@field filler_unit_weight integer
 ---@field no_encounter_weight integer
+

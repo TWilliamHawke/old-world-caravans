@@ -98,6 +98,13 @@ no_encounter_weight:set_default_value(50)
 no_encounter_weight:slider_set_step_size(10)
 
 
+local accessibility_section = old_world_caravans:add_new_section("m_accessibility")
+accessibility_section:set_localised_text("Caravans accessibility")
+
+local force_enable = old_world_caravans:add_new_option("force_enable", "checkbox")
+force_enable:set_text("owc_mct_force_enable", true)
+force_enable:set_tooltip_text("owc_mct_force_enable_tooltip", true)
+
 local debug_section = old_world_caravans:add_new_section("n_debug")
 debug_section:set_localised_text("Debug Section")
 
@@ -134,6 +141,7 @@ if encounter_budget_1.set_is_global then
   scale_difficulty_cargo:set_is_global(true);
   scale_difficulty_strenght:set_is_global(true);
   no_encounter_weight:set_is_global(true);
+  force_enable:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

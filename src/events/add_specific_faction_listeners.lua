@@ -10,11 +10,13 @@ function Old_world_caravans:add_specific_faction_listeners()
     function(context)
       local character = context:character();
       if character:is_null_interface() then return end
-      local faction = character:faction();
+      local faction_name = character:faction():name();
 
-      if faction:name() == self.belegar_faction then
-        cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
-        self:show_caravan_button();
+      if faction_name == self.belegar_faction then
+        cm:set_saved_value(self.is_init_save_key .. faction_name, true)
+        if cm:get_local_faction():name() == faction_name then
+          self:show_caravan_button();
+        end
       end
     end,
     true
@@ -39,7 +41,9 @@ function Old_world_caravans:add_specific_faction_listeners()
       local region_owner = region:owning_faction():name();
 
       if region_owner == self.belegar_faction then
-        self:show_caravan_button();
+        if cm:get_local_faction():name() == region_owner then
+          self:show_caravan_button();
+        end
         if not cm:get_saved_value(self.is_init_save_key .. region_owner) then
           cm:set_saved_value(self.is_init_save_key .. region_owner, true)
         end
@@ -62,14 +66,16 @@ function Old_world_caravans:add_specific_faction_listeners()
       local belegar_faction = cm:get_faction(self.belegar_faction)
       if not belegar_faction or not belegar_faction:is_human() then return end
       if self:caravan_button_should_be_visible(belegar_faction) then return end
-
+      --wh3_main_combi_region_karak_hirn
       local region = cm:get_region(self.k8p_region_name)
       if not region or region:is_null_interface() then return end
 
-      local region_owner = region:owning_faction();
+      local region_owner_key = region:owning_faction():name();
 
-      if not region:is_abandoned() and region_owner:name() == self.belegar_faction then
-        self:show_caravan_button()
+      if not region:is_abandoned() and region_owner_key == self.belegar_faction then
+        if cm:get_local_faction():name() == region_owner_key then
+          self:show_caravan_button();
+        end
         cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
       else
         self:disband_all_caravans(faction)
@@ -87,24 +93,8 @@ function Old_world_caravans:add_specific_faction_listeners()
     ---@param context FactionJoinsConfederation
     function(context)
       local faction = context:confederation();
-      if not self:faction_has_caravans(faction) then return end
-      if self:caravan_button_should_be_visible(faction) then return end
-      if faction:name() == self.belegar_faction then return end
-
-      local other_name = context:faction():name();
-
-      if self.access_to_caravans_on_first_turn[other_name] then
-        self:show_caravan_button()
-        cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
-
-        local caravans_list = cm:model():world():caravans_system():faction_caravans(faction);
-        if caravans_list:is_null_interface() then return end
-        local available_caravans = caravans_list:available_caravan_recruitment_items();
-
-        if available_caravans:is_empty() then
-          self:unlock_caravan_recruitment(faction:name())
-        end
-      end
+      local other_faction = context:faction()
+      self:unlock_caravans_by_confederation(faction, other_faction)
     end,
     true);
 

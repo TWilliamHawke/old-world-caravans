@@ -31,4 +31,5 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   wh3_main_dwf_the_ancestral_throng = false,
   wh2_dlc14_brt_chevaliers_de_lyonesse = false,
   wh2_dlc17_dwf_thorek_ironbrow = false,
+  wh2_dlc13_emp_the_huntmarshals_expedition = false,
 }

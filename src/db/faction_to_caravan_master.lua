@@ -8,6 +8,7 @@ Old_world_caravans.faction_to_caravan_master = {
   wh_main_dwf_karak_izor = "wh_main_dwf_caravan_master",
   wh_main_emp_averland = "wh_main_emp_caravan_master",
   wh2_dlc13_emp_golden_order = "wh_main_emp_caravan_master",
+  wh2_dlc13_emp_the_huntmarshals_expedition = "wh_main_emp_caravan_master",
   wh_main_emp_marienburg = "wh_main_emp_caravan_master",
   wh_main_emp_hochland = "wh_main_emp_caravan_master",
   wh_main_emp_middenland = "wh_main_emp_caravan_master",
