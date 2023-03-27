@@ -6,10 +6,13 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
   local caravan_faction = context:faction();
   local cargo_amount = caravan:cargo();
   local caravan_force = caravan:caravan_force();
+  local character = context:caravan_master():character()
 
   self:spy_on_dilemmas(caravan, function()
     self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, false, function()
       cm:set_caravan_cargo(caravan, cargo_amount - 200);
+      core:trigger_custom_event("ScriptEventOwcLoseCargo", {
+        character = character});
     end);
 
     self:log("battle has attached, goto dilemma builder")

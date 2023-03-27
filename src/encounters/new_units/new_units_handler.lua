@@ -59,5 +59,8 @@ function Old_world_caravans:new_units_handler(context)
 
   attach_battle_to_dilemma(dilemma_name, caravan);
 
+  core:trigger_custom_event("ScriptEventOwcNewUnitsDilemma", {
+    character = caravan_master});
+
   cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_faction);
 end

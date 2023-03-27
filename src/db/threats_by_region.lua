@@ -642,8 +642,8 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_couronne"] = {
     wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc08_sc_nor_norsca = 2,
+    wh_main_sc_grn_greenskins = 1,
+    wh_dlc08_sc_nor_norsca = 3,
   },
   ["wh3_main_combi_region_languille"] = {
     wh_dlc03_sc_bst_beastmen = 1,
@@ -657,6 +657,12 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_gisoreux"] = {
     wh_dlc03_sc_bst_beastmen = 1,
     wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_vmp_vampire_counts = 2,
+  },
+  ["wh3_main_combi_region_montfort"] = {
+    wh_dlc03_sc_bst_beastmen = 1,
+    wh_main_sc_grn_greenskins = 2,
+    wh_main_sc_vmp_vampire_counts = 1,
   },
   ["wh3_main_combi_region_massif_orcal"] = {
     wh_main_sc_grn_greenskins = 3,
@@ -688,7 +694,7 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_brionne"] = {
     wh_dlc03_sc_bst_beastmen = 2,
     wh_main_sc_grn_greenskins = 3,
-    wh_dlc05_sc_wef_wood_elves = 1,
+    wh2_dlc11_sc_cst_vampire_coast = 1,
   },
   --kislev
   ["wh3_main_combi_region_kislev"] = {
