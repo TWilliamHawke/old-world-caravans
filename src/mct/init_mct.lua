@@ -16,20 +16,5 @@ function Old_world_caravans:mct_init(context)
   --self.filler_unit_weight = tonumber(settings.filler_unit_weight) / 10
   self.no_encounter_weight = settings.no_encounter_weight;
   self.debug_mode = settings.enable_log;
-
-  if settings.force_enable then
-    local human_factions = cm:get_human_factions()
-    
-    for _, faction_name in ipairs(human_factions) do
-      local faction = cm:get_faction(faction_name)
-      if self:faction_has_caravans(faction) and not self:caravan_button_should_be_visible(faction) then
-        if cm:get_local_faction():name() == faction_name then
-          self:show_caravan_button();
-        end
-        cm:set_saved_value(self.is_init_save_key .. faction_name, true)
-      end
-    end
-  end
-
   self.force_enable = settings.force_enable;
 end

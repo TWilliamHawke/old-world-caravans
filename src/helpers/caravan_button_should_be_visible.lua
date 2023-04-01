@@ -7,6 +7,10 @@ function Old_world_caravans:caravan_button_should_be_visible(faction)
 
   if faction_sc == "wh3_main_sc_cth_cathay" then return true end
 
+  if self.other_mods[faction_name] and cm:get_campaign_name() == "wh3_main_chaos" then
+    return false
+  end
+
   local access_on_first_turn = self.access_to_caravans_on_first_turn[faction_name];
 
   if access_on_first_turn == true then

@@ -310,11 +310,9 @@ random_army_manager:add_mandatory_unit("greenskin_medium", "wh_main_grn_cav_orc_
 --Events
 
 local event_table = {
-
   ["banditExtort"] =
   --returns its probability [1]
   { function(world_conditions)
-
     local bandit_threat = world_conditions["bandit_threat"];
     local probability = math.floor(bandit_threat / 10) + 3;
 
@@ -337,11 +335,9 @@ local event_table = {
     end
 
     return { probability, eventname }
-
   end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("banditExtort action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_1A";
       local caravan = caravan_handle;
@@ -416,11 +412,9 @@ local event_table = {
       cm:launch_custom_dilemma_from_builder(dilemma_builder, own_faction);
     end,
     true },
-
   ["banditAmbush"] =
   --returns its probability [1]
   { function(world_conditions)
-
     local bandit_threat = world_conditions["bandit_threat"];
     local event_region = world_conditions["event_region"];
     local enemy_faction = event_region:owning_faction();
@@ -443,11 +437,9 @@ local event_table = {
     end
 
     return { probability, eventname }
-
   end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("banditAmbush action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_2A";
       local caravan = caravan_handle;
@@ -508,11 +500,9 @@ local event_table = {
       end
     end,
     true },
-
   ["banditHungryOgres"] =
   --returns its probability [1]
   { function(world_conditions)
-
     local bandit_threat = world_conditions["bandit_threat"];
     local event_region = world_conditions["event_region"];
     local enemy_faction_name = event_region:owning_faction():name();
@@ -527,7 +517,7 @@ local event_table = {
 
     if caravan_force_unit_list:num_items() > 1 then
       random_unit = caravan_force_unit_list:item_at(cm:random_number(caravan_force_unit_list:num_items() - 1, 1)):
-          unit_key();
+      unit_key();
 
       if random_unit == "wh3_main_cth_cha_lord_caravan_master" or random_unit == "wh3_main_cth_cha_lord_magistrate_0" then
         random_unit = "NONE";
@@ -564,7 +554,6 @@ local event_table = {
   end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("banditHungryOgres action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_3";
       local caravan = caravan_handle;
@@ -587,11 +576,10 @@ local event_table = {
       function eat_unit_outcome()
         if random_unit ~= nil then
           local caravan_master_lookup = cm:char_lookup_str(caravan:caravan_force():general_character():
-            command_queue_index())
+          command_queue_index())
           cm:remove_unit_from_character(
             caravan_master_lookup,
             random_unit);
-
         else
           out("Script error - should have a unit to eat?")
         end
@@ -637,14 +625,11 @@ local event_table = {
       dilemma_builder:add_target("target_military_1", caravan:caravan_force());
 
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     true },
-
   ["genericShortcut"] =
   --returns its probability [1]
   { function(world_conditions)
-
     local eventname = "genericShortcut" .. "?";
     local probability = 2;
 
@@ -656,11 +641,9 @@ local event_table = {
     end
 
     return { probability, eventname }
-
   end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("genericShortcut action called")
       local dilemma_list = { "wh3_main_dilemma_cth_caravan_1A", "wh3_main_dilemma_cth_caravan_1B" }
       local dilemma_name = dilemma_list[cm:random_number(2, 1)];
@@ -693,8 +676,9 @@ local event_table = {
       local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
       local payload_builder = cm:create_payload();
 
-      local scout_skill = caravan_handle:caravan_master():character_details():character():bonus_values():scripted_value("caravan_scouting"
-        , "value");
+      local scout_skill = caravan_handle:caravan_master():character_details():character():bonus_values():scripted_value(
+      "caravan_scouting"
+      , "value");
       dilemma_builder:add_choice_payload("FIRST", payload_builder);
       payload_builder:clear();
 
@@ -705,14 +689,11 @@ local event_table = {
 
       out.design("Triggering dilemma:" .. dilemma_name)
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     false },
-
   ["genericCharacter"] =
   --returns its probability [1]
   { function(world_conditions)
-
     local eventname = "genericCharacter" .. "?";
 
     local probability = 1;
@@ -732,11 +713,9 @@ local event_table = {
     end
 
     return { probability, eventname }
-
   end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("genericCharacter action called")
 
       local AorB = { "A", "B" };
@@ -769,14 +748,11 @@ local event_table = {
 
       out.design("Triggering dilemma:" .. dilemma_name)
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     false },
-
   ["genericCargoReplenish"] =
   --returns its probability [1]
   { function(world_conditions)
-
     local eventname = "genericCargoReplenish" .. "?";
     local caravan_force = world_conditions["caravan"]:caravan_force();
 
@@ -787,11 +763,9 @@ local event_table = {
     end
 
     return { probability, eventname }
-
   end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("genericCargoReplenish action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_2B";
 
@@ -843,26 +817,21 @@ local event_table = {
 
       out.design("Triggering dilemma:" .. dilemma_name)
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     false },
-
   ["recruitmentChoiceA"] =
   --returns its probability [1]
-  { 
+  {
     function(world_conditions)
+      local eventname = "recruitmentChoiceA" .. "?";
+      local army_size = world_conditions["caravan"]:caravan_force():unit_list():num_items()
 
-    local eventname = "recruitmentChoiceA" .. "?";
-    local army_size = world_conditions["caravan"]:caravan_force():unit_list():num_items()
+      local probability = math.floor((20 - army_size) / 2);
 
-    local probability = math.floor((20 - army_size) / 2);
-
-    return { probability, eventname }
-
-  end,
+      return { probability, eventname }
+    end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("recruitmentChoiceA action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_4A";
 
@@ -898,27 +867,22 @@ local event_table = {
 
       out.design("Triggering dilemma:" .. dilemma_name)
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     false
-   },
-
+  },
   ["recruitmentChoiceB"] =
   --returns its probability [1]
-  { 
+  {
     function(world_conditions)
+      local eventname = "recruitmentChoiceB" .. "?";
+      local army_size = world_conditions["caravan"]:caravan_force():unit_list():num_items()
 
-    local eventname = "recruitmentChoiceB" .. "?";
-    local army_size = world_conditions["caravan"]:caravan_force():unit_list():num_items()
+      local probability = math.floor((20 - army_size) / 2);
 
-    local probability = math.floor((20 - army_size) / 2);
-
-    return { probability, eventname }
-
-  end,
+      return { probability, eventname }
+    end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("recruitmentChoiceB action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_4B";
 
@@ -954,16 +918,13 @@ local event_table = {
 
       out.design("Triggering dilemma:" .. dilemma_name)
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
-    false 
+    false
   },
-
   ["giftFromInd"] =
   --returns its probability [1]
   {
     function(world_conditions)
-
       local eventname = "giftFromInd" .. "?";
       local turn_number = cm:turn_number();
 
@@ -974,11 +935,9 @@ local event_table = {
       end
 
       return { probability, eventname }
-
     end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("giftFromInd action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_5";
 
@@ -1026,23 +985,20 @@ local event_table = {
 
       out.design("Triggering dilemma:" .. dilemma_name)
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     false
   },
-
   ["daemonIncursion"] =
   --returns its probability [1]
   {
     function(world_conditions)
-
       --Pick random unit
       local caravan_force_unit_list = world_conditions["caravan"]:caravan_force():unit_list()
 
       local random_unit = "NONE";
       if caravan_force_unit_list:num_items() > 1 then
         random_unit = caravan_force_unit_list:item_at(cm:random_number(caravan_force_unit_list:num_items() - 1, 0)):
-            unit_key();
+        unit_key();
 
         if random_unit == "wh3_main_cth_cha_lord_caravan_master" then
           random_unit = "NONE";
@@ -1072,7 +1028,6 @@ local event_table = {
     end,
     --enacts everything for the event: creates battle, fires dilemma etc. [2]
     function(event_conditions, caravan_handle)
-
       out.design("daemonIncursion action called")
       local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_4";
       local caravan = caravan_handle;
@@ -1129,11 +1084,9 @@ local event_table = {
       dilemma_builder:add_target("target_military_1", caravan:caravan_force());
 
       cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_handle:caravan_force():faction());
-
     end,
     true
   }
-
 };
 
 
@@ -1179,10 +1132,6 @@ core:add_listener(
     return context:faction():is_human() and cm:get_campaign_name() == "wh3_main_chaos";
   end,
   function(context)
-    out.design("Roll for Ivory Road Event");
-    if ivory_road_event_handler(context) == false then
-      out.design("Caravan not valid for event");
-    end
   end,
   true
 );
@@ -1194,8 +1143,6 @@ core:add_listener(
     return cm:get_campaign_name() == "wh3_main_chaos";
   end,
   function(context)
-    out.design("Handle a waylaid caravan");
-    waylaid_caravan_handler(context);
   end,
   true
 );
@@ -1205,12 +1152,6 @@ core:add_listener(
   "CaravanRecruited",
   true,
   function(context)
-    out.design("*** Caravan recruited ***");
-    if context:caravan():caravan_force():unit_list():num_items() < 2 then
-      local caravan = context:caravan();
-      add_inital_force(caravan);
-      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true)
-    end
   end,
   true
 );
@@ -1220,10 +1161,6 @@ core:add_listener(
   "CaravanSpawned",
   true,
   function(context)
-    out.design("*** Caravan deployed ***");
-    local caravan = context:caravan();
-    add_effectbundle(caravan);
-    cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
   end,
   true
 );
@@ -1234,57 +1171,6 @@ core:add_listener(
   true,
   ---@param context CaravanCompleted
   function(context)
-    -- store a total value of goods moved for this faction and then trigger an onwards event, narrative scripts use this
-    local node = context:complete_position():node()
-    local region_name = node:region_key()
-    local region_owner = node:region_data():region():owning_faction();
-
-    out.design("Caravan (player) arrived in: " .. region_name)
-
-    local faction = context:faction()
-    local faction_key = faction:name();
-    local prev_total_goods_moved = cm:get_saved_value("caravan_goods_moved_" .. faction_key) or 0;
-    local num_caravans_completed = cm:get_saved_value("caravans_completed_" .. faction_key) or 0;
-    cm:set_saved_value("caravan_goods_moved_" .. faction_key, prev_total_goods_moved + context:cargo());
-    cm:set_saved_value("caravans_completed_" .. faction_key, num_caravans_completed + 1);
-    core:trigger_event("ScriptEventCaravanCompleted", context);
-
-    if faction:is_human() and faction:subculture() == "wh3_main_sc_cth_cathay" then
-      reward_item_check(faction, region_name, context:caravan_master())
-    end
-
-    if not region_owner:is_null_interface() then
-
-      local region_owner_key = region_owner:name()
-      out.design("Inserting a diplomatic event for caravan arriving. Factions: " .. region_owner_key .. ", " ..
-        faction_key)
-      cm:cai_insert_caravan_diplomatic_event(region_owner_key, faction_key)
-
-      if region_owner:is_human() and faction_key ~= region_owner_key then
-        cm:trigger_incident_with_targets(
-          region_owner:command_queue_index(),
-          "wh3_main_cth_caravan_completed_received",
-          0,
-          0,
-          context:caravan_master():character():command_queue_index(),
-          0,
-          0,
-          0
-        )
-      end
-
-    end
-
-    --Reduce demand
-    local cargo = context:caravan():cargo()
-    local value = math.floor(-cargo / 18);
-    
-    if not faction:is_human() then
-      value = value / 3;
-    end
-    out.design("Reduce " .. region_name)
-
-    cm:callback(function() adjust_end_node_value(region_name, value, "add") end, 5);
 
   end,
   true
@@ -1307,24 +1193,6 @@ core:add_listener(
     return not context:caravan():is_null_interface();
   end,
   function(context)
-    --Heal Lord
-    local caravan_force_list = context:caravan_master():character():military_force():unit_list();
-    local unit = nil;
-    for i = 0, caravan_force_list:num_items() - 1 do
-      unit = caravan_force_list:item_at(i);
-      if unit:unit_key() == "wh3_main_cth_cha_lord_caravan_master" then
-        cm:set_unit_hp_to_unary_of_maximum(unit, 1);
-      end
-    end
-    --Spread out caravans
-    local caravan_lookup = cm:char_lookup_str(context:caravan():caravan_force():general_character():command_queue_index())
-    local x, y = cm:find_valid_spawn_location_for_character_from_character(
-      context:faction():name(),
-      caravan_lookup,
-      true,
-      cm:random_number(15, 5)
-    )
-    cm:teleport_to(caravan_lookup, x, y);
   end,
   true
 );
@@ -1392,7 +1260,6 @@ core:add_listener(
 --Functions
 
 function ivory_road_event_handler(context)
-
   --package up some world state
   --generate an event
 
@@ -1443,7 +1310,8 @@ function ivory_road_event_handler(context)
   end
 
 
-  local bandit_threat = math.floor(cm:model():world():caravans_system():total_banditry_for_regions_by_key(bandit_list_of_regions)
+  local bandit_threat = math.floor(cm:model():world():caravans_system():total_banditry_for_regions_by_key(
+    bandit_list_of_regions)
     / num_regions);
   out.design("Average bandit threat: " .. tostring(bandit_threat));
 
@@ -1471,13 +1339,9 @@ function ivory_road_event_handler(context)
   elseif is_battle == nil and contextual_event == nil then
     out.design("No caravan event this turn");
   end
-
-
-
 end
 
 function generate_event(conditions)
-
   --look throught the events table and create a table for weighted roll
   --pick one and return the event name
 
@@ -1487,7 +1351,6 @@ function generate_event(conditions)
 
   --build table for weighted roll
   for key, val in pairs(event_table) do
-
     i = i + 1;
 
     --Returns the probability of the event
@@ -1503,7 +1366,6 @@ function generate_event(conditions)
 
     out.design("Adding " .. name_args .. " with probability: " .. prob)
     weighted_random_list[i] = { total_probability, name_args, is_battle }
-
   end
 
   --check all the probabilites until matched
@@ -1517,7 +1379,6 @@ function generate_event(conditions)
   out.design("********")
   for j = 1, i do
     if weighted_random_list[j][1] >= random_int then
-
       --out.design(tostring(weighted_random_list[j][1]).." is greater than "..tostring(random_int))
       contextual_event_name = weighted_random_list[j][2];
       is_battle = weighted_random_list[j][3];
@@ -1533,7 +1394,6 @@ function generate_event(conditions)
 end
 
 function waylaid_caravan_handler(context)
-
   local event_name_formatted = context:context();
   local caravan_handle = context:caravan();
 
@@ -1544,11 +1404,9 @@ function waylaid_caravan_handler(context)
 
   --call the action side of the event
   event_table[event_key][2](event_name_formatted, caravan_handle);
-
 end
 
 function read_out_event_key(event_string)
-
   t = {}
   s = event_string --format is "banditAttack?first*second*third*"
   for v in string.gmatch(s, "(%a+)?") do
@@ -1559,7 +1417,6 @@ function read_out_event_key(event_string)
 end
 
 function read_out_event_params(event_string, num_args)
-
   local arg_table = {};
 
   local i = 0;
@@ -1568,14 +1425,12 @@ function read_out_event_params(event_string, num_args)
 
     local substring = v:sub(1, #v - 1)
     arg_table[i] = substring;
-
   end
 
   return (arg_table)
 end
 
 function find_battle_coords_from_region(faction_key, region_key)
-
   local x, y = cm:find_valid_spawn_location_for_character_from_settlement(
     faction_key,
     region_key,
@@ -1585,7 +1440,6 @@ function find_battle_coords_from_region(faction_key, region_key)
   );
 
   if cm:get_campaign_name() == "wh3_main_chaos" then
-
     local no_spawn_list = build_list_of_nodes();
 
     if is_pair_in_list({ x, y }, no_spawn_list) then
@@ -1597,14 +1451,12 @@ function find_battle_coords_from_region(faction_key, region_key)
         30
       );
     end
-
   end
 
   return x, y
 end
 
 function spawn_caravan_battle_force(caravan, attacking_force, region, is_ambush, immediate_battle, optional_faction)
-
   out.design("Battle created");
 
   local enemy_faction = optional_faction or "wh3_main_ogr_ogre_kingdoms_qb1"
@@ -1695,15 +1547,14 @@ end
 --Handles battles for dilemmas
 
 function attach_battle_to_dilemma(
-   dilemma_name,
-   caravan,
-   attacking_force,
-   is_ambush,
-   target_faction,
-   enemy_faction,
-   target_region,
-   custom_option)
-
+  dilemma_name,
+  caravan,
+  attacking_force,
+  is_ambush,
+  target_faction,
+  enemy_faction,
+  target_region,
+  custom_option)
   --Create the enemy force
   local enemy_force_cqi = nil;
   local x = nil;
@@ -1745,8 +1596,6 @@ function attach_battle_to_dilemma(
         out.design("Complete the carvan move");
         cm:move_caravan(caravan)
       end
-
-
     else
       out.design("Wrong dilemma...");
     end
@@ -1769,7 +1618,6 @@ end
 
 --Generate first so can be used as target
 function generate_character()
-
   out.design("Generate a hero/agent + trait")
   --Pick a unit type
   local heroes = { "wizard", "engineer" };
@@ -1785,7 +1633,6 @@ function generate_character()
 end
 
 function add_character_to_caravan(caravan, hero_pick, trait_pick)
-
   out.design("Attempt to spawn and embed hero/agent")
 
   local force = caravan:caravan_force();
@@ -1827,9 +1674,7 @@ function initalise_bandity()
 end
 
 ]]
-
 function add_inital_force(caravan)
-
   out.design("Try to add inital force to caravan, based on trait")
 
   local force_cqi = caravan:caravan_force():command_queue_index();
@@ -1906,12 +1751,11 @@ function recruit_starter_caravan()
   for i = 0, faction_list:num_items() - 1 do
     local faction = faction_list:item_at(i)
     if faction:is_human() and faction:subculture() == "wh3_main_sc_cth_cathay" then
-
       out.design("Passed tests")
       out.design(faction:name())
 
       local available_caravans =
-      model:world():caravans_system():faction_caravans(faction):available_caravan_recruitment_items();
+          model:world():caravans_system():faction_caravans(faction):available_caravan_recruitment_items();
 
       if available_caravans:is_empty() then
         out.design("No caravans in the pool! Needs one at this point to start the player with one")
@@ -1945,11 +1789,9 @@ function recruit_starter_caravan()
       end
     end
   end
-
 end
 
 function initalise_end_node_values()
-
   --randomise the end node values
   local end_nodes = {}
 
@@ -1973,23 +1815,23 @@ function initalise_end_node_values()
       ["wh3_main_combi_region_monument_of_the_moon"] = cm:random_number(150, 60),
       ["wh3_main_combi_region_temple_of_kara"]       = cm:random_number(150, 60),
       ["wh3_main_combi_region_magritta"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_khemri"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_vulture_mountain"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_karak_zorn"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_karak_azorn"]             = 75 - cm:random_number(50, 0),
-      ["wh3_main_combi_region_karak_krakaten"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_karak_dum"]             = 75 - cm:random_number(50, 0),
-      ["wh3_main_combi_region_lahmia"]             = 75 - cm:random_number(50, 0),
-      ["wh3_main_combi_region_massif_orcal"]             = 75 - cm:random_number(50, 0),
-      ["wh3_main_combi_region_bordeleaux"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_karak_ziflin"]             = cm:random_number(150, 60),
-      ["wh3_main_combi_region_sudenburg"] = cm:random_number(150, 60),
-      ["wh3_main_combi_region_couronne"] = cm:random_number(150, 60),
-      ["wh3_main_combi_region_castle_carcassonne"] = cm:random_number(150, 60),
-      ["wh3_main_combi_region_waterfall_palace"] = 75 - cm:random_number(50, 0),
-      ["wh3_main_combi_region_copher"] = cm:random_number(150, 60),
-      ["wh3_main_combi_region_zandri"] = cm:random_number(150, 60),
-      ["wh3_main_combi_region_temple_of_tlencan"] = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_khemri"]               = cm:random_number(150, 60),
+      ["wh3_main_combi_region_vulture_mountain"]     = cm:random_number(150, 60),
+      ["wh3_main_combi_region_karak_zorn"]           = cm:random_number(150, 60),
+      ["wh3_main_combi_region_karak_azorn"]          = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_karak_krakaten"]       = cm:random_number(150, 60),
+      ["wh3_main_combi_region_karak_dum"]            = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_lahmia"]               = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_massif_orcal"]         = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_bordeleaux"]           = cm:random_number(150, 60),
+      ["wh3_main_combi_region_karak_ziflin"]         = cm:random_number(150, 60),
+      ["wh3_main_combi_region_sudenburg"]            = cm:random_number(150, 60),
+      ["wh3_main_combi_region_couronne"]             = cm:random_number(150, 60),
+      ["wh3_main_combi_region_castle_carcassonne"]   = cm:random_number(150, 60),
+      ["wh3_main_combi_region_waterfall_palace"]     = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_copher"]               = cm:random_number(150, 60),
+      ["wh3_main_combi_region_zandri"]               = cm:random_number(150, 60),
+      ["wh3_main_combi_region_temple_of_tlencan"]    = 75 - cm:random_number(50, 0),
     };
   elseif cm:get_campaign_name() == "wh3_main_chaos" then
     end_nodes = {
@@ -2024,7 +1866,6 @@ function adjust_end_node_values_for_demand()
 end
 
 function adjust_end_node_value(region_name, value, operation)
-
   local region = cm:get_region(region_name);
   local cargo_value_bundle = cm:create_new_custom_effect_bundle("wh3_main_ivory_road_end_node_value");
   cargo_value_bundle:set_duration(0);
@@ -2036,7 +1877,6 @@ function adjust_end_node_value(region_name, value, operation)
     temp_end_nodes[region_name] = value;
     cm:set_saved_value("ivory_road_demand", temp_end_nodes);
     out.design("Change trade to " .. value .. " demand for caravans in " .. region_name)
-
   elseif operation == "add" then
     local temp_end_nodes = safe_get_saved_value_ivory_road_demand()
     local old_value = temp_end_nodes[region_name] or 0;
@@ -2065,7 +1905,6 @@ function adjust_end_node_value(region_name, value, operation)
 end
 
 function safe_get_saved_value_ivory_road_demand()
-
   local ivory_road_demand = cm:get_saved_value("ivory_road_demand");
 
   if ivory_road_demand ~= nil then
@@ -2082,7 +1921,6 @@ function safe_get_saved_value_ivory_road_demand()
 end
 
 function generate_attackers(bandit_threat, force_name)
-
   local difficulty = cm:get_difficulty(false);
   local turn_number = cm:turn_number();
 
@@ -2130,8 +1968,8 @@ function is_pair_in_list(pair, list)
 end
 
 function build_list_of_nodes()
-
-  local teleporter = cm:model():world():teleportation_network_system():lookup_network("wh3_main_teleportation_network_chaos");
+  local teleporter = cm:model():world():teleportation_network_system():lookup_network(
+  "wh3_main_teleportation_network_chaos");
 
   local open_nodes = teleporter:open_nodes()
   local closed_nodes = teleporter:closed_nodes()
@@ -2140,13 +1978,15 @@ function build_list_of_nodes()
   local n = 0
   local x, y;
 
-  for i = 0, closed_nodes:num_items() - 1 do n = n + 1;
-  x, y = closed_nodes:item_at(i):position();
-  all_nodes[n] = { x, y };
+  for i = 0, closed_nodes:num_items() - 1 do
+    n = n + 1;
+    x, y = closed_nodes:item_at(i):position();
+    all_nodes[n] = { x, y };
   end
-  for i = 0, open_nodes:num_items() - 1 do n = n + 1;
-  x, y = open_nodes:item_at(i):position();
-  all_nodes[n] = { x, y };
+  for i = 0, open_nodes:num_items() - 1 do
+    n = n + 1;
+    x, y = open_nodes:item_at(i):position();
+    all_nodes[n] = { x, y };
   end
 
 
@@ -2154,12 +1994,10 @@ function build_list_of_nodes()
 end
 
 function reward_item_check(faction, region_key, caravan_master)
-
   local reward = item_data[region_key]
   if not reward then return end
 
   if not faction:ancillary_exists(reward) then
-
     cm:trigger_incident_with_targets(
       faction:command_queue_index(),
       region_to_incident[region_key],

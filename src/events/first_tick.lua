@@ -1,7 +1,11 @@
 function Old_world_caravans:add_first_tick_callbacks()
   cm:add_first_tick_callback_new(
     function()
-      self:recruit_start_caravan();
+      local faction_list = cm:model():world():faction_list();
+      for i = 0, faction_list:num_items() - 1 do
+        local faction = faction_list:item_at(i)
+        self:recruit_start_caravan(faction);
+      end
       cm:set_saved_value(self.is_init_save_key, true);
 
       if vfs.exists("text/twill_old_world_caravans_brt.loc") then

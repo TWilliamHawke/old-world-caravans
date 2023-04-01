@@ -1,4 +1,7 @@
 Old_world_caravans.access_to_caravans_on_first_turn = {
+  mixer_teb_border_princes = true,
+  mixer_teb_estalia = true,
+  mixer_teb_tilea = true,
   wh_main_dwf_dwarfs = true,
   wh_main_dwf_karak_azul = true,
   wh_main_dwf_karak_kadrin = true,
