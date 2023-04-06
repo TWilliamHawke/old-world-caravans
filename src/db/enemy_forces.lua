@@ -84,9 +84,12 @@ Old_world_caravans.enemy_forces = {
       wh_main_grn_inf_night_goblins = 1,
     },
     {
+      wh_main_grn_inf_goblin_archers = 1,
+      wh_main_grn_inf_orc_arrer_boyz = 1,
+      wh_main_grn_inf_orc_big_uns = 2,
+    },
+    {
       wh_main_grn_mon_trolls = 6,
-      wh_main_grn_inf_goblin_archers = 3,
-      wh_main_grn_inf_orc_arrer_boyz = 3,
       wh_main_grn_cav_goblin_wolf_chariot = 5,
       wh_main_grn_cav_goblin_wolf_riders_0 = 1,
       wh_main_grn_cav_forest_goblin_spider_riders_0 = 1,

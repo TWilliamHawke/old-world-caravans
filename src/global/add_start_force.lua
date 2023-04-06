@@ -1,11 +1,13 @@
 ---comment
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 function Old_world_caravans:add_start_force(caravan)
-  local force_list = self.start_units.brt_caravan_skill_innate_empire;
+  local force_list = self.start_units.wh_main_brt_bretonnia.brt_caravan_skill_innate_empire;
   local caravan_master = caravan:caravan_force():general_character();
   local faction = caravan_master:faction();
+  local culture = faction:culture();
+  local units_list = self.start_units[culture] or {}
 
-  for skill, units in pairs(self.start_units) do
+  for skill, units in pairs(units_list) do
     if caravan_master:has_skill(skill) then
       force_list = units;
       break
@@ -28,5 +30,8 @@ function Old_world_caravans:add_start_force(caravan)
   elseif faction:has_technology("wh_dlc07_tech_brt_economy_other_draft") then
     cm:grant_unit_to_character(lord_str, "owc_dlc07_brt_inf_foot_squires_0");
     cm:grant_unit_to_character(lord_str, "owc_dlc07_brt_inf_foot_squires_0");
+  elseif faction:has_technology("teb_tech_exped_vets") then
+    cm:grant_unit_to_character(lord_str, "teb_republican_guard");
+    cm:grant_unit_to_character(lord_str, "teb_republican_guard");
   end
 end
