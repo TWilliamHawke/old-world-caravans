@@ -1,7 +1,7 @@
 ---@param faction FACTION_SCRIPT_INTERFACE
 function Old_world_caravans:caravan_button_should_be_visible(faction)
   if not faction:is_human() then return false end
-  if self:faction_is_modded(faction) then return end
+  if self:faction_is_modded(faction) then return true end
   local faction_name = faction:name();
   local faction_sc = faction:subculture();
 

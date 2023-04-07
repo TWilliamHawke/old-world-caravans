@@ -103,5 +103,25 @@ Old_world_caravans.awards = {
     ["wh3_main_chaos_region_ind"] = "wh3_main_anc_caravan_bejewelled_dagger",
     ["wh3_main_chaos_region_tilea"] = "wh3_main_anc_caravan_grant_of_land",
     ["wh3_main_chaos_region_estalia"] = "wh3_main_anc_caravan_spy_in_court"
+  },
+  owc_teb_cathay = {
+    ["wh3_main_combi_region_frozen_landing"] = "owc_main_anc_caravan_frost_wyrm_skull",
+    ["wh3_main_combi_region_altdorf"] = "owc_main_anc_caravan_luminark_lens",
+    ["wh3_main_combi_region_marienburg"] = "owc_main_anc_caravan_warrant_of_trade",
+    ["wh3_main_combi_region_erengrad"] = "owc_main_anc_caravan_gryphon_legion_lance",
+    ["wh3_main_combi_region_castle_drakenhof"]    = "owc_main_anc_caravan_von_carstein_blade",
+    ["wh3_main_combi_region_myrmidens"] = "owc_main_anc_caravan_grant_of_land",
+    ["wh3_main_combi_region_karaz_a_karak"] = "owc_main_anc_caravan_statue_of_zharr",
+    ["wh3_main_combi_region_estalia"] = "owc_main_anc_caravan_spy_in_court",
+    ["wh3_main_combi_region_Ind"] = "owc_main_anc_caravan_bejewelled_dagger",
+    ["wh3_main_combi_region_shattered_stone_bay"] = "owc_main_anc_caravan_sky_titan_relic",
+    ["wh3_main_combi_region_novchozy"] = "owc_main_anc_caravan_frozen_pendant",
+    ["wh3_main_combi_region_couronne"] = "owc_dlc07_anc_magic_standard_errantry_banner",
+    ["wh3_main_combi_region_castle_carcassonne"] = "owc_anc_follower_strange_bretonnian_peasant_teb",
+    ["wh3_main_combi_region_khemri"] = "owc_dlc09_anc_talisman_collar_of_shakkara",
+    ["wh3_main_combi_region_miragliano"] = "owc_main_anc_follower_empire_estalian_diestro",
+    ["wh3_main_combi_region_kraka_drak"] = "owc_main_anc_rune_master_rune_of_valaya",
+    ["wh3_main_combi_region_kings_glade"] = "owc_dlc16_anc_armour_dragon_cuirass_3",
+    ["wh3_main_combi_region_lothern"] = "owc_main_anc_talisman_diamond_guardian_phoenix",
   }
 }
