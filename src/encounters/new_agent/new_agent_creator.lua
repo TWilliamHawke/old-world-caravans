@@ -21,7 +21,7 @@ function Old_world_caravans:new_agent_creator(context)
   if #hero_list == 0 then return 0 end
 
   if not cm:military_force_contains_unit_type_from_list(caravan_force, hero_list) then
-    probability = 8;
+    probability = 5;
   end
 
   ---@param region REGION_SCRIPT_INTERFACE

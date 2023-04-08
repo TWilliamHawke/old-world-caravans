@@ -2,6 +2,8 @@
 function Old_world_caravans:local_trouble_handler(context)
   local caravan = context:caravan();
   local caravan_culture = context:faction():subculture();
+  local list_of_regions = self:get_regions_list(context) or {};
+  local bandit_threat = self:calculate_bandit_threat(list_of_regions);
 
   local function get_weight_for_node(region)
     local region_culture = self:get_culture_of_node(region);
@@ -31,9 +33,8 @@ function Old_world_caravans:local_trouble_handler(context)
     return val[1];
   end) or culture_from;
 
-  local target_region = weight_table[enemy_culture][2];
-  local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(target_region);
-  local encounter_diff = self:get_event_difficulty(banditry_level, caravan);
+  local target_region = weight_table[enemy_culture][2] or region_from:name();
+  local encounter_diff = self:get_event_difficulty(bandit_threat, caravan);
 
   self:log("selected culture is "..enemy_culture)
 

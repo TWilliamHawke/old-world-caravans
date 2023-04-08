@@ -104,6 +104,10 @@ Old_world_caravans.threats = {
     wh_dlc03_sc_bst_beastmen = 3,
     wh_main_sc_grn_greenskins = 1,
   },
+  ["wh3_main_combi_region_fort_soll"] = {
+    wh2_main_sc_skv_skaven = 2,
+    wh_main_sc_grn_greenskins = 3,
+  },
   ["wh3_main_combi_region_ubersreik"] = {
     wh_dlc03_sc_bst_beastmen = 2,
     wh_main_sc_grn_greenskins = 1,
@@ -526,6 +530,11 @@ Old_world_caravans.threats = {
     wh3_main_sc_ogr_ogre_kingdoms = 2,
     wh_dlc03_sc_bst_beastmen = 2,
   },
+  ["wh3_main_combi_region_ruins_end"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh_dlc03_sc_bst_beastmen = 2,
+  },
   ["wh3_main_combi_region_skrap_towers"] = {
     wh_dlc03_sc_bst_beastmen = 2,
     wh2_main_sc_lzd_lizardmen = 3,
@@ -832,12 +841,21 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_monument_of_the_moon"] = {
     wh2_main_sc_lzd_lizardmen = 3,
   },
+  ["wh3_main_combi_region_the_star_tower"] = {
+    wh2_main_sc_lzd_lizardmen = 2,
+    wh2_dlc11_sc_cst_vampire_coast = 2,
+  },
   --Ulthuan
   ["wh3_main_combi_region_shrine_of_khaine"] = {
     wh2_main_sc_def_dark_elves = 2,
   },
   ["wh3_main_combi_region_lothern"] = {
     wh2_dlc11_sc_cst_vampire_coast = 1,
+  },
+  ["wh3_main_combi_region_tor_yvresse"] = {
+    wh2_dlc11_sc_cst_vampire_coast = 1,
+    wh_main_sc_grn_greenskins = 1,
+    wh2_main_sc_def_dark_elves = 1,
   },
   ["wh3_main_combi_region_cairn_thel"] = {
     wh2_dlc11_sc_cst_vampire_coast = 1,
@@ -884,6 +902,16 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_khemri"] = {
     wh2_dlc09_sc_tmb_tomb_kings = 3,
+  },
+  ["wh3_main_combi_region_lashiek"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 2,
+  },
+  ["wh3_main_combi_region_wizard_caliphs_palace"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 2,
+  },
+  ["wh3_main_combi_region_black_pyramid_of_nagash"] = {
+    wh2_dlc09_sc_tmb_tomb_kings = 2,
+    wh_main_sc_vmp_vampire_counts = 2,
   },
   ["wh3_main_combi_region_lahmia"] = {
     wh2_dlc09_sc_tmb_tomb_kings = 2,

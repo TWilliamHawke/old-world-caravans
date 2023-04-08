@@ -39,6 +39,7 @@ function Old_world_caravans:add_cleanup_listeners()
 
       self:cleanup_encounter_for_faction(defender:name());
 
+      --obsolete
       if cm:get_saved_value(self.encounter_faction_save_key) then
         self:cleanup_encounter();
       end

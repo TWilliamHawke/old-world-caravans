@@ -32,4 +32,12 @@ Old_world_caravans.faction_to_caravan_master = {
   wh3_main_emp_cult_of_sigmar = "wh_main_emp_caravan_master",
   wh3_main_dwf_the_ancestral_throng = "wh_main_dwf_caravan_master",
   wh2_dlc17_dwf_thorek_ironbrow = "wh_main_dwf_caravan_master",
+  mixer_teb_border_princes = "owc_teb_caravan_master",
+  mixer_teb_estalia = "owc_teb_caravan_master",
+  mixer_teb_tilea = "owc_teb_caravan_master",
+  mixer_teb_catrazza = "owc_teb_caravan_master",
+  mixer_teb_colombo = "owc_teb_caravan_master",
+  mixer_teb_bilbali = "owc_teb_caravan_master",
+  mixer_teb_new_world_colonies = "owc_teb_caravan_master",
+
 }

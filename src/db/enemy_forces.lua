@@ -657,9 +657,7 @@ Old_world_caravans.enemy_forces = {
     general = "wh2_main_skv_warlord",
     filler_units_mult = 0.9,
     filler_units = {
-      wh2_main_skv_inf_clanrat_spearmen_0 = 1,
       wh2_main_skv_inf_clanrat_spearmen_1 = 1,
-      wh2_main_skv_inf_clanrats_0 = 1,
       wh2_main_skv_inf_clanrats_1 = 1,
     },
     {
@@ -1052,9 +1050,9 @@ Old_world_caravans.enemy_forces = {
   },
   wh_main_sc_emp_empire_1 = {
     filler_units = {
-    },
       wh_main_emp_inf_swordsmen = 3,
       wh_dlc04_emp_inf_flagellants_0 = 1,
+    },
     {
       wh_main_emp_inf_spearmen_0 = 1,
       wh_main_emp_inf_spearmen_1 = 1,

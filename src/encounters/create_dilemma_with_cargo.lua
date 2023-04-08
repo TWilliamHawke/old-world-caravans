@@ -9,6 +9,13 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
   local character = context:caravan_master():character()
 
   self:spy_on_dilemmas(caravan, function()
+    local enemy_force = cm:get_military_force_by_cqi(enemy_cqi);
+    if not enemy_force or enemy_force:is_null_interface() then
+      self:log("enemy army not found! cancel the encounter")
+      cm:set_saved_value(self.encounter_was_canceled_key, true)
+      return
+    end
+
     self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, false, function()
       cm:set_caravan_cargo(caravan, cargo_amount - 200);
       core:trigger_custom_event("ScriptEventOwcLoseCargo", {

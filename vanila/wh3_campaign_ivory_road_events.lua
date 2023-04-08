@@ -677,8 +677,8 @@ local event_table = {
       local payload_builder = cm:create_payload();
 
       local scout_skill = caravan_handle:caravan_master():character_details():character():bonus_values():scripted_value(
-      "caravan_scouting"
-      , "value");
+        "caravan_scouting"
+        , "value");
       dilemma_builder:add_choice_payload("FIRST", payload_builder);
       payload_builder:clear();
 
@@ -1311,7 +1311,7 @@ function ivory_road_event_handler(context)
 
 
   local bandit_threat = math.floor(cm:model():world():caravans_system():total_banditry_for_regions_by_key(
-    bandit_list_of_regions)
+      bandit_list_of_regions)
     / num_regions);
   out.design("Average bandit threat: " .. tostring(bandit_threat));
 
@@ -1832,6 +1832,9 @@ function initalise_end_node_values()
       ["wh3_main_combi_region_copher"]               = cm:random_number(150, 60),
       ["wh3_main_combi_region_zandri"]               = cm:random_number(150, 60),
       ["wh3_main_combi_region_temple_of_tlencan"]    = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_the_star_tower"]       = 75 - cm:random_number(50, 0),
+      ["wh3_main_combi_region_shang_yang"]           = cm:random_number(150, 60),
+      ["wh3_main_combi_region_mousillon"]            = 75 - cm:random_number(50, 0),
     };
   elseif cm:get_campaign_name() == "wh3_main_chaos" then
     end_nodes = {
@@ -1969,7 +1972,7 @@ end
 
 function build_list_of_nodes()
   local teleporter = cm:model():world():teleportation_network_system():lookup_network(
-  "wh3_main_teleportation_network_chaos");
+    "wh3_main_teleportation_network_chaos");
 
   local open_nodes = teleporter:open_nodes()
   local closed_nodes = teleporter:closed_nodes()

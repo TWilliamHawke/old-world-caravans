@@ -29,7 +29,7 @@ function Old_world_caravans:get_event_difficulty(bandit_threat, caravan)
     if not self.scale_difficulty_strenght then return 1 end
     local caravan_size = caravan:caravan_force():unit_list():num_items();
 
-    if cm:random_number(5, 1) <= caravan_size - 14 then
+    if cm:random_number(4, 1) <= caravan_size - 14 then
       return 2;
     else
       return 1;

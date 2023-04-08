@@ -8,4 +8,5 @@ Old_world_caravans.culture_to_agent_subtype = {
   wh2_main_sc_hef_high_elves = "wh2_main_hef_cha_noble_0",
   wh_dlc05_sc_wef_wood_elves = "wh2_twa02_wef_cha_glade_captain_0",
   wh2_main_sc_lzd_lizardmen = "wh2_main_lzd_cha_saurus_scar_veteran_0",
+  mixer_teb_southern_realms = "teb_duellist_hero",
 }

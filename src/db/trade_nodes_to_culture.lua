@@ -107,4 +107,13 @@ Old_world_caravans.trade_nodes_to_culture = {
   ["wh3_main_combi_region_castle_artois"] = "wh_main_sc_brt_bretonnia",
   ["wh3_main_combi_region_copher"] = "wh_main_sc_brt_bretonnia",
   ["wh3_main_combi_region_waterfall_palace"] = "wh_dlc05_sc_wef_wood_elves",
+  ["wh3_main_combi_region_verdanos"] = "wh_main_sc_teb_teb",
+  ["wh3_main_combi_region_black_tower_of_arkhan"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_wizard_caliphs_palace"] = "wh_main_sc_brt_bretonnia",
+  ["wh3_main_combi_region_the_star_tower"] = "wh_main_sc_teb_teb",
+  ["wh3_main_combi_region_tor_yvresse"] = "wh2_main_sc_hef_high_elves",
+  ["wh3_main_combi_region_kappelburg"] = "wh_main_sc_emp_empire",
+  ["wh3_main_combi_region_gronti_mingol"] = "wh_main_sc_dwf_dwarfs",
+  ["wh3_main_combi_region_skrap_towers"] = "wh3_main_sc_ogr_ogre_kingdoms",
+  ["wh3_main_combi_region_mousillon"] = "wh_main_sc_brt_bretonnia",
 }

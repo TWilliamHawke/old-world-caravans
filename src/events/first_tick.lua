@@ -12,6 +12,11 @@ function Old_world_caravans:add_first_tick_callbacks()
         self:log("bretonnia init")
         cm:set_saved_value(self.is_init_save_key .. "brt", true);
       end
+
+      if vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
+        self:log("southern realms init")
+        cm:set_saved_value(self.is_init_save_key .. "teb", true);
+      end
     end
   );
 
@@ -31,31 +36,18 @@ function Old_world_caravans:add_first_tick_callbacks()
       self:set_starting_endpoints_values();
 
       if not cm:get_saved_value(self.is_init_save_key) then
-        local human_factions = cm:get_human_factions();
-
-        for i = 1, #human_factions do
-          self:unlock_caravan_recruitment(human_factions[i]);
-        end
+        self:unlock_caravans_for_suculture("wh_main_sc_emp_empire", "emp")
+        self:unlock_caravans_for_suculture("wh_main_sc_dwf_dwarfs", "dwf")
 
         cm:set_saved_value(self.is_init_save_key, true);
-        if vfs.exists("text/twill_old_world_caravans_brt.loc") then
-          cm:set_saved_value(self.is_init_save_key .. "brt", true);
-        end
-        return
       end
 
-      if vfs.exists("text/twill_old_world_caravans_brt.loc") and not cm:get_saved_value(self.is_init_save_key .. "brt") then
-        local human_factions = cm:get_human_factions();
+      if vfs.exists("text/twill_old_world_caravans_brt.loc") then
+        self:unlock_caravans_for_suculture("wh_main_sc_brt_bretonnia", "brt")
+      end
 
-        for i = 1, #human_factions do
-          local faction = cm:get_faction(human_factions[i])
-          if faction and faction:subculture() == "wh_main_sc_brt_bretonnia" then
-            self:unlock_caravan_recruitment(human_factions[i]);
-          end
-        end
-
-        cm:set_saved_value(self.is_init_save_key .. "brt", true);
-        return
+      if vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
+        self:unlock_caravans_for_suculture("mixer_teb_southern_realms", "teb")
       end
     end
   );

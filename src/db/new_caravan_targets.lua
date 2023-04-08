@@ -26,5 +26,8 @@ Old_world_caravans.new_caravan_targets = {
   "wh3_main_combi_region_waterfall_palace",
   "wh3_main_combi_region_copher",
   "wh3_main_combi_region_zandri",
-  "wh3_main_combi_region_temple_of_tlencan"
+  "wh3_main_combi_region_temple_of_tlencan",
+  "wh3_main_combi_region_the_star_tower",
+  "wh3_main_combi_region_shang_yang",
+  "wh3_main_combi_region_mousillon",
 }
