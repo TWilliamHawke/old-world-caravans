@@ -137,6 +137,23 @@ function Old_world_caravans:add_caravan_listeners()
   );
 
   core:add_listener(
+    "owc_kill_ai_caravans",
+    "FactionTurnEnd",
+    ---@param context FactionTurnEnd
+    ---@return boolean
+    function(context)
+      local faction = context:faction();
+      local faction_sc = faction:subculture()
+      return not faction:is_human() and self.ai_caravans[faction_sc] == false;
+    end,
+    ---@param context FactionTurnEnd
+    function(context)
+      self:disband_all_caravans(context:faction());
+    end,
+    true
+  );
+
+  core:add_listener(
     "OWC_add_ai_effect",
     "FactionTurnStart",
     ---@param context FactionTurnStart

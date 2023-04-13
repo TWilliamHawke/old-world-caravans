@@ -38,6 +38,7 @@ function Old_world_caravans:ambush_handler(context)
     local enemy_force = cm:get_military_force_by_cqi(enemy_cqi);
     if not enemy_force or enemy_force:is_null_interface() then
       self:log("enemy army not found! cancel the encounter")
+      cm:move_caravan(caravan);
       cm:set_saved_value(self.encounter_was_canceled_key, true)
       return
     end

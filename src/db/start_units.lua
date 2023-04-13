@@ -54,8 +54,8 @@ Old_world_caravans.start_units = {
       "wh_main_emp_inf_halberdiers",
       "wh_main_emp_inf_crossbowmen",
       "wh_main_emp_inf_crossbowmen",
-      "wh3_main_ogr_inf_maneaters_0",
-      "wh3_main_ogr_inf_maneaters_1",
+      "wh3_main_ogr_inf_leadbelchers_0",
+      "wh3_main_ogr_inf_ironguts_0",
     },
     emp_caravan_skill_innate_elves = {
       "wh_main_emp_inf_swordsmen",

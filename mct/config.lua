@@ -3,7 +3,7 @@ local mct = get_mct();
 
 if not mct then return end
 
-local old_world_caravans = mct:register_mod("old_world_caravans")
+local old_world_caravans = mct:get_mod_by_key("old_world_caravans") or mct:register_mod("old_world_caravans")
 old_world_caravans:set_title("Caravans of the Old World", false)
 -- old_world_caravans:set_description(loc_prefix.."mod_desc", true)
 old_world_caravans:set_log_file_path("Old_world_caravans_log.txt")
@@ -105,6 +105,24 @@ local force_enable = old_world_caravans:add_new_option("force_enable", "checkbox
 force_enable:set_text("owc_mct_force_enable", true)
 force_enable:set_tooltip_text("owc_mct_force_enable_tooltip", true)
 
+local ai_empire_caravans = old_world_caravans:add_new_option("ai_empire_caravans", "checkbox")
+ai_empire_caravans:set_text("Caravans for Empire ai factions", false)
+ai_empire_caravans:set_default_value(true)
+
+local ai_dwarf_caravans = old_world_caravans:add_new_option("ai_dwarf_caravans", "checkbox")
+ai_dwarf_caravans:set_text("Caravans for Dwarfs ai factions", false)
+ai_dwarf_caravans:set_default_value(true)
+
+local ai_bretonnia_caravans = old_world_caravans:add_new_option("ai_bretonnia_caravans", "checkbox")
+ai_bretonnia_caravans:set_text("Caravans for Bretonnia ai factions", false)
+
+local ai_teb_caravans = old_world_caravans:add_new_option("ai_teb_caravans", "checkbox")
+ai_teb_caravans:set_text("Caravans for Southern Realms ai factions", false)
+
+if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
+  ai_teb_caravans:set_uic_visibility(false)
+end
+
 local debug_section = old_world_caravans:add_new_section("n_debug")
 debug_section:set_localised_text("Debug Section")
 
@@ -134,6 +152,7 @@ default_difficult:slider_set_min_max(1, 3)
 default_difficult:set_default_value(1)
 default_difficult:slider_set_step_size(1)
 
+
 if encounter_budget_1.set_is_global then
   encounter_budget_1:set_is_global(true);
   encounter_budget_2:set_is_global(true);
@@ -142,6 +161,10 @@ if encounter_budget_1.set_is_global then
   scale_difficulty_strenght:set_is_global(true);
   no_encounter_weight:set_is_global(true);
   force_enable:set_is_global(true);
+  ai_empire_caravans:set_is_global(true);
+  ai_bretonnia_caravans:set_is_global(true);
+  ai_dwarf_caravans:set_is_global(true);
+  ai_teb_caravans:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

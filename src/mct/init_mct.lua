@@ -17,4 +17,9 @@ function Old_world_caravans:mct_init(context)
   self.no_encounter_weight = settings.no_encounter_weight;
   self.debug_mode = settings.enable_log;
   self.force_enable = settings.force_enable;
+
+  self.ai_caravans.wh_main_sc_brt_bretonnia = settings.ai_bretonnia_caravans;
+  self.ai_caravans.wh_main_sc_emp_empire = settings.ai_empire_caravans;
+  self.ai_caravans.wh_main_sc_dwf_dwarfs = settings.ai_dwarf_caravans;
+  self.ai_caravans.mixer_teb_southern_realms = settings.ai_teb_caravans;
 end

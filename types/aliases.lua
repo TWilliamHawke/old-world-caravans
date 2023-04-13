@@ -9,8 +9,6 @@
 
 ---@alias enemy_data_callback fun() : string, string, 1|2|3
 
---TODO replace supply lines function
-
 ---@class MCT_settings
 ---@field default_enemy string
 ---@field default_encounter string
@@ -26,4 +24,8 @@
 ---@field encounter_budget_3 integer
 ---@field filler_unit_weight integer
 ---@field no_encounter_weight integer
+---@field ai_empire_caravans boolean
+---@field ai_teb_caravans boolean
+---@field ai_bretonnia_caravans boolean
+---@field ai_dwarf_caravans boolean
 

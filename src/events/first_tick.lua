@@ -7,11 +7,7 @@ function Old_world_caravans:add_first_tick_callbacks()
         self:recruit_start_caravan(faction);
       end
       cm:set_saved_value(self.is_init_save_key, true);
-
-      if vfs.exists("text/twill_old_world_caravans_brt.loc") then
-        self:log("bretonnia init")
-        cm:set_saved_value(self.is_init_save_key .. "brt", true);
-      end
+      cm:set_saved_value(self.is_init_save_key .. "brt", true);
 
       if vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
         self:log("southern realms init")
@@ -42,9 +38,7 @@ function Old_world_caravans:add_first_tick_callbacks()
         cm:set_saved_value(self.is_init_save_key, true);
       end
 
-      if vfs.exists("text/twill_old_world_caravans_brt.loc") then
-        self:unlock_caravans_for_suculture("wh_main_sc_brt_bretonnia", "brt")
-      end
+      self:unlock_caravans_for_suculture("wh_main_sc_brt_bretonnia", "brt")
 
       if vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
         self:unlock_caravans_for_suculture("mixer_teb_southern_realms", "teb")

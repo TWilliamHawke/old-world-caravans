@@ -3,7 +3,6 @@
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 ---@return 1 | 2 | 3 event_difficulty
 function Old_world_caravans:get_event_difficulty(bandit_threat, caravan)
-
   function get_event_difficulty_banditary()
     if bandit_threat > 70 then
       return 3
@@ -18,7 +17,7 @@ function Old_world_caravans:get_event_difficulty(bandit_threat, caravan)
     if not self.scale_difficulty_cargo then return 1 end
     local cargo = caravan:cargo();
 
-    if cm:random_number(6, 1) * 100 <= cargo - 1400 then
+    if cm:random_number(10, 1) * 100 <= cargo - 1400 then
       return 2;
     else
       return 1;
@@ -29,7 +28,9 @@ function Old_world_caravans:get_event_difficulty(bandit_threat, caravan)
     if not self.scale_difficulty_strenght then return 1 end
     local caravan_size = caravan:caravan_force():unit_list():num_items();
 
-    if cm:random_number(4, 1) <= caravan_size - 14 then
+    if bandit_threat > 40 and cm:random_number(3, 1) <= caravan_size - 18 then
+      return 3
+    elseif cm:random_number(4, 1) <= caravan_size - 14 then
       return 2;
     else
       return 1;

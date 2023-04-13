@@ -26,4 +26,11 @@ Old_world_caravans = {
   encounter_was_canceled_key = "owc_encounter_was_canceled",
   encounter_should_be_canceled = false,
   force_enable = false,
+  ai_caravans = {
+    wh_main_sc_emp_empire = true,
+    wh_main_sc_dwf_dwarfs = true,
+    wh3_main_sc_cth_cathay = true,
+    wh_main_sc_brt_bretonnia = false,
+    mixer_teb_southern_realms = false,
+  },
 }

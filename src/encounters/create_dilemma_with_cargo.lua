@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 ---@param context CaravanWaylaid
 ---@param dilemma_name string
 ---@param enemy_cqi number
@@ -13,6 +14,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
     if not enemy_force or enemy_force:is_null_interface() then
       self:log("enemy army not found! cancel the encounter")
       cm:set_saved_value(self.encounter_was_canceled_key, true)
+      cm:move_caravan(caravan);
       return
     end
 
