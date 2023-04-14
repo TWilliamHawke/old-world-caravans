@@ -1,12 +1,12 @@
 ---@param context CaravanWaylaid
 function Old_world_caravans:shortcut_handler(context)
-  local type = cm:random_number(2) > 1 and "A" or "B";
+  local type = cm:random_number(2, 1) > 1 and "A" or "B";
   local dilemma_name = "wh3_main_dilemma_cth_caravan_1" .. type;
   self:log("dilemma_name is "..dilemma_name)
 
   local caravan = context:caravan();
 
-  attach_battle_to_dilemma(
+  caravans:attach_battle_to_dilemma(
     dilemma_name,
     caravan,
     nil,

@@ -11,9 +11,10 @@ function Old_world_caravans:new_agent_creator(context)
   local caravan_culture = faction:subculture();
   local hero_list = {};
   local probability = 1;
+  local ignored_agent = self.culture_to_agent_subtype[caravan_culture];
 
-  for culture, agent in pairs(self.culture_to_agent_subtype) do
-    if culture ~= caravan_culture then
+  for _, agent in pairs(self.culture_to_agent_subtype) do
+    if ignored_agent ~= agent then
       table.insert(hero_list, agent)
     end
   end
@@ -30,7 +31,7 @@ function Old_world_caravans:new_agent_creator(context)
     local region_culture = self:get_culture_of_node(region);
     local agent = self.culture_to_agent_subtype[region_culture];
 
-    if not agent or region_culture == caravan_culture then
+    if not agent or ignored_agent == agent then
       return false;
     else
       return true;

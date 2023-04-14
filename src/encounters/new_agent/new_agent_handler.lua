@@ -36,7 +36,7 @@ function Old_world_caravans:new_agent_handler(context)
 
   dilemma_builder:add_target("default", caravan_force);
 
-  attach_battle_to_dilemma(dilemma_name, caravan);
+  caravans:attach_battle_to_dilemma(dilemma_name, caravan);
   core:trigger_custom_event("ScriptEventOwcNewHeroDilemma", {
     character = context:caravan_master():character()});
 

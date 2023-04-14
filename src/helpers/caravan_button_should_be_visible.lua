@@ -3,9 +3,9 @@ function Old_world_caravans:caravan_button_should_be_visible(faction)
   if not faction:is_human() then return false end
   if self:faction_is_modded(faction) then return true end
   local faction_name = faction:name();
-  local faction_sc = faction:subculture();
+  local culture = faction:culture();
 
-  if faction_sc == "wh3_main_sc_cth_cathay" then return true end
+  if not self.start_units[culture] then return true end
 
   if self.other_mods[faction_name] and cm:get_campaign_name() == "wh3_main_chaos" then
     return false

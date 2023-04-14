@@ -11,14 +11,14 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context CaravanRecruited
     function(context)
       local caravan = context:caravan();
-      local subculture = context:caravan():caravan_force():faction():subculture()
+      local culture = context:caravan():caravan_force():faction():culture()
       ---@diagnostic disable-next-line: undefined-field
       cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
 
-      if subculture ~= "wh3_main_sc_cth_cathay" then
+      if self.start_units[culture] then
         self:add_start_force(caravan);
       else
-        add_inital_force(caravan);
+        caravans:add_inital_force(caravan);
       end
     end,
     true
@@ -33,20 +33,20 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     ---@param context CaravanSpawned
     function(context)
-      if context:faction():subculture() ~= "wh3_main_sc_cth_cathay" then
+      if context:caravan():caravan_force():force_type() == "EMP_CARAVAN" then
         local caravan_force = context:caravan():caravan_force();
         self:remove_caravan_upkeep(caravan_force);
       end
 
       local caravan = context:caravan();
       cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
-      local caravan_master_lookup = cm:char_lookup_str(caravan:caravan_force():general_character():command_queue_index())
-      cm:force_character_force_into_stance(caravan_master_lookup, "MILITARY_FORCE_ACTIVE_STANCE_TYPE_FIXED_CAMP");
+      caravans:set_stance(caravan)
+      self:logCore("stance changed")
     end,
     true
   );
 
-  
+
   core:add_listener(
     "owc_caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",
@@ -56,10 +56,19 @@ function Old_world_caravans:add_caravan_listeners()
     ---comment
     ---@param context QueryShouldWaylayCaravan
     function(context)
-      if cm:get_campaign_name() ~= "wh3_main_chaos" then
+      local culture = context:faction():culture();
+      local faction_key = context:faction():name()
+
+      if self.start_units[culture] or (culture == "wh3_main_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         self:generate_caravan_encounter(context)
       else
-        ivory_road_event_handler(context)
+        if caravans.events_fired[faction_key] == nil or caravans.events_fired[faction_key] == false then
+          if caravans:event_handler(context) == false then
+            out.design("Caravan not valid for event");
+          elseif caravans.events_fired[faction_key] ~= nil then
+            caravans.events_fired[faction_key] = true
+          end
+        end
       end
       self:log("My handler for QueryShouldWaylayCaravan")
     end,
@@ -72,11 +81,14 @@ function Old_world_caravans:add_caravan_listeners()
     function(context)
       return not self:faction_is_modded(context:faction())
     end,
+    ---@param context CaravanWaylaid
     function(context)
-      if cm:get_campaign_name() ~= "wh3_main_chaos" then
+      local culture = context:faction():culture();
+
+      if self.start_units[culture] or (culture == "wh3_main_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         self:handle_caravan_encounter(context);
       else
-        waylaid_caravan_handler(context);
+        caravans:waylaid_caravan_handler(context);
       end
       self:log("My handler for CaravanWaylaid")
     end,
@@ -113,7 +125,7 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     ---@param context CaravanCompleted
     function(context)
-      self:complete_caravans(context)
+      --self:complete_caravans(context)
       local faction = context:faction()
 
       if not faction:is_human() then return end

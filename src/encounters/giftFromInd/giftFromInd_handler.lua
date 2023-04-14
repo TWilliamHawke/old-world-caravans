@@ -3,7 +3,7 @@ function Old_world_caravans:giftFromInd_handler(context)
   local dilemma_name = "wh3_main_dilemma_cth_caravan_5";
   local caravan = context:caravan();
 
-  attach_battle_to_dilemma(dilemma_name, caravan);
+  caravans:attach_battle_to_dilemma(dilemma_name, caravan);
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
 
