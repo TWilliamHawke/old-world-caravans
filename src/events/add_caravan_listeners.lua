@@ -33,7 +33,7 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     ---@param context CaravanSpawned
     function(context)
-      if context:caravan():caravan_force():force_type() == "EMP_CARAVAN" then
+      if context:caravan():caravan_force():force_type():key() == "EMP_CARAVAN" then
         local caravan_force = context:caravan():caravan_force();
         self:remove_caravan_upkeep(caravan_force);
       end
@@ -41,7 +41,6 @@ function Old_world_caravans:add_caravan_listeners()
       local caravan = context:caravan();
       cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
       caravans:set_stance(caravan)
-      self:logCore("stance changed")
     end,
     true
   );

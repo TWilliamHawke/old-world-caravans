@@ -43,26 +43,7 @@ function Old_world_caravans:ambush_handler(context)
       return
     end
 
-    self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, true, function()
-      --doesn't work properly
-      cm:remove_unit_from_character(lord_str, random_unit);
-
-      for _ = 2, #units_to_add do
-        cm:grant_unit_to_character(lord_str, random_unit);
-      end
-
-      local table_index = 1;
-      local caravan_master = cm:get_character_by_cqi(caravan_master_cqi)
-      local unit_list = caravan_master:military_force():unit_list()
-
-      for i = 0, units_count - 2 do
-        local unit = unit_list:item_at(i);
-        if unit:unit_key() == random_unit and units_to_add[table_index] then
-          cm:add_experience_to_unit(unit, units_to_add[table_index]);
-          table_index = table_index + 1;
-        end
-      end
-    end);
+    self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, true, function() end);
 
     self:log("battle has attached, goto dilemma builder")
 

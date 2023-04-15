@@ -927,12 +927,18 @@ function caravans:initialise()
 		"WorldStartRound",
 		true,
 		function()
+      Old_world_caravans:logCore("start  "..type(enemy_char_cqi))
 			for j = 1, #enemy_char_cqi do
+        Old_world_caravans:logCore(enemy_char_cqi[j])
 				cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");	
 				cm:kill_character("character_cqi:"..enemy_char_cqi[j], true)
 				cm:callback(function() cm:disable_event_feed_events(false, "", "", "diplomacy_faction_destroyed") end, 0.2);
+        Old_world_caravans:logCore("char killed")
+
 			end
 			enemy_char_cqi = {}
+      Old_world_caravans:logCore(" all char killed")
+
 		end,
 		true
 	);
@@ -947,7 +953,7 @@ function caravans:initialise()
 		function(context)
 			local turn = cm:model():turn_number();
 			local faction_key = context:faction():name()
-			if turn == 5 then
+			if turn == 1 then
 				cm:trigger_incident(faction_key, "wh3_dlc23_chd_convoy_unlocked", true);
 			elseif (turn % 10 == 0) then
 				cm:trigger_incident(faction_key, "wh3_dlc23_chd_convoy_new_contracts", true);
@@ -1062,7 +1068,7 @@ function caravans:generate_event(conditions)
 	end
 	
 	--check all the probabilites until matched
-	local no_event_chance = 25;
+	local no_event_chance = 0;
 	local random_int = cm:random_number(total_probability + no_event_chance,1);
 	local is_battle = nil;
 	local contextual_event_name = nil;

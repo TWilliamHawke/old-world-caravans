@@ -1,3 +1,4 @@
+---@diagnostic disable: param-type-mismatch, undefined-field
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 function Old_world_caravans:remove_caravan_upkeep(force)
   local bundle_key = "owc_caravan_reduce_upkeep";
@@ -6,6 +7,7 @@ function Old_world_caravans:remove_caravan_upkeep(force)
     cm:remove_effect_bundle_from_force(bundle_key, force:command_queue_index());
   end
 
+  if not cm:faction_has_campaign_feature(force:faction():name(), "additional_army_upkeep") then return end
   if vfs.exists("script/campaign/mod/flexible_unit_caps.lua") then return end
 
   local difficulty = cm:model():combined_difficulty_level();
@@ -24,7 +26,9 @@ function Old_world_caravans:remove_caravan_upkeep(force)
     upkeep_value = -4 -- legendary
   end
 
-  effect_bundle:add_effect("wh_main_effect_force_all_campaign_upkeep_hidden", "force_to_force_own_factionwide",
+  effect_bundle:add_effect(
+    "wh_main_effect_force_all_campaign_upkeep_hidden",
+    "force_to_force_own_factionwide",
     upkeep_value);
   cm:apply_custom_effect_bundle_to_force(effect_bundle, force);
 end

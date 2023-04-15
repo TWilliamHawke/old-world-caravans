@@ -28,4 +28,5 @@
 ---@field ai_teb_caravans boolean
 ---@field ai_bretonnia_caravans boolean
 ---@field ai_dwarf_caravans boolean
+---@field peasant_economy boolean
 

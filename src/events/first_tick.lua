@@ -1,11 +1,6 @@
 function Old_world_caravans:add_first_tick_callbacks()
   cm:add_first_tick_callback_new(
     function()
-      local faction_list = cm:model():world():faction_list();
-      for i = 0, faction_list:num_items() - 1 do
-        local faction = faction_list:item_at(i)
-        self:recruit_start_caravan(faction);
-      end
       cm:set_saved_value(self.is_init_save_key, true);
       cm:set_saved_value(self.is_init_save_key .. "brt", true);
 
@@ -18,6 +13,7 @@ function Old_world_caravans:add_first_tick_callbacks()
 
   cm:add_post_first_tick_callback(
     function()
+      --always happens
       core:remove_listener("caravan_waylay_query")
       core:remove_listener("caravan_waylaid")
       core:remove_listener("add_inital_force")
@@ -50,7 +46,17 @@ function Old_world_caravans:add_first_tick_callbacks()
       self:hide_caravan_button_for_belegar();
       self:set_starting_endpoints_values();
 
-      if cm:is_new_game() then return end
+      if cm:is_new_game() then
+        --new gane only
+        local faction_list = cm:model():world():faction_list();
+        for i = 0, faction_list:num_items() - 1 do
+          local faction = faction_list:item_at(i)
+          self:recruit_start_caravan(faction);
+        end
+        return
+      end
+
+      --not new game game only
 
       if not cm:get_saved_value(self.is_init_save_key) then
         self:unlock_caravans_for_suculture("wh_main_sc_emp_empire", "emp")

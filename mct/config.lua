@@ -119,6 +119,9 @@ ai_bretonnia_caravans:set_text("Caravans for Bretonnia ai factions", false)
 local ai_teb_caravans = old_world_caravans:add_new_option("ai_teb_caravans", "checkbox")
 ai_teb_caravans:set_text("Caravans for Southern Realms ai factions", false)
 
+-- local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
+-- peasant_economy:set_text("Peasant economy for bretonnia caravans", false)
+
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false)
 end

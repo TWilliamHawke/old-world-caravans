@@ -1,6 +1,7 @@
 ---@diagnostic disable: param-type-mismatch
 ---@param faction FACTION_SCRIPT_INTERFACE
 function Old_world_caravans:disband_all_caravans(faction)
+  if not self:faction_has_caravans(faction) then return end
   local force_list = faction:military_force_list();
 
   for i = 0, force_list:num_items() - 1 do
