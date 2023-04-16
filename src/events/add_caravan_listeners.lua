@@ -14,9 +14,7 @@ function Old_world_caravans:add_caravan_listeners()
       if caravan:caravan_force():unit_list():num_items() > 1 then return end
 
       local culture = context:caravan():caravan_force():faction():culture()
-      ---@diagnostic disable-next-line: undefined-field
-      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
-
+      
       if self.start_units[culture] then
         self:add_start_force(caravan);
       else
@@ -39,7 +37,9 @@ function Old_world_caravans:add_caravan_listeners()
         local caravan_force = context:caravan():caravan_force();
         self:remove_caravan_upkeep(caravan_force);
       end
-
+      
+      ---@diagnostic disable-next-line: undefined-field
+      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
       local caravan = context:caravan();
       cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
       caravans:set_stance(caravan)

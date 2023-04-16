@@ -21,4 +21,5 @@ Old_world_caravans.culture_to_enemy_faction = {
   wh3_main_sc_tze_tzeentch = "wh3_main_tze_tzeentch_qb1",
   wh3_main_sc_nur_nurgle = "wh3_main_nur_nurgle_qb1",
   wh3_main_sc_cth_cathay = "wh3_main_cth_cathay_qb1",
+  wh3_dlc23_sc_chd_chaos_dwarfs = "wh3_dlc23_chd_chaos_dwarfs_qb1",
 }

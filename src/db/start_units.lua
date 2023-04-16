@@ -344,6 +344,7 @@ Old_world_caravans.start_units = {
       "wh_main_brt_cav_knights_of_the_realm",
       "owc_dlc07_brt_inf_men_at_arms_2",
       "owc_dlc07_brt_inf_men_at_arms_2",
+      "owc_dlc07_brt_inf_men_at_arms_2",
       "owc_main_brt_inf_peasant_bowmen",
       "owc_main_brt_inf_peasant_bowmen",
     },

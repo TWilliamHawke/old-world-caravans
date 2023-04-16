@@ -24,6 +24,6 @@ function Old_world_caravans:mct_init(context)
   self.ai_caravans.mixer_teb_southern_realms = settings.ai_teb_caravans;
 
   if settings.peasant_economy then
-    --self:replace_bretonnia_units()
+    self:replace_bretonnia_units()
   end
 end

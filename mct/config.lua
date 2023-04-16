@@ -36,6 +36,7 @@ local enemy_forces_options = {
   { key = "wh3_main_sc_tze_tzeentch",       text = "tzeentch",        tt = "", default = false },
   { key = "wh3_main_sc_nur_nurgle",         text = "nurgle",          tt = "", default = false },
   { key = "wh3_main_sc_cth_cathay",         text = "cathay",          tt = "", default = false },
+  { key = "wh3_dlc23_sc_chd_chaos_dwarfs",  text = "chaos dwarfs",    tt = "", default = false },
 }
 
 local encounters = {
@@ -119,14 +120,18 @@ ai_bretonnia_caravans:set_text("Caravans for Bretonnia ai factions", false)
 local ai_teb_caravans = old_world_caravans:add_new_option("ai_teb_caravans", "checkbox")
 ai_teb_caravans:set_text("Caravans for Southern Realms ai factions", false)
 
--- local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
--- peasant_economy:set_text("Peasant economy for bretonnia caravans", false)
+local faction_section = old_world_caravans:add_new_section("n_factions")
+faction_section:set_localised_text("Specific factions setttings")
+
+local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
+peasant_economy:set_text("Peasant economy for bretonnia caravans", false)
+peasant_economy:set_tooltip_text("Caravans will use bretonnian units that effects on peasant economy. Notice that top bar counter does not update correctly", false)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false)
 end
 
-local debug_section = old_world_caravans:add_new_section("n_debug")
+local debug_section = old_world_caravans:add_new_section("o_debug")
 debug_section:set_localised_text("Debug Section")
 
 local override_encounters = old_world_caravans:add_new_option("override_encounters", "checkbox")

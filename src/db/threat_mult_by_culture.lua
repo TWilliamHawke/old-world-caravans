@@ -14,4 +14,5 @@ Old_world_caravans.threat_weight_by_culture = {
   wh3_main_sc_sla_slaanesh = 3,
   wh3_main_sc_tze_tzeentch = 3,
   wh3_main_sc_nur_nurgle = 3,
+  wh3_dlc23_sc_chd_chaos_dwarfs = 2,
 }

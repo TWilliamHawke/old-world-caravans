@@ -474,7 +474,7 @@ Old_world_caravans.threats = {
   --dark lands
   ["wh3_main_combi_region_ash_ridge_mountains"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_the_fortress_of_vorag"] = {
     wh_main_sc_vmp_vampire_counts = 3,
@@ -484,55 +484,57 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_mount_grey_hag"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_the_sentinels"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_mount_silverspear"] = {
     wh2_main_sc_skv_skaven = 3,
   },
   ["wh3_main_combi_region_tower_of_gorgoth"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_the_gates_of_zharr"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_the_daemons_stump"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_black_fortress"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_silver_pinnacle"] = {
     wh_main_sc_vmp_vampire_counts = 3,
   },
   ["wh3_main_combi_region_desolation_of_drakenmoor"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_uzkulak"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
     wh_dlc08_sc_nor_norsca = 1,
   },
   ["wh3_main_combi_region_zharr_naggrund"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_pigbarter"] = {
     wh_main_sc_grn_greenskins = 2,
     wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
     wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_ruins_end"] = {
     wh_main_sc_grn_greenskins = 2,
     wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
     wh_dlc03_sc_bst_beastmen = 2,
   },
   ["wh3_main_combi_region_skrap_towers"] = {
@@ -542,11 +544,11 @@ Old_world_caravans.threats = {
   },
   ["wh3_main_combi_region_great_skull_lakes"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_the_falls_of_doom"] = {
     wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
   },
   ["wh3_main_combi_region_gnobbly_gorge"] = {
     wh_main_sc_grn_greenskins = 2,

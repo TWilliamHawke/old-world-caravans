@@ -1132,6 +1132,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_brt_bretonnia_2 = {
+    general = "wh_main_brt_lord",
     filler_units = {
       wh_main_brt_inf_spearmen_at_arms = 1,
       wh_dlc07_brt_inf_men_at_arms_2 = 1,
@@ -1154,6 +1155,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_brt_bretonnia_3 = {
+    general = "wh_main_brt_lord",
     filler_units = {
       wh_main_brt_inf_spearmen_at_arms = 1,
       wh_dlc07_brt_inf_men_at_arms_2 = 1,
@@ -1495,6 +1497,85 @@ Old_world_caravans.enemy_forces = {
       wh3_main_cth_art_fire_rain_rocket_battery_0 = 1,
       wh3_main_cth_art_grand_cannon_0 = 1,
     },
+  },
+  wh3_dlc23_sc_chd_chaos_dwarfs_1 = {
+    general = "wh3_dlc23_chd_overseer",
+    filler_units_mult = 0.5,
+    filler_units = {
+      wh3_dlc23_chd_inf_hobgoblin_cutthroats = 1,
+      wh3_dlc23_chd_inf_hobgoblin_sneaky_gits = 1,
+    },
+    {
+      wh3_dlc23_chd_inf_chaos_dwarf_warriors = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons = 1,
+    },
+    {
+      wh3_dlc23_chd_inf_hobgoblin_archers = 4,
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_spears = 2,
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_bows = 1,
+    },
+    {
+      wh3_dlc23_chd_inf_goblin_labourers = 1,
+      wh3_dlc23_chd_inf_orc_labourers = 1,
+      NONE = 2,
+    }
+  },
+  wh3_dlc23_sc_chd_chaos_dwarfs_2 = {
+    general = "wh3_dlc23_chd_overseer",
+    filler_units_mult = 0.5,
+    filler_units = {
+      wh3_dlc23_chd_inf_hobgoblin_cutthroats = 1,
+      wh3_dlc23_chd_inf_hobgoblin_sneaky_gits = 1,
+    },
+    {
+      wh3_dlc23_chd_inf_infernal_guard = 1,
+      wh3_dlc23_chd_inf_infernal_guard_great_weapons = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_warriors = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons = 1,
+    },
+    {
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_bows = 1,
+      wh3_dlc23_chd_inf_hobgoblin_archers = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses = 1,
+    },
+    {
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_spears = 1,
+      wh3_dlc23_chd_veh_magma_cannon = 1,
+      wh3_dlc23_chd_veh_deathshrieker_rocket_launcher = 1,
+      wh3_dlc23_chd_inf_orc_labourers = 1,
+      wh3_dlc23_chd_veh_iron_daemon = 1,
+    }
+  },
+  wh3_dlc23_sc_chd_chaos_dwarfs_3 = {
+    general = "wh3_dlc23_chd_overseer",
+    filler_units = {
+      wh3_dlc23_chd_inf_hobgoblin_cutthroats = 1,
+      wh3_dlc23_chd_inf_hobgoblin_sneaky_gits = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_warriors = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons = 1,
+    },
+    {
+      wh3_dlc23_chd_inf_infernal_guard = 1,
+      wh3_dlc23_chd_inf_infernal_guard_great_weapons = 1,
+    },
+    {
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_spears = 1,
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_bows = 1,
+      wh3_dlc23_chd_veh_skullcracker = 1,
+      wh3_dlc23_chd_mon_kdaai_fireborn = 2,
+      wh3_dlc23_chd_cav_bull_centaurs_axe = 2,
+    },
+    {
+      wh3_dlc23_chd_inf_hobgoblin_archers = 1,
+      wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses = 1,
+      wh3_dlc23_chd_inf_infernal_guard_fireglaives = 1,
+    },
+    {
+      wh3_dlc23_chd_veh_iron_daemon = 1,
+      wh3_dlc23_chd_veh_magma_cannon = 2,
+      wh3_dlc23_chd_mon_great_taurus = 1,
+      wh3_dlc23_chd_mon_lammasu = 1,
+    }
   },
 
 }

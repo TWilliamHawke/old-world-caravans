@@ -12,6 +12,7 @@ function Old_world_caravans:add_first_tick_callbacks()
   );
 
   cm:add_first_tick_callback(function()
+    self:fill_core_caravans_data();
     caravans.rhox_mar_caravan_replace_listener = function()
       self:logCore("Marienburg \"Replace listeners\" function was replaced")
     end
@@ -26,32 +27,7 @@ function Old_world_caravans:add_first_tick_callbacks()
       core:remove_listener("add_inital_bundles")
       core:remove_listener("caravan_master_heal")
 
-      --uses cathay node values when caravan completed
-      caravans.culture_to_faction.wh_main_emp_empire = "cathay";
-      caravans.culture_to_faction.wh_main_dwf_dwarfs = "cathay";
-      caravans.culture_to_faction.wh_main_brt_bretonnia = "cathay";
-      caravans.culture_to_faction.mixer_teb_southern_realms = "cathay";
-
-      --prevent crashes in caravans:reward_item_check
-      caravans.item_data.wh_main_emp_empire = {};
-      caravans.item_data.wh_main_dwf_dwarfs = {};
-      caravans.item_data.wh_main_brt_bretonnia = {};
-      caravans.item_data.mixer_teb_southern_realms = {};
-
-      --update trade nodes values on turn start
-      for _, region in ipairs(self.new_caravan_targets) do
-        table.insert(caravans.destinations_key.main_warhammer.cathay, region)
-      end
-
-      -- caravans.event_tables.wh_main_emp_empire = {};
-      -- caravans.event_tables.wh_main_dwf_dwarfs = {};
-      -- caravans.event_tables.wh_main_brt_bretonnia = {};
-      -- caravans.event_tables.mixer_teb_southern_realms = {};
-
-      -- if cm:get_campaign_name() ~= "wh3_main_chaos" then
-      --   caravans.event_tables.wh3_main_cth_cathay = {};
-      -- end
-
+      self:fill_core_caravans_data();
       self:hide_caravan_button_for_belegar();
       self:set_starting_endpoints_values();
 
