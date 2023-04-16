@@ -11,6 +11,8 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context CaravanRecruited
     function(context)
       local caravan = context:caravan();
+      if caravan:caravan_force():unit_list():num_items() > 1 then return end
+
       local culture = context:caravan():caravan_force():faction():culture()
       ---@diagnostic disable-next-line: undefined-field
       cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
@@ -170,15 +172,14 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context FactionTurnStart
     ---@return boolean
     function(context)
-      local subculture = context:faction():subculture();
-      return self.culture_to_trait[subculture] ~= nil;
+      local faction_name = context:faction():name();
+      return self.access_to_caravans_on_first_turn[faction_name] ~= nil;
     end,
     ---@param context FactionTurnStart
     function(context)
       local faction = context:faction();
       if faction:is_human() then return end
       local effect_key = "wh3_main_caravan_AI_threat_reduction";
-
       if not faction:has_effect_bundle(effect_key) then
         cm:apply_effect_bundle(effect_key, faction:name(), 0)
       end

@@ -10,7 +10,6 @@ function Old_world_caravans:recruit_start_caravan(faction)
   if caravans_list:is_null_interface() then return end
   if self:faction_is_modded(faction) then return end
   if not self:caravan_button_should_be_visible(faction) then return end
-
   local available_caravans = caravans_list:available_caravan_recruitment_items();
 
   if available_caravans:is_empty() then return end

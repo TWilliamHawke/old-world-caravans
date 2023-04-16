@@ -1,12 +1,12 @@
 Old_world_caravans.start_units = {
   wh_main_emp_empire = {
     emp_caravan_skill_innate_empire = {
-      "wh_main_emp_inf_swordsmen",
-      "wh_main_emp_inf_swordsmen",
+      "wh_main_emp_inf_spearmen_1",
+      "wh_main_emp_inf_spearmen_1",
       "wh_main_emp_inf_halberdiers",
       "wh_main_emp_inf_halberdiers",
-      "wh_main_emp_inf_crossbowmen",
-      "wh_main_emp_inf_crossbowmen",
+      "wh2_dlc13_emp_inf_huntsmen_0",
+      "wh2_dlc13_emp_inf_huntsmen_0",
       "wh2_dlc13_emp_inf_huntsmen_0",
       "wh2_dlc13_emp_inf_huntsmen_0",
       "wh_main_emp_inf_spearmen_1",
