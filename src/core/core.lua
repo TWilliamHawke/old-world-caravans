@@ -27,6 +27,7 @@ Old_world_caravans = {
   encounter_should_be_canceled = false,
   force_enable = false,
   peasant_economy = false,
+  random_enemies = false,
   ai_caravans = {
     wh_main_sc_emp_empire = true,
     wh_main_sc_dwf_dwarfs = true,

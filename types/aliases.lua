@@ -29,4 +29,5 @@
 ---@field ai_bretonnia_caravans boolean
 ---@field ai_dwarf_caravans boolean
 ---@field peasant_economy boolean
+---@field random_enemies boolean
 

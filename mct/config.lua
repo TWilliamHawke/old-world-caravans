@@ -11,6 +11,7 @@ old_world_caravans:set_author("TWilliam")
 
 if old_world_caravans.set_workshop_id then
   old_world_caravans:set_main_image("ui/mct/twill_old_world_caravans.png", 300, 300)
+  old_world_caravans:set_workshop_id("2943940309")
 end
 
 local enemy_forces_options = {
@@ -121,11 +122,15 @@ local ai_teb_caravans = old_world_caravans:add_new_option("ai_teb_caravans", "ch
 ai_teb_caravans:set_text("Caravans for Southern Realms ai factions", false)
 
 local faction_section = old_world_caravans:add_new_section("n_factions")
-faction_section:set_localised_text("Specific factions setttings")
+faction_section:set_localised_text("Miscellaneous setttings")
 
 local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
-peasant_economy:set_text("Peasant economy for bretonnia caravans", false)
-peasant_economy:set_tooltip_text("Caravans will use bretonnian units that effects on peasant economy. Works only for new Caravans", false)
+peasant_economy:set_text("Peasant economy for Bretonnian caravans", false)
+peasant_economy:set_tooltip_text("Non-kinght units in Bretonnian caravans will be affecting peasant economy. Works only for new Caravans", false)
+
+local random_enemies = old_world_caravans:add_new_option("random_enemies", "checkbox")
+random_enemies:set_text("Randomize enemies", false)
+random_enemies:set_tooltip_text("Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false)
@@ -174,6 +179,7 @@ if encounter_budget_1.set_is_global then
   ai_dwarf_caravans:set_is_global(true);
   ai_teb_caravans:set_is_global(true);
   peasant_economy:set_is_global(true);
+  random_enemies:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

@@ -1247,7 +1247,8 @@ Old_world_caravans.enemy_forces = {
     {
       wh_main_dwf_inf_miners_0 = 1,
       wh_main_dwf_inf_miners_1 = 1,
-      NONE = 2,
+      wh_main_dwf_inf_longbeards = 1,
+      wh_main_dwf_inf_longbeards_1 = 1,
     },
   },
   wh_main_sc_dwf_dwarfs_2 = {
@@ -1315,12 +1316,14 @@ Old_world_caravans.enemy_forces = {
     {
       wh2_main_hef_inf_archers_0 = 1,
       wh2_main_hef_inf_archers_1 = 1,
-      wh2_main_hef_cav_ellyrian_reavers_1 = 1,
     },
     {
+      wh2_main_hef_cav_ellyrian_reavers_1 = 1,
       wh2_dlc15_hef_mon_war_lions_of_chrace_0 = 1,
       wh2_main_hef_mon_great_eagle = 1,
-      NONE = 2,
+      wh2_main_hef_cav_ellyrian_reavers_0 = 1,
+      wh2_dlc15_hef_inf_silverin_guard_0 = 1,
+      wh2_main_hef_inf_white_lions_of_chrace_0 = 1,
     },
   },
   wh2_main_sc_hef_high_elves_2 = {

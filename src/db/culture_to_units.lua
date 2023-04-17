@@ -68,10 +68,10 @@ Old_world_caravans.culture_to_units = {
     strongA = {
       ["owc_dlc07_brt_inf_battle_pilgrims_0"] = { 2, 2, 3 },
       ["owc_dlc07_brt_inf_foot_squires_0"] = { 2, 2, 3 },
-      ["owc_dlc07_brt_art_blessed_field_trebuchet_0"] = { 1, 2, 3 },
+      ["owc_dlc07_brt_art_blessed_field_trebuchet_0"] = { 1, 1, 2 },
     },
     strongB = {
-      ["wh_dlc07_brt_cav_knights_errant_0"] = { 5, 2, 2 },
+      ["wh_dlc07_brt_cav_knights_errant_0"] = { 3, 2, 2 },
       ["wh_dlc07_brt_cav_questing_knights_0"] = { 2, 2, 2 },
       ["wh_main_brt_cav_knights_of_the_realm"] = { 2, 2, 2 },
       ["wh_main_brt_cav_pegasus_knights"] = { 1, 1, 1 },

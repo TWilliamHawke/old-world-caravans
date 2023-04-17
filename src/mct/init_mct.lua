@@ -18,6 +18,7 @@ function Old_world_caravans:mct_init(context)
   self.debug_mode = settings.enable_log;
   self.force_enable = settings.force_enable;
   self.peasant_economy = settings.peasant_economy;
+  self.random_enemies = settings.random_enemies;
 
   self.ai_caravans.wh_main_sc_brt_bretonnia = settings.ai_bretonnia_caravans;
   self.ai_caravans.wh_main_sc_emp_empire = settings.ai_empire_caravans;

@@ -24,6 +24,12 @@ function Old_world_caravans:get_enemy_by_regions(context)
 
   local target_region = threated_regions[main_threat] or start_region:name();
 
+  if self.random_enemies then
+    main_threat = self:select_random_key_by_weight(self.culture_to_enemy_faction, function (val)
+      return 1
+    end) or "wh_main_sc_grn_greenskins"
+  end
+
 
   return main_threat, target_region, encounter_dif;
 end
