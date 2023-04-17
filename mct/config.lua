@@ -125,7 +125,7 @@ faction_section:set_localised_text("Specific factions setttings")
 
 local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
 peasant_economy:set_text("Peasant economy for bretonnia caravans", false)
-peasant_economy:set_tooltip_text("Caravans will use bretonnian units that effects on peasant economy. Notice that top bar counter does not update correctly", false)
+peasant_economy:set_tooltip_text("Caravans will use bretonnian units that effects on peasant economy. Works only for new Caravans", false)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false)
@@ -173,6 +173,7 @@ if encounter_budget_1.set_is_global then
   ai_bretonnia_caravans:set_is_global(true);
   ai_dwarf_caravans:set_is_global(true);
   ai_teb_caravans:set_is_global(true);
+  peasant_economy:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

@@ -1,4 +1,4 @@
----@diagnostic disable: param-type-mismatch, undefined-field, redundant-parameter
+---@diagnostic disable: undefined-field, missing-parameter, param-type-mismatch, redundant-parameter
 
 out.design("*** Caravans script loaded ***");
 
@@ -27,21 +27,55 @@ caravans.events_fired = {}
 
 caravans.culture_to_faction = {
 	wh3_main_cth_cathay = "cathay",
+	wh_main_emp_empire = "cathay",
+	wh_main_dwf_dwarfs = "cathay",
+	wh_main_brt_bretonnia = "cathay",
+	mixer_teb_southern_realms = "cathay",
 	wh3_dlc23_chd_chaos_dwarfs = "chaos_dwarfs"
 }
 
 caravans.destinations_key = {
 	main_warhammer = {
 		cathay = {
-		"wh3_main_combi_region_frozen_landing",
-		"wh3_main_combi_region_myrmidens",
-		"wh3_main_combi_region_erengrad",
-		"wh3_main_combi_region_karaz_a_karak",
-		"wh3_main_combi_region_castle_drakenhof",
-		"wh3_main_combi_region_altdorf",
-		"wh3_main_combi_region_marienburg"
-
-		},
+      "wh3_main_combi_region_frozen_landing",
+      "wh3_main_combi_region_myrmidens",
+      "wh3_main_combi_region_erengrad",
+      "wh3_main_combi_region_karaz_a_karak",
+      "wh3_main_combi_region_castle_drakenhof",
+      "wh3_main_combi_region_altdorf",
+      "wh3_main_combi_region_marienburg",
+      "wh3_main_combi_region_kislev",
+      "wh3_main_combi_region_kraka_drak",
+      "wh3_main_combi_region_karak_kadrin",
+      "wh3_main_combi_region_zhufbar",
+      "wh3_main_combi_region_kings_glade",
+      "wh3_main_combi_region_miragliano",
+      "wh3_main_combi_region_lothern",
+      "wh3_main_combi_region_gaean_vale",
+      "wh3_main_combi_region_monument_of_the_moon",
+      "wh3_main_combi_region_temple_of_kara",
+      "wh3_main_combi_region_magritta",
+      "wh3_main_combi_region_khemri",
+      "wh3_main_combi_region_vulture_mountain",
+      "wh3_main_combi_region_karak_zorn",
+      "wh3_main_combi_region_karak_azorn",
+      "wh3_main_combi_region_karak_krakaten",
+      "wh3_main_combi_region_karak_dum",
+      "wh3_main_combi_region_lahmia",
+      "wh3_main_combi_region_massif_orcal",
+      "wh3_main_combi_region_bordeleaux",
+      "wh3_main_combi_region_karak_ziflin",
+      "wh3_main_combi_region_sudenburg",
+      "wh3_main_combi_region_couronne",
+      "wh3_main_combi_region_castle_carcassonne",
+      "wh3_main_combi_region_waterfall_palace",
+      "wh3_main_combi_region_copher",
+      "wh3_main_combi_region_zandri",
+      "wh3_main_combi_region_temple_of_tlencan",
+      "wh3_main_combi_region_the_star_tower",
+      "wh3_main_combi_region_shang_yang",
+      "wh3_main_combi_region_mousillon",
+    },
 
 		chaos_dwarfs = {
 			"wh3_main_combi_region_great_hall_of_greasus",
@@ -421,7 +455,12 @@ caravans.item_data = {
 		wh3_main_combi_region_karond_kar 							= "wh3_dlc23_anc_convoy_spiked_whip",
 	
 		wh3_main_combi_region_wizard_caliphs_palace 				= "wh3_dlc23_anc_convoy_eternal_servant",
-	}
+	},
+  wh_main_emp_empire = {},
+	wh_main_dwf_dwarfs = {},
+	wh_main_brt_bretonnia = {},
+	mixer_teb_southern_realms = {},
+
 }
 
 caravans.unit_data = {
@@ -614,9 +653,7 @@ function caravans:initialise()
 
 	if cm:is_new_game() then
 
----@diagnostic disable-next-line: missing-parameter, param-type-mismatch
 		cm:set_script_state("caravan_camera_x",590);
-    ---@diagnostic disable-next-line: missing-parameter, param-type-mismatch
 		cm:set_script_state("caravan_camera_y",305);
 	
 		local all_factions = cm:model():world():faction_list();
@@ -658,7 +695,6 @@ function caravans:initialise()
 	end
 
 	--Listeners
-  Old_world_caravans:logCore("add listeners")
 	core:add_listener(
 		"convoy_event_update",
 		"WorldStartRound",
@@ -685,15 +721,6 @@ function caravans:initialise()
 			return context:faction():is_human()
 		end,
 		function(context)
-			local faction_key = context:faction():name()
-      Old_world_caravans:logCore("still triggered")
-			if caravans.events_fired[faction_key] == nil or caravans.events_fired[faction_key] == false then
-				if self:event_handler(context) == false then
-					out.design("Caravan not valid for event");
-				elseif caravans.events_fired[faction_key] ~= nil then
-					caravans.events_fired[faction_key] = true
-				end
-			end
 		end,
 		true
 	);
@@ -703,7 +730,6 @@ function caravans:initialise()
 		"CaravanWaylaid",
 		true,
 		function(context)
-			self:waylaid_caravan_handler(context);
 		end,
 		true
 	);
@@ -713,12 +739,6 @@ function caravans:initialise()
 		"CaravanRecruited",
 		true,
 		function(context)
-			out.design("*** Caravan recruited ***");
-			if context:caravan():caravan_force():unit_list():num_items() < 2 then
-				local caravan = context:caravan();
-				self:add_inital_force(caravan);
-				cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true)
-			end;
 		end,
 		true
 	);
@@ -728,10 +748,6 @@ function caravans:initialise()
 		"CaravanSpawned",
 		true,
 		function(context)
-			out.design("*** Caravan deployed ***");
-			local caravan = context:caravan();
-			self:set_stance(caravan);
-			cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
 		end,
 		true
 	);
@@ -823,26 +839,6 @@ function caravans:initialise()
 			return not context:caravan():is_null_interface();
 		end,
 		function(context)
-			--Heal Lord
-			local caravan_force_list = context:caravan_master():character():military_force():unit_list();
-			local unit = nil;
-			for i=0, caravan_force_list:num_items()-1 do
-				unit = caravan_force_list:item_at(i);
-
-				---TODO way to make this generic?
-				if unit:unit_key() == "wh3_main_cth_cha_lord_caravan_master" then
-					cm:set_unit_hp_to_unary_of_maximum(unit, 1);
-				end
-			end
-			--Spread out caravans
-			local caravan_lookup = cm:char_lookup_str(context:caravan():caravan_force():general_character():command_queue_index())
-			local x,y = cm:find_valid_spawn_location_for_character_from_character(
-				context:faction():name(),
-				caravan_lookup,
-				true,
-				cm:random_number(15,5)
-				)
-			cm:teleport_to(caravan_lookup,  x,  y);
 		end,
 		true
 	);
@@ -927,18 +923,12 @@ function caravans:initialise()
 		"WorldStartRound",
 		true,
 		function()
-      Old_world_caravans:logCore("start  "..type(enemy_char_cqi))
 			for j = 1, #enemy_char_cqi do
-        Old_world_caravans:logCore(enemy_char_cqi[j])
 				cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");	
 				cm:kill_character("character_cqi:"..enemy_char_cqi[j], true)
 				cm:callback(function() cm:disable_event_feed_events(false, "", "", "diplomacy_faction_destroyed") end, 0.2);
-        Old_world_caravans:logCore("char killed")
-
 			end
 			enemy_char_cqi = {}
-      Old_world_caravans:logCore(" all char killed")
-
 		end,
 		true
 	);
@@ -953,7 +943,7 @@ function caravans:initialise()
 		function(context)
 			local turn = cm:model():turn_number();
 			local faction_key = context:faction():name()
-			if turn == 1 then
+			if turn == 5 then
 				cm:trigger_incident(faction_key, "wh3_dlc23_chd_convoy_unlocked", true);
 			elseif (turn % 10 == 0) then
 				cm:trigger_incident(faction_key, "wh3_dlc23_chd_convoy_new_contracts", true);
@@ -1068,7 +1058,7 @@ function caravans:generate_event(conditions)
 	end
 	
 	--check all the probabilites until matched
-	local no_event_chance = 0;
+	local no_event_chance = 25;
 	local random_int = cm:random_number(total_probability + no_event_chance,1);
 	local is_battle = nil;
 	local contextual_event_name = nil;

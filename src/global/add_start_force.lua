@@ -34,4 +34,10 @@ function Old_world_caravans:add_start_force(caravan)
     cm:grant_unit_to_character(lord_str, "teb_republican_guard");
     cm:grant_unit_to_character(lord_str, "teb_republican_guard");
   end
+  self:logCore("before check")
+
+  if self.peasant_economy then
+    Calculate_Economy_Penalty(faction)
+  end
+
 end

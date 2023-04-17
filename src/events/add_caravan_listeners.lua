@@ -1,4 +1,14 @@
 function Old_world_caravans:add_caravan_listeners()
+  core:remove_listener("owc_add_inital_force")
+  core:remove_listener("owc_caravan_spawned")
+  core:remove_listener("owc_caravan_waylay_query_no_cathay")
+  core:remove_listener("owc_caravan_waylaid_no_cathay")
+  core:remove_listener("owc_SettlementSelected_caravan_test")
+  core:remove_listener("owc_CaravanCompleted")
+  core:remove_listener("owc_caravan_moved")
+  core:remove_listener("owc_kill_ai_caravans")
+  core:remove_listener("OWC_add_ai_effect")
+
   core:add_listener(
     "owc_add_inital_force",
     "CaravanRecruited",

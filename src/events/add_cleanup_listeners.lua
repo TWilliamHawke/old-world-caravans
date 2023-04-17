@@ -1,4 +1,9 @@
 function Old_world_caravans:add_cleanup_listeners()
+  core:remove_listener("owc_postbattle_faction_cleanup")
+  core:remove_listener("owc_EndOfRound_encounter_faction_cleanup")
+  core:remove_listener("owc_clean_up_attacker")
+  core:remove_listener("owc_quest_item_triggered")
+
   core:add_listener(
     "owc_postbattle_faction_cleanup",
     "BattleCompleted",

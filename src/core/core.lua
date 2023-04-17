@@ -26,6 +26,7 @@ Old_world_caravans = {
   encounter_was_canceled_key = "owc_encounter_was_canceled",
   encounter_should_be_canceled = false,
   force_enable = false,
+  peasant_economy = false,
   ai_caravans = {
     wh_main_sc_emp_empire = true,
     wh_main_sc_dwf_dwarfs = true,

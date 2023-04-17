@@ -27,6 +27,10 @@ function Old_world_caravans:add_first_tick_callbacks()
       core:remove_listener("add_inital_bundles")
       core:remove_listener("caravan_master_heal")
 
+      self:add_specific_faction_listeners();
+      self:add_cleanup_listeners();
+      self:add_caravan_listeners();
+
       self:fill_core_caravans_data();
       self:hide_caravan_button_for_belegar();
       self:set_starting_endpoints_values();

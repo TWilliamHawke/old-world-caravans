@@ -1,6 +1,12 @@
 function Old_world_caravans:add_specific_faction_listeners()
+  core:remove_listener("owc_karak_eight_peaks_occupied")
+  core:remove_listener("owc_belegar_turn_start")
+  core:remove_listener("owc_belegar_joins_confederation")
+  core:remove_listener("owc_CaravanTargetClick")
+  core:remove_listener("owc_brt_caravan_new_units")
+
   core:add_listener(
-    "karak_eight_peaks_occupied_caravan",
+    "owc_karak_eight_peaks_occupied",
     "GarrisonOccupiedEvent",
     function(context)
       --wh3_main_combi_region_karak_bhufdar for tests
@@ -54,7 +60,7 @@ function Old_world_caravans:add_specific_faction_listeners()
 
 
   core:add_listener(
-    "belegar_joins_confederation_caravan",
+    "owc_belegar_joins_confederation",
     "FactionJoinsConfederation",
     function(context)
       local faction_name = context:confederation():name();
@@ -121,4 +127,33 @@ function Old_world_caravans:add_specific_faction_listeners()
     end,
     true
   )
+
+  core:add_listener(
+    "owc_brt_caravan_new_units",
+    "ScriptEventOwcNewUnitsDilemma",
+    ---@param context CharacterRankUp
+    ---@return boolean
+    function(context)
+      local agent_type = context:character():character_subtype_key()
+
+      return self.peasant_economy and agent_type == "wh_main_brt_caravan_master"
+    end,
+    ---@param context CharacterRankUp
+    function(context)
+      local faction = context:character():faction()
+      core:add_listener(
+        "owc_brt_caravan_new_unit_choice",
+        "DilemmaChoiceMadeEvent",
+        true,
+        function()
+          cm:callback(function()
+            Calculate_Economy_Penalty(faction)
+          end,  0.5)
+        end,
+        false
+      );
+    end,
+    true
+  )
+
 end
