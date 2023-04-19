@@ -28,7 +28,7 @@ function Old_world_caravans:new_agent_creator(context)
   ---@param region REGION_SCRIPT_INTERFACE
   ---@return boolean
   function node_has_agent(region)
-    local region_culture = self:get_culture_of_node(region);
+    local region_culture = self:get_subculture_of_node(region);
     local agent = self.culture_to_agent_subtype[region_culture];
 
     if not agent or ignored_agent == agent then

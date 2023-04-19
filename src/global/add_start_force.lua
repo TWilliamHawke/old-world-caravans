@@ -1,11 +1,11 @@
 ---comment
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 function Old_world_caravans:add_start_force(caravan)
-  local force_list = self.start_units.wh_main_brt_bretonnia.brt_caravan_skill_innate_empire;
+  local force_list = self.start_units.wh_main_sc_brt_bretonnia.brt_caravan_skill_innate_empire;
   local caravan_master = caravan:caravan_force():general_character();
   local faction = caravan_master:faction();
-  local culture = faction:culture();
-  local units_list = self.start_units[culture] or {}
+  local subculture = faction:subculture();
+  local units_list = self.start_units[subculture] or {}
 
   for skill, units in pairs(units_list) do
     if caravan_master:has_skill(skill) then

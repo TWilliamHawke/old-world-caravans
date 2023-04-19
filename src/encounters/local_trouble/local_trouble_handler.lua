@@ -6,7 +6,7 @@ function Old_world_caravans:local_trouble_handler(context)
   local bandit_threat = self:calculate_bandit_threat(list_of_regions);
 
   local function get_weight_for_node(region)
-    local region_culture = self:get_culture_of_node(region);
+    local region_culture = self:get_subculture_of_node(region);
     local dilemma_name = self.db.local_trouble_dilemmas[region_culture];
     local culture_weight = self.node_culture_to_event_weight[caravan_culture] and
         self.node_culture_to_event_weight[caravan_culture][region_culture];

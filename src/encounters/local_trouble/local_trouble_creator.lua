@@ -5,8 +5,8 @@ function Old_world_caravans:local_trouble_creator(context)
 
   local caravan_master = context.caravan:caravan_master():character();
 
-  local culture_from = self:get_culture_of_node(context.from);
-  local culture_to = self:get_culture_of_node(context.to);
+  local culture_from = self:get_subculture_of_node(context.from);
+  local culture_to = self:get_subculture_of_node(context.to);
   local dilemma_from = self.db.local_trouble_dilemmas[culture_from];
   local dilemma_to = self.db.local_trouble_dilemmas[culture_to];
 

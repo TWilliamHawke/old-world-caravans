@@ -23,9 +23,9 @@ function Old_world_caravans:add_caravan_listeners()
       local caravan = context:caravan();
       if caravan:caravan_force():unit_list():num_items() > 1 then return end
 
-      local culture = context:caravan():caravan_force():faction():culture()
+      local subculture = context:caravan():caravan_force():faction():subculture()
       
-      if self.start_units[culture] then
+      if self.start_units[subculture] then
         self:add_start_force(caravan);
       else
         caravans:add_inital_force(caravan);
@@ -67,11 +67,11 @@ function Old_world_caravans:add_caravan_listeners()
     ---comment
     ---@param context QueryShouldWaylayCaravan
     function(context)
-      local culture = context:faction():culture();
+      local subculture = context:caravan():caravan_force():faction():subculture()
       local faction_key = context:faction():name()
       self:log("My handler for QueryShouldWaylayCaravan")
 
-      if self.start_units[culture] or (culture == "wh3_main_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
+      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         self:generate_caravan_encounter(context)
       else
         if caravans.events_fired[faction_key] == nil or caravans.events_fired[faction_key] == false then
@@ -95,9 +95,9 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     ---@param context CaravanWaylaid
     function(context)
-      local culture = context:faction():culture();
+      local subculture = context:faction():subculture();
 
-      if self.start_units[culture] or (culture == "wh3_main_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
+      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         self:handle_caravan_encounter(context);
       else
         caravans:waylaid_caravan_handler(context);

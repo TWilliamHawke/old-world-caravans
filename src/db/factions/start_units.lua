@@ -1,5 +1,5 @@
 Old_world_caravans.start_units = {
-  wh_main_emp_empire = {
+  wh_main_sc_emp_empire = {
     emp_caravan_skill_innate_empire = {
       "wh_main_emp_inf_spearmen_1",
       "wh_main_emp_inf_spearmen_1",
@@ -149,7 +149,7 @@ Old_world_caravans.start_units = {
       "wh_main_emp_cav_outriders_1",
     },
   },
-  wh_main_dwf_dwarfs = {
+  wh_main_sc_dwf_dwarfs = {
     dwf_caravan_skill_innate_empire = {
       "wh_main_dwf_inf_longbeards",
       "wh_main_dwf_inf_dwarf_warrior_0",
@@ -269,7 +269,7 @@ Old_world_caravans.start_units = {
       "wh3_main_ogr_inf_maneaters_1",
     },
   },
-  wh_main_brt_bretonnia = {
+  wh_main_sc_brt_bretonnia = {
     brt_caravan_skill_innate_kislev = {
       "wh_main_brt_cav_knights_of_the_realm",
       "wh_main_brt_cav_knights_of_the_realm",

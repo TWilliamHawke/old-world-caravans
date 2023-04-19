@@ -7,8 +7,8 @@ function Old_world_caravans:new_units_handler(context)
 
   local end_region = self:get_region_by_node(caravan, context:to());
   local start_region = self:get_region_by_node(caravan, context:from());
-  local end_region_culture = self:get_culture_of_node(end_region);
-  local start_region_culture = self:get_culture_of_node(start_region);
+  local end_region_culture = self:get_subculture_of_node(end_region);
+  local start_region_culture = self:get_subculture_of_node(start_region);
 
   local regions_weight = {
     [end_region_culture] = self:get_region_weight(end_region_culture, caravan_master),

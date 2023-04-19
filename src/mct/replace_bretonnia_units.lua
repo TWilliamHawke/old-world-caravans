@@ -36,9 +36,8 @@ function Old_world_caravans:replace_bretonnia_units()
     },
   }
 
-  for _, units in pairs(self.start_units.wh_main_brt_bretonnia) do
+  for _, units in pairs(self.start_units.wh_main_sc_brt_bretonnia) do
     for i = 1, #units do
-      local unit = tostring(units[i])
       local replacer = replacers[units[i]];
 
       if replacer then
