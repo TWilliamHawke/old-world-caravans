@@ -69,6 +69,7 @@ function Old_world_caravans:add_caravan_listeners()
     function(context)
       local culture = context:faction():culture();
       local faction_key = context:faction():name()
+      self:log("My handler for QueryShouldWaylayCaravan")
 
       if self.start_units[culture] or (culture == "wh3_main_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         self:generate_caravan_encounter(context)
@@ -79,9 +80,9 @@ function Old_world_caravans:add_caravan_listeners()
           elseif caravans.events_fired[faction_key] ~= nil then
             caravans.events_fired[faction_key] = true
           end
+          self:log("Generate Encounter for Chaos dwarfs or ROC Cathay")
         end
       end
-      self:log("My handler for QueryShouldWaylayCaravan")
     end,
     true
   );
@@ -100,6 +101,7 @@ function Old_world_caravans:add_caravan_listeners()
         self:handle_caravan_encounter(context);
       else
         caravans:waylaid_caravan_handler(context);
+        self:log("Handle Encounter for Chaos dwarfs or ROC Cathay")
       end
       self:log("My handler for CaravanWaylaid")
     end,

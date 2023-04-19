@@ -41,7 +41,7 @@ Old_world_caravans.culture_to_units = {
     },
     strongA = {
       ["wh_main_emp_inf_greatswords"] = { 3, 1, 2 },
-      ["wh_main_emp_inf_halberdiers"] = { 3, 2, 3 },
+      ["wh_main_emp_inf_halberdiers"] = { 2, 2, 3 },
       ["wh_main_emp_art_helstorm_rocket_battery"] = { 1, 1, 1 },
       ["wh_main_emp_art_helblaster_volley_gun"] = { 1, 1, 1 },
     },
@@ -81,6 +81,7 @@ Old_world_caravans.culture_to_units = {
     weakA = {
       ["wh3_main_ksl_inf_armoured_kossars_0"] = { 3, 2, 3 },
       ["wh3_main_ksl_cav_horse_raiders_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_veh_light_war_sled_0"] = { 1, 2, 2 },
     },
     weakB = {
       ["wh3_main_ksl_inf_kossars_0"] = { 2, 2, 3 },
@@ -95,7 +96,8 @@ Old_world_caravans.culture_to_units = {
     },
     strongB = {
       ["wh3_main_ksl_cav_winged_lancers_0"] = { 1, 2, 2 },
-      ["wh3_main_ksl_veh_light_war_sled_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_veh_heavy_war_sled_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_cav_gryphon_legion_0"] = { 1, 1, 2 },
     },
   },
   wh_main_sc_dwf_dwarfs = {
@@ -111,7 +113,7 @@ Old_world_caravans.culture_to_units = {
       ["wh_dlc06_dwf_inf_rangers_0"] = { 1, 2, 3 },
     },
     strongA = {
-      ["wh_dlc06_dwf_inf_bugmans_rangers_0"] = { 4, 2, 3 },
+      ["wh_dlc06_dwf_inf_bugmans_rangers_0"] = { 3, 2, 3 },
       ["wh_main_dwf_inf_irondrakes_0"] = { 1, 1, 1 },
       ["wh_main_dwf_inf_irondrakes_2"] = { 1, 1, 1 },
       ["wh_main_dwf_art_organ_gun"] = { 1, 1, 1 },
@@ -119,7 +121,7 @@ Old_world_caravans.culture_to_units = {
     },
     strongB = {
       ["wh2_dlc10_dwf_inf_giant_slayers"] = { 1, 2, 2 },
-      ["wh_main_dwf_inf_longbeards"] = { 4, 2, 2 },
+      ["wh_main_dwf_inf_longbeards"] = { 3, 2, 2 },
       ["wh_main_dwf_inf_ironbreakers"] = { 1, 1, 1 },
       ["wh_main_dwf_inf_hammerers"] = { 1, 1, 1 },
     },
