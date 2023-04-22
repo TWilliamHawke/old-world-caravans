@@ -40,5 +40,6 @@ function Old_world_caravans:add_southern_realms_support()
     self.enemy_forces.wh_main_sc_teb_teb_1 = self.enemy_forces.wh_main_sc_emp_empire_1;
     self.enemy_forces.wh_main_sc_teb_teb_2 = self.enemy_forces.wh_main_sc_emp_empire_2;
     self.enemy_forces.wh_main_sc_teb_teb_3 = self.enemy_forces.wh_main_sc_emp_empire_3;
+    self.node_culture_to_event_weight.mixer_teb_southern_realms = {};
   end
 end

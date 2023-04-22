@@ -31,3 +31,10 @@
 ---@field peasant_economy boolean
 ---@field random_enemies boolean
 
+---@class Prebattle_caravan_data
+---@field caravan CARAVAN_SCRIPT_INTERFACE
+---@field dilemma_name string
+---@field x integer
+---@field y integer
+---@field is_ambush boolean
+---@field enemy_force_cqi integer

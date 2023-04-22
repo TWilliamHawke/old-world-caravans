@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-field
 ---@param context CaravanWaylaid
 function Old_world_caravans:ambush_handler(context)
-  local enemy_cqi = self:prepare_forces_for_battle(context,
+  local enemy_cqi, x, y = self:create_enemy_army(context,
     function()
       return self:get_enemy_by_regions(context)
     end, "wh2_dlc17_bundle_scripted_lizardmen_encounter", "owc_caravan_no_menace_bellow"
@@ -10,8 +10,6 @@ function Old_world_caravans:ambush_handler(context)
 
   local caravan = context:caravan();
   local caravan_force = caravan:caravan_force();
-  local caravan_master_cqi = caravan_force:general_character():command_queue_index();
-  local lord_str = cm:char_lookup_str(caravan_master_cqi);
 
   local agents_count = caravan_force:character_list():num_items();
   local units_count = caravan_force:unit_list():num_items();
@@ -25,14 +23,15 @@ function Old_world_caravans:ambush_handler(context)
   local random_idx = cm:random_number(units_count - 1, agents_count);
   local random_unit = caravan_force:unit_list():item_at(random_idx):unit_key();
 
-  local units_to_add = {};
-
-  for i = 0, units_count - 1 do
-    local unit = caravan_force:unit_list():item_at(i);
-    if unit:unit_key() == random_unit then
-      table.insert(units_to_add, unit:experience_level());
-    end
-  end
+  ---@type Prebattle_caravan_data
+  local prebattle_data = {
+    caravan = caravan,
+    dilemma_name = dilemma_name,
+    enemy_force_cqi = enemy_cqi,
+    is_ambush = true,
+    x = x,
+    y = y
+  }
 
   self:spy_on_dilemmas(caravan, function()
     local enemy_force = cm:get_military_force_by_cqi(enemy_cqi);
@@ -43,7 +42,8 @@ function Old_world_caravans:ambush_handler(context)
       return
     end
 
-    self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, true, function() end);
+    self:bind_battle_to_dilemma(prebattle_data, function()
+    end);
 
     self:log("battle has attached, goto dilemma builder")
 

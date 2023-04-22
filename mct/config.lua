@@ -50,6 +50,7 @@ local encounters = {
   { key = "new_units",       text = "new_units",       tt = "", default = false },
   { key = "shortcut",        text = "shortcut",        tt = "", default = false },
   { key = "giftFromInd",     text = "giftFromInd",     tt = "", default = false },
+  { key = "enemy_caravan",   text = "enemy_caravan",     tt = "", default = false },
 
 }
 

@@ -28,6 +28,7 @@ Old_world_caravans = {
   force_enable = false,
   peasant_economy = false,
   random_enemies = false,
+  cathay_caravans = {},
   ai_caravans = {
     wh_main_sc_emp_empire = true,
     wh_main_sc_dwf_dwarfs = true,

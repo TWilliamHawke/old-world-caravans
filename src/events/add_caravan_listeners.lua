@@ -24,7 +24,7 @@ function Old_world_caravans:add_caravan_listeners()
       if caravan:caravan_force():unit_list():num_items() > 1 then return end
 
       local subculture = context:caravan():caravan_force():faction():subculture()
-      
+      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true)
       if self.start_units[subculture] then
         self:add_start_force(caravan);
       else
@@ -98,7 +98,14 @@ function Old_world_caravans:add_caravan_listeners()
       local subculture = context:faction():subculture();
 
       if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
-        self:handle_caravan_encounter(context);
+        local ok, err = pcall(function()
+          self:handle_caravan_encounter(context);
+        
+        end);
+        
+        if not ok then
+          self:logCore(tostring(err));
+        end
       else
         caravans:waylaid_caravan_handler(context);
         self:log("Handle Encounter for Chaos dwarfs or ROC Cathay")

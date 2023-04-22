@@ -1025,6 +1025,7 @@ function caravans:event_handler(context)
 	
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function caravans:generate_event(conditions)
 
 	--look throught the events table and create a table for weighted roll

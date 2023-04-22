@@ -31,7 +31,7 @@ Old_world_caravans.node_culture_to_event_weight = {
   },
   wh3_main_sc_cth_cathay = {
     wh_main_sc_emp_empire = 24,
-    wh3_main_sc_cth_cathay = 200,
+    wh3_main_sc_cth_cathay = 99,
     wh3_main_sc_ogr_ogre_kingdoms = 35,
     wh3_main_sc_ksl_kislev = 40,
     wh_main_sc_dwf_dwarfs = 30,

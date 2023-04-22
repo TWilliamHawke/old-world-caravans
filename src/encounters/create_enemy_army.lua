@@ -1,9 +1,10 @@
 ---@param context CaravanWaylaid
 ---@param enemy_data_callback enemy_data_callback
 ---@param ... string effects
----@return integer
-function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callback, ...)
-  local caravan = context:caravan();
+---@return integer enemy_cqi
+---@return integer x
+---@return integer y
+function Old_world_caravans:create_enemy_army(context, enemy_data_callback, ...)
   local enemy_culture, target_region, encounter_dif = enemy_data_callback();
   local caravan_faction_key = context:faction():name()
 
@@ -56,9 +57,5 @@ function Old_world_caravans:prepare_forces_for_battle(context, enemy_data_callba
     cm:set_saved_value(self.encounter_faction_save_key..caravan_faction_key, enemy_cqi);
   end
 
-
-  ---@diagnostic disable-next-line: param-type-mismatch
-  self:teleport_caravan_to_position(caravan, x, y);
-
-  return enemy_cqi;
+  return enemy_cqi, x, y;
 end

@@ -1,13 +1,13 @@
 ---@diagnostic disable: undefined-field
 ---@param context CaravanWaylaid
----@param dilemma_name string
----@param enemy_cqi number
-function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, enemy_cqi)
+---@param prebattle_data Prebattle_caravan_data
+function Old_world_caravans:create_dilemma_with_cargo(context, prebattle_data)
   local caravan = context:caravan();
   local caravan_faction = context:faction();
   local cargo_amount = caravan:cargo();
   local caravan_force = caravan:caravan_force();
   local character = context:caravan_master():character()
+  local enemy_cqi = prebattle_data.enemy_force_cqi
 
   self:spy_on_dilemmas(caravan, function()
     local enemy_force = cm:get_military_force_by_cqi(enemy_cqi);
@@ -18,7 +18,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
       return
     end
 
-    self:bind_battle_to_dilemma(caravan, dilemma_name, enemy_cqi, false, function()
+    self:bind_battle_to_dilemma(prebattle_data, function()
       cm:set_caravan_cargo(caravan, cargo_amount - 200);
       core:trigger_custom_event("ScriptEventOwcLoseCargo", {
         character = character});
@@ -26,7 +26,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, dilemma_name, ene
 
     self:log("battle has attached, goto dilemma builder")
 
-    local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
+    local dilemma_builder = cm:create_dilemma_builder(prebattle_data.dilemma_name);
     local payload_builder = cm:create_payload();
 
     dilemma_builder:add_choice_payload("FIRST", payload_builder);
