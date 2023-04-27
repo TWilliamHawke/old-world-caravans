@@ -41,16 +41,18 @@ local enemy_forces_options = {
 }
 
 local encounters = {
-  { key = "nothing",         text = "nothing",         tt = "", default = false },
-  { key = "ambush",          text = "ambush",          tt = "", default = false },
-  { key = "cargo_replenish", text = "cargo_replenish", tt = "", default = false },
-  { key = "enemy_attack",    text = "enemy_attack",    tt = "", default = true },
-  { key = "local_trouble",   text = "local_trouble",   tt = "", default = false },
-  { key = "new_agent",       text = "new_agent",       tt = "", default = false },
-  { key = "new_units",       text = "new_units",       tt = "", default = false },
-  { key = "shortcut",        text = "shortcut",        tt = "", default = false },
-  { key = "giftFromInd",     text = "giftFromInd",     tt = "", default = false },
-  { key = "enemy_caravan",   text = "enemy_caravan",     tt = "", default = false },
+  { key = "nothing",          text = "nothing",          tt = "", default = false },
+  { key = "ambush",           text = "ambush",           tt = "", default = false },
+  { key = "cargo_replenish",  text = "cargo_replenish",  tt = "", default = false },
+  { key = "enemy_attack",     text = "enemy_attack",     tt = "", default = true },
+  { key = "local_trouble",    text = "local_trouble",    tt = "", default = false },
+  { key = "new_agent",        text = "new_agent",        tt = "", default = false },
+  { key = "new_units",        text = "new_units",        tt = "", default = false },
+  { key = "shortcut",         text = "shortcut",         tt = "", default = false },
+  { key = "giftFromInd",      text = "giftFromInd",      tt = "", default = false },
+  { key = "enemy_caravan",    text = "enemy_caravan",    tt = "", default = false },
+  { key = "friendly_caravan", text = "friendly_caravan", tt = "", default = false },
+  { key = "ogres_my_lord",    text = "ogres_my_lord",    tt = "", default = false },
 
 }
 
@@ -127,11 +129,13 @@ faction_section:set_localised_text("Miscellaneous setttings")
 
 local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
 peasant_economy:set_text("Peasant economy for Bretonnian caravans", false)
-peasant_economy:set_tooltip_text("Non-kinght units in Bretonnian caravans will be affecting peasant economy. Works only for new Caravans", false)
+peasant_economy:set_tooltip_text(
+"Non-kinght units in Bretonnian caravans will be affecting peasant economy. Works only for new Caravans", false)
 
 local random_enemies = old_world_caravans:add_new_option("random_enemies", "checkbox")
 random_enemies:set_text("Randomize enemies", false)
-random_enemies:set_tooltip_text("Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
+random_enemies:set_tooltip_text(
+"Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false)

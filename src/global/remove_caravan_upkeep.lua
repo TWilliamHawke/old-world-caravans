@@ -1,6 +1,7 @@
 ---@diagnostic disable: param-type-mismatch, undefined-field
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 function Old_world_caravans:remove_caravan_upkeep(force)
+  if not force:faction():is_human() then return end
   local bundle_key = "owc_caravan_reduce_upkeep";
 
   if force:has_effect_bundle(bundle_key) then
