@@ -33,14 +33,7 @@ function Old_world_caravans:ambush_handler(context)
     y = y
   }
 
-  self:spy_on_dilemmas(caravan, function()
-    local enemy_force = cm:get_military_force_by_cqi(enemy_cqi);
-    if not enemy_force or enemy_force:is_null_interface() then
-      self:log("enemy army not found! cancel the encounter")
-      cm:move_caravan(caravan);
-      cm:set_saved_value(self.encounter_was_canceled_key, true)
-      return
-    end
+  self:spy_on_dilemmas(caravan, enemy_cqi, function()
 
     self:bind_battle_to_dilemma(prebattle_data, function()
     end);
@@ -51,6 +44,8 @@ function Old_world_caravans:ambush_handler(context)
     local payload_builder = cm:create_payload();
     dilemma_builder:add_choice_payload("FIRST", payload_builder);
     payload_builder:remove_unit(caravan:caravan_force(), random_unit);
+    payload_builder:clear();
+
     dilemma_builder:add_choice_payload("SECOND", payload_builder);
     dilemma_builder:add_target("default", caravan:caravan_force());
 

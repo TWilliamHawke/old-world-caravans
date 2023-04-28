@@ -1,7 +1,8 @@
 ---@diagnostic disable: undefined-field
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
+---@param enemy_cqi number
 ---@param encounter_callback fun()
-function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
+function Old_world_caravans:spy_on_dilemmas(caravan, enemy_cqi, encounter_callback)
   core:remove_listener("owc_any_dilemma_triggered");
   core:remove_listener("owc_dillemma_choice_spy_on");
 
@@ -26,7 +27,7 @@ function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
         "DilemmaChoiceMadeEvent",
         true,
         function()
-          self:spy_on_dilemmas(caravan, encounter_callback)
+          self:spy_on_dilemmas(caravan, enemy_cqi, encounter_callback)
         end,
         false
       );
@@ -51,6 +52,14 @@ function Old_world_caravans:spy_on_dilemmas(caravan, encounter_callback)
     false);
 
   cm:callback(function()
+    local enemy_force = cm:get_military_force_by_cqi(enemy_cqi);
+    if not enemy_force or enemy_force:is_null_interface() then
+      self:log("enemy army not found! cancel the encounter")
+      cm:move_caravan(caravan);
+      cm:set_saved_value(self.encounter_was_canceled_key, true)
+      return
+    end
+
     cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
     cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
     core:remove_listener("owc_any_mission_triggered");

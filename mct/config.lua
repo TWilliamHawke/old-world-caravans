@@ -53,6 +53,10 @@ local encounters = {
   { key = "enemy_caravan",    text = "enemy_caravan",    tt = "", default = false },
   { key = "friendly_caravan", text = "friendly_caravan", tt = "", default = false },
   { key = "ogres_my_lord",    text = "ogres_my_lord",    tt = "", default = false },
+  { key = "good_deal",        text = "good_deal",        tt = "", default = false },
+  { key = "wild_river",       text = "wild_river",       tt = "", default = false },
+  { key = "training_camp",    text = "training_camp",    tt = "", default = false },
+  { key = "daemons_attack",   text = "daemons_attack",   tt = "", default = false },
 
 }
 
@@ -130,12 +134,12 @@ faction_section:set_localised_text("Miscellaneous setttings")
 local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
 peasant_economy:set_text("Peasant economy for Bretonnian caravans", false)
 peasant_economy:set_tooltip_text(
-"Non-kinght units in Bretonnian caravans will be affecting peasant economy. Works only for new Caravans", false)
+  "Non-kinght units in Bretonnian caravans will be affecting peasant economy. Works only for new Caravans", false)
 
 local random_enemies = old_world_caravans:add_new_option("random_enemies", "checkbox")
 random_enemies:set_text("Randomize enemies", false)
 random_enemies:set_tooltip_text(
-"Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
+  "Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false)

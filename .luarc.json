@@ -17,7 +17,8 @@
     "random_army_manager",
     "uim",
     "kill_faction",
-        "Calculate_Economy_Penalty"
+        "Calculate_Economy_Penalty",
+        "get_random_ancillary_key_for_faction"
   ],
   "hint.semicolon": "All",
   "diagnostics.disable": [
