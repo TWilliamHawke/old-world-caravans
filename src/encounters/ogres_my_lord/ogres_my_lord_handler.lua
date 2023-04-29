@@ -6,19 +6,22 @@ function Old_world_caravans:ogres_my_lord_handler(context)
   local caravan_force = caravan:caravan_force();
   local faction = context:faction()
 
-  caravans:attach_battle_to_dilemma(
-    dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
-    nil);
+  local prebattle_data = {
+    caravan = caravan,
+    dilemma_name = dilemma_name,
+    enemy_force_cqi = -1,
+  }
+
+  self:bind_battle_to_dilemma(prebattle_data, 0, function()
+    ---@diagnostic disable-next-line: undefined-field
+    cm:move_caravan(caravan);
+    core:trigger_custom_event("ScriptEventOwcNewUnitsDilemma", {
+      character = caravan:caravan_master():character() });
+  end)
 
   local orge_unit = self:select_random_key_by_weight(self.ogre_mercenaries, function(val)
-        return val;
-      end) or "wh3_main_ogr_inf_ironguts_0";
+    return val;
+  end) or "wh3_main_ogr_inf_ironguts_0";
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();

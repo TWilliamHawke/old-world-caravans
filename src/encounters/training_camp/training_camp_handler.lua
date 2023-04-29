@@ -4,15 +4,15 @@ function Old_world_caravans:training_camp_handler(context)
   local caravan = context:caravan();
   local faction = context:faction()
 
-  caravans:attach_battle_to_dilemma(
-    dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
-    nil);
+  ---@type Prebattle_caravan_data
+  local prebattle_data = {
+    caravan = caravan,
+    dilemma_name = dilemma_name,
+    enemy_force_cqi = -1,
+  }
+
+  self:bind_battle_to_dilemma(prebattle_data, 0, function()
+  end)
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();

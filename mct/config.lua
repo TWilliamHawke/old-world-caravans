@@ -57,6 +57,7 @@ local encounters = {
   { key = "wild_river",       text = "wild_river",       tt = "", default = false },
   { key = "training_camp",    text = "training_camp",    tt = "", default = false },
   { key = "daemons_attack",   text = "daemons_attack",   tt = "", default = false },
+  { key = "offenceorDefence", text = "offenceorDefence", tt = "", default = false },
 
 }
 

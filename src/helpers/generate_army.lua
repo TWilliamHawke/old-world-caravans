@@ -51,7 +51,9 @@ function Old_world_caravans:generate_army(army_key, budget)
     local chance_to_increace = units_count - math.floor(units_count);
     units_count = math.floor(units_count);
 
-    if cm:random_number(8, 0) / 10 < chance_to_increace then
+    --chance_to_increace < 0.2 => 0%
+    --chance_to_increace > 0.8 => 100%
+    if cm:random_number(6, 0) / 10 < chance_to_increace - 0.2 then
       units_count = units_count + 1;
     end
 

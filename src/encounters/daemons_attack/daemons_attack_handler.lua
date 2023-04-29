@@ -44,7 +44,7 @@ function Old_world_caravans:daemons_attack_handler(context)
   if not random_unit then return end
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
-    self:bind_battle_to_dilemma(prebattle_data, function()
+    self:bind_battle_to_dilemma(prebattle_data, 0, function()
     end);
 
     self:log("battle has attached, goto dilemma builder")

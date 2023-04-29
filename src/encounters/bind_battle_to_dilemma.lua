@@ -1,6 +1,7 @@
 ---@param prebattle_data Prebattle_caravan_data
----@param callback function | nil
-function Old_world_caravans:bind_battle_to_dilemma(prebattle_data, callback)
+---@param callback function
+---@param callback_choice integer
+function Old_world_caravans:bind_battle_to_dilemma(prebattle_data, callback_choice, callback)
   local caravan = prebattle_data.caravan;
   local caravan_faction = caravan:caravan_force():faction():name();
   local caravan_cqi = caravan:caravan_force():command_queue_index();
@@ -14,21 +15,21 @@ function Old_world_caravans:bind_battle_to_dilemma(prebattle_data, callback)
     if prebattle_data.dilemma_name ~= dilemma then return end
     local choice = context:choice();
 
-    if choice == 0 then
-      self:log("before Start battle"..tostring(prebattle_data.x)..tostring(prebattle_data.y));
+    if choice == callback_choice then
+      callback();
+      self:log("Apply callback");
+    end
+
+    if choice == 0 and prebattle_data.enemy_force_cqi > 0 then
       self:teleport_caravan_to_position(caravan, prebattle_data.x, prebattle_data.y);
       cm:disable_event_feed_events(true, "", "", "character_dies_battle");
       cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
       cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
-      
+
       self:log("Start battle");
       cm:force_attack_of_opportunity(prebattle_data.enemy_force_cqi, caravan_cqi, prebattle_data.is_ambush);
-    else
+    elseif choice == 1 then
       self:cleanup_encounter_for_faction(caravan_faction);
-      if callback then
-        callback();
-        self:log("Apply callback");
-      end
       ---@diagnostic disable-next-line: undefined-field
       cm:move_caravan(caravan);
 

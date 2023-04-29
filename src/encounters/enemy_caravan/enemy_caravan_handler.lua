@@ -73,7 +73,7 @@ function Old_world_caravans:enemy_caravan_handler(context)
   }
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
-    self:bind_battle_to_dilemma(prebattle_data, function()
+    self:bind_battle_to_dilemma(prebattle_data, 0, function()
       ---@diagnostic disable-next-line: undefined-field
       cm:set_caravan_cargo(caravan, cargo_amount + 200);
     end);

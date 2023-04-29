@@ -10,7 +10,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, prebattle_data)
   local enemy_cqi = prebattle_data.enemy_force_cqi
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
-    self:bind_battle_to_dilemma(prebattle_data, function()
+    self:bind_battle_to_dilemma(prebattle_data, 1, function()
       cm:set_caravan_cargo(caravan, cargo_amount - 200);
       core:trigger_custom_event("ScriptEventOwcLoseCargo", {
         character = character});

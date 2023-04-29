@@ -16,6 +16,42 @@ function Old_world_caravans:add_first_tick_callbacks()
     caravans.rhox_mar_caravan_replace_listener = function()
       self:logCore("Marienburg \"Replace listeners\" function was replaced")
     end
+
+    for culture, trait_list in pairs(self.start_units) do
+      self:logCore("==============")
+      self:logCore(culture)
+
+      local total_cost = 0;
+      local min_cost = 9999999;
+      local max_cost = 0;
+      local army_count = 0;
+
+      for trait, unit_list in pairs(trait_list) do
+        local army_cost = 0;
+
+        for _, unit_key in pairs(unit_list) do
+          local unit_cost = cco("CcoMainUnitRecord", unit_key):Call("Cost") or 0;
+          army_cost = army_cost + unit_cost;
+        end
+
+        total_cost = total_cost + army_cost;
+        army_count = army_count + 1;
+
+        if army_cost < min_cost then
+          min_cost = army_cost;
+        end
+        if army_cost > max_cost then
+          max_cost = army_cost;
+        end
+      end
+
+      army_count = army_count == 0 and 1 or army_count;
+      local mid_cost = total_cost / army_count;
+
+      self:logCore("mid_cost is "..mid_cost)
+      self:logCore("min_cost is "..min_cost)
+      self:logCore("max_cost is "..max_cost)
+    end
   end)
 
   cm:add_post_first_tick_callback(
