@@ -61,6 +61,10 @@ function Old_world_caravans:generate_army(army_key, budget)
     add_units_in_list(unit_key, units_count);
     self:log(unit_key..": x"..units_count)
 
+    if unit_cost >= local_budget then
+      return 0
+    end
+
     return local_budget - unit_cost * units_count;
   end
 

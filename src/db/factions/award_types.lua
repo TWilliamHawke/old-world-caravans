@@ -5,4 +5,5 @@ Old_world_caravans.award_types = {
   mixer_teb_southern_realms = "resource",
   wh_main_sc_emp_empire = "item",
   owc_teb_cathay = "item",
+  wh3_main_sc_ksl_kislev = "item",
 }

@@ -30,4 +30,8 @@ Old_world_caravans.new_caravan_targets = {
   "wh3_main_combi_region_the_star_tower",
   "wh3_main_combi_region_shang_yang",
   "wh3_main_combi_region_mousillon",
+  "wh3_main_combi_region_nuln",
+  "wh3_main_combi_region_great_hall_of_greasus",
+  "wh3_main_combi_region_hanyu_port",
+  "wh3_main_combi_region_nan_gau",
 }

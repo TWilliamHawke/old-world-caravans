@@ -472,6 +472,22 @@ Old_world_caravans.threats = {
     wh_main_sc_vmp_vampire_counts = 1,
   },
   --dark lands
+  ["wh3_dlc23_combi_region_fort_dorznye_vort"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
+  },
+  ["wh3_dlc23_combi_region_gash_kadrak"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
+  },
+  ["wh3_main_combi_region_howling_rock"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
+  },
+  ["wh3_dlc23_combi_region_blasted_expanse"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
+  },
   ["wh3_main_combi_region_ash_ridge_mountains"] = {
     wh_main_sc_grn_greenskins = 2,
     wh3_dlc23_sc_chd_chaos_dwarfs = 2,
@@ -559,6 +575,19 @@ Old_world_caravans.threats = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
     wh_dlc03_sc_bst_beastmen = 1,
   },
+  ["wh3_main_combi_region_titans_notch"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
+  ["wh3_main_combi_region_amblepeak"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+    wh_dlc03_sc_bst_beastmen = 1,
+  },
+  ["wh3_main_combi_region_karak_vrag"] = {
+    wh_main_sc_grn_greenskins = 2,
+    wh3_main_sc_ogr_ogre_kingdoms = 2,
+  },
   ["wh3_main_combi_region_karak_azorn"] = {
     wh_main_sc_grn_greenskins = 2,
     wh3_main_sc_ogr_ogre_kingdoms = 2,
@@ -625,9 +654,28 @@ Old_world_caravans.threats = {
     wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_shang_yang"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
+    wh3_main_sc_ogr_ogre_kingdoms = 1,
     wh2_main_sc_skv_skaven = 1,
     wh_main_sc_grn_greenskins = 1,
+    wh_dlc03_sc_bst_beastmen = 1,
+  },
+  ["wh3_main_combi_region_shrine_of_the_alchemist"] = {
+    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh2_main_sc_skv_skaven = 1,
+    wh_main_sc_grn_greenskins = 1,
+    wh_dlc03_sc_bst_beastmen = 1,
+  },
+  ["wh3_main_combi_region_nan_li"] = {
+    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh2_main_sc_skv_skaven = 1,
+    wh_main_sc_grn_greenskins = 1,
+    wh_dlc03_sc_bst_beastmen = 1,
+  },
+  ["wh3_main_combi_region_nan_gau"] = {
+    wh3_main_sc_ogr_ogre_kingdoms = 1,
+    wh2_main_sc_skv_skaven = 1,
+    wh_main_sc_grn_greenskins = 1,
+    wh_dlc03_sc_bst_beastmen = 1,
   },
   ["wh3_main_combi_region_xen_wu"] = {
     wh3_main_sc_ogr_ogre_kingdoms = 3,
@@ -948,4 +996,5 @@ Old_world_caravans.threats = {
   ["wh3_main_combi_region_waterfall_palace"] = {
     wh_dlc05_sc_wef_wood_elves = 3,
   },
+
 }
