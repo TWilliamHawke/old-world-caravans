@@ -1,18 +1,17 @@
----comment
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 function Old_world_caravans:add_start_force(caravan)
-  local force_list = self.start_units.wh_main_sc_brt_bretonnia.brt_caravan_skill_innate_empire;
   local caravan_master = caravan:caravan_force():general_character();
   local faction = caravan_master:faction();
   local subculture = faction:subculture();
-  local units_list = self.start_units[subculture] or {}
+  local units_list = self.start_units[subculture];
+  local elite_guards_data = self.db.elite_guards[subculture];
 
-  for skill, units in pairs(units_list) do
-    if caravan_master:has_skill(skill) then
-      force_list = units;
-      break
-    end
-  end
+  if not units_list then return end
+
+  ---@diagnostic disable-next-line: undefined-field
+  local innate_skill = caravan_master:background_skill()
+  local force_list = units_list[innate_skill] or
+  self.start_units.wh_main_sc_brt_bretonnia.brt_caravan_skill_innate_empire;
 
   local lord_cqi = caravan_master:command_queue_index();
   local lord_str = cm:char_lookup_str(lord_cqi);
@@ -21,22 +20,12 @@ function Old_world_caravans:add_start_force(caravan)
     cm:grant_unit_to_character(lord_str, force_list[i]);
   end
 
-  if faction:has_technology("wh_main_tech_dwf_civ_3_2") then
-    cm:grant_unit_to_character(lord_str, "wh_main_dwf_inf_longbeards");
-    cm:grant_unit_to_character(lord_str, "wh_main_dwf_inf_longbeards");
-  elseif faction:has_technology("wh2_dlc13_tech_emp_economy_3") then
-    cm:grant_unit_to_character(lord_str, "wh_main_emp_inf_greatswords");
-    cm:grant_unit_to_character(lord_str, "wh_main_emp_inf_greatswords");
-  elseif faction:has_technology("wh_dlc07_tech_brt_economy_other_draft") then
-    cm:grant_unit_to_character(lord_str, "owc_dlc07_brt_inf_foot_squires_0");
-    cm:grant_unit_to_character(lord_str, "owc_dlc07_brt_inf_foot_squires_0");
-  elseif faction:has_technology("teb_tech_exped_vets") then
-    cm:grant_unit_to_character(lord_str, "teb_republican_guard");
-    cm:grant_unit_to_character(lord_str, "teb_republican_guard");
+  if elite_guards_data and faction:has_technology(elite_guards_data.technology) then
+    cm:grant_unit_to_character(lord_str, elite_guards_data.unit);
+    cm:grant_unit_to_character(lord_str, elite_guards_data.unit);
   end
 
   if self.peasant_economy then
     Calculate_Economy_Penalty(faction)
   end
-
 end

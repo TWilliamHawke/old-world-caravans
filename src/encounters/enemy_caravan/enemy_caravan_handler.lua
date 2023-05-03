@@ -28,24 +28,32 @@ function Old_world_caravans:enemy_caravan_handler(context)
   end
 
   local enemy_culture = self:select_random_key_by_weight(weight_table,
-        function(val)
-          return val
-        end, true) or "wh3_main_sc_cth_cathay";
+    function(val)
+      return val
+    end, true) or "wh3_main_sc_cth_cathay";
   self:logCore("selected caravan culture is " .. enemy_culture)
 
   local caravans_list = self.start_units[enemy_culture] or self.cathay_caravans;
 
   local caravan_trait = self:select_random_key_by_weight(caravans_list, function(val)
-        return 1;
-      end) or "none";
+    return 1;
+  end) or "none";
 
   local unit_list = caravans_list[caravan_trait] or default_caravan;
-  local general = self.culture_to_caravan_master[enemy_culture] or "wh3_main_cth_lord_magistrate_yang";
+  local general = self.culture_to_fake_caravan_master[enemy_culture] or "wh3_main_cth_lord_magistrate_yang";
   local enemy_faction = self.culture_to_enemy_faction[enemy_culture];
-  self:logCore("selected enemy_faction culture is " .. enemy_faction)
-  self:logCore("caravan has " .. tostring(#unit_list) .. " units")
+  local elite_guards = self.db.elite_guards[enemy_culture];
+
 
   local army_string = table.concat(unit_list, ",")
+
+  if elite_guards and self:is_late_game() then
+    local elite_unit = elite_guards.unit;
+
+    if elite_unit then
+      army_string = army_string .. "," .. elite_unit .. "," .. elite_unit
+    end
+  end
 
   local x, y = self:find_position_for_spawn(caravan_faction_key, start_region:name())
 

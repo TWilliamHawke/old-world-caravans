@@ -1341,6 +1341,7 @@ function caravans:attach_battle_to_dilemma(
 	return enemy_force_cqi
 end;
 
+---@param caravan CARAVAN_SCRIPT_INTERFACE
 function caravans:add_inital_force(caravan)
 	local force_cqi = caravan:caravan_force():command_queue_index();
 	local commander = caravan:caravan_force():general_character()

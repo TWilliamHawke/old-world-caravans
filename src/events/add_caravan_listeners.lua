@@ -23,8 +23,9 @@ function Old_world_caravans:add_caravan_listeners()
       local caravan = context:caravan();
       if caravan:caravan_force():unit_list():num_items() > 1 then return end
 
-      local subculture = context:caravan():caravan_force():faction():subculture()
-      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true)
+      local subculture = caravan:caravan_force():faction():subculture()
+      ---@diagnostic disable-next-line: undefined-field
+      cm:set_character_excluded_from_trespassing(caravan:caravan_master():character(), true)
       if self.start_units[subculture] then
         self:add_start_force(caravan);
       else

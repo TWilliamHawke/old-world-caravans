@@ -1,3 +1,4 @@
+--true requires for confederation check
 Old_world_caravans.access_to_caravans_on_first_turn = {
   mixer_teb_border_princes = true,
   mixer_teb_estalia = true,
@@ -39,4 +40,12 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   wh2_dlc14_brt_chevaliers_de_lyonesse = false,
   wh2_dlc17_dwf_thorek_ironbrow = false,
   wh2_dlc13_emp_the_huntmarshals_expedition = false,
+  wh3_main_ksl_the_ice_court = true,
+  wh3_main_ksl_brotherhood_of_the_bear = true,
+  wh3_main_ksl_druzhina_enclave = true,
+  wh3_main_ksl_ropsmenn_clan = true,
+  wh3_main_ksl_the_great_orthodoxy = true,
+  wh3_main_ksl_ungol_kindred = true,
+  wh3_main_ksl_ursun_revivalists = false,
+  wh_main_dwf_kraka_drak = true,
 }
