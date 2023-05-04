@@ -24,7 +24,7 @@ function Old_world_caravans:friendly_caravan_handler(context)
   cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", -200);
   cargo_bundle:set_duration(0);
 
-  payload_builder:faction_ancillary_gain(caravan_faction, "wh3_main_anc_enchanted_item_jar_of_all_souls")
+  payload_builder:faction_ancillary_gain(caravan_faction, "owc_main_anc_enchanted_item_jar_of_all_souls")
   payload_builder:effect_bundle_to_force(caravan:caravan_force(), cargo_bundle);
   dilemma_builder:add_choice_payload("FIRST", payload_builder);
 

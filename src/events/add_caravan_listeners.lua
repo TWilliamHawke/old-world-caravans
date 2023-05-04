@@ -48,7 +48,7 @@ function Old_world_caravans:add_caravan_listeners()
         local caravan_force = context:caravan():caravan_force();
         self:remove_caravan_upkeep(caravan_force);
       end
-      
+
       ---@diagnostic disable-next-line: undefined-field
       cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
       local caravan = context:caravan();
@@ -101,9 +101,8 @@ function Old_world_caravans:add_caravan_listeners()
       if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         local ok, err = pcall(function()
           self:handle_caravan_encounter(context);
-        
         end);
-        
+
         if not ok then
           self:logCore(tostring(err));
         end
@@ -132,10 +131,10 @@ function Old_world_caravans:add_caravan_listeners()
       -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
       -- :item_at(0))
 
-      local caravan = cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0)
-      cm:move_caravan(caravan)
+      -- local caravan = cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0)
+      -- cm:move_caravan(caravan)
 
-      --self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
+      self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
     end,
     true
   )
@@ -157,7 +156,8 @@ function Old_world_caravans:add_caravan_listeners()
       local region_name = node:region_key()
       self:give_caravan_award(faction, region_name);
       self:give_unit_award(caravan, region_name)
-
+      ---@diagnostic disable-next-line: param-type-mismatch
+      cm:remove_effect_bundle_from_force("owc_caravan_cargo_cap", caravan:caravan_force():command_queue_index())
     end,
     true
   )

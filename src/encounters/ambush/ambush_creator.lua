@@ -13,7 +13,12 @@ function Old_world_caravans:ambush_creator(context)
   if context.caravan:caravan_master():character():has_skill("wh3_main_skill_cth_caravan_master_scouts") then
     probability = math.floor(probability / 2)
   end;
-  local max_probability = math.floor(10 * context.ownership_mult)
+  local max_probability = math.floor(10 * context.ownership_mult);
+
+  if caravan_force:has_effect_bundle("owc_caravan_exhausted_guards") then
+    probability = probability * 2;
+    max_probability = max_probability * 2;
+  end
 
   return math.min(probability, max_probability);
 end
