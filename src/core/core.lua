@@ -14,7 +14,7 @@ Old_world_caravans = {
   encounter_budgets = {
     3500,
     5000,
-    6500
+    7000
   },
   filler_unit_weight = 1.5,
   cargo_threat_mult = 0.015,

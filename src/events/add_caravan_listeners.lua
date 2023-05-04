@@ -132,7 +132,10 @@ function Old_world_caravans:add_caravan_listeners()
       -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
       -- :item_at(0))
 
-      self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
+      local caravan = cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0)
+      cm:move_caravan(caravan)
+
+      --self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
     end,
     true
   )
@@ -146,13 +149,15 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     ---@param context CaravanCompleted
     function(context)
-      --self:complete_caravans(context)
       local faction = context:faction()
 
       if not faction:is_human() then return end
-      local node = context:complete_position():node()
+      local node = context:complete_position():node();
+      local caravan = context:caravan();
       local region_name = node:region_key()
       self:give_caravan_award(faction, region_name);
+      self:give_unit_award(caravan, region_name)
+
     end,
     true
   )
