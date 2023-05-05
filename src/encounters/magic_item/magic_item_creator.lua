@@ -1,7 +1,7 @@
 ---@param context Encounter_creator_context
 ---@return integer encounter_probability
-function Old_world_caravans:good_deal_creator(context)
-  local probability = 0;
+function Old_world_caravans:magic_item_creator(context)
+  local probability = 1;
   local caravan_master = context.caravan:caravan_master():character()
 
   local culture_to = self:get_subculture_of_node(context.to);

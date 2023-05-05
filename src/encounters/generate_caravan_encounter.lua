@@ -72,5 +72,5 @@ function Old_world_caravans:generate_caravan_encounter(context)
   if selected_encounter == "nothing" then return end
 
   ---@diagnostic disable-next-line: redundant-parameter
-  context:flag_for_waylay(selected_encounter)
+  context:flag_for_waylay("owc_"..selected_encounter)
 end

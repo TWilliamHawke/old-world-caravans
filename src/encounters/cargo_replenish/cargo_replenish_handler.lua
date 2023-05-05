@@ -12,9 +12,7 @@ function Old_world_caravans:cargo_replenish_handler(context)
     nil,
     nil,
     function()
-      local cargo = caravan:cargo();
-      ---@diagnostic disable-next-line: undefined-field
-      cm:set_caravan_cargo(caravan, cargo + 200)
+      self:increase_caravan_cargo(caravan, 200)
     end);
 
     local dilemma_builder = cm:create_dilemma_builder(dilemma_name);

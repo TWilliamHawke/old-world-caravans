@@ -1,9 +1,10 @@
 ---@param context CaravanWaylaid
-function Old_world_caravans:good_deal_handler(context)
+function Old_world_caravans:magic_item_handler(context)
   local faction = context:faction()
   local faction_name = context:faction():name();
   local caravan_force = context:caravan():caravan_force();
   local caravan = context:caravan();
+  local faction_sc = faction:culture();
 
   local dilemma_name = "owc_main_dilemma_caravan_good_deal";
 
@@ -16,16 +17,28 @@ function Old_world_caravans:good_deal_handler(context)
     nil,
     nil,
     function()
-      local cargo = caravan:cargo();
-      ---@diagnostic disable-next-line: undefined-field
-      cm:set_caravan_cargo(caravan, cargo + 200);
+      self:increase_caravan_cargo(caravan, 200)
     end);
 
+  local ancillary_categories = {
+    "armour",
+    "enchanted_item",
+    "banner",
+    "talisman",
+    "weapon",
+  };
+
+  if faction_sc ~= "wh_main_dwf_dwarfs" then
+    table.insert(ancillary_categories, "arcane_item")
+  end
+
+  local category = ancillary_categories[cm:random_number(#ancillary_categories)]
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
 
-  local random_item = get_random_ancillary_key_for_faction(faction_name, false, "rare");
+  --works incorrectly for dwarfs
+  local random_item = get_random_ancillary_key_for_faction(faction_name, category, "rare");
   payload_builder:faction_ancillary_gain(faction, random_item);
 
   dilemma_builder:add_choice_payload("FIRST", payload_builder);
@@ -43,4 +56,5 @@ function Old_world_caravans:good_deal_handler(context)
   self:log("dilemma_builder is finished, launch the dilemma")
 
   cm:launch_custom_dilemma_from_builder(dilemma_builder, faction);
+
 end
