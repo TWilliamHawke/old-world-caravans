@@ -2,7 +2,7 @@
 ---@param budget number
 ---@return string
 ---@return table<string>
-function Old_world_caravans:generate_army(army_key, budget)
+function Old_world_caravans:generate_army(army_key, encounter_dif)
   local default_string = [[
     wh_main_grn_inf_night_goblins,
   wh_main_grn_inf_night_goblins,
@@ -11,6 +11,8 @@ function Old_world_caravans:generate_army(army_key, budget)
   wh_main_grn_mon_trolls,
   wh_main_grn_mon_trolls]];
   local army_template = self.enemy_forces[army_key];
+  local budget = self.encounter_budgets[encounter_dif];
+
 
   if not army_template then
     return default_string, {};

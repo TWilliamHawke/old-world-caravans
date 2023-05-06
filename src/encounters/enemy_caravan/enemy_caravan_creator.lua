@@ -13,7 +13,7 @@ function Old_world_caravans:enemy_caravan_creator(context)
 
       --low weight means hight caravan chance
       if weight_from < 100 or weight_to < 100 then
-        probability = 3;
+        probability = 5;
         break
       end
     end

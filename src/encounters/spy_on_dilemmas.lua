@@ -37,8 +37,13 @@ function Old_world_caravans:spy_on_dilemmas(caravan, enemy_cqi, encounter_callba
 
   core:add_listener("owc_any_mission_triggered",
     "MissionIssued",
-    true,
-    function()
+    ---@param context MissionIssued
+    function(context)
+      local mission_name = context:mission():mission_record_key()
+      return string.find(mission_name, "_qb_")
+    end,
+    ---comment
+    function(context)
       core:remove_listener("owc_any_dilemma_triggered");
       core:remove_listener("owc_dillemma_choice_spy_on")
       cm:move_caravan(caravan);

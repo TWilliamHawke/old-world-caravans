@@ -236,3 +236,5 @@ function Old_world_caravans_vows:add_vow_listeners()
 end
 
 Old_world_caravans_vows:add_vow_listeners()
+
+--TODO update for new encounters

@@ -63,6 +63,13 @@ local encounters = {
 
 }
 
+local combat_encounter_options = {
+  { key = "0.5", text = ".5x", tt = "", is_default = false },
+  { key = "1", text = "1x", tt = "", is_default = true },
+  { key = "1.5", text = "1.5x", tt = "", is_default = false },
+  { key = "2", text = "2x", tt = "", is_default = false },
+}
+
 
 local first_section = old_world_caravans:get_section_by_key("default");
 first_section:set_localised_text("Encounters Difficulty", false);
@@ -94,13 +101,18 @@ encounter_budget_3:slider_set_step_size(500)
 -- filler_unit_weight:set_default_value(15)
 -- filler_unit_weight:slider_set_step_size(1)
 
-local scale_difficulty_cargo = old_world_caravans:add_new_option("scale_difficulty_cargo", "checkbox")
-scale_difficulty_cargo:set_text("owc_mct_scale_difficulty_cargo", true)
-scale_difficulty_cargo:set_tooltip_text("owc_mct_scale_difficulty_cargo_tooltip", true);
+-- local scale_difficulty_cargo = old_world_caravans:add_new_option("scale_difficulty_cargo", "checkbox")
+-- scale_difficulty_cargo:set_text("owc_mct_scale_difficulty_cargo", true)
+-- scale_difficulty_cargo:set_tooltip_text("owc_mct_scale_difficulty_cargo_tooltip", true);
 
-local scale_difficulty_strenght = old_world_caravans:add_new_option("scale_difficulty_strenght", "checkbox")
-scale_difficulty_strenght:set_text("owc_mct_scale_difficulty_strenght", true)
-scale_difficulty_strenght:set_tooltip_text("owc_mct_scale_difficulty_strenght_tooltip", true);
+-- local scale_difficulty_strenght = old_world_caravans:add_new_option("scale_difficulty_strenght", "checkbox")
+-- scale_difficulty_strenght:set_text("owc_mct_scale_difficulty_strenght", true)
+-- scale_difficulty_strenght:set_tooltip_text("owc_mct_scale_difficulty_strenght_tooltip", true);
+
+local combat_probability = old_world_caravans:add_new_option("combat_probability", "dropdown")
+combat_probability:set_text("Probability for Combat encounters", false)
+combat_probability:add_dropdown_values(combat_encounter_options)
+
 
 local no_encounter_weight = old_world_caravans:add_new_option("no_encounter_weight", "slider")
 no_encounter_weight:set_text("owc_mct_no_encounter_weight", true)
@@ -131,6 +143,17 @@ ai_bretonnia_caravans:set_text("Caravans for Bretonnia ai factions", false)
 local ai_teb_caravans = old_world_caravans:add_new_option("ai_teb_caravans", "checkbox")
 ai_teb_caravans:set_text("Caravans for Southern Realms ai factions", false)
 
+if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
+  ai_teb_caravans:set_uic_visibility(false, false)
+end
+
+local ai_ksl_caravans = old_world_caravans:add_new_option("ai_ksl_caravans", "checkbox")
+ai_ksl_caravans:set_text("Caravans for Kislev ai factions", false)
+
+if not vfs.exists("script/campaign/mod/twill_old_world_caravans_ksl.lua") then
+  ai_ksl_caravans:set_uic_visibility(false, false)
+end
+
 local faction_section = old_world_caravans:add_new_section("n_factions")
 faction_section:set_localised_text("Miscellaneous setttings")
 
@@ -143,10 +166,6 @@ local random_enemies = old_world_caravans:add_new_option("random_enemies", "chec
 random_enemies:set_text("Randomize enemies", false)
 random_enemies:set_tooltip_text(
   "Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
-
-if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
-  ai_teb_caravans:set_uic_visibility(false)
-end
 
 local debug_section = old_world_caravans:add_new_section("o_debug")
 debug_section:set_localised_text("Debug Section")
@@ -182,8 +201,8 @@ if encounter_budget_1.set_is_global then
   encounter_budget_1:set_is_global(true);
   encounter_budget_2:set_is_global(true);
   encounter_budget_3:set_is_global(true);
-  scale_difficulty_cargo:set_is_global(true);
-  scale_difficulty_strenght:set_is_global(true);
+  -- scale_difficulty_cargo:set_is_global(true);
+  -- scale_difficulty_strenght:set_is_global(true);
   no_encounter_weight:set_is_global(true);
   force_enable:set_is_global(true);
   ai_empire_caravans:set_is_global(true);
@@ -192,6 +211,7 @@ if encounter_budget_1.set_is_global then
   ai_teb_caravans:set_is_global(true);
   peasant_economy:set_is_global(true);
   random_enemies:set_is_global(true);
+  combat_probability:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

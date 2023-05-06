@@ -640,7 +640,6 @@ caravans.journey_durations = {
 function caravans:initialise()
 	--Setup
 
-	-- TODO sort this out, it's messy and needs to be adjusted to work with Chorfs
 	if cm:get_campaign_name() == "main_warhammer" then
 		self.region_reward_list = self.region_reward_list_combi;
 	elseif cm:get_campaign_name() == "wh3_main_chaos" then
@@ -661,7 +660,6 @@ function caravans:initialise()
 		for i=0, all_factions:num_items()-1 do
 			faction = all_factions:item_at(i)
 			local faction_key = faction:name();
-			--TODO work out what this means and make it generic
 			if not faction:is_human() and faction:subculture() == "wh3_main_sc_cth_cathay" then
 				cm:apply_effect_bundle("wh3_main_caravan_AI_threat_reduction", faction:name(),0)
 			end
@@ -844,7 +842,6 @@ function caravans:initialise()
 	);
 
 
-	---TODO must be a better way to do this???
 	core:add_listener(
 		"clean_up_attacker",
 		"FactionTurnStart",
@@ -881,7 +878,6 @@ function caravans:initialise()
 		true
 	);
 
-	---TODO must be a better way to do this???
 	core:add_listener(
 		"reenable_event_feed_post_caravan_battle",
 		"BattleCompleted",

@@ -6,7 +6,7 @@ function Old_world_caravans:giftFromInd_creator(context)
 
   local turn_number = cm:turn_number();
 
-  local probability = 1 + math.floor(turn_number / 100);
+  local probability = 2 + math.floor(turn_number / 50);
 
   if turn_number < 25 then
     probability = 0;

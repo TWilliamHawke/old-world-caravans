@@ -34,6 +34,7 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   local cqi = caravan_faction:command_queue_index();
 
   local payload_builder = cm:create_payload();
+  self:log("award unit is "..tostring(unit_key))
   payload_builder:add_unit(caravan_force, unit_key, 1, 0)
   local char_cqi = caravan_force:general_character():command_queue_index()
 

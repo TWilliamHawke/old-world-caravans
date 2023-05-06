@@ -11,14 +11,11 @@ function Old_world_caravans:daemons_attack_creator(context)
   for i = 0, context.list_of_regions:num_items() - 1 do
     local region = context.list_of_regions:item_at(i);
 
-    for corruption in pairs(self.chaos_corruptions) do
-      local corruption_level = cm:get_corruption_value_in_region(region, corruption) or 0;
-      if corruption_level > 0 then
-        probability = probability + 2;
-        break
-      end
+    ---@diagnostic disable-next-line: redundant-parameter
+    if cm:get_highest_corruption_in_region(region:region(), self.chaos_corruptions) then
+      probability = probability + 4;
     end
   end
 
-	return math.min(probability, 8)
+  return math.min(probability, 15)
 end

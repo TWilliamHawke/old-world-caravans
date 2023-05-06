@@ -10,6 +10,7 @@ Old_world_caravans = {
   override_enemy = false,
   default_enemy_culture = nil, ---@type nil | string
   default_difficult = 1, ---@type 1 | 2 | 3
+  combat_encounter_chance = 1,
   db = {},
   encounter_budgets = {
     3500,
@@ -35,5 +36,6 @@ Old_world_caravans = {
     wh3_main_sc_cth_cathay = true,
     wh_main_sc_brt_bretonnia = false,
     mixer_teb_southern_realms = false,
+    wh3_main_sc_ksl_kislev = false,
   },
 }

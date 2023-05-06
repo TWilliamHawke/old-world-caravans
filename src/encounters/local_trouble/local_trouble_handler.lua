@@ -36,6 +36,13 @@ function Old_world_caravans:local_trouble_handler(context)
   local target_region = weight_table[enemy_culture][2] or region_from:name();
   local encounter_diff = self:get_event_difficulty(bandit_threat, caravan);
 
+  if self.random_enemies then
+    enemy_culture = self:select_random_key_by_weight(self.db.local_trouble_dilemmas, function (val)
+      return 1
+    end) or culture_from;
+  end
+
+
   self:log("selected culture is "..enemy_culture)
 
   --local dilemma_name = self.db.local_trouble_dilemmas[enemy_culture] or "wh3_main_dilemma_cth_caravan_battle_1A";

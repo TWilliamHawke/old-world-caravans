@@ -24,10 +24,12 @@
 ---@field encounter_budget_3 integer
 ---@field filler_unit_weight integer
 ---@field no_encounter_weight integer
+---@field combat_probability number
 ---@field ai_empire_caravans boolean
 ---@field ai_teb_caravans boolean
 ---@field ai_bretonnia_caravans boolean
 ---@field ai_dwarf_caravans boolean
+---@field ai_ksl_caravans boolean
 ---@field peasant_economy boolean
 ---@field random_enemies boolean
 

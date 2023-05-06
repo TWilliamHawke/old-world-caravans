@@ -19,12 +19,10 @@ function Old_world_caravans:daemons_attack_handler(context)
   for i = 0, list_of_regions:num_items() - 1 do
     local region = list_of_regions:item_at(i);
 
-    for corruption in pairs(self.chaos_corruptions) do
-      local corruption_level = cm:get_corruption_value_in_region(region, corruption) or 0;
-      if corruption_level > 0 then
-        target_region = region:key()
-        break
-      end
+    ---@diagnostic disable-next-line: redundant-parameter
+    if cm:get_highest_corruption_in_region(region:region(), self.chaos_corruptions) then
+      target_region = region:key();
+      break
     end
   end
 
@@ -45,7 +43,12 @@ function Old_world_caravans:daemons_attack_handler(context)
 
   local random_unit = self:get_random_unit(caravan);
 
-  if not random_unit then return end
+  if not random_unit then
+    self:log("not enough units for ambush event")
+  ---@diagnostic disable-next-line: undefined-field
+    cm:move_caravan(caravan);
+    return
+  end
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
     self:bind_battle_to_dilemma(prebattle_data, 0, function()

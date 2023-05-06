@@ -19,11 +19,13 @@ function Old_world_caravans:mct_init(context)
   self.force_enable = settings.force_enable;
   self.peasant_economy = settings.peasant_economy;
   self.random_enemies = settings.random_enemies;
+  self.combat_encounter_chance = tonumber(settings.combat_probability);
 
   self.ai_caravans.wh_main_sc_brt_bretonnia = settings.ai_bretonnia_caravans;
   self.ai_caravans.wh_main_sc_emp_empire = settings.ai_empire_caravans;
   self.ai_caravans.wh_main_sc_dwf_dwarfs = settings.ai_dwarf_caravans;
   self.ai_caravans.mixer_teb_southern_realms = settings.ai_teb_caravans;
+  self.ai_caravans.wh3_main_sc_ksl_kislev = settings.ai_ksl_caravans;
 
   if settings.peasant_economy then
     self:replace_bretonnia_units()

@@ -16,8 +16,7 @@ function Old_world_caravans:create_enemy_army(context, enemy_data_callback, ...)
   local enemy_faction = self.culture_to_enemy_faction[enemy_culture] or "wh_main_grn_greenskins_qb1";
 
   local force_key = enemy_culture .. "_" .. tostring(encounter_dif);
-  local force_budget = self.encounter_budgets[encounter_dif];
-  local army_string = self:generate_army(force_key, force_budget);
+  local army_string = self:generate_army(force_key, encounter_dif);
   local x, y = self:find_position_for_spawn(caravan_faction_key, target_region)
   local general = self.enemy_forces[force_key] and self.enemy_forces[force_key].general;
   cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");

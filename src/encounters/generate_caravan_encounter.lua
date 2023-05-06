@@ -31,16 +31,16 @@ function Old_world_caravans:generate_caravan_encounter(context)
     ownership_mult = ownership_mult,
   };
 
-  local no_encounter_weight = self.no_encounter_weight / 2;
+  local weight_table = {
+    nothing = self.no_encounter_weight,
+  }
 
   if cm:get_saved_value(self.encounter_was_canceled_key) then
-    no_encounter_weight = 0;
+    weight_table.nothing = 0;
     cm:set_saved_value(self.encounter_was_canceled_key, false)
   end
 
-  local weight_table = {
-    nothing = no_encounter_weight,
-  }
+  self:log("probability for no encounter is " .. tostring(weight_table.nothing));
 
   for _, encounter in ipairs(self.encounters) do
     local encounter_creator = encounter .. "_creator";
@@ -53,6 +53,11 @@ function Old_world_caravans:generate_caravan_encounter(context)
 
     if type(self[encounter_creator]) == "function" then
       local probability = self[encounter_creator](self, conditions)
+
+      if self.combat_encounters[encounter] then
+        probability = math.floor(probability * self.combat_encounter_chance)
+      end
+
       self:log("probability for " .. encounter .. " is " .. probability);
       weight_table[encounter] = probability;
     else
@@ -61,8 +66,8 @@ function Old_world_caravans:generate_caravan_encounter(context)
   end
 
   local selected_encounter = self:select_random_key_by_weight(weight_table, function(val)
-        return val;
-      end, true) or "nothing";
+    return val;
+  end, true) or "nothing";
 
   if self.override_encounters then
     selected_encounter = self.default_encounter
@@ -72,5 +77,5 @@ function Old_world_caravans:generate_caravan_encounter(context)
   if selected_encounter == "nothing" then return end
 
   ---@diagnostic disable-next-line: redundant-parameter
-  context:flag_for_waylay("owc_"..selected_encounter)
+  context:flag_for_waylay("owc_" .. selected_encounter)
 end

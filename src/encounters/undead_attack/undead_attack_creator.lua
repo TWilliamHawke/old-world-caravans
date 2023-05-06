@@ -11,12 +11,12 @@ function Old_world_caravans:undead_attack_creator(context)
   for i = 0, context.list_of_regions:num_items() - 1 do
     local region = context.list_of_regions:item_at(i);
 
-    local corruption_level = cm:get_corruption_value_in_region(region, "wh3_main_corruption_vampiric") or 0;
+    local corruption_level = cm:get_corruption_value_in_region(region:region(), "wh3_main_corruption_vampiric") or 0;
 
     if corruption_level > 0 then
-      probability = probability + 2;
+      probability = probability + 4;
     end
   end
 
-	return math.min(probability, 8)
+	return math.min(probability, 15)
 end

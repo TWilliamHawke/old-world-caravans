@@ -11,17 +11,13 @@ function Old_world_caravans:ambush_handler(context)
   local caravan = context:caravan();
   local caravan_force = caravan:caravan_force();
 
-  local agents_count = caravan_force:character_list():num_items();
-  local units_count = caravan_force:unit_list():num_items();
+  local random_unit = self:get_random_unit(caravan)
 
-  if units_count - agents_count < 1 then
+  if not random_unit then
     self:log("not enough units for ambush event")
     cm:move_caravan(caravan);
     return
   end
-
-  local random_idx = cm:random_number(units_count - 1, agents_count);
-  local random_unit = caravan_force:unit_list():item_at(random_idx):unit_key();
 
   ---@type Prebattle_caravan_data
   local prebattle_data = {
@@ -34,7 +30,6 @@ function Old_world_caravans:ambush_handler(context)
   }
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
-
     self:bind_battle_to_dilemma(prebattle_data, 0, function()
     end);
 
@@ -43,9 +38,9 @@ function Old_world_caravans:ambush_handler(context)
     local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
     local payload_builder = cm:create_payload();
     dilemma_builder:add_choice_payload("FIRST", payload_builder);
-    payload_builder:remove_unit(caravan:caravan_force(), random_unit);
     payload_builder:clear();
 
+    payload_builder:remove_unit(caravan:caravan_force(), random_unit);
     dilemma_builder:add_choice_payload("SECOND", payload_builder);
     dilemma_builder:add_target("default", caravan:caravan_force());
 

@@ -1,7 +1,7 @@
 ---@param context Encounter_creator_context
 ---@return integer encounter_probability
 function Old_world_caravans:magic_item_creator(context)
-  local probability = 1;
+  local probability = 2;
   local caravan_master = context.caravan:caravan_master():character()
 
   local culture_to = self:get_subculture_of_node(context.to);
@@ -11,7 +11,7 @@ function Old_world_caravans:magic_item_creator(context)
   local skill_from = self:caravan_master_has_special_trait(caravan_master, culture_from)
 
   if skill_from or skill_to then
-    probability = 3;
+    probability = 6;
   end
 
 	return probability;

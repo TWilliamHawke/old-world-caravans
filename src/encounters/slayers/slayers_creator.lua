@@ -12,5 +12,5 @@ function Old_world_caravans:slayers_creator(context)
     return 0
   end
 
-  return 2
+  return 4
 end

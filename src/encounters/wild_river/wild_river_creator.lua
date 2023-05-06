@@ -11,7 +11,7 @@ function Old_world_caravans:wild_river_creator(context)
 
   if cargo < 500 then return 0 end
 
-  if units_count > 16 then return 2 end
+  if units_count > 16 then return 4 end
 
-	return 1
+	return 2
 end
