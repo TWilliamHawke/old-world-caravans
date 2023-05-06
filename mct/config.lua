@@ -53,12 +53,13 @@ local encounters = {
   { key = "enemy_caravan",    text = "enemy_caravan",    tt = "", default = false },
   { key = "friendly_caravan", text = "friendly_caravan", tt = "", default = false },
   { key = "ogres_my_lord",    text = "ogres_my_lord",    tt = "", default = false },
-  { key = "magic_item",        text = "magic_item",        tt = "", default = false },
+  { key = "magic_item",       text = "magic_item",       tt = "", default = false },
   { key = "wild_river",       text = "wild_river",       tt = "", default = false },
   { key = "training_camp",    text = "training_camp",    tt = "", default = false },
   { key = "daemons_attack",   text = "daemons_attack",   tt = "", default = false },
   { key = "offenceorDefence", text = "offenceorDefence", tt = "", default = false },
-  { key = "slayers", text = "slayers", tt = "", default = false },
+  { key = "slayers",          text = "slayers",          tt = "", default = false },
+  { key = "undead_attack",    text = "undead_attack",    tt = "", default = false },
 
 }
 

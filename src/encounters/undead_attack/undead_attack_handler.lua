@@ -1,34 +1,23 @@
 ---@param context CaravanWaylaid
-function Old_world_caravans:daemons_attack_handler(context)
+function Old_world_caravans:undead_attack_handler(context)
   local caravan = context:caravan()
   local faction = context:faction()
-  local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_4";
-  local region_keys, list_of_regions = self:get_regions_list(context)
+  local dilemma_name = "owc_main_dilemma_undead_attack";
+  local region_keys, list_of_regions = self:get_regions_list(context);
   local bandit_threat = self:calculate_bandit_threat(region_keys or {});
   local encounter_dif = self:get_event_difficulty(bandit_threat, caravan);
-
-  local daemons = {
-    "wh3_main_sc_kho_khorne",
-    "wh3_main_sc_nur_nurgle",
-    "wh3_main_sc_tze_tzeentch",
-    "wh3_main_sc_sla_slaanesh",
-  }
+  local selected_culture = "wh_main_sc_vmp_vampire_counts"
 
   local target_region = self:get_region_by_node(caravan, context:to()):name();
 
   for i = 0, list_of_regions:num_items() - 1 do
     local region = list_of_regions:item_at(i);
-
-    for corruption in pairs(self.chaos_corruptions) do
-      local corruption_level = cm:get_corruption_value_in_region(region, corruption) or 0;
-      if corruption_level > 0 then
-        target_region = region:key()
-        break
-      end
+    local corruption_level = cm:get_corruption_value_in_region(region, "wh3_main_corruption_vampiric") or 0;
+    if corruption_level > 0 then
+      target_region = region:key()
+      break
     end
   end
-
-  local selected_culture = daemons[cm:random_number(#daemons)]
 
   local enemy_cqi, x, y = self:create_enemy_army(context, function()
     return selected_culture, target_region, encounter_dif

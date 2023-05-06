@@ -24,7 +24,7 @@ function Old_world_caravans:calculate_evil_faction_threat(list_of_regions, carav
     end
 
     for corruption_type, culture in pairs(self.coruption_to_culture) do
-      local corruption_level = cm:get_corruption_value_in_region(region, corruption_type);
+      local corruption_level = cm:get_corruption_value_in_region(region, corruption_type) or 0;
       local threat_add = math.ceil(corruption_level / 35);
 
       if threat_add > 0 then

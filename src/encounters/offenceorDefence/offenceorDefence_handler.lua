@@ -1,6 +1,6 @@
 ---@param context CaravanWaylaid
 function Old_world_caravans:offenceorDefence_handler(context)
-  local dilemma_name = "wh3_dlc23_dilemma_chd_convoy_offence_or_defence";
+  local dilemma_name = "owc_main_dilemma_armory_supply";
   local caravan = context:caravan();
   local faction = context:faction();
   local caravan_force = caravan:caravan_force();

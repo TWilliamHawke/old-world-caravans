@@ -31,7 +31,7 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   if not unit_key then return end
 
   local incident_name = "emp_caravan_completed_units";
-  local cqi = caravan_force:faction():command_queue_index();
+  local cqi = caravan_faction:command_queue_index();
 
   local payload_builder = cm:create_payload();
   payload_builder:add_unit(caravan_force, unit_key, 1, 0)

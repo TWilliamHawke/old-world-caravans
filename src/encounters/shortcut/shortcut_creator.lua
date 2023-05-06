@@ -1,14 +1,23 @@
 ---@param context Encounter_creator_context
 ---@return integer encounter_probability
----@return string encounter_string
 function Old_world_caravans:shortcut_creator(context)
   local probability = 2;
-  local caravan_master = context.caravan:caravan_master():character_details();
+  local caravan = context.caravan;
+  local caravan_master = caravan:caravan_master():character_details();
 
----@diagnostic disable-next-line: redundant-parameter
+  local faction_sc = caravan_master:faction():subculture();
+
+  local destination = context.to:name();
+
+  local is_final_segement = self.awards[faction_sc]
+      and self.awards[faction_sc][destination]
+
+  if is_final_segement then return 0 end
+
+  ---@diagnostic disable-next-line: redundant-parameter
   if caravan_master:has_skill("wh3_main_skill_cth_caravan_master_wheelwright") then
-    probability = 8;
-  end;
+    probability = 4;
+  end
 
-  return probability, "shortcut"
+  return probability;
 end

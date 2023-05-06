@@ -1,21 +1,21 @@
 ---@param context CaravanWaylaid
 function Old_world_caravans:friendly_caravan_handler(context)
-  local dilemma_name = "wh3_dlc23_dilemma_chd_convoy_power_overwhelming";
+  local dilemma_name = "owc_main_dilemma_friendly_caravan";
   local caravan = context:caravan()
   local caravan_faction = context:faction()
 
-  caravans:attach_battle_to_dilemma(
-    dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
-    function()
-      ---@diagnostic disable-next-line: undefined-field
-      cm:set_caravan_cargo(caravan, caravan:cargo() - 200)
-    end);
+  local prebattle_data = {
+    caravan = caravan,
+    dilemma_name = dilemma_name,
+    enemy_force_cqi = -1,
+  }
+
+
+  self:bind_battle_to_dilemma(prebattle_data, 0, function()
+    ---@diagnostic disable-next-line: undefined-field
+    cm:move_caravan(caravan);
+    self:increase_caravan_cargo(caravan, -200)
+  end)
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();

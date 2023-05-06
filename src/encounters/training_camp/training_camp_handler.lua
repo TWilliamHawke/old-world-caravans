@@ -1,6 +1,6 @@
 ---@param context CaravanWaylaid
 function Old_world_caravans:training_camp_handler(context)
-  local dilemma_name = "wh3_dlc23_dilemma_chd_convoy_training_camp";
+  local dilemma_name = "owc_main_dilemma_training_camp";
   local caravan = context:caravan();
   local faction = context:faction()
 

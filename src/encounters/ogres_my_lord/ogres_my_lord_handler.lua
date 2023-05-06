@@ -1,7 +1,7 @@
 ---comment
 ---@param context CaravanWaylaid
 function Old_world_caravans:ogres_my_lord_handler(context)
-  local dilemma_name = "wh3_dlc23_dilemma_chd_convoy_ogre_mercenaries";
+  local dilemma_name = "owc_main_dilemma_caravan_ogres";
   local caravan = context:caravan();
   local caravan_force = caravan:caravan_force();
   local faction = context:faction()

@@ -3,7 +3,7 @@ function Old_world_caravans:enemy_caravan_handler(context)
   local caravan = context:caravan();
   local caravan_culture = context:faction():subculture();
   local caravan_faction_key = context:faction():name()
-  local dilemma_name = "wh3_dlc23_dilemma_chd_convoy_cathay_caravan";
+  local dilemma_name = "owc_main_dilemma_enemy_caravan";
 
   local end_region = self:get_region_by_node(caravan, context:to());
   local start_region = self:get_region_by_node(caravan, context:from());
@@ -37,7 +37,7 @@ function Old_world_caravans:enemy_caravan_handler(context)
       return val
     end, true) or "wh3_main_sc_cth_cathay";
 
-  self:logCore("selected caravan culture is " .. enemy_culture)
+  self:log("selected caravan culture is " .. enemy_culture)
 
   local caravans_list = self.start_units[enemy_culture] or self.cathay_caravans;
 
