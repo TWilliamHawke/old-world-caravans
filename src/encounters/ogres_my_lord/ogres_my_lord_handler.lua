@@ -28,7 +28,6 @@ function Old_world_caravans:ogres_my_lord_handler(context)
 
   payload_builder:add_unit(caravan_force, orge_unit, 1, 0);
   payload_builder:treasury_adjustment(-1000);
-  payload_builder:text_display("dummy_convoy_ogres_first");
   dilemma_builder:add_choice_payload("FIRST", payload_builder);
   payload_builder:clear();
 

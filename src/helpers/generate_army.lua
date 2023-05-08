@@ -1,10 +1,10 @@
 ---@param army_key string
----@param budget number
+---@param encounter_dif number
 ---@return string
 ---@return table<string>
 function Old_world_caravans:generate_army(army_key, encounter_dif)
   local default_string = [[
-    wh_main_grn_inf_night_goblins,
+    wh_main_grn_inf_orc_big_uns,
   wh_main_grn_inf_night_goblins,
   wh_main_grn_inf_night_goblins,
   wh_main_grn_inf_night_goblins,
@@ -12,6 +12,7 @@ function Old_world_caravans:generate_army(army_key, encounter_dif)
   wh_main_grn_mon_trolls]];
   local army_template = self.enemy_forces[army_key];
   local budget = self.encounter_budgets[encounter_dif];
+  local min_army_size = self.min_army_size[encounter_dif] or 0
 
 
   if not army_template then
@@ -23,7 +24,7 @@ function Old_world_caravans:generate_army(army_key, encounter_dif)
   local unit_budget = math.max(budget / (#army_template + filler_units_weight), 500);
   local filler_unit_budget = unit_budget * filler_units_weight;
   local filler_units = army_template.filler_units or {};
-  local unit_cap = cm:random_number(2) > 1 and 7 or 8;
+  local unit_cap = cm:random_number(2) > 1 and 6 or 7;
 
   local function add_units_in_list(unit, count)
     if count <= 0 or unit == "NONE" then return end
@@ -61,7 +62,7 @@ function Old_world_caravans:generate_army(army_key, encounter_dif)
 
     units_count = math.min(units_count, unit_cap);
     add_units_in_list(unit_key, units_count);
-    self:log(unit_key..": x"..units_count)
+    self:log(unit_key .. ": x" .. units_count)
 
     if unit_cost >= local_budget then
       return 0
@@ -77,6 +78,13 @@ function Old_world_caravans:generate_army(army_key, encounter_dif)
   end
 
   select_unit(filler_units, filler_unit_budget + budget_balance);
+
+  if #unit_list < min_army_size and #unit_list > 0 then
+    for _ = #unit_list, min_army_size - 1 do
+      self:log("additional unit: "..unit_list[#unit_list])
+      table.insert(unit_list, unit_list[#unit_list])
+    end
+  end
 
   return table.concat(unit_list, ","), unit_list
 end

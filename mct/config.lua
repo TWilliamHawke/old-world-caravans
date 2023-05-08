@@ -110,7 +110,7 @@ encounter_budget_3:slider_set_step_size(500)
 -- scale_difficulty_strenght:set_tooltip_text("owc_mct_scale_difficulty_strenght_tooltip", true);
 
 local combat_probability = old_world_caravans:add_new_option("combat_probability", "dropdown")
-combat_probability:set_text("Probability for Combat encounters", false)
+combat_probability:set_text("owc_mct_combat_probability", true)
 combat_probability:add_dropdown_values(combat_encounter_options)
 
 
@@ -130,25 +130,25 @@ force_enable:set_text("owc_mct_force_enable", true)
 force_enable:set_tooltip_text("owc_mct_force_enable_tooltip", true)
 
 local ai_empire_caravans = old_world_caravans:add_new_option("ai_empire_caravans", "checkbox")
-ai_empire_caravans:set_text("Caravans for Empire ai factions", false)
+ai_empire_caravans:set_text("owc_mct_ai_empire_caravans", true)
 ai_empire_caravans:set_default_value(true)
 
 local ai_dwarf_caravans = old_world_caravans:add_new_option("ai_dwarf_caravans", "checkbox")
-ai_dwarf_caravans:set_text("Caravans for Dwarfs ai factions", false)
+ai_dwarf_caravans:set_text("owc_mct_ai_dwarf_caravans", true)
 ai_dwarf_caravans:set_default_value(true)
 
 local ai_bretonnia_caravans = old_world_caravans:add_new_option("ai_bretonnia_caravans", "checkbox")
-ai_bretonnia_caravans:set_text("Caravans for Bretonnia ai factions", false)
+ai_bretonnia_caravans:set_text("owc_mct_ai_bretonnia_caravans", false)
 
 local ai_teb_caravans = old_world_caravans:add_new_option("ai_teb_caravans", "checkbox")
-ai_teb_caravans:set_text("Caravans for Southern Realms ai factions", false)
+ai_teb_caravans:set_text("owc_mct_ai_teb_caravans", true)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
   ai_teb_caravans:set_uic_visibility(false, false)
 end
 
 local ai_ksl_caravans = old_world_caravans:add_new_option("ai_ksl_caravans", "checkbox")
-ai_ksl_caravans:set_text("Caravans for Kislev ai factions", false)
+ai_ksl_caravans:set_text("owc_mct_ai_ksl_caravans", true)
 
 if not vfs.exists("script/campaign/mod/twill_old_world_caravans_ksl.lua") then
   ai_ksl_caravans:set_uic_visibility(false, false)
@@ -158,14 +158,14 @@ local faction_section = old_world_caravans:add_new_section("n_factions")
 faction_section:set_localised_text("Miscellaneous setttings")
 
 local peasant_economy = old_world_caravans:add_new_option("peasant_economy", "checkbox")
-peasant_economy:set_text("Peasant economy for Bretonnian caravans", false)
+peasant_economy:set_text("owc_mct_peasant_economy", true)
 peasant_economy:set_tooltip_text(
-  "Non-kinght units in Bretonnian caravans will be affecting peasant economy. Works only for new Caravans", false)
+  "owc_mct_peasant_economy_tooltip", true)
 
 local random_enemies = old_world_caravans:add_new_option("random_enemies", "checkbox")
-random_enemies:set_text("Randomize enemies", false)
+random_enemies:set_text("owc_mct_random_enemies", true)
 random_enemies:set_tooltip_text(
-  "Race of enemies in encounters won't be tied to regions or corruption level and will be fully random", false)
+  "owc_mct_random_enemies_tooltip", true)
 
 local debug_section = old_world_caravans:add_new_section("o_debug")
 debug_section:set_localised_text("Debug Section")

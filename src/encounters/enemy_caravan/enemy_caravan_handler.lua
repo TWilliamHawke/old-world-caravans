@@ -35,7 +35,7 @@ function Old_world_caravans:enemy_caravan_handler(context)
   local enemy_culture = self:select_random_key_by_weight(weight_table,
     function(val)
       return val
-    end, true) or "wh3_main_sc_cth_cathay";
+    end) or "wh3_main_sc_cth_cathay";
 
   self:log("selected caravan culture is " .. enemy_culture)
 
@@ -103,6 +103,11 @@ function Old_world_caravans:enemy_caravan_handler(context)
     local own_faction = caravan:caravan_force():faction();
 
     payload_builder:text_display("dummy_convoy_cathay_caravan_first");
+
+    if caravan_culture == "wh_main_sc_brt_bretonnia" then
+      payload_builder:faction_pooled_resource_transaction( "brt_chivalry", "technology", -50, false)
+    end
+
     dilemma_builder:add_choice_payload("FIRST", payload_builder);
     payload_builder:clear();
 

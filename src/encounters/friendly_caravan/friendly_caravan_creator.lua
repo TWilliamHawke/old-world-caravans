@@ -3,6 +3,7 @@
 function Old_world_caravans:friendly_caravan_creator(context)
   local caravan_culture = context.faction:subculture();
   if caravan_culture == "wh3_main_sc_cth_cathay" then return 0 end
+  if caravan_culture == "wh_main_sc_brt_bretonnia" then return 0 end
 
   local cargo = context.caravan:cargo();
 

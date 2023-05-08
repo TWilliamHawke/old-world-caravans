@@ -105,9 +105,6 @@ Old_world_caravans.enemy_forces = {
       wh_main_grn_inf_night_goblins = 1,
     },
     {
-      wh_main_grn_mon_trolls = 4,
-      wh2_dlc15_grn_mon_river_trolls_0 = 1,
-      wh2_dlc15_grn_mon_stone_trolls_0 = 1,
       wh_main_grn_cav_orc_boar_chariot = 2,
       wh_main_grn_cav_forest_goblin_spider_riders_0 = 2,
       wh_main_grn_cav_orc_boar_boyz = 2,
@@ -117,9 +114,14 @@ Old_world_caravans.enemy_forces = {
     {
       wh_main_grn_inf_black_orcs = 3,
       wh_main_grn_inf_orc_big_uns = 3,
+    },
+    {
       wh_main_grn_inf_night_goblin_archers = 2,
       wh_main_grn_inf_orc_arrer_boyz = 2,
-    },
+      wh_main_grn_mon_trolls = 2,
+      wh2_dlc15_grn_mon_river_trolls_0 = 1,
+      wh2_dlc15_grn_mon_stone_trolls_0 = 1,
+    }
   },
   wh_main_sc_grn_greenskins_3 = {
     filler_units = {
@@ -128,8 +130,6 @@ Old_world_caravans.enemy_forces = {
       wh_main_grn_inf_night_goblins = 1,
     },
     {
-      wh2_dlc15_grn_mon_river_trolls_0 = 1,
-      wh2_dlc15_grn_mon_stone_trolls_0 = 1,
       wh_main_grn_cav_orc_boar_chariot = 2,
       wh_main_grn_cav_orc_boar_boyz = 2,
       wh_main_grn_cav_savage_orc_boar_boy_big_uns = 2,
@@ -137,15 +137,18 @@ Old_world_caravans.enemy_forces = {
     {
       wh_main_grn_inf_black_orcs = 3,
       wh_main_grn_inf_orc_big_uns = 3,
-      wh_main_grn_inf_night_goblin_archers = 2,
-      wh_main_grn_inf_orc_arrer_boyz = 2,
     },
     {
-      NONE = 2,
-      wh_main_grn_mon_arachnarok_spider_0 = 1,
-      wh_main_grn_mon_giant = 1,
+      wh_main_grn_inf_night_goblin_archers = 2,
+      wh_main_grn_inf_orc_arrer_boyz = 2,
       wh_main_grn_art_doom_diver_catapult = 1,
       wh_main_grn_art_goblin_rock_lobber = 1,
+    },
+    {
+      wh2_dlc15_grn_mon_river_trolls_0 = 1,
+      wh2_dlc15_grn_mon_stone_trolls_0 = 1,
+      wh_main_grn_mon_arachnarok_spider_0 = 1,
+      wh_main_grn_mon_giant = 1,
     },
   },
   wh_main_sc_vmp_vampire_counts_1 = {
@@ -188,7 +191,7 @@ Old_world_caravans.enemy_forces = {
   },
   wh_main_sc_vmp_vampire_counts_3 = {
     general = "wh_main_vmp_master_necromancer",
-    --filler_units_mult = 0.7,
+    filler_units_mult = 0.7,
     filler_units = {
       wh_main_vmp_inf_skeleton_warriors_0 = 1,
       wh_main_vmp_inf_skeleton_warriors_1 = 1,
@@ -325,7 +328,6 @@ Old_world_caravans.enemy_forces = {
       wh_dlc08_nor_mon_war_mammoth_1 = 1,
       wh_dlc08_nor_mon_skinwolves_0 = 1,
       wh_dlc08_nor_mon_skinwolves_1 = 1,
-      NONE = 6
     },
   },
   wh2_dlc11_sc_cst_vampire_coast_1 = {
@@ -655,7 +657,7 @@ Old_world_caravans.enemy_forces = {
   },
   wh2_main_sc_skv_skaven_3 = {
     general = "wh2_main_skv_warlord",
-    filler_units_mult = 0.9,
+    filler_units_mult = 0.8,
     filler_units = {
       wh2_main_skv_inf_clanrat_spearmen_1 = 1,
       wh2_main_skv_inf_clanrats_1 = 1,
@@ -724,7 +726,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh2_dlc09_sc_tmb_tomb_kings_3 = {
-    filler_units_mult = 0.8,
+    filler_units_mult = 0.7,
     filler_units = {
       wh2_dlc09_tmb_inf_skeleton_warriors_0 = 1,
       wh2_dlc09_tmb_inf_skeleton_spearmen_0 = 1,

@@ -37,10 +37,12 @@ function Old_world_caravans:ambush_handler(context)
 
     local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
     local payload_builder = cm:create_payload();
+    payload_builder:text_display("dummy_convoy_redeadify_first")
     dilemma_builder:add_choice_payload("FIRST", payload_builder);
     payload_builder:clear();
 
     payload_builder:remove_unit(caravan:caravan_force(), random_unit);
+    payload_builder:text_display("dummy_convoy_redeadify_second")
     dilemma_builder:add_choice_payload("SECOND", payload_builder);
     dilemma_builder:add_target("default", caravan:caravan_force());
 

@@ -42,6 +42,11 @@ function Old_world_caravans:wild_river_handler(context)
   cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", -200);
   cargo_bundle:set_duration(0);
   payload_builder:effect_bundle_to_force(caravan_force, cargo_bundle);
+
+  if character:trait_points("owc_trait_grail_vow_caravan_cargo") == 1 then
+    payload_builder:text_display("owc_grail_vow_complete")
+  end
+
   dilemma_builder:add_choice_payload("SECOND", payload_builder);
 
   dilemma_builder:add_target("default", cm:get_military_force_by_cqi(enemy_cqi));

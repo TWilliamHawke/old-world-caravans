@@ -24,14 +24,13 @@ function Old_world_caravans:enemy_attack_handler(context)
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
     self:bind_battle_to_dilemma(prebattle_data, 1, function()
-      core:trigger_custom_event("ScriptEventOwcLoseCargo", {
-        character = character});
     end);
 
     self:log("battle has attached, goto dilemma builder")
 
     local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
     local payload_builder = cm:create_payload();
+    payload_builder:text_display("dummy_convoy_hungry_daemons_first")
 
     dilemma_builder:add_choice_payload("FIRST", payload_builder);
     payload_builder:clear();

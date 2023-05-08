@@ -17,6 +17,11 @@ Old_world_caravans = {
     5000,
     7000
   },
+  min_army_size = {
+    6,
+    8,
+    10
+  },
   filler_unit_weight = 1.5,
   cargo_threat_mult = 0.015,
   scale_difficulty_cargo = false,
