@@ -3,9 +3,7 @@ function Old_world_caravans:undead_attack_handler(context)
   local caravan = context:caravan()
   local faction = context:faction()
   local dilemma_name = "owc_main_dilemma_undead_attack";
-  local region_keys, list_of_regions = self:get_regions_list(context);
-  local bandit_threat = self:calculate_bandit_threat(region_keys or {});
-  local encounter_dif = self:get_event_difficulty(bandit_threat, caravan);
+  local _, list_of_regions = self:get_regions_list(context);
   local selected_culture = "wh_main_sc_vmp_vampire_counts"
 
   local target_region = self:get_region_by_node(caravan, context:to()):name();
@@ -19,9 +17,7 @@ function Old_world_caravans:undead_attack_handler(context)
     end
   end
 
-  local enemy_cqi, x, y = self:create_enemy_army(context, function()
-    return selected_culture, target_region, encounter_dif
-  end)
+  local enemy_cqi, x, y = self:create_enemy_army(context, selected_culture, target_region)
 
   local prebattle_data = {
     caravan = context:caravan(),

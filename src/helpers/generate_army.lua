@@ -1,8 +1,9 @@
----@param army_key string
+---@param enemy_culture string
 ---@param encounter_dif number
+---@param additional_budget number
 ---@return string
----@return table<string>
-function Old_world_caravans:generate_army(army_key, encounter_dif)
+---@return string | nil general
+function Old_world_caravans:generate_army(enemy_culture, encounter_dif, additional_budget)
   local default_string = [[
     wh_main_grn_inf_orc_big_uns,
   wh_main_grn_inf_night_goblins,
@@ -10,19 +11,28 @@ function Old_world_caravans:generate_army(army_key, encounter_dif)
   wh_main_grn_inf_night_goblins,
   wh_main_grn_mon_trolls,
   wh_main_grn_mon_trolls]];
-  local army_template = self.enemy_forces[army_key];
-  local budget = self.encounter_budgets[encounter_dif];
+
+  local force_key = enemy_culture .. "_" .. tostring(encounter_dif);
+  local army_template = self.enemy_forces[force_key];
+  local budget = self.encounter_budgets[encounter_dif] + additional_budget;
   local min_army_size = self.min_army_size[encounter_dif] or 0
+  local general = self.enemy_forces[force_key] and self.enemy_forces[force_key].general;
 
 
   if not army_template then
-    return default_string, {};
+    return default_string;
   end
 
   local unit_list = {};
   local filler_units_weight = (army_template.filler_units_mult or 1) * self.filler_unit_weight;
   local unit_budget = math.max(budget / (#army_template + filler_units_weight), 500);
   local filler_unit_budget = unit_budget * filler_units_weight;
+
+  if filler_unit_budget > 2500 and #army_template > 0 then
+    filler_unit_budget = 2500;
+    unit_budget = (budget - 2500) / #army_template;
+  end
+
   local filler_units = army_template.filler_units or {};
   local unit_cap = cm:random_number(2) > 1 and 6 or 7;
 
@@ -86,5 +96,5 @@ function Old_world_caravans:generate_army(army_key, encounter_dif)
     end
   end
 
-  return table.concat(unit_list, ","), unit_list
+  return table.concat(unit_list, ","), general
 end

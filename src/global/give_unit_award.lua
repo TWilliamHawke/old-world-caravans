@@ -16,6 +16,7 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   local caravan_force = caravan:caravan_force()
   local units_count = caravan_force:unit_list():num_items();
   if units_count > 19 then return end
+  local caravan_master = caravan_force:general_character();
 
   local type = self:is_late_game() and "late" or "early";
 
@@ -35,7 +36,9 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
 
   local payload_builder = cm:create_payload();
   self:log("award unit is "..tostring(unit_key))
-  payload_builder:add_unit(caravan_force, unit_key, 1, 0)
+
+  local count = self:caravan_master_has_special_trait(caravan_master, region_sc) and 2 or 1
+  payload_builder:add_unit(caravan_force, unit_key, count, 0)
   local char_cqi = caravan_force:general_character():command_queue_index()
 
   ---@diagnostic disable-next-line: undefined-field

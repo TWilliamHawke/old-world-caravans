@@ -1,11 +1,13 @@
 ---@param context CaravanWaylaid
----@param enemy_data_callback enemy_data_callback
+---@param enemy_culture string
+---@param target_region string
 ---@param ... string effects
 ---@return integer enemy_cqi
 ---@return integer x
 ---@return integer y
-function Old_world_caravans:create_enemy_army(context, enemy_data_callback, ...)
-  local enemy_culture, target_region, encounter_dif = enemy_data_callback();
+function Old_world_caravans:create_enemy_army(context, enemy_culture, target_region, ...)
+
+  local encounter_dif, additional_budget = self:get_event_difficulty(context);
   local caravan_faction_key = context:faction():name()
 
   if self.override_enemy and self.default_enemy_culture then
@@ -15,10 +17,8 @@ function Old_world_caravans:create_enemy_army(context, enemy_data_callback, ...)
 
   local enemy_faction = self.culture_to_enemy_faction[enemy_culture] or "wh_main_grn_greenskins_qb1";
 
-  local force_key = enemy_culture .. "_" .. tostring(encounter_dif);
-  local army_string = self:generate_army(force_key, encounter_dif);
+  local army_string, general = self:generate_army(enemy_culture, encounter_dif, additional_budget);
   local x, y = self:find_position_for_spawn(caravan_faction_key, target_region)
-  local general = self.enemy_forces[force_key] and self.enemy_forces[force_key].general;
   cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");
   cm:disable_event_feed_events(true, "wh_event_category_character", "", "");
   local enemy_cqi = 0;

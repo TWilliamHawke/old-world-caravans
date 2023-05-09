@@ -148,7 +148,7 @@ function Old_world_caravans:add_specific_faction_listeners()
         function()
           cm:callback(function()
             Calculate_Economy_Penalty(faction)
-          end,  0.5)
+          end, 0.5)
         end,
         false
       );

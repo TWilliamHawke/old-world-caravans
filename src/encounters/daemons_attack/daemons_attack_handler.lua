@@ -3,9 +3,7 @@ function Old_world_caravans:daemons_attack_handler(context)
   local caravan = context:caravan()
   local faction = context:faction()
   local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_4";
-  local region_keys, list_of_regions = self:get_regions_list(context)
-  local bandit_threat = self:calculate_bandit_threat(region_keys or {});
-  local encounter_dif = self:get_event_difficulty(bandit_threat, caravan);
+  local _, list_of_regions = self:get_regions_list(context)
 
   local daemons = {
     "wh3_main_sc_kho_khorne",
@@ -28,9 +26,7 @@ function Old_world_caravans:daemons_attack_handler(context)
 
   local selected_culture = daemons[cm:random_number(#daemons)]
 
-  local enemy_cqi, x, y = self:create_enemy_army(context, function()
-    return selected_culture, target_region, encounter_dif
-  end)
+  local enemy_cqi, x, y = self:create_enemy_army(context, selected_culture, target_region)
 
   local prebattle_data = {
     caravan = context:caravan(),

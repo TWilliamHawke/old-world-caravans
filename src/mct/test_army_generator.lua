@@ -5,6 +5,6 @@ function Old_world_caravans:test_army_generator()
 
   for i=1, 20 do
     self:log("Army #"..tostring(i))
-    self:generate_army(army_key, self.default_difficult)
+    self:generate_army(army_key, self.default_difficult, 0)
   end
 end

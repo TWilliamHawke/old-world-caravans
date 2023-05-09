@@ -1,15 +1,18 @@
 ---@diagnostic disable: undefined-field
 ---@param context CaravanWaylaid
 function Old_world_caravans:ambush_handler(context)
-  local enemy_cqi, x, y = self:create_enemy_army(context,
-    function()
-      return self:get_enemy_by_regions(context)
-    end, "wh2_dlc17_bundle_scripted_lizardmen_encounter", "owc_caravan_no_menace_bellow"
-  );
+  local emeny_culture, target_region = self:get_enemy_by_regions(context)
   local dilemma_name = "owc_main_dilemma_caravan_1";
-
   local caravan = context:caravan();
   local caravan_force = caravan:caravan_force();
+
+  local enemy_cqi, x, y = self:create_enemy_army(
+    context,
+    emeny_culture,
+    target_region,
+    "wh2_dlc17_bundle_scripted_lizardmen_encounter",
+    "owc_caravan_no_menace_bellow"
+  );
 
   local random_unit = self:get_random_unit(caravan)
 

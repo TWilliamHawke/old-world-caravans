@@ -17,7 +17,7 @@ function Old_world_caravans:add_mct_listeners()
     function(context)
       self:finalize_mct(context)
       self:mct_init(context)
-      self:test_army_generator()
+      --self:test_army_generator()
       self:logCore("MCT FINALIZED")
     end,
     true

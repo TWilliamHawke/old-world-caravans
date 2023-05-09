@@ -3,7 +3,7 @@ Old_world_caravans.culture_to_units = {
   wh3_main_sc_cth_cathay = {
     weakA = {
       ["wh3_main_cth_inf_jade_warriors_0"] = { 2, 2, 3 },
-      ["wh3_main_cth_inf_jade_warriors_1"] = { 4, 2, 2 },
+      ["wh3_main_cth_inf_jade_warriors_1"] = { 4, 1, 2 },
       ["wh3_main_cth_inf_peasant_spearmen_1"] = { 4, 2, 3 },
       ["wh3_main_cth_cav_peasant_horsemen_0"] = { 1, 2, 2 },
     },
@@ -102,7 +102,7 @@ Old_world_caravans.culture_to_units = {
   },
   wh_main_sc_dwf_dwarfs = {
     weakA = {
-      ["wh_main_dwf_inf_miners_1"] = { 1, 3, 4 },
+      ["wh_main_dwf_inf_miners_1"] = { 1, 2, 3 },
       ["wh_main_dwf_inf_dwarf_warrior_0"] = { 3, 2, 3 },
       ["wh_main_dwf_inf_slayers"] = { 1, 2, 2 },
       ["wh_main_dwf_inf_longbeards"] = { 1, 2, 2 },

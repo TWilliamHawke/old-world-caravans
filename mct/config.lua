@@ -212,6 +212,7 @@ if encounter_budget_1.set_is_global then
   peasant_economy:set_is_global(true);
   random_enemies:set_is_global(true);
   combat_probability:set_is_global(true);
+  ai_ksl_caravans:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

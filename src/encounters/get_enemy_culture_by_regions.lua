@@ -1,7 +1,6 @@
 ---@param context CaravanWaylaid
 ---@return string enemy_culture
 ---@return string enemy_region
----@return 1 | 2| 3 encounter_dif
 function Old_world_caravans:get_enemy_by_regions(context)
   local caravan = context:caravan();
   local caravan_faction = context:faction();
@@ -11,9 +10,6 @@ function Old_world_caravans:get_enemy_by_regions(context)
   if context:faction():subculture() ~= "wh3_main_sc_cth_cathay" then
     table.insert(list_of_regions, start_region:name());
   end
-
-  local bandit_threat = self:calculate_bandit_threat(list_of_regions);
-  local encounter_dif = self:get_event_difficulty(bandit_threat, caravan);
 
 
   local threat_list, threated_regions = self:calculate_evil_faction_threat(list_of_regions, caravan_faction);
@@ -31,5 +27,5 @@ function Old_world_caravans:get_enemy_by_regions(context)
   end
 
 
-  return main_threat, target_region, encounter_dif;
+  return main_threat, target_region;
 end

@@ -2,8 +2,6 @@
 function Old_world_caravans:local_trouble_handler(context)
   local caravan = context:caravan();
   local caravan_culture = context:faction():subculture();
-  local list_of_regions = self:get_regions_list(context) or {};
-  local bandit_threat = self:calculate_bandit_threat(list_of_regions);
 
   local function get_weight_for_node(region)
     local region_culture = self:get_subculture_of_node(region);
@@ -29,30 +27,31 @@ function Old_world_caravans:local_trouble_handler(context)
     [culture_to] = { weight_to, region_to:name() },
   }
 
-  local enemy_culture = self:select_random_key_by_weight(weight_table, function (val)
+  local enemy_culture = self:select_random_key_by_weight(weight_table, function(val)
     return val[1];
   end) or culture_from;
 
   local target_region = weight_table[enemy_culture][2] or region_from:name();
-  local encounter_diff = self:get_event_difficulty(bandit_threat, caravan);
 
   if self.random_enemies then
-    enemy_culture = self:select_random_key_by_weight(self.db.local_trouble_dilemmas, function (val)
+    enemy_culture = self:select_random_key_by_weight(self.db.local_trouble_dilemmas, function(val)
       return 1
     end) or culture_from;
   end
 
 
-  self:log("selected culture is "..enemy_culture)
+  self:log("selected culture is " .. enemy_culture)
 
   --local dilemma_name = self.db.local_trouble_dilemmas[enemy_culture] or "wh3_main_dilemma_cth_caravan_battle_1A";
   local suffix = cm:random_number(2) > 1 and "A" or "B";
   local dilemma_name = "wh3_main_dilemma_cth_caravan_battle_1" .. suffix;
 
-  local enemy_cqi, x, y = self:create_enemy_army(context,
-  function ()
-    return enemy_culture, target_region, encounter_diff;
-  end, "wh2_dlc16_bundle_scripted_wood_elf_encounter", "owc_caravan_no_menace_bellow")
+  local enemy_cqi, x, y = self:create_enemy_army(
+    context,
+    enemy_culture,
+    target_region,
+    "wh2_dlc16_bundle_scripted_wood_elf_encounter",
+    "owc_caravan_no_menace_bellow")
 
   local prebattle_data = {
     caravan = context:caravan(),

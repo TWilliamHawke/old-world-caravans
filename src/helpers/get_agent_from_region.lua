@@ -8,7 +8,7 @@ function Old_world_caravans:get_agent_from_region(node, caravan)
   local caravan_culture = caravan_master:faction():subculture();
   local region_culture = self:get_subculture_of_node(region);
   local culture_weight = self:get_culture_weight(region_culture, caravan_culture);
-  local agent = self.culture_to_agent_subtype[region_culture];
+  local agent = self.culture_to_agent_unit[region_culture];
 
   if not agent or region_culture == caravan_culture then
     return "", 0;

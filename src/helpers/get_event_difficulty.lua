@@ -1,14 +1,18 @@
 ---comment
----@param bandit_threat integer
----@param caravan CARAVAN_SCRIPT_INTERFACE
+---@param context CaravanWaylaid
 ---@return 1 | 2 | 3 event_difficulty
-function Old_world_caravans:get_event_difficulty(bandit_threat, caravan)
+---@return integer
+function Old_world_caravans:get_event_difficulty(context)
+  local list_of_regions = self:get_regions_list(context) or {};
+  local bandit_threat = self:calculate_bandit_threat(list_of_regions)
+  local caravan = context:caravan()
+
+
   local force_cqi = caravan:caravan_force():command_queue_index();
-  local caravan_size = caravan:caravan_force():unit_list():num_items();
   local caravan_cost = cm:force_gold_value(force_cqi)
+  local additional_budget = 0;
 
   local banditary_dif = 1;
-  local units_dif = 1;
   local cost_dif = 1;
 
   if bandit_threat > 70 then
@@ -17,17 +21,16 @@ function Old_world_caravans:get_event_difficulty(bandit_threat, caravan)
     banditary_dif = 2;
   end
 
-  if cm:random_number(3, 1) <= caravan_size - 18 then
-    units_dif = 3
-  elseif cm:random_number(5, 1) <= caravan_size - 13 then
-    units_dif = 2;
-  end
-
-  if cm:random_number(6, 1) * 500 <= caravan_cost - 10000 then
+  if cm:random_number(6, 1) * 500 <= caravan_cost - 9000 then
     cost_dif = 3;
-  elseif cm:random_number(6, 1) * 500 <= caravan_cost - 6500 then
+  elseif cm:random_number(5, 1) * 500 <= caravan_cost - 6000 then
     cost_dif = 2;
   end
 
-  return math.max(banditary_dif, units_dif, cost_dif);
+  if caravan_cost > 12000 then
+    additional_budget = math.floor((caravan_cost - 12000) * 0.7);
+    self:log("additional_budget for encounter force is "..additional_budget)
+  end
+
+  return math.max(banditary_dif, cost_dif), additional_budget;
 end

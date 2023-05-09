@@ -2,7 +2,7 @@ function Old_world_caravans:add_southern_realms_support()
   if vfs.exists("script/frontend/mod/cataph_teb.lua") then
     self:log("add_southern_realms_support")
 
-    self.culture_to_agent_subtype.wh_main_sc_teb_teb = "teb_duellist_hero";
+    self.culture_to_agent_unit.wh_main_sc_teb_teb = "teb_duellist_hero";
     self.trade_nodes_to_culture.wh3_main_combi_region_monument_of_the_moon = "wh_main_sc_teb_teb"
 
     self.culture_to_units.wh_main_sc_teb_teb = {

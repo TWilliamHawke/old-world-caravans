@@ -9,4 +9,6 @@ Old_world_caravans.caravan_master_units = {
   til_merchant = true,
   til_merchant_horse = true,
   til_merchant_bhorse = true,
+  wh3_main_ksl_cha_boyar_0 = true,
+  wh3_main_ksl_cha_boyar_1 = true,
 }
