@@ -23,8 +23,8 @@ function Old_world_caravans:shortcut_handler(context)
     local payload_builder = cm:create_payload();
 
     local scout_skill = caravan:caravan_master():character():bonus_values():scripted_value("caravan_scouting", "value")
-    dilemma_builder:add_choice_payload("FIRST", payload_builder);
     payload_builder:text_display("dummy_convoy_guide_first")
+    dilemma_builder:add_choice_payload("FIRST", payload_builder);
     payload_builder:clear();
 
     payload_builder:treasury_adjustment(math.floor(-500 * ((100 + scout_skill) / 100)));

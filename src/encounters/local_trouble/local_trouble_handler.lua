@@ -49,9 +49,7 @@ function Old_world_caravans:local_trouble_handler(context)
   local enemy_cqi, x, y = self:create_enemy_army(
     context,
     enemy_culture,
-    target_region,
-    "wh2_dlc16_bundle_scripted_wood_elf_encounter",
-    "owc_caravan_no_menace_bellow")
+    target_region)
 
   local prebattle_data = {
     caravan = context:caravan(),

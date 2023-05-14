@@ -42,7 +42,6 @@ function Old_world_caravans:spy_on_dilemmas(caravan, enemy_cqi, encounter_callba
       local mission_name = context:mission():mission_record_key()
       return string.find(mission_name, "_qb_")
     end,
-    ---comment
     function(context)
       core:remove_listener("owc_any_dilemma_triggered");
       core:remove_listener("owc_dillemma_choice_spy_on")

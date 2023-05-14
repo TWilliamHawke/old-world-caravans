@@ -9,7 +9,7 @@ Old_world_caravans = {
   k8p_region_name = "wh3_main_combi_region_karak_eight_peaks",
   override_enemy = false,
   default_enemy_culture = "wh_main_sc_grn_greenskins",
-  default_difficult = 1, ---@type 1 | 2 | 3
+  default_difficult = 1, ---@type encounter_diff
   combat_encounter_chance = 1,
   db = {},
   encounter_budgets = {
@@ -22,7 +22,11 @@ Old_world_caravans = {
     8,
     10
   },
-  filler_unit_weight = 1.5,
+  filler_unit_weight = {
+    1.5,
+    1.3,
+    1.1
+  },
   cargo_threat_mult = 0.015,
   scale_difficulty_cargo = false,
   scale_difficulty_strenght = false,

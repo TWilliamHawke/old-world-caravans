@@ -1,5 +1,5 @@
 ---@param enemy_culture string
----@param encounter_dif number
+---@param encounter_dif encounter_diff
 ---@param additional_budget number
 ---@return string
 ---@return string | nil general
@@ -24,14 +24,10 @@ function Old_world_caravans:generate_army(enemy_culture, encounter_dif, addition
   end
 
   local unit_list = {};
-  local filler_units_weight = (army_template.filler_units_mult or 1) * self.filler_unit_weight;
-  local unit_budget = math.max(budget / (#army_template + filler_units_weight), 500);
+  local filler_units_weight = (army_template.filler_units_mult or 1) * self.filler_unit_weight[encounter_dif];
+  local unit_budget = budget / (#army_template + filler_units_weight);
   local filler_unit_budget = unit_budget * filler_units_weight;
 
-  if filler_unit_budget > 2500 and #army_template > 0 then
-    filler_unit_budget = 2500;
-    unit_budget = (budget - 2500) / #army_template;
-  end
 
   local filler_units = army_template.filler_units or {};
   local unit_cap = cm:random_number(2) > 1 and 6 or 7;

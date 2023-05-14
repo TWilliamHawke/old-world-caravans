@@ -1,4 +1,3 @@
----comment
 ---@param context CaravanWaylaid
 function Old_world_caravans:ogres_my_lord_handler(context)
   local dilemma_name = "owc_main_dilemma_caravan_ogres";

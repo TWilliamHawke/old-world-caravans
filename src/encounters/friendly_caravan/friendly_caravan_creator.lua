@@ -17,5 +17,9 @@ function Old_world_caravans:friendly_caravan_creator(context)
 
   local probability = math.max(weight_from, weight_to);
 
+  if not context.faction:ancillary_exists("owc_main_anc_enchanted_item_jar_of_all_souls") then
+    probability = probability * 2
+  end
+
   return probability;
 end

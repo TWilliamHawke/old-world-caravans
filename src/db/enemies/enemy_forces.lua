@@ -30,18 +30,20 @@ Old_world_caravans.enemy_forces = {
       wh_dlc03_bst_inf_gor_herd_0 = 1,
       wh_dlc03_bst_inf_gor_herd_1 = 1,
       wh_dlc03_bst_inf_bestigor_herd_0 = 2,
-      wh_dlc03_bst_inf_ungor_raiders_0 = 2,
     },
     {
-      wh_dlc03_bst_inf_centigors_0 = 2,
-      wh_dlc03_bst_feral_manticore = 2,
       wh_dlc03_bst_inf_minotaurs_0 = 2,
       wh_dlc03_bst_mon_chaos_spawn_0 = 2,
+      wh_dlc03_bst_inf_ungor_raiders_0 = 4,
+    },
+    {
+      wh_dlc03_bst_feral_manticore = 4,
+      wh_dlc03_bst_inf_centigors_0 = 2,
       wh_dlc03_bst_inf_centigors_1 = 2,
       wh_dlc03_bst_inf_centigors_2 = 2,
       wh2_dlc17_bst_cav_tuskgor_chariot_0 = 2,
       wh_dlc03_bst_cav_razorgor_chariot_0 = 2,
-      wh_dlc03_bst_inf_razorgor_herd_0 = 5
+      wh_dlc03_bst_inf_razorgor_herd_0 = 4
     },
   },
   wh_dlc03_sc_bst_beastmen_3 = {
@@ -171,7 +173,7 @@ Old_world_caravans.enemy_forces = {
   },
   wh_main_sc_vmp_vampire_counts_2 = {
     general = "wh_main_vmp_master_necromancer",
-    filler_units_mult = 0.7,
+    filler_units_mult = 0.9,
     filler_units = {
       wh_main_vmp_inf_skeleton_warriors_0 = 1,
       wh_main_vmp_inf_skeleton_warriors_1 = 1,
@@ -191,7 +193,7 @@ Old_world_caravans.enemy_forces = {
   },
   wh_main_sc_vmp_vampire_counts_3 = {
     general = "wh_main_vmp_master_necromancer",
-    filler_units_mult = 0.7,
+    filler_units_mult = 0.9,
     filler_units = {
       wh_main_vmp_inf_skeleton_warriors_0 = 1,
       wh_main_vmp_inf_skeleton_warriors_1 = 1,
@@ -642,7 +644,6 @@ Old_world_caravans.enemy_forces = {
   },
   wh2_main_sc_skv_skaven_2 = {
     general = "wh2_main_skv_warlord",
-    filler_units_mult = 0.9,
     filler_units = {
       wh2_main_skv_inf_clanrat_spearmen_0 = 1,
       wh2_main_skv_inf_clanrat_spearmen_1 = 1,
@@ -671,10 +672,14 @@ Old_world_caravans.enemy_forces = {
   },
   wh2_main_sc_skv_skaven_3 = {
     general = "wh2_main_skv_warlord",
-    filler_units_mult = 0.8,
     filler_units = {
       wh2_main_skv_inf_clanrat_spearmen_1 = 1,
       wh2_main_skv_inf_clanrats_1 = 1,
+    },
+    {
+      wh2_dlc12_skv_inf_warplock_jezzails_0 = 1,
+      wh2_main_skv_art_plagueclaw_catapult = 1,
+      wh2_main_skv_art_warp_lightning_cannon = 1,
     },
     {
       wh2_main_skv_inf_plague_monk_censer_bearer = 1,
@@ -694,11 +699,6 @@ Old_world_caravans.enemy_forces = {
       wh2_main_skv_veh_doomwheel = 3,
       wh2_main_skv_mon_hell_pit_abomination = 2,
     },
-    {
-      wh2_dlc12_skv_inf_warplock_jezzails_0 = 1,
-      wh2_main_skv_art_plagueclaw_catapult = 1,
-      wh2_main_skv_art_warp_lightning_cannon = 1,
-    },
   },
   wh2_dlc09_sc_tmb_tomb_kings_1 = {
     filler_units_mult = 0.8,
@@ -717,7 +717,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh2_dlc09_sc_tmb_tomb_kings_2 = {
-    filler_units_mult = 0.8,
+    filler_units_mult = 0.9,
     filler_units = {
       wh2_dlc09_tmb_inf_skeleton_warriors_0 = 1,
       wh2_dlc09_tmb_inf_skeleton_spearmen_0 = 1,
@@ -740,7 +740,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh2_dlc09_sc_tmb_tomb_kings_3 = {
-    filler_units_mult = 0.7,
+    filler_units_mult = 0.9,
     filler_units = {
       wh2_dlc09_tmb_inf_skeleton_warriors_0 = 1,
       wh2_dlc09_tmb_inf_skeleton_spearmen_0 = 1,
@@ -1086,7 +1086,6 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_emp_empire_2 = {
-    filler_units_mult = 0.8,
     filler_units = {
       wh_main_emp_inf_swordsmen = 1,
       wh_main_emp_inf_greatswords = 1,
@@ -1299,7 +1298,9 @@ Old_world_caravans.enemy_forces = {
       wh_main_dwf_inf_miners_1 = 1,
       wh_main_dwf_inf_irondrakes_0 = 1,
       wh_main_dwf_inf_irondrakes_2 = 1,
-      NONE = 3
+      wh_main_dwf_inf_quarrellers_0 = 1,
+      wh_main_dwf_inf_quarrellers_1 = 1,
+      wh_main_dwf_inf_thunderers_0 = 1,
     },
   },
   wh_main_sc_dwf_dwarfs_3 = {
@@ -1330,7 +1331,9 @@ Old_world_caravans.enemy_forces = {
       wh_main_dwf_inf_miners_1 = 1,
       wh_main_dwf_inf_irondrakes_0 = 1,
       wh_main_dwf_inf_irondrakes_2 = 1,
-      NONE = 3
+      wh_main_dwf_inf_quarrellers_0 = 1,
+      wh_main_dwf_inf_quarrellers_1 = 1,
+      wh_dlc06_dwf_inf_rangers_0 = 1,
     },
   },
   wh2_main_sc_hef_high_elves_1 = {
@@ -1551,7 +1554,7 @@ Old_world_caravans.enemy_forces = {
   },
   wh3_dlc23_sc_chd_chaos_dwarfs_2 = {
     general = "wh3_dlc23_chd_overseer",
-    filler_units_mult = 0.5,
+    filler_units_mult = 0.7,
     filler_units = {
       wh3_dlc23_chd_inf_hobgoblin_cutthroats = 1,
       wh3_dlc23_chd_inf_hobgoblin_sneaky_gits = 1,
@@ -1563,16 +1566,14 @@ Old_world_caravans.enemy_forces = {
       wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons = 1,
     },
     {
-      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_bows = 1,
       wh3_dlc23_chd_inf_hobgoblin_archers = 1,
       wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses = 1,
     },
     {
+      wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_bows = 1,
       wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_spears = 1,
-      wh3_dlc23_chd_veh_magma_cannon = 1,
-      wh3_dlc23_chd_veh_deathshrieker_rocket_launcher = 1,
-      wh3_dlc23_chd_inf_orc_labourers = 1,
-      wh3_dlc23_chd_veh_iron_daemon = 1,
+      wh3_dlc23_chd_inf_orc_labourers = 2,
+      wh3_dlc23_chd_veh_iron_daemon = 2,
     }
   },
   wh3_dlc23_sc_chd_chaos_dwarfs_3 = {

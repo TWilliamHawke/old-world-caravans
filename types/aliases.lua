@@ -8,6 +8,7 @@
 ---@field ownership_mult number
 
 ---@alias enemy_data_callback fun() : string, string, 1|2|3
+---@alias encounter_diff 1|2|3
 
 ---@class MCT_settings
 ---@field default_enemy string
@@ -18,7 +19,7 @@
 ---@field scale_difficulty_strenght boolean
 ---@field enable_log boolean
 ---@field force_enable boolean
----@field default_difficult 1 | 2 | 3
+---@field default_difficult encounter_diff
 ---@field encounter_budget_1 integer
 ---@field encounter_budget_2 integer
 ---@field encounter_budget_3 integer

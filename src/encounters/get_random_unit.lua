@@ -1,4 +1,3 @@
----comment
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 ---@return string | nil
 function Old_world_caravans:get_random_unit(caravan)
