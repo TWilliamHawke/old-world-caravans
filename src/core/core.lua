@@ -11,6 +11,7 @@ Old_world_caravans = {
   default_enemy_culture = "wh_main_sc_grn_greenskins",
   default_difficult = 1, ---@type encounter_diff
   combat_encounter_chance = 1,
+  cargo_value = 100,
   db = {},
   encounter_budgets = {
     3500,

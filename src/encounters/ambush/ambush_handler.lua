@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-field
+---@diagnostic disable: undefined-field, param-type-mismatch
 ---@param context CaravanWaylaid
 function Old_world_caravans:ambush_handler(context)
   local emeny_culture, target_region = self:get_enemy_by_regions(context)
@@ -9,9 +9,7 @@ function Old_world_caravans:ambush_handler(context)
   local enemy_cqi, x, y = self:create_enemy_army(
     context,
     emeny_culture,
-    target_region,
-    "wh2_dlc17_bundle_scripted_lizardmen_encounter",
-    "owc_caravan_no_menace_bellow"
+    target_region
   );
 
   local random_unit = self:get_random_unit(caravan)
@@ -34,6 +32,9 @@ function Old_world_caravans:ambush_handler(context)
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
     self:bind_battle_to_dilemma(prebattle_data, 0, function()
+      cm:apply_effect_bundle_to_force("wh2_dlc17_bundle_scripted_lizardmen_encounter", enemy_cqi, 0);
+      cm:apply_effect_bundle_to_force("owc_caravan_no_menace_bellow", enemy_cqi, 0);
+
     end);
 
     self:log("battle has attached, goto dilemma builder")

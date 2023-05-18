@@ -6,6 +6,8 @@ function Old_world_caravans:finalize_mct(context)
     local fluc_mct = mct:get_mod_by_key("old_world_caravans")
     local settings = fluc_mct:get_settings(); ---@type MCT_settings
 
+    self:apply_cargo_value_effect(settings.cargo_value)
+
     if not settings.force_enable then return end
 
     local human_factions = cm:get_human_factions()

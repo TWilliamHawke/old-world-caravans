@@ -25,6 +25,7 @@
 ---@field encounter_budget_3 integer
 ---@field filler_unit_weight integer
 ---@field no_encounter_weight integer
+---@field cargo_value integer
 ---@field combat_probability number
 ---@field ai_empire_caravans boolean
 ---@field ai_teb_caravans boolean

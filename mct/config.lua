@@ -64,10 +64,10 @@ local encounters = {
 }
 
 local combat_encounter_options = {
-  { key = "0.5", text = ".5x", tt = "", is_default = false },
-  { key = "1", text = "1x", tt = "", is_default = true },
+  { key = "0.5", text = ".5x",  tt = "", is_default = false },
+  { key = "1",   text = "1x",   tt = "", is_default = true },
   { key = "1.5", text = "1.5x", tt = "", is_default = false },
-  { key = "2", text = "2x", tt = "", is_default = false },
+  { key = "2",   text = "2x",   tt = "", is_default = false },
 }
 
 
@@ -94,12 +94,6 @@ encounter_budget_3:set_tooltip_text("owc_mct_encounter_budget_tooltip", true);
 encounter_budget_3:slider_set_min_max(5000, 10000)
 encounter_budget_3:set_default_value(7000)
 encounter_budget_3:slider_set_step_size(500)
-
--- local filler_unit_weight = old_world_caravans:add_new_option("filler_unit_weight", "slider");
--- filler_unit_weight:set_text("Filler units weight")
--- filler_unit_weight:slider_set_min_max(10, 20)
--- filler_unit_weight:set_default_value(15)
--- filler_unit_weight:slider_set_step_size(1)
 
 -- local scale_difficulty_cargo = old_world_caravans:add_new_option("scale_difficulty_cargo", "checkbox")
 -- scale_difficulty_cargo:set_text("owc_mct_scale_difficulty_cargo", true)
@@ -167,6 +161,14 @@ random_enemies:set_text("owc_mct_random_enemies", true)
 random_enemies:set_tooltip_text(
   "owc_mct_random_enemies_tooltip", true)
 
+local cargo_value = old_world_caravans:add_new_option("cargo_value", "slider");
+cargo_value:set_text("Base Cargo Value")
+cargo_value:slider_set_min_max(0, 200)
+cargo_value:set_default_value(100)
+cargo_value:slider_set_step_size(10)
+cargo_value:set_tooltip_text("Defines the profit from caravans, in %", false)
+
+
 local debug_section = old_world_caravans:add_new_section("o_debug")
 debug_section:set_localised_text("Debug Section")
 
@@ -213,6 +215,7 @@ if encounter_budget_1.set_is_global then
   random_enemies:set_is_global(true);
   combat_probability:set_is_global(true);
   ai_ksl_caravans:set_is_global(true);
+  cargo_value:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

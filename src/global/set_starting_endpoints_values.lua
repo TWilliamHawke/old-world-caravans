@@ -4,11 +4,13 @@ function Old_world_caravans:set_starting_endpoints_values()
   local ivory_road_demand = cm:get_saved_value("ivory_road_demand");
   local values_is_touched = false;
 
-  for _, region_name in ipairs(self.new_caravan_targets) do
+  for i = 1, #self.new_caravan_targets do
+    local region_name = self.new_caravan_targets[i];
+
     if ivory_road_demand.cathay[region_name] == nil then
       values_is_touched = true
       local region = cm:get_region(region_name);
-      local value = cm:random_number(150, 60);
+      local value = cm:random_number(140, 25);
       local cargo_value_bundle = cm:create_new_custom_effect_bundle(effect_name);
       cargo_value_bundle:set_duration(0);
       cargo_value_bundle:add_effect("wh3_main_effect_caravan_cargo_value_regions", "region_to_region_own", value);

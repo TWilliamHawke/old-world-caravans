@@ -35,6 +35,8 @@ function Old_world_caravans:add_first_tick_callbacks()
       self:hide_caravan_button_for_belegar();
       self:set_starting_endpoints_values();
 
+      self:apply_cargo_value_effect(self.cargo_value)
+
       if cm:is_new_game() then
         --new gane only
         local faction_list = cm:model():world():faction_list();

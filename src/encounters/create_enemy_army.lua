@@ -1,11 +1,10 @@
 ---@param context CaravanWaylaid
 ---@param enemy_culture string
 ---@param target_region string
----@param ... string effects
 ---@return integer enemy_cqi
 ---@return integer x
 ---@return integer y
-function Old_world_caravans:create_enemy_army(context, enemy_culture, target_region, ...)
+function Old_world_caravans:create_enemy_army(context, enemy_culture, target_region)
 
   local encounter_dif, additional_budget = self:get_event_difficulty(context);
   local caravan_faction_key = context:faction():name()
@@ -31,9 +30,6 @@ function Old_world_caravans:create_enemy_army(context, enemy_culture, target_reg
       function(enemy_char_cqi, enemy_force_cqi)
         cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
         cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
-        for _, effect_bundle in pairs(arg) do
-          cm:apply_effect_bundle_to_force(effect_bundle, enemy_force_cqi, 0);
-        end
 
         enemy_cqi = enemy_force_cqi;
       end);
@@ -44,9 +40,7 @@ function Old_world_caravans:create_enemy_army(context, enemy_culture, target_reg
       function(enemy_char_cqi, enemy_force_cqi)
         cm:force_declare_war(enemy_faction, caravan_faction_key, false, false);
         cm:disable_movement_for_character(cm:char_lookup_str(enemy_char_cqi));
-        for _, effect_bundle in pairs(arg) do
-          cm:apply_effect_bundle_to_force(effect_bundle, enemy_force_cqi, 0);
-        end
+
         enemy_cqi = enemy_force_cqi;
       end);
   end
