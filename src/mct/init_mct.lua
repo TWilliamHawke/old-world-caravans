@@ -29,6 +29,10 @@ function Old_world_caravans:mct_init(context)
   self.ai_caravans.wh3_main_sc_ksl_kislev = settings.ai_ksl_caravans;
 
   if settings.peasant_economy then
-    self:replace_bretonnia_units()
+    self:replace_units(self.brt_replacers)
+  end
+
+  if settings.replace_units then
+    self:replace_units(self.main_replacers)
   end
 end

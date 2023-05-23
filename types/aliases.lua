@@ -34,6 +34,7 @@
 ---@field ai_ksl_caravans boolean
 ---@field peasant_economy boolean
 ---@field random_enemies boolean
+---@field replace_units boolean
 
 ---@class Prebattle_caravan_data
 ---@field caravan CARAVAN_SCRIPT_INTERFACE

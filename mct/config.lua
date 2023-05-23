@@ -156,6 +156,11 @@ peasant_economy:set_text("owc_mct_peasant_economy", true)
 peasant_economy:set_tooltip_text(
   "owc_mct_peasant_economy_tooltip", true)
 
+local replace_units = old_world_caravans:add_new_option("replace_units", "checkbox")
+replace_units:set_text("Caravans not affects unit caps")
+replace_units:set_tooltip_text(
+  "Caravan units will be replaced by copies that do not affect unit caps mods but also not affect by unit upgrades mods. This only works for new caravans. Bretonnia peasants have their own option")
+
 local random_enemies = old_world_caravans:add_new_option("random_enemies", "checkbox")
 random_enemies:set_text("owc_mct_random_enemies", true)
 random_enemies:set_tooltip_text(
@@ -216,6 +221,7 @@ if encounter_budget_1.set_is_global then
   combat_probability:set_is_global(true);
   ai_ksl_caravans:set_is_global(true);
   cargo_value:set_is_global(true);
+  replace_units:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end
