@@ -49,8 +49,7 @@ function Old_world_caravans:wild_river_handler(context)
 
   dilemma_builder:add_choice_payload("SECOND", payload_builder);
 
-  dilemma_builder:add_target("default", cm:get_military_force_by_cqi(enemy_cqi));
-  dilemma_builder:add_target("target_military_1", caravan_force);
+  dilemma_builder:add_target("default", caravan_force);
 
   self:log("dilemma_builder is finished, launch the dilemma")
 

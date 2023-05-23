@@ -28,10 +28,6 @@ function Old_world_caravans:magic_item_handler(context)
     "weapon",
   };
 
-  if faction_sc ~= "wh_main_dwf_dwarfs" then
-    table.insert(ancillary_categories, "arcane_item")
-  end
-
   local category = ancillary_categories[cm:random_number(#ancillary_categories)]
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
@@ -50,8 +46,7 @@ function Old_world_caravans:magic_item_handler(context)
   payload_builder:effect_bundle_to_force(caravan_force, cargo_bundle);
   dilemma_builder:add_choice_payload("SECOND", payload_builder);
 
-  dilemma_builder:add_target("default", cm:get_military_force_by_cqi(enemy_cqi));
-  dilemma_builder:add_target("target_military_1", caravan_force);
+  dilemma_builder:add_target("default", caravan_force);
 
   self:log("dilemma_builder is finished, launch the dilemma")
 
