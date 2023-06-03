@@ -951,6 +951,9 @@ function caravans:initialise()
 end
 --Functions
 
+---comment
+---@param context QueryShouldWaylayCaravan
+---@return boolean
 function caravans:event_handler(context)
 	
 	--package up some world state

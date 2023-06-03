@@ -87,7 +87,7 @@ function Old_world_caravans_vows:add_vow_listeners()
   )
 
   core:add_listener(
-    "owc_postbattle_faction_cleanup",
+    "owc_postbattle_vow",
     "BattleCompleted",
     ---@param context BattleCompleted
     function(context)
@@ -208,7 +208,7 @@ function Old_world_caravans_vows:add_vow_listeners()
   )
 
   core:add_listener(
-    "owc_CaravanCompleted",
+    "owc_vow_CaravanCompleted",
     "CaravanCompleted",
     ---@param context CaravanCompleted
     function(context)

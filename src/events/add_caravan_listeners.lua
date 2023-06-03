@@ -8,6 +8,7 @@ function Old_world_caravans:add_caravan_listeners()
   core:remove_listener("owc_caravan_moved")
   core:remove_listener("owc_kill_ai_caravans")
   core:remove_listener("OWC_add_ai_effect")
+  core:remove_listener("OWC_caravan_finished")
 
   core:add_listener(
     "owc_add_inital_force",
@@ -192,6 +193,21 @@ function Old_world_caravans:add_caravan_listeners()
   );
 
   core:add_listener(
+    "owc_kill_mar_caravans",
+    "FactionTurnEnd",
+    ---@param context FactionTurnEnd
+    ---@return boolean
+    function(context)
+      local faction = context:faction();
+      return faction:is_human();
+    end,
+    function()
+      self:disband_mar_convoys();
+    end,
+    true
+  );
+
+  core:add_listener(
     "OWC_add_ai_effect",
     "FactionTurnStart",
     ---@param context FactionTurnStart
@@ -208,6 +224,18 @@ function Old_world_caravans:add_caravan_listeners()
       if not faction:has_effect_bundle(effect_key) then
         cm:apply_effect_bundle(effect_key, faction:name(), 0)
       end
+    end,
+    true
+  );
+
+  core:add_listener(
+    "OWC_caravan_finished",
+    "CaravanCompleted",
+    function(context)
+      return not self:faction_is_modded(context:faction());
+    end,
+    function(context)
+      caravans:handle_caravan_complete(context)
     end,
     true
   );

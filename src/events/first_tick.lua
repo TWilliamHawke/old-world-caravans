@@ -13,6 +13,7 @@ function Old_world_caravans:add_first_tick_callbacks()
 
   cm:add_first_tick_callback(function()
     self:fill_core_caravans_data();
+    self:disband_mar_convoys();
     caravans.rhox_mar_caravan_replace_listener = function()
       self:logCore("Marienburg \"Replace listeners\" function was replaced")
     end
@@ -26,6 +27,8 @@ function Old_world_caravans:add_first_tick_callbacks()
       core:remove_listener("add_inital_force")
       core:remove_listener("add_inital_bundles")
       core:remove_listener("caravan_master_heal")
+      core:remove_listener("caravan_finished")
+
 
       self:add_caravan_listeners();
       self:add_specific_faction_listeners();
