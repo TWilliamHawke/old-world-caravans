@@ -18,5 +18,5 @@ function Old_world_caravans:undead_attack_creator(context)
     end
   end
 
-	return math.min(probability, 15)
+	return math.min(probability, 10)
 end

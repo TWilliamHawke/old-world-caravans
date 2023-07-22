@@ -17,5 +17,5 @@ function Old_world_caravans:daemons_attack_creator(context)
     end
   end
 
-  return math.min(probability, 15)
+  return math.min(probability, 10)
 end

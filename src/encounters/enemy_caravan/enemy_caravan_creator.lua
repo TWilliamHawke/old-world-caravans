@@ -19,5 +19,9 @@ function Old_world_caravans:enemy_caravan_creator(context)
     end
   end
 
+  if cm:turn_number() < 30 then
+    probability = 3;
+  end
+
   return probability;
 end

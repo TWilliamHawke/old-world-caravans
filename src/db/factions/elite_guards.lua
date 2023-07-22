@@ -20,7 +20,7 @@ Old_world_caravans.db.elite_guards = {
     unit = "wh3_main_ksl_inf_tzar_guard_0"
   },
   wh3_main_sc_cth_cathay = {
-    technology = "wh3_main_tech_ksl_3_07",
+    technology = "qwerty", --not a bug
     unit = "wh3_main_cth_inf_dragon_guard_0"
   },
 }

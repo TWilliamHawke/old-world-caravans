@@ -20,8 +20,8 @@ function Old_world_caravans:get_event_difficulty(context)
     banditary_dif = 2;
   end
 
-  local med_encounter_floor = self.encounter_budgets[2] * 1.35
-  local hard_encounter_floor = self.encounter_budgets[3] * 1.35
+  local med_encounter_floor = 6500
+  local hard_encounter_floor = 9500
 
   if cm:random_number(8, 1) * 500 <= caravan_cost - hard_encounter_floor then
     cost_dif = 3;

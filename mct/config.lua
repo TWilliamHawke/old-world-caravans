@@ -84,7 +84,7 @@ encounter_budget_1:slider_set_step_size(500)
 local encounter_budget_2 = old_world_caravans:add_new_option("encounter_budget_2", "slider");
 encounter_budget_2:set_text("owc_mct_encounter_budget_2", true)
 encounter_budget_2:set_tooltip_text("owc_mct_encounter_budget_tooltip", true);
-encounter_budget_2:slider_set_min_max(3000, 7000)
+encounter_budget_2:slider_set_min_max(3000, 7500)
 encounter_budget_2:set_default_value(5000)
 encounter_budget_2:slider_set_step_size(500)
 

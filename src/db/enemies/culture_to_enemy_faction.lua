@@ -1,5 +1,6 @@
 Old_world_caravans.culture_to_enemy_faction = {
   wh_main_sc_emp_empire = "wh_main_emp_empire_qb1",
+  mixer_teb_southern_realms = "wh_main_emp_empire_qb1",
   wh_main_sc_brt_bretonnia = "wh_main_brt_bretonnia_qb1",
   wh3_main_sc_ksl_kislev = "wh3_main_ksl_kislev_qb1",
   wh_main_sc_dwf_dwarfs = "wh_main_dwf_dwarfs_qb1",

@@ -13,6 +13,11 @@ function Old_world_caravans:fill_core_caravans_data()
   caravans.item_data.mixer_teb_southern_realms = {};
   caravans.item_data.wh3_main_ksl_kislev = {};
 
+  --increase some cathay caravans
+  table.insert(caravans.traits_to_units.wh3_main_skill_innate_cth_caravan_master_gunner, "wh3_main_cth_inf_crane_gunners_0")
+  local army = caravans.traits_to_units["wh3_main_skill_innate_cth_caravan_master_Former-Artillery-Officer"]
+  table.insert(army, "wh3_main_cth_inf_jade_warriors_1")
+
   --update trade nodes values on turn start
   for _, region in ipairs(self.new_caravan_targets) do
     table.insert(caravans.destinations_key.main_warhammer.cathay, region)

@@ -1,9 +1,13 @@
 function Old_world_caravans:add_southern_realms_support()
   if vfs.exists("script/frontend/mod/cataph_teb.lua") then
-    self:log("add_southern_realms_support")
+    self:logCore("add_southern_realms_support")
 
     self.culture_to_agent_unit.wh_main_sc_teb_teb = "teb_duellist_hero";
     self.trade_nodes_to_culture.wh3_main_combi_region_monument_of_the_moon = "wh_main_sc_teb_teb"
+
+    self.enemy_forces.mixer_teb_southern_realms_1 = self.enemy_forces.wh_main_sc_teb_teb_1;
+    self.enemy_forces.mixer_teb_southern_realms_2 = self.enemy_forces.wh_main_sc_teb_teb_2;
+    self.enemy_forces.mixer_teb_southern_realms_3 = self.enemy_forces.wh_main_sc_teb_teb_3;
 
     self.culture_to_units.wh_main_sc_teb_teb = {
       weakA = {
@@ -35,7 +39,10 @@ function Old_world_caravans:add_southern_realms_support()
       },
     }
   else
-    self:log("replace teb with empire");
+    self:logCore("replace teb with empire");
+    self.enemy_forces.mixer_teb_southern_realms_1 = self.enemy_forces.wh_main_sc_emp_empire_1;
+    self.enemy_forces.mixer_teb_southern_realms_2 = self.enemy_forces.wh_main_sc_emp_empire_2;
+    self.enemy_forces.mixer_teb_southern_realms_3 = self.enemy_forces.wh_main_sc_emp_empire_3;
 
     self.enemy_forces.wh_main_sc_teb_teb_1 = self.enemy_forces.wh_main_sc_emp_empire_1;
     self.enemy_forces.wh_main_sc_teb_teb_2 = self.enemy_forces.wh_main_sc_emp_empire_2;
