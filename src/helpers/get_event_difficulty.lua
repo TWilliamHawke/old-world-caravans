@@ -8,7 +8,10 @@ function Old_world_caravans:get_event_difficulty(context)
 
 
   local force_cqi = caravan:caravan_force():command_queue_index();
+  local caravan_health = cm:military_force_average_strength(caravan:caravan_force()) / 2 + 50;
   local caravan_cost = cm:force_gold_value(force_cqi)
+   --caravan cost already includes this but autoresolve is very harsh for damaged armies
+  caravan_cost = math.floor(caravan_cost * caravan_health / 100);
   local additional_budget = 0;
 
   local banditary_dif = 1; ---@type encounter_diff
@@ -21,7 +24,7 @@ function Old_world_caravans:get_event_difficulty(context)
   end
 
   local med_encounter_floor = 6500
-  local hard_encounter_floor = 9500
+  local hard_encounter_floor = 10500
 
   if cm:random_number(8, 1) * 500 <= caravan_cost - hard_encounter_floor then
     cost_dif = 3;
@@ -30,7 +33,7 @@ function Old_world_caravans:get_event_difficulty(context)
   end
 
   if caravan_cost > 12000 and cost_dif == 3 then
-    additional_budget = math.floor((caravan_cost - 12000) * 0.7);
+    additional_budget = math.floor((caravan_cost - 12000) * 0.5);
     self:log("additional_budget for encounter force is "..additional_budget)
   end
 
