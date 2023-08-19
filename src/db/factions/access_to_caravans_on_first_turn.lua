@@ -8,6 +8,7 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   mixer_teb_colombo = false,
   mixer_teb_bilbali = true,
   mixer_teb_new_world_colonies = false,
+  cr_emp_guests_of_the_raja = false,
   --dwarfs
   wh_main_dwf_dwarfs = true,
   wh_main_dwf_karak_azul = true,
@@ -19,6 +20,13 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   wh3_main_dwf_the_ancestral_throng = false,
   wh2_dlc17_dwf_thorek_ironbrow = false,
   wh_main_dwf_kraka_drak = true,
+  wh2_dlc15_dwf_clan_helhein = false,
+  wh2_main_dwf_greybeards_prospectors = false,
+  wh2_main_dwf_karak_zorn = false,
+  wh2_main_dwf_spine_of_sotek_dwarfs = false,
+  wh_main_dwf_karak_norn = false,
+  wh3_main_dwf_karak_azorn = false,
+  cr_dwf_firebeards_excavators = false,
   --empire
   wh_main_emp_averland = true,
   wh2_dlc13_emp_golden_order = true,
@@ -45,7 +53,8 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   wh_main_brt_lyonesse = true,
   wh_main_brt_parravon = true,
   wh2_dlc14_brt_chevaliers_de_lyonesse = false,
-  wh2_main_brt_thegans_crusaders = false,     --set false for prevent Rapance
+  cr_brt_leofrics_fellowship = false,
+  wh2_main_brt_thegans_crusaders = false,     --is false to prevent Rapance
   wh2_main_brt_knights_of_the_flame = false,  --to unlock caravans
   wh2_main_brt_knights_of_origo = false,      --after confederation with them
   --kislev

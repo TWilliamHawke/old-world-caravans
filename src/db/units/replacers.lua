@@ -169,4 +169,8 @@ Old_world_caravans.main_replacers = {
   teb_militia_knights = "owc_militia_knights",
   teb_paymaster = "owc_paymaster",
   teb_kotrs = "owc_kotrs",
+  -- teb_shieldbearers = 1,
+  -- teb_encarmine = 1,
+  -- teb_noble_retinue = 1,
+
 }

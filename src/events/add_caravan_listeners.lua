@@ -182,8 +182,9 @@ function Old_world_caravans:add_caravan_listeners()
     ---@return boolean
     function(context)
       local faction = context:faction();
-      local faction_sc = faction:subculture()
-      return not faction:is_human() and self.ai_caravans[faction_sc] == false;
+      local faction_sc = faction:subculture();
+      local faction_name = faction:name();
+      return not faction:is_human() and (self.ai_caravans[faction_sc] == false or self.minor_without_caravans[faction_name]);
     end,
     ---@param context FactionTurnEnd
     function(context)

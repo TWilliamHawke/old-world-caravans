@@ -39,7 +39,7 @@
 ---@class Prebattle_caravan_data
 ---@field caravan CARAVAN_SCRIPT_INTERFACE
 ---@field dilemma_name string
----@field x integer
----@field y integer
----@field is_ambush boolean
+---@field x integer | nil
+---@field y integer | nil
+---@field is_ambush boolean | nil
 ---@field enemy_force_cqi integer
