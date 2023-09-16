@@ -42,9 +42,15 @@ function caravans:handle_caravan_complete(context)
     cm:cai_insert_caravan_diplomatic_event(region_owner_key, faction_key)
 
     if region_owner:is_human() and faction_key ~= region_owner_key then
+      local incident_key = "wh3_main_cth_caravan_completed_received"
+					
+      if faction:culture() == "wh3_dlc23_chd_chaos_dwarfs" then
+        incident_key = "wh3_dlc23_chd_convoy_completed_received"
+      end
+
       cm:trigger_incident_with_targets(
         region_owner:command_queue_index(),
-        "wh3_main_cth_caravan_completed_received",
+        incident_key,
         ---@diagnostic disable-next-line: param-type-mismatch
         0, 0, 0, 0, region:cqi(), 0
       )
