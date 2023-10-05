@@ -42,7 +42,8 @@ function Old_world_caravans:generate_caravan_encounter(context)
 
   self:log("probability for no encounter is " .. tostring(weight_table.nothing));
 
-  for _, encounter in ipairs(self.encounters) do
+  for i = 1,  #self.encounters do
+    local encounter = self.encounters[i];
     local encounter_creator = encounter .. "_creator";
     local encounter_handler = encounter .. "_handler";
 

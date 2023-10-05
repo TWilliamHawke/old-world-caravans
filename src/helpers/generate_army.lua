@@ -79,8 +79,8 @@ function Old_world_caravans:generate_army(enemy_culture, encounter_dif, addition
 
   local budget_balance = 0;
 
-  for _, unit_group in ipairs(army_template) do
-    budget_balance = select_unit(unit_group, unit_budget + budget_balance)
+  for i = 1, #army_template do
+    budget_balance = select_unit(army_template[i], unit_budget + budget_balance)
   end
 
   select_unit(filler_units, filler_unit_budget + budget_balance);

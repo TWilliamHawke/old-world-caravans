@@ -19,8 +19,8 @@ function Old_world_caravans:fill_core_caravans_data()
   table.insert(army, "wh3_main_cth_inf_jade_warriors_1")
 
   --update trade nodes values on turn start
-  for _, region in ipairs(self.new_caravan_targets) do
-    table.insert(caravans.destinations_key.main_warhammer.cathay, region)
+  for i = 1, #self.new_caravan_targets do
+    table.insert(caravans.destinations_key.main_warhammer.cathay, self.new_caravan_targets[i])
   end
 
   --copy cathay caravan units
@@ -29,8 +29,8 @@ function Old_world_caravans:fill_core_caravans_data()
     if trait:sub(1, 25) == "wh3_main_skill_innate_cth" then
       self.cathay_caravans[trait] = {};
 
-      for _, unit in ipairs(units) do
-        table.insert(self.cathay_caravans[trait], unit)
+      for i = 1, #units do
+        table.insert(self.cathay_caravans[trait], units[i])
       end
     end
   end

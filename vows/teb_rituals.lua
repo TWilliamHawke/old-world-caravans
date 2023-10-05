@@ -5,13 +5,6 @@ Old_world_caravans_teb = {
   }
 }
 
-cm:add_first_tick_callback(function()
-  -- core:call_once("owc_teb_init", function()
-  -- local faction = cm:get_local_faction()
-
-  -- end)
-end)
-
 function Old_world_caravans_teb:add_listeners()
   core:add_listener(
     "owc_teb_ritual",

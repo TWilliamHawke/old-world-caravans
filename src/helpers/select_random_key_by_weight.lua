@@ -27,7 +27,7 @@ function Old_world_caravans:select_random_key_by_weight(table, weight_selector, 
   end;
 
 
-  for key, val in pairs(table) do
+  for key, val in self:sorted_pairs(table) do
     random_key = key;
     local weight = val and weight_selector(val) or 0;
 

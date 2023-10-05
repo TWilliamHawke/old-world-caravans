@@ -13,14 +13,15 @@ function Old_world_caravans:finalize_mct(context)
     local human_factions = cm:get_human_factions()
     if not human_factions or type(human_factions) ~= "table" then return end
 
-    for _, faction_name in ipairs(human_factions) do
+    for i = 1, #human_factions do
+      local faction_name = human_factions[i]
       local faction = cm:get_faction(faction_name)
 
       if faction and self:faction_has_caravans(faction)
           and not self:caravan_button_should_be_visible(faction)
       then
         self:logCore("show caravans for " .. faction_name)
-        if cm:get_local_faction():name() == faction_name then
+        if cm:get_local_faction(true):name() == faction_name then
           self:show_caravan_button();
         end
         cm:set_saved_value(self.is_init_save_key .. faction_name, true)

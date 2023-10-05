@@ -35,7 +35,7 @@ function Old_world_caravans:add_first_tick_callbacks()
       self:add_cleanup_listeners();
 
       self:fill_core_caravans_data();
-      self:hide_caravan_button_for_belegar();
+      self:hide_caravan_button_without_access();
       self:set_starting_endpoints_values();
 
       self:apply_cargo_value_effect(self.cargo_value)

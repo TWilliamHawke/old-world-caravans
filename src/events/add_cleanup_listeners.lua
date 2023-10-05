@@ -85,7 +85,8 @@ function Old_world_caravans:add_cleanup_listeners()
 
     local human_factions = cm:get_human_factions();
 
-    for _, faction in ipairs(human_factions) do
+    for i = 1, #human_factions do
+      local faction = human_factions[i]
       if cm:get_saved_value(self.encounter_faction_save_key..faction) then
         self:cleanup_encounter_for_faction(faction);
       end

@@ -16,7 +16,7 @@ function Old_world_caravans:add_start_force(caravan)
   local lord_cqi = caravan_master:command_queue_index();
   local lord_str = cm:char_lookup_str(lord_cqi);
 
-  for i in ipairs(force_list) do
+  for i = 1, #force_list do
     cm:grant_unit_to_character(lord_str, force_list[i]);
   end
 

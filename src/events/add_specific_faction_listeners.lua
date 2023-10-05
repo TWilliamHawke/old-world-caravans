@@ -20,7 +20,7 @@ function Old_world_caravans:add_specific_faction_listeners()
 
       if faction_name == self.belegar_faction then
         cm:set_saved_value(self.is_init_save_key .. faction_name, true)
-        if cm:get_local_faction():name() == faction_name then
+        if cm:get_local_faction(true):name() == faction_name then
           self:show_caravan_button();
         end
       end
@@ -47,7 +47,7 @@ function Old_world_caravans:add_specific_faction_listeners()
       local region_owner = region:owning_faction():name();
 
       if region_owner == self.belegar_faction then
-        if cm:get_local_faction():name() == region_owner then
+        if cm:get_local_faction(true):name() == region_owner then
           self:show_caravan_button();
         end
         if not cm:get_saved_value(self.is_init_save_key .. region_owner) then
@@ -79,7 +79,7 @@ function Old_world_caravans:add_specific_faction_listeners()
       local region_owner_key = region:owning_faction():name();
 
       if not region:is_abandoned() and region_owner_key == self.belegar_faction then
-        if cm:get_local_faction():name() == region_owner_key then
+        if cm:get_local_faction(true):name() == region_owner_key then
           self:show_caravan_button();
         end
         cm:set_saved_value(self.is_init_save_key .. faction:name(), true)

@@ -8,7 +8,7 @@ function Old_world_caravans:unlock_caravans_by_confederation(faction, other_fact
   local other_name = other_faction:name();
 
   if self.access_to_caravans_on_first_turn[other_name] then
-    if cm:get_local_faction():name() == faction:name() then
+    if cm:get_local_faction(true):name() == faction:name() then
       self:show_caravan_button();
     end
     cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
