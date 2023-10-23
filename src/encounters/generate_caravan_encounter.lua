@@ -18,6 +18,7 @@ function Old_world_caravans:generate_caravan_encounter(context)
   local end_region = self:get_region_by_node(caravan, context:to());
   local bandit_threat = self:calculate_bandit_threat(region_names);
   local ownership_mult = self:calculate_ownership_mult(list_of_regions, faction)
+  local caravan_health = 0.5 + cm:military_force_average_strength(caravan:caravan_force()) / 200; --[0.5, 1]
 
   ---@type Encounter_creator_context
   local conditions = {
@@ -56,7 +57,7 @@ function Old_world_caravans:generate_caravan_encounter(context)
       local probability = self[encounter_creator](self, conditions)
 
       if self.combat_encounters[encounter] then
-        probability = math.floor(probability * self.combat_encounter_chance)
+        probability = math.floor(probability * self.combat_encounter_chance * caravan_health)
       end
 
       self:log("probability for " .. encounter .. " is " .. probability);

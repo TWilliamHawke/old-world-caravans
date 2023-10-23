@@ -128,14 +128,14 @@ function Old_world_caravans:add_caravan_listeners()
       local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
 
       local faction = cm:get_local_faction()
-      --self:give_caravan_award(faction, settlement)
+      -- self:give_caravan_award(faction, settlement)
       -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
       -- :item_at(0))
 
       -- local caravan = cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0)
       -- cm:move_caravan(caravan)
 
-      self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
+      -- self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
     end,
     true
   )

@@ -8,7 +8,7 @@ function Old_world_caravans:get_event_difficulty(context)
 
 
   local force_cqi = caravan:caravan_force():command_queue_index();
-  local caravan_health = cm:military_force_average_strength(caravan:caravan_force()) / 2 + 50;
+  local caravan_health = cm:military_force_average_strength(caravan:caravan_force()) / 2 + 50; --[50, 100]
   local caravan_cost = cm:force_gold_value(force_cqi)
    --caravan cost already includes this but autoresolve is very harsh for damaged armies
   caravan_cost = math.floor(caravan_cost * caravan_health / 100);
