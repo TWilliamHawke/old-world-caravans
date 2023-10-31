@@ -35,11 +35,11 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   local cqi = caravan_faction:command_queue_index();
 
   local payload_builder = cm:create_payload();
-  self:log("award unit is "..tostring(unit_key))
+  self:log("award unit is "..tostring(unit_key));
 
-  local count = self:caravan_master_has_special_trait(caravan_master, region_sc) and 2 or 1
-  payload_builder:add_unit(caravan_force, unit_key, count, 0)
-  local char_cqi = caravan_force:general_character():command_queue_index()
+  local unit_count = self:caravan_master_has_cultural_trait(caravan_master, region_sc) and 2 or 1;
+  payload_builder:add_unit(caravan_force, unit_key, unit_count, 0);
+  local char_cqi = caravan_force:general_character():command_queue_index();
 
   ---@diagnostic disable-next-line: undefined-field
   cm:trigger_custom_incident_with_targets(

@@ -73,11 +73,18 @@ function Old_world_caravans:add_caravan_listeners()
       local faction_key = context:faction():name()
       self:log("My handler for QueryShouldWaylayCaravan")
 
-      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
-        self:generate_caravan_encounter(context)
+      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "main_warhammer") then
+        local has_handler, selected_encounter = self:generate_caravan_encounter(context)
+        self:log("selected_encounter is " .. tostring(selected_encounter))
+
+        if has_handler then
+          ---@diagnostic disable-next-line: redundant-parameter
+          context:flag_for_waylay("owc_" .. selected_encounter)
+        end
       else
         if caravans.events_fired[faction_key] == nil or caravans.events_fired[faction_key] == false then
           if caravans:event_handler(context) == false then
+            ---@diagnostic disable-next-line: undefined-field
             out.design("Caravan not valid for event");
           elseif caravans.events_fired[faction_key] ~= nil then
             caravans.events_fired[faction_key] = true
@@ -99,7 +106,7 @@ function Old_world_caravans:add_caravan_listeners()
     function(context)
       local subculture = context:faction():subculture();
 
-      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
+      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() == "main_warhammer") then
         local ok, err = pcall(function()
           self:handle_caravan_encounter(context);
         end);
@@ -152,6 +159,7 @@ function Old_world_caravans:add_caravan_listeners()
       local faction = context:faction()
 
       if not faction:is_human() then return end
+      ---@diagnostic disable-next-line: undefined-field
       local node = context:complete_position():node();
       local caravan = context:caravan();
       local region_name = node:region_key()
@@ -184,7 +192,8 @@ function Old_world_caravans:add_caravan_listeners()
       local faction = context:faction();
       local faction_sc = faction:subculture();
       local faction_name = faction:name();
-      return not faction:is_human() and (self.ai_caravans[faction_sc] == false or self.minor_without_caravans[faction_name]);
+      return not faction:is_human() and
+      (self.ai_caravans[faction_sc] == false or self.minor_without_caravans[faction_name]);
     end,
     ---@param context FactionTurnEnd
     function(context)

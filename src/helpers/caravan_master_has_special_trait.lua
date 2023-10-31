@@ -1,7 +1,7 @@
 ---@param caravan_master CHARACTER_SCRIPT_INTERFACE
 ---@param region_culture string
 ---@return boolean
-function Old_world_caravans:caravan_master_has_special_trait(caravan_master, region_culture)
+function Old_world_caravans:caravan_master_has_cultural_trait(caravan_master, region_culture)
   local caravan_culture = caravan_master:faction():subculture();
   local caravan_traits = self.culture_to_trait[caravan_culture];
 

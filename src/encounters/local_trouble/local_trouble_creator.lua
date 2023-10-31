@@ -16,11 +16,11 @@ function Old_world_caravans:local_trouble_creator(context)
     return 0;
   end
 
-  if self:caravan_master_has_special_trait(caravan_master, culture_from) then
+  if self:caravan_master_has_cultural_trait(caravan_master, culture_from) then
     return 0;
   end
 
-  if self:caravan_master_has_special_trait(caravan_master, culture_to) then
+  if self:caravan_master_has_cultural_trait(caravan_master, culture_to) then
     return 0;
   end
 

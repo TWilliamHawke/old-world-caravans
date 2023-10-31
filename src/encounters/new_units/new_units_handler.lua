@@ -29,12 +29,12 @@ function Old_world_caravans:new_units_handler(context)
 
 
   local strong_units_border = cm:turn_number() > 50 and 3 or 4;
-  local force_strenght = cm:random_number(4) > strong_units_border and "strong" or "weak";
-  self:log("selected force strenght is " .. force_strenght)
-  local suffix = (force_strenght == "strong" or cm:random_number(2) > 1) and "A" or "B";
+  local units_strenght = cm:random_number(4) > strong_units_border and "strong" or "weak";
+  self:log("selected units strenght is " .. units_strenght)
+  local suffix = (units_strenght == "strong" or cm:random_number(2) > 1) and "A" or "B";
 
-  local unitsA, unitsA_count = self:select_unit(selected_cultureA, force_strenght .. "A");
-  local unitsB, unitsB_count = self:select_unit(selected_cultureB, force_strenght .. "B");
+  local unitsA, unitsA_count = self:select_unit(selected_cultureA, units_strenght .. "A");
+  local unitsB, unitsB_count = self:select_unit(selected_cultureB, units_strenght .. "B");
 
   if unitsA_count < 1 or unitsB_count < 1 then
     self:logCore("cannot select units");

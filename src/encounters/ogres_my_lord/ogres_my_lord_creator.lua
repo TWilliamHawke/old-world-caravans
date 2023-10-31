@@ -5,7 +5,7 @@ function Old_world_caravans:ogres_my_lord_creator(context)
   local caravan_master = context.caravan:caravan_master():character()
   local probability = math.floor((20 - army_size) / 2);
 
-  if self:caravan_master_has_special_trait(caravan_master, "wh3_main_sc_ogr_ogre_kingdoms") then
+  if self:caravan_master_has_cultural_trait(caravan_master, "wh3_main_sc_ogr_ogre_kingdoms") then
     probability = probability * 2;
   end
 

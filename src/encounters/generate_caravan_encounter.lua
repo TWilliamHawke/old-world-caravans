@@ -1,10 +1,16 @@
 ---@param context QueryShouldWaylayCaravan
+---@return nil | boolean, string | nil
 function Old_world_caravans:generate_caravan_encounter(context)
   if self.encounter_should_be_canceled then
     cm:set_saved_value(self.encounter_was_canceled_key, true)
     self.encounter_should_be_canceled = false;
     self:log("encounter was canceled")
     return
+  end
+
+  if self.override_encounters then
+    local result = self:handler_is_exists(self.default_encounter);
+    return result, self.default_encounter;
   end
 
   local region_names, list_of_regions = self:get_regions_list(context);
@@ -46,11 +52,9 @@ function Old_world_caravans:generate_caravan_encounter(context)
   for i = 1,  #self.encounters do
     local encounter = self.encounters[i];
     local encounter_creator = encounter .. "_creator";
-    local encounter_handler = encounter .. "_handler";
 
-    if type(self[encounter_handler]) == "function" then
-    else
-      self:log(encounter_handler .. " is not a function")
+    if not self:handler_is_exists(encounter) then
+      self:log(encounter .. "_handler is not a function")
     end
 
     if type(self[encounter_creator]) == "function" then
@@ -71,13 +75,7 @@ function Old_world_caravans:generate_caravan_encounter(context)
     return val;
   end, true) or "nothing";
 
-  if self.override_encounters then
-    selected_encounter = self.default_encounter
-  end
+  local result = self:handler_is_exists(selected_encounter);
 
-  self:log("selected_encounter is " .. selected_encounter)
-  if selected_encounter == "nothing" then return end
-
-  ---@diagnostic disable-next-line: redundant-parameter
-  context:flag_for_waylay("owc_" .. selected_encounter)
+  return result, selected_encounter;
 end

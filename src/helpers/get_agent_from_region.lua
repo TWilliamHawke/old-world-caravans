@@ -14,7 +14,7 @@ function Old_world_caravans:get_agent_from_region(node, caravan)
     return "", 0;
   end;
 
-  if self:caravan_master_has_special_trait(caravan_master, region_culture) then
+  if self:caravan_master_has_cultural_trait(caravan_master, region_culture) then
     culture_weight = culture_weight * 10;
   end
 

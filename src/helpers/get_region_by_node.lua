@@ -4,4 +4,4 @@
 function Old_world_caravans:get_region_by_node(caravan, node_position)
   local node = caravan:position():network():node_for_position(node_position);
   return node:region_data():region();
-end;
+end
