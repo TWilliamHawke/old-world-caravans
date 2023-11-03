@@ -1070,6 +1070,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_emp_empire_1 = {
+    general = "wh_main_emp_lord",
     filler_units = {
       wh_main_emp_inf_swordsmen = 3,
       wh_dlc04_emp_inf_flagellants_0 = 1,
@@ -1086,6 +1087,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_emp_empire_2 = {
+    general = "wh_main_emp_lord",
     filler_units = {
       wh_main_emp_inf_swordsmen = 1,
       wh_main_emp_inf_greatswords = 1,
@@ -1108,6 +1110,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_emp_empire_3 = {
+    general = "wh_main_emp_lord",
     filler_units = {
       wh_main_emp_inf_swordsmen = 1,
       wh_main_emp_inf_greatswords = 1,
