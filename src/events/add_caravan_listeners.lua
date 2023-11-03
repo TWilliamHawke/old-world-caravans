@@ -134,7 +134,14 @@ function Old_world_caravans:add_caravan_listeners()
       local settlement = context:garrison_residence():region():name();
       local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
 
-      local faction = cm:get_local_faction()
+      local log_x = context:garrison_residence():region():settlement():logical_position_x();
+      local log_y = context:garrison_residence():region():settlement():logical_position_y();
+      local faction = cm:get_faction("wh3_main_cth_cathay_qb1");
+
+      -- local name = faction and not faction:is_null_interface() and faction:name();
+      -- self:logCore(name);
+      self:logCore("owc-"..settlement.."\t"..tostring(log_x).."\t"..tostring(log_y));
+
       -- self:give_caravan_award(faction, settlement)
       -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
       -- :item_at(0))

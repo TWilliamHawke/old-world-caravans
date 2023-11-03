@@ -3,7 +3,7 @@ function Old_world_caravans:logCore(text)
   local logFile = io.open("Old_world_caravans_log.txt","a");
   if(logFile == nil) then return end;
 
-  logFile:write("FLUC: "..logText .. "  \n");
+  logFile:write("OWC: "..logText .. "\n");
   logFile:flush();
   logFile:close();
 end
