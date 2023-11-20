@@ -1,7 +1,7 @@
 ---ugly hack because adding caravan master to pool causes crash
 ---@param faction_name string
 function Old_world_caravans:unlock_caravan_recruitment(faction_name)
-  if cm:get_campaign_name() ~= "main_warhammer" then return end
+  if cm:get_campaign_name() == "wh3_main_chaos" then return end
   local faction = cm:get_faction(faction_name);
   if not faction or not self:faction_has_caravans(faction) then return end
 

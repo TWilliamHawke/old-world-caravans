@@ -14,7 +14,8 @@ function Old_world_caravans:calculate_evil_faction_threat(list_of_regions, carav
     local owner_subculture = self:get_subculture_of_region(region);
     local threat_mult = self.threat_weight_by_culture[owner_subculture] or 1;
 
-    local region_threats = self.threats[region_name];
+    local threat_set = self.threats[region_name] or self.default_threat_set;
+    local region_threats = self.treats_list[threat_set];
 
     if region_threats then
       for culture, threat in pairs(region_threats) do

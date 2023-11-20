@@ -712,5 +712,16 @@ Old_world_caravans.start_units = {
       "wh3_main_ksl_inf_kossars_0",
       "wh3_main_ksl_inf_kossars_0",
     },
+    ksl_caravan_skill_innate_forest = {
+      "wh3_main_ksl_inf_armoured_kossars_0",
+      "wh3_main_ksl_inf_armoured_kossars_0",
+      "wh3_main_ksl_inf_kossars_0",
+      "wh3_main_ksl_inf_kossars_0",
+      "wh3_main_ksl_inf_kossars_0",
+      "wh3_main_ksl_inf_kossars_0",
+      "wh3_dlc24_ksl_mon_the_things_in_the_woods",
+      "wh3_dlc24_ksl_mon_the_things_in_the_woods",
+      "wh3_dlc24_ksl_mon_the_things_in_the_woods",
+    }
   }
 }

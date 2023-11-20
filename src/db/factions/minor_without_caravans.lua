@@ -9,4 +9,12 @@ Old_world_caravans.minor_without_caravans = {
   wh2_main_brt_knights_of_the_flame = true,
   wh2_main_brt_knights_of_origo = true,
   cr_brt_leofrics_fellowship = true,
+  cr_emp_cult_of_ulric = true,
+  cr_ksl_heldegrad = true,
+  cr_ksl_order_of_the_winter_sun = true,
+  wh_main_dwf_karak_ziflin = true,
+  cr_dwf_clan_durazgrund = true,
+  cr_emp_carroburg = true,
+  wh3_dlc20_brt_march_of_couronne = true,
+
 }

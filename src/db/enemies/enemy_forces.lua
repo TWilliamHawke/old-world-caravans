@@ -79,6 +79,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_grn_greenskins_1 = {
+    filler_units_mult = 1.1,
     filler_units = {
       wh_main_grn_inf_orc_boyz = 3,
       wh_main_grn_inf_goblin_spearmen = 1,

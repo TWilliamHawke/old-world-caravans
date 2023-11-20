@@ -1,1000 +1,556 @@
 Old_world_caravans.threats = {
-  ["wh3_main_combi_region_carroburg"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_weismund"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_middenheim"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_middenstag"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_dlc20_combi_region_krudenwald"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_hergig"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_wolfenburg"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_castle_von_rauken"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_dlc08_sc_nor_norsca = 2,
-  },
-  ["wh3_main_combi_region_averheim"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_grenzstadt"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 3,
-  },
-  ["wh3_main_combi_region_talabheim"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_kemperbad"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_krugenheim"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-  },
-  ["wh3_main_combi_region_kappelburg"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-  },
-  ["wh3_main_combi_region_gryphon_wood"] = {
-    wh_dlc05_sc_wef_wood_elves = 1,
-  },
-  ["wh3_main_combi_region_laurelorn_forest"] = {
-    wh_dlc05_sc_wef_wood_elves = 1,
-  },
-  ["wh3_main_combi_region_marienburg"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc08_sc_nor_norsca = 1,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_gorssel"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_aarnau"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_the_black_pit"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 4,
-  },
-  ["wh3_main_combi_region_wreckers_point"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 3,
-  },
-  ["wh3_main_combi_region_salzenmund"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_dlc05_sc_wef_wood_elves = 1,
-    wh_dlc08_sc_nor_norsca = 1,
-  },
-  ["wh3_main_combi_region_dietershafen"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_norden"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_eilhart"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_altdorf"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_grunburg"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_fort_soll"] = {
-    wh2_main_sc_skv_skaven = 2,
-    wh_main_sc_grn_greenskins = 3,
-  },
-  ["wh3_main_combi_region_ubersreik"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_flensburg"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_wurtbad"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_niedling"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-    wh_main_sc_vmp_vampire_counts = 1,
-  },
-  ["wh3_main_combi_region_the_moot"] = {
-    wh_dlc03_sc_bst_beastmen = 3,
-    wh_main_sc_vmp_vampire_counts = 1,
-  },
-  ["wh3_main_combi_region_nuln"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_dotternbach"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_wissenburg"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_pfeildorf"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_steingart"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 3,
-  },
-  ["wh3_main_combi_region_mordheim"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh2_main_sc_skv_skaven = 3,
-    wh_dlc05_sc_wef_wood_elves = 1,
-  },
-  ["wh3_main_combi_region_nagenhof"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_essen"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_bechafen"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
+  ["wh3_main_combi_region_carroburg"] = "empire_main",
+  ["wh3_main_combi_region_weismund"] = "empire_mountain",
+  ["wh3_main_combi_region_middenheim"] = "empire_mountain_skaven",
+  ["wh3_main_combi_region_middenstag"] = "empire_main",
+  ["wh3_dlc20_combi_region_krudenwald"] = "empire_main",
+  ["wh3_main_combi_region_hergig"] = "empire_main",
+  ["wh3_main_combi_region_wolfenburg"] = "empire_main",
+  ["wh3_main_combi_region_castle_von_rauken"] = "empire_coast",
+  ["wh3_main_combi_region_averheim"] = "empire_mountain",
+  ["wh3_main_combi_region_grenzstadt"] = "empire_greenskins",
+  ["wh3_main_combi_region_talabheim"] = "empire_skaven",
+  ["wh3_main_combi_region_kemperbad"] = "empire_main",
+  ["wh3_main_combi_region_krugenheim"] = "empire_ogres",
+  ["wh3_main_combi_region_kappelburg"] = "empire_ogres",
+  ["wh3_main_combi_region_gryphon_wood"] = "wood_elves",
+  ["wh3_main_combi_region_laurelorn_forest"] = "wood_elves",
+  ["wh3_main_combi_region_marienburg"] = "marienburg",
+  ["wh3_main_combi_region_gorssel"] = "empire_coast",
+  ["wh3_main_combi_region_aarnau"] = "empire_coast",
+  ["wh3_main_combi_region_the_black_pit"] = "empire_greenskins",
+  ["wh3_main_combi_region_wreckers_point"] = "empire_greenskins",
+  ["wh3_main_combi_region_salzenmund"] = "empire_wood_coast",
+  ["wh3_main_combi_region_dietershafen"] = "empire_mountain_coast",
+  ["wh3_main_combi_region_norden"] = "empire_coast",
+  ["wh3_main_combi_region_eilhart"] = "empire_mountain",
+  ["wh3_main_combi_region_altdorf"] = "empire_skaven",
+  ["wh3_main_combi_region_grunburg"] = "empire_mountain",
+  ["wh3_main_combi_region_fort_soll"] = "mountains",
+  ["wh3_main_combi_region_ubersreik"] = "empire_mountain",
+  ["wh3_main_combi_region_flensburg"] = "empire_main",
+  ["wh3_main_combi_region_wurtbad"] = "empire_main",
+  ["wh3_main_combi_region_niedling"] = "empire_vampires",
+  ["wh3_main_combi_region_the_moot"] = "empire_vampires",
+  ["wh3_main_combi_region_nuln"] = "empire_mountain_skaven",
+  ["wh3_main_combi_region_dotternbach"] = "empire_mountain_skaven",
+  ["wh3_main_combi_region_wissenburg"] = "empire_mountain",
+  ["wh3_main_combi_region_pfeildorf"] = "empire_mountain_skaven",
+  ["wh3_main_combi_region_steingart"] = "empire_greenskins",
+  ["wh3_main_combi_region_mordheim"] = "mordheim",
+  ["wh3_main_combi_region_nagenhof"] = "empire_main",
+  ["wh3_main_combi_region_essen"] = "empire_main",
+  ["wh3_main_combi_region_bechafen"] = "empire_main",
   --sylvania
-  ["wh3_main_combi_region_swartzhafen"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_fort_oberstyre"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_castle_templehof"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_eschen"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_waldenhof"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_castle_drakenhof"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  --south lands
-  ["wh3_main_combi_region_bilbali"] = {
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc03_sc_bst_beastmen = 3,
-    wh_dlc05_sc_wef_wood_elves = 1,
-  },
-  ["wh3_main_combi_region_montenas"] = {
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_combi_region_nuja"] = {
-    wh2_main_sc_skv_skaven = 1,
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_combi_region_magritta"] = {
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_combi_region_tobaro"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_main_sc_skv_skaven = 3,
-    wh2_dlc11_sc_cst_vampire_coast = 1,
-    wh_dlc03_sc_bst_beastmen = 3,
-  },
-  ["wh3_main_combi_region_zvorak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_matorca"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_karak_angazhar"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_myrmidens"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_verdanos"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_argalis"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_akendorf"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_sartosa"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 3,
-  },
-  ["wh3_main_combi_region_luccini"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_dlc11_sc_cst_vampire_coast = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_riffraffa"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_dlc11_sc_cst_vampire_coast = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_miragliano"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_dlc11_sc_cst_vampire_coast = 3,
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_karak_bhufdar"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_karak_izor"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_zarakzil"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_grn_greenskins = 3,
-  },
+  ["wh3_main_combi_region_swartzhafen"] = "empire_vampires",
+  ["wh3_main_combi_region_fort_oberstyre"] = "empire_vampires",
+  ["wh3_main_combi_region_castle_templehof"] = "empire_vampires",
+  ["wh3_main_combi_region_eschen"] = "empire_vampires",
+  ["wh3_main_combi_region_waldenhof"] = "empire_vampires",
+  ["wh3_main_combi_region_castle_drakenhof"] = "empire_vampires",
+  --south realms
+  ["wh3_main_combi_region_bilbali"] = "empire_skaven",
+  ["wh3_main_combi_region_montenas"] = "empire_skaven",
+  ["wh3_main_combi_region_nuja"] = "empire_skaven",
+  ["wh3_main_combi_region_magritta"] = "empire_skaven",
+  ["wh3_main_combi_region_tobaro"] = "srealms_skaven_coast",
+  ["wh3_main_combi_region_zvorak"] = "srealms_greenskins",
+  ["wh3_main_combi_region_matorca"] = "srealms_greenskins",
+  ["wh3_main_combi_region_karak_angazhar"] = "srealms_greenskins",
+  ["wh3_main_combi_region_myrmidens"] = "srealms_greenskins",
+  ["wh3_main_combi_region_verdanos"] = "srealms_greenskins",
+  ["wh3_main_combi_region_argalis"] = "srealms_greenskins",
+  ["wh3_main_combi_region_akendorf"] = "bretonnia_main",
+  ["wh3_main_combi_region_sartosa"] = "vcoast",
+  ["wh3_main_combi_region_luccini"] = "srealms_coast",
+  ["wh3_main_combi_region_riffraffa"] = "srealms_coast",
+  ["wh3_main_combi_region_miragliano"] = "srealms_skaven_coast",
+  ["wh3_main_combi_region_karak_bhufdar"] = "mountains",
+  ["wh3_main_combi_region_karak_izor"] = "mountains",
+  ["wh3_main_combi_region_zarakzil"] = "srealms_mix",
   --northern world edge mountains
-  ["wh3_main_combi_region_karak_kadrin"] = {
-    wh_main_sc_vmp_vampire_counts = 2,
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_karak_raziak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_gnashraks_lair"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_khazid_irkulaz"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_ungor"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_zhufbar"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_oakenhammer"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_vmp_vampire_counts = 1,
-  },
-  ["wh3_main_combi_region_karag_dromar"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 3,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_grom_peak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_the_high_place"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_worlds_edge_archway"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_mount_gunbad"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_fallen_king_mountain"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_vlag"] = {
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_tribeslaughter"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_dum"] = {
-    wh3_main_sc_kho_khorne = 5,
-  },
+  ["wh3_main_combi_region_karak_kadrin"] = "mountains_vampire",
+  ["wh3_main_combi_region_karak_raziak"] = "mountains",
+  ["wh3_main_combi_region_gnashraks_lair"] = "mountains",
+  ["wh3_main_combi_region_khazid_irkulaz"] = "mountains",
+  ["wh3_main_combi_region_karak_ungor"] = "mountains",
+  ["wh3_main_combi_region_zhufbar"] = "mountains",
+  ["wh3_main_combi_region_oakenhammer"] = "mountains_vampire",
+  ["wh3_main_combi_region_karag_dromar"] = "empire_mountain_skaven",
+  ["wh3_main_combi_region_grom_peak"] = "mountains",
+  ["wh3_main_combi_region_the_high_place"] = "mountains",
+  ["wh3_main_combi_region_worlds_edge_archway"] = "mountains",
+  ["wh3_main_combi_region_mount_gunbad"] = "mountains",
+  ["wh3_main_combi_region_fallen_king_mountain"] = "mountains",
+  ["wh3_main_combi_region_karak_vlag"] = "mountains_north",
+  ["wh3_main_combi_region_tribeslaughter"] = "mountains_north",
+  ["wh3_main_combi_region_karak_dum"] = "khorne",
   ---southern world edge mountains
-  ["wh3_main_combi_region_mount_squighorn"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_the_pillars_of_grungni"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karag_dron"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_iron_rock"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_black_crag"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_valayas_sorrow"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_black_iron_mine"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_azul"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_eight_peaks"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_crooked_fang_fort"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_dringorackaz"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_spitepeak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_sump_pit"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_misty_mountain"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_kradtommen"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_karak_azgal"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_deff_gorge"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_mahrak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_granite_massif"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karag_orrud"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-    wh2_dlc09_sc_tmb_tomb_kings = 1,
-  },
-  ["wh3_main_combi_region_mount_arachnos"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-    wh2_dlc09_sc_tmb_tomb_kings = 1,
-  },
-  ["wh3_main_combi_region_lost_plateau"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-    wh2_dlc09_sc_tmb_tomb_kings = 1,
-  },
-  ["wh3_main_combi_region_karak_zorn"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
+  ["wh3_main_combi_region_mount_squighorn"] = "mountains",
+  ["wh3_main_combi_region_the_pillars_of_grungni"] = "mountains",
+  ["wh3_main_combi_region_karag_dron"] = "mountains",
+  ["wh3_main_combi_region_iron_rock"] = "mountains",
+  ["wh3_main_combi_region_black_crag"] = "mountains",
+  ["wh3_main_combi_region_valayas_sorrow"] = "mountains",
+  ["wh3_main_combi_region_black_iron_mine"] = "mountains",
+  ["wh3_main_combi_region_karak_azul"] = "mountains",
+  ["wh3_main_combi_region_karak_eight_peaks"] = "mountains",
+  ["wh3_main_combi_region_crooked_fang_fort"] = "mountains",
+  ["wh3_main_combi_region_dringorackaz"] = "mountains",
+  ["wh3_main_combi_region_spitepeak"] = "mountains",
+  ["wh3_main_combi_region_sump_pit"] = "mountains",
+  ["wh3_main_combi_region_misty_mountain"] = "mountains",
+  ["wh3_main_combi_region_kradtommen"] = "mountains",
+  ["wh3_main_combi_region_karak_azgal"] = "mountains",
+  ["wh3_main_combi_region_deff_gorge"] = "mountains",
+  ["wh3_main_combi_region_mahrak"] = "mountains",
+  ["wh3_main_combi_region_granite_massif"] = "mountains",
+  ["wh3_main_combi_region_karag_orrud"] = "mountains_desert",
+  ["wh3_main_combi_region_mount_arachnos"] = "mountains_desert",
+  ["wh3_main_combi_region_lost_plateau"] = "mountains_desert",
+  ["wh3_main_combi_region_karak_zorn"] = "mountains",
   --Grey mountains
-  ["wh3_main_combi_region_mighdal_vongalbarak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_hirn"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_gristle_valley"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_grimhold"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_norn"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_karak_azgaraz"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_karak_ziflin"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_vmp_vampire_counts = 1,
-  },
+  ["wh3_main_combi_region_mighdal_vongalbarak"] = "mountains",
+  ["wh3_main_combi_region_karak_hirn"] = "mountains",
+  ["wh3_main_combi_region_gristle_valley"] = "mountains",
+  ["wh3_main_combi_region_grimhold"] = "mountains",
+  ["wh3_main_combi_region_karak_norn"] = "mountains",
+  ["wh3_main_combi_region_karak_azgaraz"] = "mountains",
+  ["wh3_main_combi_region_karak_ziflin"] = "mountains_vampire",
   --dark lands
-  ["wh3_dlc23_combi_region_fort_dorznye_vort"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_dlc23_combi_region_gash_kadrak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_howling_rock"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_dlc23_combi_region_blasted_expanse"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_ash_ridge_mountains"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_the_fortress_of_vorag"] = {
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_combi_region_crookback_mountain"] = {
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_mount_grey_hag"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_the_sentinels"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_mount_silverspear"] = {
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_tower_of_gorgoth"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_the_gates_of_zharr"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_the_daemons_stump"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_black_fortress"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_silver_pinnacle"] = {
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_combi_region_desolation_of_drakenmoor"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_uzkulak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-    wh_dlc08_sc_nor_norsca = 1,
-  },
-  ["wh3_main_combi_region_zharr_naggrund"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_pigbarter"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_ruins_end"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-    wh_dlc03_sc_bst_beastmen = 2,
-  },
-  ["wh3_main_combi_region_skrap_towers"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh2_main_sc_lzd_lizardmen = 3,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_great_skull_lakes"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_the_falls_of_doom"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_dlc23_sc_chd_chaos_dwarfs = 2,
-  },
-  ["wh3_main_combi_region_gnobbly_gorge"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
+  ["wh3_dlc23_combi_region_fort_dorznye_vort"] = "dark_lands",
+  ["wh3_dlc23_combi_region_gash_kadrak"] = "dark_lands",
+  ["wh3_main_combi_region_howling_rock"] = "dark_lands",
+  ["wh3_dlc23_combi_region_blasted_expanse"] = "dark_lands",
+  ["wh3_main_combi_region_ash_ridge_mountains"] = "dark_lands",
+  ["wh3_main_combi_region_the_fortress_of_vorag"] = "vampires",
+  ["wh3_main_combi_region_crookback_mountain"] = "skaven",
+  ["wh3_main_combi_region_mount_grey_hag"] = "dark_lands",
+  ["wh3_main_combi_region_the_sentinels"] = "dark_lands",
+  ["wh3_main_combi_region_mount_silverspear"] = "skaven",
+  ["wh3_main_combi_region_tower_of_gorgoth"] = "dark_lands",
+  ["wh3_main_combi_region_the_gates_of_zharr"] = "dark_lands",
+  ["wh3_main_combi_region_the_daemons_stump"] = "dark_lands",
+  ["wh3_main_combi_region_black_fortress"] = "dark_lands",
+  ["wh3_main_combi_region_silver_pinnacle"] = "vampires",
+  ["wh3_main_combi_region_desolation_of_drakenmoor"] = "dark_lands",
+  ["wh3_main_combi_region_uzkulak"] = "dark_lands_north",
+  ["wh3_main_combi_region_zharr_naggrund"] = "dark_lands",
+  ["wh3_main_combi_region_pigbarter"] = "dark_lands_south",
+  ["wh3_main_combi_region_ruins_end"] = "dark_lands_south",
+  ["wh3_main_combi_region_skrap_towers"] = "skaven_lizard",
+  ["wh3_main_combi_region_great_skull_lakes"] = "dark_lands",
+  ["wh3_main_combi_region_the_falls_of_doom"] = "dark_lands",
+  ["wh3_main_combi_region_gnobbly_gorge"] = "ogre_mountains",
   --mountains of moon
-  ["wh3_main_combi_region_karak_krakaten"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_titans_notch"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_combi_region_amblepeak"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_karak_vrag"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_combi_region_karak_azorn"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_combi_region_valley_of_horns"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_flayed_rock"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_black_fang"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_vale_of_titans"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_fire_mouth"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_bloodpeak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_icespewer"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc08_sc_nor_norsca = 2,
-  },
-  ["wh3_main_combi_region_blizzardpeak"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc08_sc_nor_norsca = 2,
-  },
-  ["wh3_main_combi_region_the_maw_gate"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_sabre_mountain"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_main_sc_grn_greenskins = 2,
-  },
-  ["wh3_main_combi_region_gorger_rock"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_great_hall_of_greasus"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_hanyu_port"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh2_main_sc_skv_skaven = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_qiang"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_shang_yang"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_grn_greenskins = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_shrine_of_the_alchemist"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_grn_greenskins = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_nan_li"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_grn_greenskins = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_nan_gau"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 1,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_grn_greenskins = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_xen_wu"] = {
-    wh3_main_sc_ogr_ogre_kingdoms = 3,
-    wh2_main_sc_skv_skaven = 1,
-    wh_main_sc_grn_greenskins = 1,
-  },
+  ["wh3_main_combi_region_karak_krakaten"] = "ogre_lands",
+  ["wh3_main_combi_region_titans_notch"] = "ogre_mountains",
+  ["wh3_main_combi_region_amblepeak"] = "ogre_lands",
+  ["wh3_main_combi_region_karak_vrag"] = "ogre_mountains",
+  ["wh3_main_combi_region_karak_azorn"] = "ogre_mountains",
+  ["wh3_main_combi_region_valley_of_horns"] = "ogre_lands",
+  ["wh3_main_combi_region_flayed_rock"] = "ogre_skaven",
+  ["wh3_main_combi_region_black_fang"] = "ogre_lands",
+  ["wh3_main_combi_region_vale_of_titans"] = "ogre_lands",
+  ["wh3_main_combi_region_fire_mouth"] = "ogre_lands",
+  ["wh3_main_combi_region_bloodpeak"] = "ogre_lands",
+  ["wh3_main_combi_region_icespewer"] = "ogre_north",
+  ["wh3_main_combi_region_blizzardpeak"] = "ogre_north",
+  ["wh3_main_combi_region_the_maw_gate"] = "ogre_lands",
+  ["wh3_main_combi_region_sabre_mountain"] = "ogre_mountains",
+  ["wh3_main_combi_region_gorger_rock"] = "ogre_lands",
+  ["wh3_main_combi_region_great_hall_of_greasus"] = "ogre_lands",
+  ["wh3_main_combi_region_hanyu_port"] = "ogre_skaven",
+  ["wh3_main_combi_region_qiang"] = "ogre_skaven",
+  ["wh3_main_combi_region_shang_yang"] = "ogre_skaven",
+  ["wh3_main_combi_region_shrine_of_the_alchemist"] = "ogre_skaven",
+  ["wh3_main_combi_region_nan_li"] = "ogre_skaven",
+  ["wh3_main_combi_region_nan_gau"] = "ogre_skaven",
+  ["wh3_main_combi_region_xen_wu"] = "ogre_skaven",
   --bretonnia
-  ["wh3_main_combi_region_castle_carcassonne"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc05_sc_wef_wood_elves = 1,
-    wh2_main_sc_skv_skaven = 2,
-  },
-  ["wh3_main_combi_region_parravon"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_quenelles"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc05_sc_wef_wood_elves = 1,
-  },
-  ["wh3_main_combi_region_couronne"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 1,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_languille"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc08_sc_nor_norsca = 2,
-  },
-  ["wh3_main_combi_region_castle_artois"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-  },
-  ["wh3_main_combi_region_gisoreux"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_main_sc_vmp_vampire_counts = 2,
-  },
-  ["wh3_main_combi_region_montfort"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_main_sc_vmp_vampire_counts = 1,
-  },
-  ["wh3_main_combi_region_massif_orcal"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_castle_bastonne"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-  },
-  ["wh3_main_combi_region_aquitaine"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_mousillon"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_combi_region_lyonesse"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_combi_region_bordeleaux"] = {
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh_main_sc_grn_greenskins = 2,
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_combi_region_brionne"] = {
-    wh_dlc03_sc_bst_beastmen = 2,
-    wh_main_sc_grn_greenskins = 3,
-    wh2_dlc11_sc_cst_vampire_coast = 1,
-  },
+  ["wh3_main_combi_region_castle_carcassonne"] = "bretonnia_skaven_wood",
+  ["wh3_main_combi_region_parravon"] = "bretonnia_skaven",
+  ["wh3_main_combi_region_quenelles"] = "bretonnia_wood",
+  ["wh3_main_combi_region_couronne"] = "bretonnia_north",
+  ["wh3_main_combi_region_languille"] = "bretonnia_north",
+  ["wh3_main_combi_region_castle_artois"] = "bretonnia_main",
+  ["wh3_main_combi_region_gisoreux"] = "bretonnia_vampires",
+  ["wh3_main_combi_region_montfort"] = "bretonnia_vampires",
+  ["wh3_main_combi_region_massif_orcal"] = "mountains",
+  ["wh3_main_combi_region_castle_bastonne"] = "bretonnia_main",
+  ["wh3_main_combi_region_aquitaine"] = "bretonnia_skaven",
+  ["wh3_main_combi_region_mousillon"] = "bretonnia_vampires",
+  ["wh3_main_combi_region_lyonesse"] = "bretonnia_vampires",
+  ["wh3_main_combi_region_bordeleaux"] = "bretonnia_vampires",
+  ["wh3_main_combi_region_brionne"] = "bretonnia_coast",
   --kislev
-  ["wh3_main_combi_region_kislev"] = {
-    wh_dlc08_sc_nor_norsca = 1,
-  },
-  ["wh3_main_combi_region_castle_alexandronov"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_zavastra"] = {
-    wh_dlc08_sc_nor_norsca = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_vitevo"] = {
-    wh_dlc08_sc_nor_norsca = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_fort_jakova"] = {
-    wh_dlc08_sc_nor_norsca = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_erengrad"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_zoishenk"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_fort_ostrosk"] = {
-    wh_dlc08_sc_nor_norsca = 2,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_fort_straghov"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-    wh2_main_sc_skv_skaven = 1,
-  },
-  ["wh3_main_combi_region_praag"] = {
-    wh_dlc08_sc_nor_norsca = 2,
-  },
-  ["wh3_main_combi_region_volksgrad"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_novchozy"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
+  ["wh3_main_combi_region_kislev"] = "kislev_north",
+  ["wh3_main_combi_region_castle_alexandronov"] = "kislev_north",
+  ["wh3_main_combi_region_zavastra"] = "kislev",
+  ["wh3_main_combi_region_vitevo"] = "kislev",
+  ["wh3_main_combi_region_fort_jakova"] = "kislev",
+  ["wh3_main_combi_region_erengrad"] = "kislev_north",
+  ["wh3_main_combi_region_zoishenk"] = "kislev_north",
+  ["wh3_main_combi_region_fort_ostrosk"] = "kislev_skaven",
+  ["wh3_main_combi_region_fort_straghov"] = "mountains_north",
+  ["wh3_main_combi_region_praag"] = "kislev_north",
+  ["wh3_main_combi_region_volksgrad"] = "kislev_north",
+  ["wh3_main_combi_region_novchozy"] = "kislev_north",
   --wastes
-  ["wh3_main_combi_region_varenka_hills"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_barag_dawazbag"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_barak_varr"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_dok_karaz"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 1,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_stonemine_tower"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_bitterstone_mine"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh3_main_sc_ogr_ogre_kingdoms = 2,
-  },
-  ["wh3_main_combi_region_ekrund"] = {
-    wh_main_sc_grn_greenskins = 2,
-    wh2_main_sc_skv_skaven = 3,
-  },
-  ["wh3_main_combi_region_dragonhorn_mines"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_gronti_mingol"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_galbaraz"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_stormhenge"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-  },
-  ["wh3_main_combi_region_gor_gazan"] = {
-    wh_main_sc_grn_greenskins = 1,
-    wh2_dlc09_sc_tmb_tomb_kings = 1,
-  },
-  ["wh3_main_combi_region_forest_of_gloom"] = {
-    wh_main_sc_grn_greenskins = 3,
-  },
-  ["wh3_main_combi_region_karaz_a_karak"] = {
-    wh_main_sc_grn_greenskins = 3,
-  },
+  ["wh3_main_combi_region_varenka_hills"] = "badlands",
+  ["wh3_main_combi_region_barag_dawazbag"] = "badlands",
+  ["wh3_main_combi_region_barak_varr"] = "badlands",
+  ["wh3_main_combi_region_dok_karaz"] = "badlands_skaven",
+  ["wh3_main_combi_region_stonemine_tower"] = "mountains",
+  ["wh3_main_combi_region_bitterstone_mine"] = "badlands_ogres",
+  ["wh3_main_combi_region_ekrund"] = "mountains",
+  ["wh3_main_combi_region_dragonhorn_mines"] = "badlands",
+  ["wh3_main_combi_region_gronti_mingol"] = "badlands",
+  ["wh3_main_combi_region_galbaraz"] = "badlands",
+  ["wh3_main_combi_region_stormhenge"] = "badlands",
+  ["wh3_main_combi_region_gor_gazan"] = "badlands_desert",
+  ["wh3_main_combi_region_forest_of_gloom"] = "badlands",
+  ["wh3_main_combi_region_karaz_a_karak"] = "badlands",
   --north dwarfs
-  ["wh3_main_combi_region_khazid_bordkarag"] = {
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_kraka_drak"] = {
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_sjoktraken"] = {
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_skv_skaven = 2,
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_temple_of_heimkel"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_frozen_landing"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
+  ["wh3_main_combi_region_khazid_bordkarag"] = "mountains_north",
+  ["wh3_main_combi_region_kraka_drak"] = "mountains_north",
+  ["wh3_main_combi_region_sjoktraken"] = "mountains_north",
+  ["wh3_main_combi_region_temple_of_heimkel"] = "kislev_north",
+  ["wh3_main_combi_region_frozen_landing"] = "kislev_north",
   --vcoast
-  ["wh3_main_combi_region_the_galleons_graveyard"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 3,
-  },
-  ["wh3_main_combi_region_kings_glade"] = {
-    wh_dlc05_sc_wef_wood_elves = 1,
-  },
+  ["wh3_main_combi_region_the_galleons_graveyard"] = "vcoast",
+  ["wh3_main_combi_region_kings_glade"] = "wood_elves",
   ---lustria
-  ["wh3_main_combi_region_temple_of_kara"] = {
-    wh2_main_sc_lzd_lizardmen = 3,
-  },
-  ["wh3_main_combi_region_monument_of_the_moon"] = {
-    wh2_main_sc_lzd_lizardmen = 3,
-  },
-  ["wh3_main_combi_region_the_star_tower"] = {
-    wh2_main_sc_lzd_lizardmen = 2,
-    wh2_dlc11_sc_cst_vampire_coast = 2,
-  },
+  ["wh3_main_combi_region_temple_of_kara"] = "lustrua",
+  ["wh3_main_combi_region_monument_of_the_moon"] = "lustrua",
+  ["wh3_main_combi_region_the_star_tower"] = "lustrua_coast",
   --Ulthuan
-  ["wh3_main_combi_region_shrine_of_khaine"] = {
-    wh2_main_sc_def_dark_elves = 2,
-  },
-  ["wh3_main_combi_region_lothern"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 1,
-  },
-  ["wh3_main_combi_region_tor_yvresse"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 1,
-    wh_main_sc_grn_greenskins = 1,
-    wh2_main_sc_def_dark_elves = 1,
-  },
-  ["wh3_main_combi_region_cairn_thel"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 1,
-    wh_main_sc_grn_greenskins = 1,
-  },
-  ["wh3_main_combi_region_tor_anlec"] = {
-    wh2_main_sc_def_dark_elves = 3,
-  },
-  ["wh3_main_combi_region_shrine_of_loec"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 2,
-    wh_main_sc_grn_greenskins = 2,
-  },
-  ["wh3_main_combi_region_shrine_of_kurnous"] = {
-    wh2_main_sc_def_dark_elves = 2,
-  },
-  ["wh3_main_combi_region_elisia"] = {
-    wh2_main_sc_def_dark_elves = 2,
-  },
-  ["wh3_main_combi_region_tor_koruali"] = {
-    wh2_main_sc_def_dark_elves = 2,
-  },
-  ["wh3_main_combi_region_tor_achare"] = {
-    wh2_main_sc_def_dark_elves = 2,
-  },
-  ["wh3_main_combi_region_elessaeli"] = {
-    wh2_dlc11_sc_cst_vampire_coast = 1,
-    wh_main_sc_grn_greenskins = 1,
-  },
+  ["wh3_main_combi_region_shrine_of_khaine"] = "ulthuan",
+  ["wh3_main_combi_region_lothern"] = "ulthuan_coast",
+  ["wh3_main_combi_region_tor_yvresse"] = "ulthuan_greenskins",
+  ["wh3_main_combi_region_cairn_thel"] = "ulthuan_greenskins",
+  ["wh3_main_combi_region_tor_anlec"] = "ulthuan",
+  ["wh3_main_combi_region_shrine_of_loec"] = "ulthuan_greenskins",
+  ["wh3_main_combi_region_shrine_of_kurnous"] = "ulthuan",
+  ["wh3_main_combi_region_elisia"] = "ulthuan",
+  ["wh3_main_combi_region_tor_koruali"] = "ulthuan",
+  ["wh3_main_combi_region_tor_achare"] = "ulthuan",
+  ["wh3_main_combi_region_elessaeli"] = "ulthuan_greenskins",
   --desert
-  ["wh3_main_combi_region_zandri"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_pools_of_despair"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_black_tower_of_arkhan"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_eye_of_the_panther"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_vulture_mountain"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_khemri"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_lashiek"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 2,
-  },
-  ["wh3_main_combi_region_wizard_caliphs_palace"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 2,
-  },
-  ["wh3_main_combi_region_black_pyramid_of_nagash"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 2,
-    wh_main_sc_vmp_vampire_counts = 2,
-  },
-  ["wh3_main_combi_region_lahmia"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 2,
-    wh_main_sc_vmp_vampire_counts = 2,
-  },
-  ["wh3_main_combi_region_el_kalabad"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_sudenburg"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_agrul_migdhal"] = {
-    wh_main_sc_grn_greenskins = 3,
-    wh_dlc03_sc_bst_beastmen = 1,
-    wh2_dlc09_sc_tmb_tomb_kings = 2,
-  },
-  ["wh3_main_combi_region_floating_village"] = {
-    wh_main_sc_vmp_vampire_counts = 3,
-  },
-  ["wh3_main_combi_region_numas"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_yetchitch"] = {
-    wh_dlc08_sc_nor_norsca = 3,
-  },
-  ["wh3_main_combi_region_temple_of_tlencan"] = {
-    wh2_main_sc_lzd_lizardmen = 3,
-  },
-  ["wh3_main_combi_region_copher"] = {
-    wh2_dlc09_sc_tmb_tomb_kings = 3,
-  },
-  ["wh3_main_combi_region_waterfall_palace"] = {
-    wh_dlc05_sc_wef_wood_elves = 3,
-  },
+  ["wh3_main_combi_region_zandri"] = "desert",
+  ["wh3_main_combi_region_pools_of_despair"] = "desert",
+  ["wh3_main_combi_region_black_tower_of_arkhan"] = "desert",
+  ["wh3_main_combi_region_eye_of_the_panther"] = "desert",
+  ["wh3_main_combi_region_vulture_mountain"] = "desert",
+  ["wh3_main_combi_region_khemri"] = "desert",
+  ["wh3_main_combi_region_lashiek"] = "desert",
+  ["wh3_main_combi_region_wizard_caliphs_palace"] = "desert",
+  ["wh3_main_combi_region_black_pyramid_of_nagash"] = "desert_vampires",
+  ["wh3_main_combi_region_lahmia"] = "desert_vampires",
+  ["wh3_main_combi_region_el_kalabad"] = "desert",
+  ["wh3_main_combi_region_sudenburg"] = "desert",
+  ["wh3_main_combi_region_agrul_migdhal"] = "badlands_desert",
+  ["wh3_main_combi_region_floating_village"] = "vampires",
+  ["wh3_main_combi_region_numas"] = "desert",
+  ["wh3_main_combi_region_yetchitch"] = "kislev_north",
+  ["wh3_main_combi_region_temple_of_tlencan"] = "lustrua",
+  ["wh3_main_combi_region_copher"] = "desert",
+  ["wh3_main_combi_region_waterfall_palace"] = "wood_elves",
+
+  ["cr_oldworld_region_ulfraya"] = "srealms_no_ogres",              --	owc-karaz_a_karak-akendorf
+  ["cr_oldworld_region_akendorf"] = "srealms_no_ogres",             --	owc-karaz_a_karak-akendorf
+  ["cr_oldworld_region_karaz_a_karak"] = "mountains",        --	owc-karaz_a_karak-karag_dromar
+  ["cr_oldworld_region_black_falls"] = "mountains_skaven",          --	owc-karaz_a_karak-karag_dromar
+  ["cr_oldworld_region_karag_dromar"] = "mountains_skaven",         --	owc-karaz_a_karak-karag_dromar
+  ["cr_oldworld_region_gundriksons_mines"] = "mountains",    --	owc-karaz_a_karak-zhufbar
+  ["cr_oldworld_region_zhufbar"] = "mountains",              --	owc-karaz_a_karak-zhufbar
+  ["cr_oldworld_region_moonstone_mountain"] = "mountains_skaven",   --	owc-karaz_a_karak-mount_gunbad
+  ["cr_oldworld_region_mount_gunbad"] = "mountains_skaven",         --	owc-karaz_a_karak-mount_gunbad
+  ["cr_oldworld_region_helcave"] = "mountains",              --	owc-zhufbar-karak_kadrin
+  ["cr_oldworld_region_karak_kadrin"] = "mountains",         --	owc-zhufbar-karak_kadrin
+  ["cr_oldworld_region_nachtdorf"] = "empire_main",            --	owc-karak_kadrin-bechafen
+  ["cr_oldworld_region_bechafen"] = "empire_wood",             --	owc-karak_kadrin-bechafen
+  ["cr_oldworld_region_resvynhaf"] = "empire_main",            --	owc-bechafen-kislev
+  ["cr_oldworld_region_irinasgrad"] = "empire_main",           --	owc-bechafen-kislev
+  ["cr_oldworld_region_kislev"] = "kislev",               --	owc-bechafen-kislev
+  ["cr_oldworld_region_zenres"] = "srealms_greenskins",               --	owc-akendorf-barak_varr
+  ["cr_oldworld_region_the_isle_of_zul"] = "srealms_greenskins",      --	owc-akendorf-barak_varr
+  ["cr_oldworld_region_barak_varr"] = "srealms_greenskins",           --	owc-akendorf-barak_varr
+  ["cr_oldworld_region_somjek"] = "srealms_greenskins",               --	owc-barak_varr-zvorak
+  ["cr_oldworld_region_matorca"] = "srealms_greenskins",              --	owc-barak_varr-zvorak
+  ["cr_oldworld_region_khypris"] = "srealms_greenskins",              --	owc-barak_varr-zvorak
+  ["cr_oldworld_region_arnalos"] = "srealms_greenskins",              --	owc-barak_varr-zvorak
+  ["cr_oldworld_region_zvorak"] = "srealms_greenskins",               --	owc-barak_varr-zvorak
+  ["cr_oldworld_region_lakoras"] = "srealms_greenskins",              --	owc-zvorak-zarakzil
+  ["cr_oldworld_region_zarakzil"] = "mountains",             --	owc-zvorak-zarakzil
+  ["cr_oldworld_region_fester_spike"] = "mountains",         --	owc-zvorak-kazad_frukund
+  ["cr_oldworld_region_karak_grom"] = "mountains",           --	owc-zvorak-kazad_frukund
+  ["cr_oldworld_region_karak_eksfilaz"] = "mountains",       --	owc-zvorak-kazad_frukund
+  ["cr_oldworld_region_kazad_frukund"] = "mountains",        --	owc-zvorak-kazad_frukund
+  ["cr_oldworld_region_ravola"] = "srealms_vampires",               --	owc-kazad_frukund-miragliano
+  ["cr_oldworld_region_ebino"] = "srealms_vampires",                --	owc-kazad_frukund-miragliano
+  ["cr_oldworld_region_miragliano"] = "srealms_skaven_coast",           --	owc-kazad_frukund-miragliano
+  ["cr_oldworld_region_mighdal_vongalbarak"] = "mountains",  --	owc-karag_dromar-karak_hirn
+  ["cr_oldworld_region_karak_angazhar"] = "mountains",       --	owc-karag_dromar-karak_hirn
+  ["cr_oldworld_region_karak_gantuk"] = "mountains",         --	owc-karag_dromar-karak_hirn
+  ["cr_oldworld_region_karak_hirn"] = "mountains",           --	owc-karag_dromar-karak_hirn
+  ["cr_oldworld_region_putrid_stump"] = "mountains_skaven",         --	owc-karak_hirn-karak_izor
+  ["cr_oldworld_region_karak_izor"] = "mountains_skaven",           --	owc-karak_hirn-karak_izor
+  ["cr_oldworld_region_kazad_elgazund"] = "mountains",       --	owc-karak_izor-karak_norn
+  ["cr_oldworld_region_grimhold"] = "mountains",             --	owc-karak_izor-karak_norn
+  ["cr_oldworld_region_karak_norn"] = "mountains",           --	owc-karak_izor-karak_norn
+  ["cr_oldworld_region_khazid_grimaz"] = "mountains",        --	owc-karak_norn-grunere
+  ["cr_oldworld_region_blood_keep"] = "mountains",           --	owc-karak_norn-grunere
+  ["cr_oldworld_region_karak_azgaraz"] = "mountains",        --	owc-karak_norn-grunere
+  ["cr_oldworld_region_castle_sanglac"] = "mountains",       --	owc-karak_norn-grunere
+  ["cr_oldworld_region_grunere"] = "mountains",              --	owc-karak_norn-grunere
+  ["cr_oldworld_region_castle_drachenfels"] = "mountains_vampire",   --	owc-grunere-karak_ziflin
+  ["cr_oldworld_region_helspire"] = "mountains_vampire",             --	owc-grunere-karak_ziflin
+  ["cr_oldworld_region_helmgart"] = "mountains",             --	owc-grunere-karak_ziflin
+  ["cr_oldworld_region_karak_ziflin"] = "mountains",         --	owc-grunere-karak_ziflin
+  ["cr_oldworld_region_blackstone_tower"] = "mountains",     --	owc-grunere-karak_ziflin
+  ["cr_oldworld_region_klessen"] = "empire_mountain",              --	owc-karak_ziflin-marienburg
+  ["cr_oldworld_region_marienburg"] = "marienburg",           --	owc-karak_ziflin-marienburg
+  ["cr_oldworld_region_karak_kaferkammaz"] = "mountains",    --	owc-karak_izor-kazad_frukund
+  ["cr_oldworld_region_grim_duraz"] = "mountains",           --	owc-karak_ziflin-grung_zint
+  ["cr_oldworld_region_fort_bergbres"] = "mountains",        --	owc-karak_ziflin-grung_zint
+  ["cr_oldworld_region_garban_hold"] = "mountains",          --	owc-karak_ziflin-grung_zint
+  ["cr_oldworld_region_grung_zint"] = "mountains",           --	owc-karak_ziflin-grung_zint
+  ["cr_oldworld_region_foul_peak"] = "mountains",            --	owc-kazad_frukund-valley_of_windmills
+  ["cr_oldworld_region_stormwrath_peak"] = "mountains",      --	owc-kazad_frukund-valley_of_windmills
+  ["cr_oldworld_region_ironspike"] = "mountains",            --	owc-kazad_frukund-valley_of_windmills
+  ["cr_oldworld_region_bilious_basilica"] = "mountains_skaven",     --	owc-kazad_frukund-valley_of_windmills
+  ["cr_oldworld_region_valley_of_windmills"] = "mountains_skaven",  --	owc-kazad_frukund-valley_of_windmills
+  ["cr_oldworld_region_turin"] = "bretonnia_vampires",                --	owc-kazad_frukund-chinon
+  ["cr_oldworld_region_summersfall_fort"] = "bretonnia_vampires",     --	owc-kazad_frukund-chinon
+  ["cr_oldworld_region_brusse"] = "bretonnia_main",               --	owc-kazad_frukund-chinon
+  ["cr_oldworld_region_chinon"] = "bretonnia_main",               --	owc-kazad_frukund-chinon
+  ["cr_oldworld_region_barrows_of_cuileux"] = "empire_ogres",   --	owc-chinon-barrows_of_cuileux
+  ["cr_oldworld_region_castle_parravon"] = "bretonnia_main",      --	owc-grunere-barrows_of_cuileux
+  ["cr_oldworld_region_viefin"] = "mountains",               --	owc-grunere-barrows_of_cuileux
+  ["cr_oldworld_region_gien"] = "bretonnia_main",                 --	owc-chinon-bordeleaux
+  ["cr_oldworld_region_castle_aquitaine"] = "bretonnia_main",     --	owc-chinon-bordeleaux
+  ["cr_oldworld_region_chateau_depee"] = "bretonnia_main",        --	owc-chinon-bordeleaux
+  ["cr_oldworld_region_castle_bordeleaux"] = "bretonnia_main",    --	owc-chinon-bordeleaux
+  ["cr_oldworld_region_the_humble_chapel"] = "bretonnia_main",    --	owc-chinon-bastonne
+  ["cr_oldworld_region_castle_bastonne"] = "bretonnia_main",      --	owc-chinon-bastonne
+  ["cr_oldworld_region_castle_garamont"] = "bretonnia_main",      --	owc-bastonne-artois
+  ["cr_oldworld_region_yremy"] = "bretonnia_main",                --	owc-bastonne-artois
+  ["cr_oldworld_region_uesin"] = "bretonnia_main",                --	owc-bastonne-artois
+  ["cr_oldworld_region_castle_artois"] = "bretonnia_main",        --	owc-bastonne-artois
+  ["cr_oldworld_region_grasgar_castle"] = "bretonnia_main",       --	owc-artois-couronne
+  ["cr_oldworld_region_couronne"] = "bretonnia_north",             --	owc-artois-couronne
+  ["cr_oldworld_region_castle_drakenhof"] = "empire_vampires",     --	owc-zhufbar-templehof
+  ["cr_oldworld_region_licheburg"] = "empire_vampires",            --	owc-zhufbar-templehof
+  ["cr_oldworld_region_vanhaldenschlosse"] = "empire_vampires",    --	owc-zhufbar-templehof
+  ["cr_oldworld_region_castle_templehof"] = "empire_vampires",     --	owc-zhufbar-templehof
+  ["cr_oldworld_region_fort_oberstyre"] = "empire_vampires",       --	owc-templehof-wurtbad
+  ["cr_oldworld_region_niedling"] = "empire_vampires",             --	owc-templehof-wurtbad
+  ["cr_oldworld_region_wurtbad"] = "empire_main",              --	owc-templehof-wurtbad
+  ["cr_oldworld_region_klam"] = "empire_main",                 --	owc-wurtbad-dukelberg
+  ["cr_oldworld_region_flensburg"] = "empire_main",            --	owc-wurtbad-dukelberg
+  ["cr_oldworld_region_kirchham"] = "empire_main",             --	owc-wurtbad-dukelberg
+  ["cr_oldworld_region_dukelberg"] = "empire_skaven",            --	owc-wurtbad-dukelberg
+  ["cr_oldworld_region_ubersreik"] = "empire_mountain",            --	owc-dukelberg-grunere
+  ["cr_oldworld_region_lieske"] = "empire_main",               --	owc-wurtbad-talabheim
+  ["cr_oldworld_region_talabheim"] = "empire_main",            --	owc-wurtbad-talabheim
+  ["cr_oldworld_region_gruyden"] = "empire_main",              --	owc-talabheim-karaz_ghumzul
+  ["cr_oldworld_region_krudenwald"] = "empire_main",           --	owc-talabheim-karaz_ghumzul
+  ["cr_oldworld_region_karaz_ghumzul"] = "mountains",        --	owc-talabheim-karaz_ghumzul
+  ["cr_oldworld_region_rib_peaks"] = "empire_main",            --	owc-mount_gunbad-fallen_king
+  ["cr_oldworld_region_grom_peak"] = "empire_main",            --	owc-mount_gunbad-fallen_king
+  ["cr_oldworld_region_fallen_king_mountain"] = "ogre_mountains", --	owc-mount_gunbad-fallen_king
+  ["cr_oldworld_region_broken_leg_gully"] = "ogre_mountains",     --	owc-fallen_king-karak_ungor
+  ["cr_oldworld_region_karak_ungor"] = "mountains",          --	owc-fallen_king-karak_ungor
+  ["cr_oldworld_region_peak_pass"] = "ogre_mountains",            --	owc-karak_kadrin-karak_ungor
+  ["cr_oldworld_region_kalinora"] = "mountains_north",             --	owc-karak_ungor-deghov
+  ["cr_oldworld_region_deghov"] = "mountains_north",               --	owc-karak_ungor-deghov
+  ["cr_oldworld_region_karak_angkul"] = "mountains_north",         --	owc-deghov-bonestash
+  ["cr_oldworld_region_bonestash"] = "mountains_north",            --	owc-deghov-bonestash
+  ["cr_oldworld_region_bloody_spires"] = "mountains_north",        --	owc-bonestash-karak_vlag
+  ["cr_oldworld_region_karak_vlag"] = "mountains_north",           --	owc-bonestash-karak_vlag
+  ["cr_oldworld_region_uvetsyn"] = "kislev",              --	owc-deghov-zhedevka
+  ["cr_oldworld_region_belava"] = "kislev",               --	owc-deghov-zhedevka
+  ["cr_oldworld_region_zhanyka"] = "kislev_vampires",              --	owc-deghov-zhedevka
+  ["cr_oldworld_region_zhedevka"] = "kislev_vampires",             --	owc-deghov-zhedevka
+  ["cr_oldworld_region_dagnyper"] = "kislev_north",             --	owc-zhedevka-fort_ostrosk
+  ["cr_oldworld_region_iaryn"] = "kislev_north",                --	owc-zhedevka-fort_ostrosk
+  ["cr_oldworld_region_fort_ostrosk"] = "kislev_north",         --	owc-zhedevka-fort_ostrosk
+  ["cr_oldworld_region_fort_straghov"] = "kislev_north",        --	owc-fort_ostrosk-kraka_drak
+  ["cr_oldworld_region_kraka_ravnvake"] = "mountains_north",       --	owc-fort_ostrosk-kraka_drak
+  ["cr_oldworld_region_grung_drekaz"] = "mountains_north",         --	owc-fort_ostrosk-kraka_drak
+  ["cr_oldworld_region_kraka_drak"] = "mountains_north",           --	owc-fort_ostrosk-kraka_drak
+  ["cr_oldworld_region_vitzy"] = "kislev_vampires",                --	owc-zhedevka-erengrad
+  ["cr_oldworld_region_erengrad"] = "kislev",             --	owc-zhedevka-erengrad
+  ["cr_oldworld_region_dhazhyn"] = "kislev_north",              --	owc-fort_ostrosk-aesir_pass
+  ["cr_oldworld_region_sturen_ridge"] = "kislev_north",         --	owc-fort_ostrosk-aesir_pass
+  ["cr_oldworld_region_aesir_pass"] = "kislev_north",           --	owc-fort_ostrosk-aesir_pass
+  ["cr_oldworld_region_frigustrexs_lair"] = "kislev_north",     --	owc-fort_ostrosk-aesir_pass
+  ["cr_oldworld_region_crow_brethren_roost"] = "kislev_north",  --	owc-fort_ostrosk-aesir_pass
+  ["cr_oldworld_region_kraka_ornsmotek"] = "kislev_north",      --	owc-fort_ostrosk-aesir_pass
+  ["cr_oldworld_region_kazad_urkbavak"] = "mountains",       --	owc-karaz_a_karak-blizzard_gap
+  ["cr_oldworld_region_blizzard_gap"] = "mountains_skaven",         --	owc-karaz_a_karak-blizzard_gap
+  ["cr_oldworld_region_karitamens_tomb"] = "mountains",      --	owc-blizzard_gap-troll_zags
+  ["cr_oldworld_region_troll_zags"] = "mountains_skaven",           --	owc-blizzard_gap-troll_zags
+  ["cr_oldworld_region_thunder_mountain"] = "mountains_skaven",     --	owc-troll_zags-black_crag
+  ["cr_oldworld_region_black_crag"] = "mountains",           --	owc-troll_zags-black_crag
+  ["cr_oldworld_region_karagril"] = "empire_main",             --	owc-black_crag-karak_azul
+  ["cr_oldworld_region_karag_lhune"] = "mountains_skaven",          --	owc-black_crag-karak_azul
+  ["cr_oldworld_region_karag_nar"] = "mountains_skaven",            --	owc-black_crag-karak_azul
+  ["cr_oldworld_region_karak_azul"] = "mountains",           --	owc-black_crag-karak_azul
+  ["cr_oldworld_region_zavastra"] = "empire_main",             --	owc-bechafen-ptorsk
+  ["cr_oldworld_region_ptorsk"] = "empire_main",               --	owc-bechafen-ptorsk
+  ["cr_oldworld_region_ahlenhof"] = "empire_main",             --	owc-talabheim-schoppendorf
+  ["cr_oldworld_region_schoppendorf"] = "empire_main",         --	owc-talabheim-schoppendorf
+  ["cr_oldworld_region_brockel"] = "empire_main",              --	owc-schoppendorf-deinste
+  ["cr_oldworld_region_winsen"] = "empire_mountain",               --	owc-schoppendorf-deinste
+  ["cr_oldworld_region_deinste"] = "empire_mountain",              --	owc-schoppendorf-deinste
+  ["cr_oldworld_region_gorssel"] = "empire_coast",              --	owc-deinste-tancred
+  ["cr_oldworld_region_tancred_castle"] = "bretonnia_north",       --	owc-deinste-tancred
+  ["cr_oldworld_region_hautmont"] = "bretonnia_north",             --	owc-tancred-couronne
+  ["cr_oldworld_region_kamysh"] = "kislev",               --	owc-ptorsk-zhedevka
+  ["cr_oldworld_region_choika"] = "kislev",               --	owc-ptorsk-zhedevka
+  ["cr_oldworld_region_eldagsen"] = "empire_main",             --	owc-schoppendorf-altdorf
+  ["cr_oldworld_region_altdorf"] = "empire_main",              --	owc-schoppendorf-altdorf
+  ["cr_oldworld_region_dok_karaz"] = "badlands",            --	owc-barak_varr-tooth_fort
+  ["cr_oldworld_region_scabby_eye_camp"] = "badlands",      --	owc-barak_varr-tooth_fort
+  ["cr_oldworld_region_da_howlaz_camp"] = "badlands",       --	owc-barak_varr-tooth_fort
+  ["cr_oldworld_region_broken_tooth_fort"] = "badlands",    --	owc-barak_varr-tooth_fort
+  ["cr_oldworld_region_one_eyed_fort"] = "badlands",        --	owc-tooth_fort-tar_pits
+  ["cr_oldworld_region_oeragor"] = "badlands",              --	owc-tooth_fort-tar_pits
+  ["cr_oldworld_region_putrid_tar_pits"] = "badlands",      --	owc-tooth_fort-tar_pits
+  ["cr_oldworld_region_bitterstone_mine"] = "badlands",     --	owc-tar_pits-ekrund
+  ["cr_oldworld_region_ekrund"] = "badlands",               --	owc-tar_pits-ekrund
+  ["cr_oldworld_region_castle_grauenburg"] = "empire_main",    --	owc-altdorf-eilhart
+  ["cr_oldworld_region_eilhart"] = "empire_mountain",              --	owc-altdorf-eilhart
+  ["cr_oldworld_region_broekwater"] = "empire_mountain_coast",           --	owc-marienburg-tancred_castle
+  ["cr_oldworld_region_montfort"] = "bretonnia_main",             --	owc-eilhart-montfort
+  ["cr_oldworld_region_montlac"] = "bretonnia_ogres",              --	owc-montfort-perrache
+  ["cr_oldworld_region_perrache"] = "bretonnia_wood",             --	owc-montfort-perrache
+  ["cr_oldworld_region_castle_quenelles"] = "bretonnia_wood",     --	owc-perrache-quenelles
+  ["cr_oldworld_region_vauls_anvil"] = "wood_elves",          --	owc-quenelles-kings_glade
+  ["cr_oldworld_region_kings_glade"] = "wood_elves",          --	owc-quenelles-kings_glade
+  ["cr_oldworld_region_laguiller"] = "bretonnia_main",            --	owc-quenelles-muret
+  ["cr_oldworld_region_muret"] = "bretonnia_main",                --	owc-quenelles-muret
+  ["cr_oldworld_region_castle_gransette"] = "sr",     --	owc-muret-potes
+  ["cr_oldworld_region_castle_brionne"] = "bretonnia_main",       --	owc-muret-potes
+  ["cr_oldworld_region_graus"] = "srealms_coast",                --	owc-muret-potes
+  ["cr_oldworld_region_vizeaya"] = "srealms_coast",              --	owc-muret-potes
+  ["cr_oldworld_region_potes"] = "srealms_skaven",                --	owc-muret-potes
+  ["cr_oldworld_region_cebreros"] = "srealms_vampires",             --	owc-verin-magritta
+  ["cr_oldworld_region_molena"] = "srealms_vampires",               --	owc-verin-magritta
+  ["cr_oldworld_region_magritta"] = "srealms_coast",             --	owc-verin-magritta
+  ["cr_oldworld_region_castle_sangasse"] = "bretonnia_main",      --	owc-montfort-bastonne
+  ["cr_oldworld_region_raisol"] = "bretonnia_main",               --	owc-bastonne-bordeleaux
+  ["cr_oldworld_region_tahme"] = "empire_main",                --	owc-altdorf-ubersreik
+  ["cr_oldworld_region_nuln"] = "empire_mountain",                 --	owc-ubersreik-nuln
+  ["cr_oldworld_region_wissenburg"] = "empire_mountain",           --	owc-nuln-meissen
+  ["cr_oldworld_region_dotternbach"] = "empire_mountain",          --	owc-nuln-meissen
+  ["cr_oldworld_region_meissen"] = "empire_mountain",              --	owc-nuln-meissen
+  ["cr_oldworld_region_bugmans_brewery"] = "empire_mountain",      --	owc-meissen-kreutzhofen
+  ["cr_oldworld_region_kreutzhofen"] = "empire_mountain_skaven",          --	owc-meissen-kreutzhofen
+  ["cr_oldworld_region_mortensholm"] = "srealms_greenskins",          --	owc-kreutzhofen-khypris
+  ["cr_oldworld_region_mentreda"] = "srealms_greenskins",             --	owc-kreutzhofen-khypris
+  ["cr_oldworld_region_salignac_la_rouge"] = "bretonnia_wood",    --	owc-quenelles-ravola
+  ["cr_oldworld_region_citadel_of_myrmidia"] = "badlands",  --	owc-khypris-citadel_of_myrmidia
+  ["cr_oldworld_region_viadaza"] = "srealms_coast",              --	owc-ravola-remas
+  ["cr_oldworld_region_urbimo"] = "srealms_coast",               --	owc-ravola-remas
+  ["cr_oldworld_region_remas"] = "srealms_coast",                --	owc-ravola-remas
+  ["cr_oldworld_region_castle_desfleuve"] = "bretonnia_main",     --	owc-marienburg-gisoreux
+  ["cr_oldworld_region_castle_gisoreux"] = "bretonnia_main",      --	owc-marienburg-gisoreux
+  ["cr_oldworld_region_larret"] = "bretonnia_main",               --	owc-gisoreux-larret
+  ["cr_oldworld_region_barfleur"] = "bretonnia_north",             --	owc-larret-soleil
+  ["cr_oldworld_region_barley_motte"] = "bretonnia_north",         --	owc-larret-soleil
+  ["cr_oldworld_region_soleil"] = "bretonnia_north",               --	owc-larret-soleil
+  ["cr_oldworld_region_neuland"] = "kislev_north",              --	owc-soleil-neuland
+  ["cr_oldworld_region_grunburg"] = "empire_skaven",             --	owc-altdorf-kemperbad
+  ["cr_oldworld_region_kemperbad"] = "empire_skaven",            --	owc-altdorf-kemperbad
+  ["cr_oldworld_region_delberz"] = "empire_main",              --	owc-altdorf-delberz
+  ["cr_oldworld_region_middenheim"] = "empire_main",           --	owc-delberz-salzenmund
+  ["cr_oldworld_region_salzenmund"] = "empire_main",           --	owc-delberz-salzenmund
+  ["cr_oldworld_region_norden"] = "empire_coast",               --	owc-salzenmund-salkalten
+  ["cr_oldworld_region_salkalten"] = "empire_coast",            --	owc-salzenmund-salkalten
+  ["cr_oldworld_region_castle_von_rauken"] = "empire_coast",    --	owc-salkalten-erengrad
+  ["cr_oldworld_region_milkavala"] = "empire_coast",            --	owc-salkalten-erengrad
+  ["cr_oldworld_region_borgas"] = "srealms_skaven",               --	owc-potes-verin
+  ["cr_oldworld_region_pina_wood"] = "wood_elves",            --	owc-potes-verin
+  ["cr_oldworld_region_verin"] = "srealms_skaven",                --	owc-potes-verin
+  ["cr_oldworld_region_achaes"] = "srealms_greenskins",               --	owc-khypris-thessos
+  ["cr_oldworld_region_thessos"] = "srealms_greenskins",              --	owc-khypris-thessos
+  ["cr_oldworld_region_kasos"] = "srealms_greenskins",                --	owc-thessos-myrmidens
+  ["cr_oldworld_region_myrmidens"] = "srealms_greenskins",            --	owc-thessos-myrmidens
+  ["cr_oldworld_region_worden"] = "empire_main",               --	owc-wurtbad-averheim
+  ["cr_oldworld_region_averheim"] = "empire_main",             --	owc-wurtbad-averheim
+  ["cr_oldworld_region_heideck"] = "empire_main",              --	owc-averheim-grenzstadt
+  ["cr_oldworld_region_grenzstadt"] = "empire_mountain",           --	owc-averheim-grenzstadt
+  ["cr_oldworld_region_munzig"] = "empire_mountain",               --	owc-grenzstadt-akendorf
+  ["cr_oldworld_region_lengenfeld"] = "empire_main",           --	owc-nuln-averheim
+  ["cr_oldworld_region_streissen"] = "empire_main",            --	owc-nuln-averheim
+  ["cr_oldworld_region_swartzhafen"] = "empire_vampires",          --	owc-castle_templehof-hornau
+  ["cr_oldworld_region_hornau"] = "empire_mountain",               --	owc-castle_templehof-hornau
+  ["cr_oldworld_region_oakenhammer"] = "mountains",          --	owc-hornau-zhufbar
+  ["cr_oldworld_region_pfeildorf"] = "empire_main",            --	owc-meissen-grenzstadt
+  ["cr_oldworld_region_eicheschatten"] = "empire_ogres",        --	owc-averheim-hornau
+  ["cr_oldworld_region_essen"] = "empire_main",                --	owc-castle_templehof-bechafen
+  ["cr_oldworld_region_seuthes"] = "empire_wood",              --	owc-castle_templehof-bechafen
+  ["cr_oldworld_region_grimminghagen"] = "empire_main",        --	owc-delberz-gruyden
+  ["cr_oldworld_region_lochrafurt"] = "empire_main",           --	owc-gruyden-kappelburg
+  ["cr_oldworld_region_kappelburg"] = "empire_wood",           --	owc-gruyden-kappelburg
+  ["cr_oldworld_region_gryphon_wood"] = "wood_elves",         --	owc-kappelburg-bechafen
+  ["cr_oldworld_region_waldenhof"] = "empire_vampires",            --	owc-castle_templehof-fichetal
+  ["cr_oldworld_region_fichetal"] = "empire_main",             --	owc-castle_templehof-fichetal
+  ["cr_oldworld_region_oisillon"] = "bretonnia_main",             --	owc-couronne-gisoreux
+  ["cr_oldworld_region_soude"] = "bretonnia_main",                --	owc-gisoreux-sangasse
+  ["cr_oldworld_region_waterfall_palace"] = "wood_elves",     --	owc-parravon-waterfall_palace
+  ["cr_oldworld_region_sigmarsheim"] = "bretonnia_main",          --	owc-artois-mousillon
+  ["cr_oldworld_region_castle_rachard"] = "bretonnia_vampires",       --	owc-artois-mousillon
+  ["cr_oldworld_region_castle_mousillon"] = "bretonnia_vampires",     --	owc-artois-mousillon
+  ["cr_oldworld_region_derrevin_libre"] = "bretonnia_main",       --	owc-mousillon-gien
+  ["cr_oldworld_region_azuara"] = "srealms_skaven",               --	owc-brionne-potes
+  ["cr_oldworld_region_schilderheim"] = "empire_mountain",         --	owc-marienburg-bogenhafen
+  ["cr_oldworld_region_bogenhafen"] = "empire_mountain",           --	owc-marienburg-bogenhafen
+  ["cr_oldworld_region_wuppertal"] = "empire_main",            --	owc-nuln-grenzstadt
+  ["cr_oldworld_region_chantillon"] = "bretonnia_north",           --	owc-couronne-fort_solace
+  ["cr_oldworld_region_fort_solace"] = "empire_coast",          --	owc-couronne-fort_solace
+  ["cr_oldworld_region_hergig"] = "empire_main",               --	owc-delberz-hergig
+  ["cr_oldworld_region_fort_korver"] = "empire_main",          --	owc-hergig-bechafen
+  ["cr_oldworld_region_oldenlitz"] = "empire_coast",            --	owc-salzenmund-tor_lithanel
+  ["cr_oldworld_region_schlaghugel"] = "empire_coast",          --	owc-salzenmund-tor_lithanel
+  ["cr_oldworld_region_tor_lithanel"] = "wood_elves",         --	owc-salzenmund-tor_lithanel
+  ["cr_oldworld_region_vitevo"] = "empire_main",               --	owc-kislev-weiler
+  ["cr_oldworld_region_weiler"] = "empire_mountain",               --	owc-kislev-weiler
+  ["cr_oldworld_region_nagenhof"] = "empire_mountain",             --	owc-weiler-fichetal
+  ["cr_oldworld_region_eschen"] = "empire_mountain",               --	owc-weiler-fichetal
+  ["cr_oldworld_region_schramleben"] = "empire_mountain",          --	owc-hornau-grenzstadt
+  ["cr_oldworld_region_pfungzig"] = "empire_mountain",             --	owc-hornau-grenzstadt
+  ["cr_oldworld_region_heldegrad"] = "empire_main",            --	owc-bechafen-hazelhof
+  ["cr_oldworld_region_kiel"] = "empire_wood",                 --	owc-bechafen-hazelhof
+  ["cr_oldworld_region_hazelhof"] = "empire_main",             --	owc-bechafen-hazelhof
+  ["cr_oldworld_region_krugenheim"] = "empire_main",           --	owc-hazelhof-averheim
+  ["cr_oldworld_region_halstedt"] = "empire_main",             --	owc-hazelhof-averheim
+  ["cr_oldworld_region_moasach"] = "empire_main",              --	owc-averheim-kreutzhofen
+  ["cr_oldworld_region_wurzen"] = "empire_wood",               --	owc-ptorsk-hergig
+  ["cr_oldworld_region_horno"] = "empire_main",                --	owc-hazelhof-zutzen
+  ["cr_oldworld_region_wiedebach"] = "empire_main",            --	owc-hazelhof-zutzen
+  ["cr_oldworld_region_zutzen"] = "empire_main",               --	owc-hazelhof-zutzen
+  ["cr_oldworld_region_kammendum"] = "empire_main",            --	owc-salzenmund-deinste
+  ["cr_oldworld_region_bokel"] = "empire_mountain",                --	owc-salzenmund-deinste
+  ["cr_oldworld_region_grung_stekbrud"] = "kislev_north",       --	owc-fort_straghov-kraka_drak
+  ["cr_oldworld_region_fort_sturchod"] = "kislev_north",        --	owc-fort_straghov-fort_uilegzny
+  ["cr_oldworld_region_fort_uilegzny"] = "kislev_north",        --	owc-fort_straghov-fort_uilegzny
+  ["cr_oldworld_region_embrun"] = "bretonnia_main",               --	owc-brusse-carcassonne
+  ["cr_oldworld_region_castle_carcassonne"] = "bretonnia_main",   --	owc-brusse-carcassonne
+  ["cr_oldworld_region_kazad_sedazund"] = "srealms_greenskins",       --	owc-matorca-trantio
+  ["cr_oldworld_region_trantio"] = "srealms_greenskins",              --	owc-matorca-trantio
+  ["cr_oldworld_region_ferignac"] = "bretonnia_main",             --	owc-brusse-guaniar
+  ["cr_oldworld_region_guaniar"] = "srealms_skaven",              --	owc-brusse-guaniar
+  ["cr_oldworld_region_durango"] = "mountains",              --	owc-guaniar-raganos
+  ["cr_oldworld_region_raganos"] = "srealms_skaven",              --	owc-guaniar-raganos
+  ["cr_oldworld_region_zaragoz"] = "srealms_skaven",              --	owc-raganos-magritta
+  ["cr_oldworld_region_mordheim"] = "empire_skaven",             --	owc-wurtbad-essen
+  ["cr_oldworld_region_aldium"] = "srealms_greenskins",               --		cr_oldworld_ivory_road_aldium-matorca
+  ["cr_oldworld_region_praag"] = "kislev",                --		cr_oldworld_ivory_road_kislev-praag
+  ["cr_oldworld_region_sjoktraken"] = "kislev_north",           --		cr_oldworld_ivory_road_fort_straghov-sjoktraken
+  ["cr_oldworld_region_hall_of_urslo"] = "kislev_north",        --		cr_oldworld_ivory_road_sjoktraken-hall_of_urslo
 
 }

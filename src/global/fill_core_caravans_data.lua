@@ -19,10 +19,15 @@ function Old_world_caravans:fill_core_caravans_data()
   table.insert(army, "wh3_main_cth_inf_jade_warriors_1")
 
   --update trade nodes values on turn start
-  for i = 1, #self.new_caravan_targets do
+  for i = 1, #self.new_caravan_targets.main_warhammer do
     table.insert(caravans.destinations_key.main_warhammer.cathay, self.new_caravan_targets[i])
   end
 
+  if caravans.destinations_key.cr_oldworld then
+    for i = 1, #self.new_caravan_targets.cr_oldworld do
+      table.insert(caravans.destinations_key.cr_oldworld.cathay, self.new_caravan_targets[i])
+    end
+  end
   --copy cathay caravan units
   for trait, units in pairs(caravans.traits_to_units) do
     ---@diagnostic disable-next-line: undefined-field

@@ -73,7 +73,7 @@ function Old_world_caravans:add_caravan_listeners()
       local faction_key = context:faction():name()
       self:log("My handler for QueryShouldWaylayCaravan")
 
-      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "main_warhammer") then
+      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() == "wh3_main_chaos") then
         local has_handler, selected_encounter = self:generate_caravan_encounter(context)
         self:log("selected_encounter is " .. tostring(selected_encounter))
 
@@ -106,7 +106,7 @@ function Old_world_caravans:add_caravan_listeners()
     function(context)
       local subculture = context:faction():subculture();
 
-      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() == "main_warhammer") then
+      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
         local ok, err = pcall(function()
           self:handle_caravan_encounter(context);
         end);
@@ -132,17 +132,14 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context SettlementSelected
     function(context)
       local settlement = context:garrison_residence():region():name();
-      local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
+      -- local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
+      local faction = cm:get_local_faction(true);
 
       local log_x = context:garrison_residence():region():settlement():logical_position_x();
       local log_y = context:garrison_residence():region():settlement():logical_position_y();
-      local faction = cm:get_faction("wh3_main_cth_cathay_qb1");
+      self:log("owc-" .. settlement .. "\t" .. tostring(log_x) .. "\t" .. tostring(log_y));
 
-      -- local name = faction and not faction:is_null_interface() and faction:name();
-      -- self:logCore(name);
-      self:logCore("owc-"..settlement.."\t"..tostring(log_x).."\t"..tostring(log_y));
-
-      -- self:give_caravan_award(faction, settlement)
+      self:give_caravan_award(faction, settlement)
       -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
       -- :item_at(0))
 
@@ -200,7 +197,7 @@ function Old_world_caravans:add_caravan_listeners()
       local faction_sc = faction:subculture();
       local faction_name = faction:name();
       return not faction:is_human() and
-      (self.ai_caravans[faction_sc] == false or self.minor_without_caravans[faction_name]);
+          (self.ai_caravans[faction_sc] == false or self.minor_without_caravans[faction_name]);
     end,
     ---@param context FactionTurnEnd
     function(context)

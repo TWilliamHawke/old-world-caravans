@@ -5,6 +5,7 @@ function Old_world_caravans:local_trouble_creator(context)
 
   local caravan_master = context.caravan:caravan_master():character();
   local caravan_culture = context.faction:subculture();
+  local cargo_factor = math.floor(math.max(context.caravan:cargo() - 500, 0) * 0.004);
 
   local culture_from = self:get_subculture_of_node(context.from);
   local culture_to = self:get_subculture_of_node(context.to);
@@ -24,7 +25,7 @@ function Old_world_caravans:local_trouble_creator(context)
     return 0;
   end
 
-  local probability = math.ceil(context.bandit_threat / 5) + 2;
+  local probability = math.ceil(context.bandit_threat / 5) + cargo_factor;
 
   if character:trait_points("owc_trait_grail_vow_caravan_cargo") == 1 then
     probability = 20

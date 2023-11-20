@@ -50,7 +50,7 @@ function Old_world_caravans:add_first_tick_callbacks()
         return
       end
 
-      --not new game game only
+      --if load existing save:
 
       if not cm:get_saved_value(self.is_init_save_key) then
         self:unlock_caravans_for_suculture("wh_main_sc_emp_empire", "emp")

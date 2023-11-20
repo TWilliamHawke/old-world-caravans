@@ -3,6 +3,7 @@ Old_world_caravans = {
   encounter_faction_save_key = "owc_encounter_faction",
   cleaup_encounter_debounce_key = "owc_kill_key",
   dilemma_callback_key = "dilemma_callback_key",
+  default_threat_set = "bretonnia_main",
   debug_mode = false,
   invasion_key = "owc_encounter",
   belegar_faction = "wh_main_dwf_karak_izor",
