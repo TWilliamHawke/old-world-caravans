@@ -137,9 +137,9 @@ function Old_world_caravans:add_caravan_listeners()
 
       local log_x = context:garrison_residence():region():settlement():logical_position_x();
       local log_y = context:garrison_residence():region():settlement():logical_position_y();
-      self:log("owc-" .. settlement .. "\t" .. tostring(log_x) .. "\t" .. tostring(log_y));
+      --self:log("owc-" .. settlement .. "\t" .. tostring(log_x) .. "\t" .. tostring(log_y));
 
-      self:give_caravan_award(faction, settlement)
+      --self:give_caravan_award(faction, settlement)
       -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
       -- :item_at(0))
 
@@ -213,7 +213,7 @@ function Old_world_caravans:add_caravan_listeners()
     ---@return boolean
     function(context)
       local faction = context:faction();
-      return faction:is_human();
+      return faction:is_human() and self.debug_mode;
     end,
     function()
       self:disband_mar_convoys();

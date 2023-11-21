@@ -7,7 +7,8 @@ function caravans:generate_event(conditions)
   local i = 0;
 
   local culture = conditions.faction:culture()
-  local events = caravans.event_tables[culture]
+  local events = caravans.event_tables[culture];
+  if not events then return nil, false end
 
   --build table for weighted roll
   for _, val in pairs(events) do

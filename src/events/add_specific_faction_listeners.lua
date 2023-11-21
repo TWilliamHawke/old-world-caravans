@@ -155,5 +155,4 @@ function Old_world_caravans:add_specific_faction_listeners()
     end,
     true
   )
-
 end
