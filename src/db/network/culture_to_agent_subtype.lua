@@ -1,6 +1,6 @@
 Old_world_caravans.culture_to_agent_unit = {
   wh_main_sc_emp_empire = "wh_main_emp_cha_captain_0",
-  wh_main_sc_brt_bretonnia = "wh_main_brt_cha_paladin_3",
+  wh_main_sc_brt_bretonnia = "wh_main_brt_cha_paladin_4",
   wh3_main_sc_ksl_kislev = "wh3_main_ksl_cha_patriarch_2",
   wh_main_sc_dwf_dwarfs = "wh_main_dwf_cha_thane",
   wh_main_sc_teb_teb = "wh3_main_ogr_cha_hunter_0",

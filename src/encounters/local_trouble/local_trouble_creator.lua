@@ -5,7 +5,12 @@ function Old_world_caravans:local_trouble_creator(context)
 
   local caravan_master = context.caravan:caravan_master():character();
   local caravan_culture = context.faction:subculture();
-  local cargo_factor = math.floor(math.max(context.caravan:cargo() - 500, 0) * 0.004);
+  local cargo = context.caravan:cargo();
+  local cargo_factor = math.floor(math.max(cargo - 500, 0) * 0.004);
+
+  if cargo > 1200 then
+    cargo_factor = cargo_factor * 2;
+  end
 
   local culture_from = self:get_subculture_of_node(context.from);
   local culture_to = self:get_subculture_of_node(context.to);
