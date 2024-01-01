@@ -39,5 +39,6 @@ function Old_world_caravans:replace_units(replacers)
     end
   end
 
+  self:add_caravan_units_to_vanilla();
 
 end

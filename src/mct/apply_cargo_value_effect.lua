@@ -6,7 +6,7 @@ function Old_world_caravans:apply_cargo_value_effect(value)
   for i = 1, #human_factions do
     local faction = cm:get_faction(human_factions[i])
 
-    if self:faction_has_caravans(faction) then
+    if self:faction_has_caravans(faction) and self:faction_is_supported(faction) then
       if faction:has_effect_bundle(bundle_name) then
         cm:remove_effect_bundle(bundle_name, human_factions[i])
       end

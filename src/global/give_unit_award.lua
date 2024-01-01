@@ -7,11 +7,9 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   if not region_sc then return end
 
   local caravan_faction = caravan:caravan_force():faction();
-  local caravan_sc = caravan_faction:subculture();
 
-  if not self.awards[caravan_sc] then return end
   if not caravan_faction:is_human() then return end
-  if self:faction_is_modded(caravan_faction) then return end
+  if not self:faction_is_supported(caravan_faction) then return end
 
   local caravan_force = caravan:caravan_force()
   local units_count = caravan_force:unit_list():num_items();

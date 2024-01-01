@@ -57,13 +57,12 @@ function Old_world_caravans:add_cleanup_listeners()
     "FactionTurnEnd",
     ---@param context FactionTurnEnd
     function(context)
-      local subculture = context:faction():subculture();
-      return self.culture_to_trait[subculture] ~= nil and context:faction():is_human();
+      local faction = context:faction();
+      return self:faction_is_supported(faction) and faction:is_human();
     end,
     ---@param context FactionTurnEnd
     function(context)
       local faction_name = context:faction():name();
-      if self:faction_is_modded(context:faction()) then return end
       self:cleanup_encounter_for_faction(faction_name);
     end,
     true

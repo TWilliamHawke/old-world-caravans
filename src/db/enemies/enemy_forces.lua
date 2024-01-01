@@ -79,17 +79,11 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_main_sc_grn_greenskins_1 = {
-    filler_units_mult = 1.1,
     filler_units = {
       wh_main_grn_inf_orc_boyz = 3,
       wh_main_grn_inf_goblin_spearmen = 1,
       wh_dlc06_grn_inf_nasty_skulkers_0 = 1,
       wh_main_grn_inf_night_goblins = 1,
-    },
-    {
-      wh_main_grn_inf_goblin_archers = 1,
-      wh_main_grn_inf_orc_arrer_boyz = 1,
-      wh_main_grn_inf_orc_big_uns = 2,
     },
     {
       wh_main_grn_mon_trolls = 6,
@@ -98,6 +92,11 @@ Old_world_caravans.enemy_forces = {
       wh_main_grn_cav_forest_goblin_spider_riders_0 = 1,
       wh_dlc06_grn_cav_squig_hoppers_0 = 1,
       wh_main_grn_cav_orc_boar_boyz = 3,
+    },
+    {
+      wh_main_grn_inf_goblin_archers = 1,
+      wh_main_grn_inf_orc_arrer_boyz = 1,
+      wh_main_grn_inf_orc_big_uns = 2,
     },
   },
   wh_main_sc_grn_greenskins_2 = {

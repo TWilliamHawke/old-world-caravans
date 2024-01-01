@@ -12,39 +12,35 @@ function Old_world_caravans:add_first_tick_callbacks()
   );
 
   cm:add_first_tick_callback(function()
-    self:fill_core_caravans_data();
-    self:disband_mar_convoys();
-    caravans.rhox_mar_caravan_replace_listener = function()
-      self:logCore("Marienburg \"Replace listeners\" function was replaced")
+    local ok, err = pcall(function()
+      self:fill_core_caravans_data();
+      self:disband_mar_convoys();
+    end);
+
+    if not ok then
+      self:logCore(tostring(err));
     end
   end)
 
   cm:add_post_first_tick_callback(
     function()
+      self:add_caravan_units_to_vanilla(); --second time to make sure
       --always happens
-      core:remove_listener("caravan_waylay_query")
-      core:remove_listener("caravan_waylaid")
-      core:remove_listener("add_inital_force")
-      core:remove_listener("add_inital_bundles")
-      core:remove_listener("caravan_master_heal")
-      core:remove_listener("caravan_finished")
-
 
       self:add_caravan_listeners();
       self:add_specific_faction_listeners();
       self:add_cleanup_listeners();
 
-      self:fill_core_caravans_data();
       self:hide_caravan_button_without_access();
       self:set_starting_endpoints_values();
 
       self:apply_cargo_value_effect(self.cargo_value)
 
       if cm:is_new_game() then
-        --new gane only
-        local faction_list = cm:model():world():faction_list();
-        for i = 0, faction_list:num_items() - 1 do
-          local faction = faction_list:item_at(i)
+        --new game only
+        local human_factions = cm:get_human_factions();
+        for i = 1, #human_factions do
+          local faction = human_factions[i]
           self:recruit_start_caravan(faction);
         end
         return

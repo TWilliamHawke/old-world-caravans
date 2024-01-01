@@ -17,31 +17,23 @@ function Old_world_caravans:add_caravan_listeners()
     ---@return boolean
     function(context)
       local faction = context:faction()
-      return not self:faction_is_modded(faction);
+      return self:faction_is_supported(faction);
     end,
     ---@param context CaravanRecruited
     function(context)
       local caravan = context:caravan();
-      if caravan:caravan_force():unit_list():num_items() > 1 then return end
-
-      local subculture = caravan:caravan_force():faction():subculture()
-      ---@diagnostic disable-next-line: undefined-field
-      cm:set_character_excluded_from_trespassing(caravan:caravan_master():character(), true)
-      if self.start_units[subculture] then
-        self:add_start_force(caravan);
-      else
-        caravans:add_inital_force(caravan);
-      end
+      self:add_start_force(caravan);
     end,
     true
   );
+
   core:add_listener(
     "owc_caravan_spawned",
     "CaravanSpawned",
     ---@param context CaravanSpawned
     function(context)
       local faction = context:faction()
-      return not self:faction_is_modded(faction);
+      return self:faction_is_supported(faction);
     end,
     ---@param context CaravanSpawned
     function(context)
@@ -49,12 +41,6 @@ function Old_world_caravans:add_caravan_listeners()
         local caravan_force = context:caravan():caravan_force();
         self:remove_caravan_upkeep(caravan_force);
       end
-
-      ---@diagnostic disable-next-line: undefined-field
-      cm:set_character_excluded_from_trespassing(context:caravan():caravan_master():character(), true);
-      local caravan = context:caravan();
-      cm:set_saved_value("caravans_dispatched_" .. context:faction():name(), true);
-      caravans:set_stance(caravan)
     end,
     true
   );
@@ -64,33 +50,20 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_caravan_waylay_query_no_cathay",
     "QueryShouldWaylayCaravan",
     function(context)
-      return context:faction():is_human() and not self:faction_is_modded(context:faction());
+      local faction = context:faction()
+      return faction:is_human() and self:faction_is_supported(faction);
     end,
     ---comment
     ---@param context QueryShouldWaylayCaravan
     function(context)
-      local subculture = context:caravan():caravan_force():faction():subculture()
-      local faction_key = context:faction():name()
       self:log("My handler for QueryShouldWaylayCaravan")
 
-      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() == "wh3_main_chaos") then
-        local has_handler, selected_encounter = self:generate_caravan_encounter(context)
-        self:log("selected_encounter is " .. tostring(selected_encounter))
+      local has_handler, selected_encounter = self:generate_caravan_encounter(context)
+      self:log("selected_encounter is " .. tostring(selected_encounter))
 
-        if has_handler then
-          ---@diagnostic disable-next-line: redundant-parameter
-          context:flag_for_waylay("owc_" .. selected_encounter)
-        end
-      else
-        if caravans.events_fired[faction_key] == nil or caravans.events_fired[faction_key] == false then
-          if caravans:event_handler(context) == false then
-            ---@diagnostic disable-next-line: undefined-field
-            out.design("Caravan not valid for event");
-          elseif caravans.events_fired[faction_key] ~= nil then
-            caravans.events_fired[faction_key] = true
-          end
-          self:log("Generate Encounter for Chaos dwarfs or ROC Cathay")
-        end
+      if has_handler then
+        ---@diagnostic disable-next-line: redundant-parameter
+        context:flag_for_waylay("owc?" .. selected_encounter)
       end
     end,
     true
@@ -100,23 +73,17 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_caravan_waylaid_no_cathay",
     "CaravanWaylaid",
     function(context)
-      return not self:faction_is_modded(context:faction())
+      local faction = context:faction()
+      return faction:is_human() and self:faction_is_supported(faction);
     end,
     ---@param context CaravanWaylaid
     function(context)
-      local subculture = context:faction():subculture();
+      local ok, err = pcall(function()
+        self:handle_caravan_encounter(context);
+      end);
 
-      if self.start_units[subculture] or (subculture == "wh3_main_sc_cth_cathay" and cm:get_campaign_name() ~= "wh3_main_chaos") then
-        local ok, err = pcall(function()
-          self:handle_caravan_encounter(context);
-        end);
-
-        if not ok then
-          self:logCore(tostring(err));
-        end
-      else
-        caravans:waylaid_caravan_handler(context);
-        self:log("Handle Encounter for Chaos dwarfs or ROC Cathay")
+      if not ok then
+        self:logCore(tostring(err));
       end
       self:log("My handler for CaravanWaylaid")
     end,
@@ -156,13 +123,13 @@ function Old_world_caravans:add_caravan_listeners()
     "CaravanCompleted",
     ---@param context CaravanCompleted
     function(context)
-      return not self:faction_is_modded(context:faction());
+      local faction = context:faction()
+      return faction:is_human() and self:faction_is_supported(faction);
     end,
     ---@param context CaravanCompleted
     function(context)
       local faction = context:faction()
 
-      if not faction:is_human() then return end
       ---@diagnostic disable-next-line: undefined-field
       local node = context:complete_position():node();
       local caravan = context:caravan();
@@ -179,10 +146,13 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_caravan_moved",
     "CaravanMoved",
     function(context)
-      return not context:caravan():is_null_interface() and not self:faction_is_modded(context:faction());
+      local faction = context:faction();
+      return self:faction_is_supported(faction);
     end,
+    ---comment
+    ---@param context CaravanMoved
     function(context)
-      self:teleport_caravan(context)
+      self:heal_caravan_master(context)
     end,
     true
   );
@@ -227,8 +197,8 @@ function Old_world_caravans:add_caravan_listeners()
     ---@param context FactionTurnStart
     ---@return boolean
     function(context)
-      local faction_name = context:faction():name();
-      return self.access_to_caravans_on_first_turn[faction_name] ~= nil;
+      local faction = context:faction();
+      return self:faction_is_supported(faction);
     end,
     ---@param context FactionTurnStart
     function(context)
@@ -238,18 +208,6 @@ function Old_world_caravans:add_caravan_listeners()
       if not faction:has_effect_bundle(effect_key) then
         cm:apply_effect_bundle(effect_key, faction:name(), 0)
       end
-    end,
-    true
-  );
-
-  core:add_listener(
-    "OWC_caravan_finished",
-    "CaravanCompleted",
-    function(context)
-      return not self:faction_is_modded(context:faction());
-    end,
-    function(context)
-      caravans:handle_caravan_complete(context)
     end,
     true
   );
