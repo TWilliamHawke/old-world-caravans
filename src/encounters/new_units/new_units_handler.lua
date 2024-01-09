@@ -43,7 +43,6 @@ function Old_world_caravans:new_units_handler(context)
     return
   end
 
-
   local dilemma_name = "wh3_main_dilemma_cth_caravan_4" .. suffix;
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
@@ -57,7 +56,7 @@ function Old_world_caravans:new_units_handler(context)
 
   dilemma_builder:add_target("default", caravan_force);
 
-  caravans:attach_battle_to_dilemma(dilemma_name, caravan);
+  self:bind_callback_to_dilemma(dilemma_name, caravan);
 
   core:trigger_custom_event("ScriptEventOwcNewUnitsDilemma", {
     character = caravan_master});

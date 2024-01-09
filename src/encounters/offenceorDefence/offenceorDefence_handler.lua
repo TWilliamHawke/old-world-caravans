@@ -5,15 +5,9 @@ function Old_world_caravans:offenceorDefence_handler(context)
   local faction = context:faction();
   local caravan_force = caravan:caravan_force();
 
-  caravans:attach_battle_to_dilemma(
+  self:bind_callback_to_dilemma(
     dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
-    nil);
+    caravan);
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();

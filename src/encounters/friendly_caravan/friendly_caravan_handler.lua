@@ -4,18 +4,10 @@ function Old_world_caravans:friendly_caravan_handler(context)
   local caravan = context:caravan()
   local caravan_faction = context:faction()
 
-  local prebattle_data = {
-    caravan = caravan,
-    dilemma_name = dilemma_name,
-    enemy_force_cqi = -1,
-  }
-
-
-  self:bind_battle_to_dilemma(prebattle_data, 0, function()
-    ---@diagnostic disable-next-line: undefined-field
-    cm:move_caravan(caravan);
-    self:increase_caravan_cargo(caravan, -200)
-  end)
+  self:bind_callback_to_dilemma(dilemma_name, caravan, 0,
+    function()
+      self:increase_caravan_cargo(caravan, -200)
+    end)
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
@@ -35,5 +27,4 @@ function Old_world_caravans:friendly_caravan_handler(context)
 
 
   cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan_faction);
-
 end

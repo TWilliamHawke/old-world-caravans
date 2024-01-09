@@ -66,6 +66,7 @@ Old_world_caravans.new_caravan_targets = {
     "cr_oldworld_region_castle_carcassonne",
     "cr_oldworld_region_waterfall_palace",
     "cr_oldworld_region_tor_lithanel",
+    "cr_oldworld_region_sjoktraken"
   },
 
 

@@ -34,5 +34,9 @@ function Old_world_caravans:mct_init(context)
 
   if settings.replace_units then
     self:replace_units(self.main_replacers)
+
+    if vfs.exists("script/campaign/mod/twill_old_world_caravans_teb.lua") then
+      self:replace_units(self.teb_replacers)
+    end
   end
 end

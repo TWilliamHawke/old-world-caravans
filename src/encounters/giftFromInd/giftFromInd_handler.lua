@@ -3,7 +3,8 @@ function Old_world_caravans:giftFromInd_handler(context)
   local dilemma_name = "wh3_main_dilemma_cth_caravan_5";
   local caravan = context:caravan();
 
-  caravans:attach_battle_to_dilemma(dilemma_name, caravan);
+  self:bind_callback_to_dilemma(dilemma_name, caravan);
+
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
 
@@ -33,6 +34,5 @@ function Old_world_caravans:giftFromInd_handler(context)
 
   dilemma_builder:add_target("default", caravan:caravan_force());
 
-  out.design("Triggering dilemma:" .. dilemma_name)
   cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan:caravan_force():faction());
 end

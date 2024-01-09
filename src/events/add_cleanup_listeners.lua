@@ -13,7 +13,7 @@ function Old_world_caravans:add_cleanup_listeners()
       local attacker
 
       if pb:has_been_fought() then
-				local attacker_name = cm:pending_battle_cache_get_attacker_faction_name(1);
+        local attacker_name = cm:pending_battle_cache_get_attacker_faction_name(1);
         attacker = cm:get_faction(attacker_name)
       else
         attacker = pb:attacker():faction();
@@ -30,7 +30,7 @@ function Old_world_caravans:add_cleanup_listeners()
       local defender
 
       if pb:has_been_fought() then
-				local defender_name = cm:pending_battle_cache_get_defender_faction_name(1);
+        local defender_name = cm:pending_battle_cache_get_defender_faction_name(1);
         defender = cm:get_faction(defender_name)
       else
         defender = pb:defender():faction();
@@ -69,40 +69,37 @@ function Old_world_caravans:add_cleanup_listeners()
   );
 
   core:add_listener(
-  "owc_clean_up_attacker",
-  "FactionTurnStart",
-  ---@param context FactionTurnStart
-  ---@return boolean
-  function(context)
-    local faction_name = context:faction():name();
-    local faction_sc = context:faction():subculture();
-    return self.culture_to_enemy_faction[faction_sc] == faction_name;
-  end,
-  ---@param context FactionTurnStart
-  function(context)
-    cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");
+    "owc_clean_up_attacker",
+    "FactionTurnStart",
+    ---@param context FactionTurnStart
+    ---@return boolean
+    function(context)
+      local faction_name = context:faction():name();
+      local faction_sc = context:faction():subculture();
+      return self.culture_to_enemy_faction[faction_sc] == faction_name;
+    end,
+    ---@param context FactionTurnStart
+    function(context)
+      cm:disable_event_feed_events(true, "", "", "diplomacy_faction_destroyed");
 
-    local human_factions = cm:get_human_factions();
+      local human_factions = cm:get_human_factions();
 
-    for i = 1, #human_factions do
-      local faction = human_factions[i]
-      if cm:get_saved_value(self.encounter_faction_save_key..faction) then
-        self:cleanup_encounter_for_faction(faction);
+      for i = 1, #human_factions do
+        local faction = human_factions[i]
+        if cm:get_saved_value(self.encounter_faction_save_key .. faction) then
+          self:cleanup_encounter_for_faction(faction);
+        end
       end
-    end
+    end,
+    true
+  );
 
-  end,
-  true
-);
-
-core:add_listener("owc_quest_item_triggered",
-"ScriptEventTriggerQuestChain",
-true,
-function()
-  self:log("ScriptEventTriggerQuestChain")
-  self.encounter_should_be_canceled = true
-end,
-true);
-
-
+  core:add_listener("owc_quest_item_triggered",
+    "ScriptEventTriggerQuestChain",
+    true,
+    function()
+      self:log("ScriptEventTriggerQuestChain")
+      self.encounter_should_be_canceled = true
+    end,
+    true);
 end;

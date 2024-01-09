@@ -150,6 +150,10 @@ Old_world_caravans.main_replacers = {
   wh_main_vmp_mon_crypt_horrors = "owc_main_vmp_mon_crypt_horrors",
   wh_main_vmp_mon_vargheists = "owc_main_vmp_mon_vargheists",
   wh_main_vmp_mon_varghulf = "owc_main_vmp_mon_varghulf",
+
+}
+
+Old_world_caravans.teb_replacers = {
   teb_pikemen = "owc_pikemen",
   teb_republican_guard = "owc_republican_guard",
   teb_pavisiers = "owc_pavisiers",
@@ -169,8 +173,8 @@ Old_world_caravans.main_replacers = {
   teb_militia_knights = "owc_militia_knights",
   teb_paymaster = "owc_paymaster",
   teb_kotrs = "owc_kotrs",
+  --TODO add thse units to db
   -- teb_shieldbearers = 1,
   -- teb_encarmine = 1,
   -- teb_noble_retinue = 1,
-
 }

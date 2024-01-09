@@ -16,14 +16,9 @@ function Old_world_caravans:wild_river_handler(context)
   end
 
 
-  caravans:attach_battle_to_dilemma(
+  self:bind_callback_to_dilemma(
     dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
+    caravan, 1,
     function()
       ---@diagnostic disable-next-line: undefined-field
       cm:set_caravan_cargo(caravan, cargo_amount - 200);

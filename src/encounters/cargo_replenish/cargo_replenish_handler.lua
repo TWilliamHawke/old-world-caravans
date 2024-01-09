@@ -3,14 +3,9 @@ function Old_world_caravans:cargo_replenish_handler(context)
   local dilemma_name = "wh3_main_dilemma_cth_caravan_2B";
   local caravan = context:caravan();
 
-  caravans:attach_battle_to_dilemma(
+  self:bind_callback_to_dilemma(
     dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
+    caravan, 1,
     function()
       self:increase_caravan_cargo(caravan, 200)
     end);
@@ -37,7 +32,6 @@ function Old_world_caravans:cargo_replenish_handler(context)
 
     dilemma_builder:add_target("default", caravan:caravan_force());
 
-    out.design("Triggering dilemma:" .. dilemma_name)
     cm:launch_custom_dilemma_from_builder(dilemma_builder, caravan:caravan_force():faction());
 
 end

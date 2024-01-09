@@ -5,13 +5,7 @@ function Old_world_caravans:ogres_my_lord_handler(context)
   local caravan_force = caravan:caravan_force();
   local faction = context:faction()
 
-  local prebattle_data = {
-    caravan = caravan,
-    dilemma_name = dilemma_name,
-    enemy_force_cqi = -1,
-  }
-
-  self:bind_battle_to_dilemma(prebattle_data, 0, function()
+  self:bind_callback_to_dilemma(dilemma_name, caravan, 0, function()
     ---@diagnostic disable-next-line: undefined-field
     cm:move_caravan(caravan);
     core:trigger_custom_event("ScriptEventOwcNewUnitsDilemma", {
@@ -35,6 +29,5 @@ function Old_world_caravans:ogres_my_lord_handler(context)
 
   dilemma_builder:add_target("default", caravan_force);
 
-  out.design("Triggering dilemma:" .. dilemma_name)
   cm:launch_custom_dilemma_from_builder(dilemma_builder, faction);
 end

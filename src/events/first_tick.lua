@@ -15,6 +15,7 @@ function Old_world_caravans:add_first_tick_callbacks()
     local ok, err = pcall(function()
       self:fill_core_caravans_data();
       self:disband_mar_convoys();
+      self:set_starting_endpoints_values();
     end);
 
     if not ok then
@@ -26,10 +27,6 @@ function Old_world_caravans:add_first_tick_callbacks()
     function()
       self:add_caravan_units_to_vanilla(); --second time to make sure
       --always happens
-
-      self:add_caravan_listeners();
-      self:add_specific_faction_listeners();
-      self:add_cleanup_listeners();
 
       self:hide_caravan_button_without_access();
       self:set_starting_endpoints_values();

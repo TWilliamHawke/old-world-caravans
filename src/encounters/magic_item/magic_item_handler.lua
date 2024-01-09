@@ -8,14 +8,9 @@ function Old_world_caravans:magic_item_handler(context)
 
   local dilemma_name = "owc_main_dilemma_caravan_good_deal";
 
-  caravans:attach_battle_to_dilemma(
+  self:bind_callback_to_dilemma(
     dilemma_name,
-    caravan,
-    nil,
-    false,
-    nil,
-    nil,
-    nil,
+    caravan, 1,
     function()
       self:increase_caravan_cargo(caravan, 200)
     end);

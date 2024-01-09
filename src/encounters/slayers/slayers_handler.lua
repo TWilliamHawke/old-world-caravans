@@ -7,13 +7,6 @@ function Old_world_caravans:slayers_handler(context)
   local suffix = units_count < 20 and "1" or "2"
   local dilemma_name = "owc_main_dilemma_caravan_slayers_" .. suffix;
 
-
-  local prebattle_data = {
-    caravan = caravan,
-    dilemma_name = dilemma_name,
-    enemy_force_cqi = -1,
-  }
-
   local slayers = {
     wh_main_dwf_inf_slayers = 3,
     wh2_dlc10_dwf_inf_giant_slayers = 1
@@ -25,9 +18,7 @@ function Old_world_caravans:slayers_handler(context)
   end) or "wh_main_dwf_inf_slayers"
 
 
-  self:bind_battle_to_dilemma(prebattle_data, 0, function()
-    ---@diagnostic disable-next-line: undefined-field
-    cm:move_caravan(caravan);
+  self:bind_callback_to_dilemma(dilemma_name, caravan, 0, function()
     self:increase_caravan_cargo(caravan, -200)
   end)
 
