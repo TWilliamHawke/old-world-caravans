@@ -16,5 +16,7 @@ Old_world_caravans.minor_without_caravans = {
   cr_dwf_clan_durazgrund = true,
   cr_emp_carroburg = true,
   wh3_dlc20_brt_march_of_couronne = true,
-
+  mixer_teb_gashnag = true,
+  cr_emp_guests_of_the_raja = true,
+  cr_emp_sigmarsheim = true,
 }

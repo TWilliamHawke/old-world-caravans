@@ -7,6 +7,7 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   mixer_teb_catrazza = true,
   mixer_teb_colombo = false,
   mixer_teb_bilbali = true,
+  mixer_teb_gashnag = true,
   mixer_teb_new_world_colonies = false,
   cr_emp_guests_of_the_raja = false,
   --dwarfs

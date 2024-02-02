@@ -12,26 +12,12 @@ function Old_world_caravans:add_first_tick_callbacks()
   );
 
   cm:add_first_tick_callback(function()
-    local ok, err = pcall(function()
-      self:fill_core_caravans_data();
-      self:disband_mar_convoys();
-      self:set_starting_endpoints_values();
-    end);
-
-    if not ok then
-      self:logCore(tostring(err));
-    end
+    self:try_game_init_stuff();
   end)
 
   cm:add_post_first_tick_callback(
     function()
-      self:add_caravan_units_to_vanilla(); --second time to make sure
-      --always happens
-
-      self:hide_caravan_button_without_access();
-      self:set_starting_endpoints_values();
-
-      self:apply_cargo_value_effect(self.cargo_value)
+      self:try_game_init_stuff(); --second time to make sure
 
       if cm:is_new_game() then
         --new game only

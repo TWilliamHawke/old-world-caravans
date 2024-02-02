@@ -1,5 +1,4 @@
 function Old_world_caravans:fill_core_caravans_data()
-  self:add_caravan_units_to_vanilla();
 
   for _, culture in ipairs(self.new_caravan_cultures) do
     --set cathay node values when caravan completed
@@ -20,12 +19,12 @@ function Old_world_caravans:fill_core_caravans_data()
 
   --update trade nodes values on turn start
   for i = 1, #self.new_caravan_targets.main_warhammer do
-    table.insert(caravans.destinations_key.main_warhammer.cathay, self.new_caravan_targets[i])
+    table.insert(caravans.destinations_key.main_warhammer.cathay, self.new_caravan_targets.main_warhammer[i])
   end
 
   if caravans.destinations_key.cr_oldworld then
     for i = 1, #self.new_caravan_targets.cr_oldworld do
-      table.insert(caravans.destinations_key.cr_oldworld.cathay, self.new_caravan_targets[i])
+      table.insert(caravans.destinations_key.cr_oldworld.cathay, self.new_caravan_targets.cr_oldworld[i])
     end
   end
   --copy cathay caravan units
@@ -44,4 +43,5 @@ function Old_world_caravans:fill_core_caravans_data()
   if not vfs.exists("script/campaign/mod/twill_old_world_caravans_ksl.lua") then
     self.node_culture_to_event_weight.wh3_main_sc_ksl_kislev = {};
   end
+
 end
