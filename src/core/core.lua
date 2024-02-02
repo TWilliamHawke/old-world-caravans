@@ -35,6 +35,7 @@ Old_world_caravans = {
   scale_difficulty_strenght = false,
   override_encounters = false,
   default_encounter = "",
+  on_settlement_click = nil,
   no_encounter_weight = 50,
   encounter_was_canceled_key = "owc_encounter_was_canceled",
   encounter_should_be_canceled = false,

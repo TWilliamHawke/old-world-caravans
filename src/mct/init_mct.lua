@@ -7,6 +7,7 @@ function Old_world_caravans:mct_init(context)
   self.override_enemy = settings.override_enemy
   self.override_encounters = settings.override_encounters
   self.default_encounter = settings.default_encounter
+  self.on_settlement_click = settings.on_settlement_click
   self.scale_difficulty_cargo = settings.scale_difficulty_cargo
   self.scale_difficulty_strenght = settings.scale_difficulty_strenght
   self.default_difficult = settings.default_difficult

@@ -94,26 +94,31 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_SettlementSelected_caravan_test",
     "SettlementSelected",
     function()
-      return self.debug_mode
+      return true;
     end,
     ---@param context SettlementSelected
     function(context)
-      local settlement = context:garrison_residence():region():name();
-      -- local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement);
+      local settlement_name = context:garrison_residence():region():name();
       local faction = cm:get_local_faction(true);
 
-      local log_x = context:garrison_residence():region():settlement():logical_position_x();
-      local log_y = context:garrison_residence():region():settlement():logical_position_y();
-      self:log("owc-" .. settlement .. "\t" .. tostring(log_x) .. "\t" .. tostring(log_y));
+      if self.on_settlement_click == "banditry" then
+        local banditry_level = cm:model():world():caravans_system():banditry_for_region_by_key(settlement_name);
+        self:log("banditry_level for " .. settlement_name .. " is " .. banditry_level);
+      elseif self.on_settlement_click == "position" then
+        local log_x = context:garrison_residence():region():settlement():logical_position_x();
+        local log_y = context:garrison_residence():region():settlement():logical_position_y();
+        self:log("owc-" .. settlement_name .. "\t" .. tostring(log_x) .. "\t" .. tostring(log_y));
+      elseif self.on_settlement_click == "award" then
+        self:give_caravan_award(faction, settlement_name)
+      elseif self.on_settlement_click == "move" then
+        local caravans_list = cm:model():world():caravans_system():faction_caravans(faction);
+        if not caravans_list or caravans_list:is_null_interface() then return end
+        local caravan = caravans_list:active_caravans():item_at(0)
+        if not caravan or caravan:is_null_interface() then return end
 
-      --self:give_caravan_award(faction, settlement)
-      -- cm:move_caravan(cm:model():world():caravans_system():faction_caravans(faction):active_caravans()
-      -- :item_at(0))
-
-      -- local caravan = cm:model():world():caravans_system():faction_caravans(faction):active_caravans():item_at(0)
-      -- cm:move_caravan(caravan)
-
-      -- self:log("banditry_level for " .. settlement .. " is " .. banditry_level);
+        ---@diagnostic disable-next-line: undefined-field
+        cm:move_caravan(caravan)
+      end
     end,
     true
   )

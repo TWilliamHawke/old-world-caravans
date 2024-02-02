@@ -70,6 +70,14 @@ local combat_encounter_options = {
   { key = "2",   text = "2x",   tt = "", is_default = false },
 }
 
+local on_click_options = {
+  { key = "none", text = "Nothing",  tt = "", is_default = true },
+  { key = "move",   text = "Move Caravan",   tt = "Move active caraven ot next trade node without any encounters", is_default = false },
+  { key = "award", text = "Get award", tt = "Get item or ritual resource from caravan destination", is_default = false },
+  { key = "banditry",   text = "Log Banditry level",   tt = "", is_default = false },
+  { key = "position",   text = "Log City Position",   tt = "", is_default = false },
+}
+
 
 local first_section = old_world_caravans:get_section_by_key("default");
 first_section:set_localised_text("Encounters Difficulty", false);
@@ -188,6 +196,12 @@ default_encounter:add_dropdown_values(encounters)
 local enable_log = old_world_caravans:add_new_option("enable_log", "checkbox")
 enable_log:set_text("owc_mct_enable_log", true)
 enable_log:set_tooltip_text("owc_mct_enable_log_tooltip", true)
+
+local on_settlement_click = old_world_caravans:add_new_option("on_settlement_click", "dropdown")
+on_settlement_click:set_text("owc_mct_on_settlement_click", true)
+on_settlement_click:add_dropdown_values(on_click_options)
+
+
 
 local override_enemy = old_world_caravans:add_new_option("override_enemy", "checkbox")
 override_enemy:set_text("owc_mct_override_enemy", true)
