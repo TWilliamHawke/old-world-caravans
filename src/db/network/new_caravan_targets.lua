@@ -66,7 +66,16 @@ Old_world_caravans.new_caravan_targets = {
     "cr_oldworld_region_castle_carcassonne",
     "cr_oldworld_region_waterfall_palace",
     "cr_oldworld_region_tor_lithanel",
-    "cr_oldworld_region_sjoktraken"
+    "cr_oldworld_region_sjoktraken",
+    "cr_oldworld_region_gryphon_wood",
+    "cr_oldworld_region_elftown",
+    "cr_oldworld_region_gate_of_stars",
+    "cr_oldworld_region_tomb_of_kali_amon",
+    "cr_oldworld_region_gor_gazan",
+    "cr_oldworld_region_castle_mousillon",
+    "cr_oldworld_region_middenheim",
+    "cr_oldworld_region_bilbali",
+
   },
 
 

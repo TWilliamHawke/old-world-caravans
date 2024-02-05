@@ -8,4 +8,6 @@ Old_world_caravans.award_culture_replacer = {
   wh3_main_combi_region_the_star_tower = "wh2_main_sc_lzd_lizardmen",
   wh3_main_combi_region_mousillon = "wh_main_sc_vmp_vampire_counts",
   wh3_main_combi_region_castle_drakenhof = "wh_main_sc_vmp_vampire_counts",
+  cr_oldworld_region_castle_mousillon = "wh_main_sc_vmp_vampire_counts",
+  cr_oldworld_region_castle_drakenhof = "wh_main_sc_vmp_vampire_counts",
 }
