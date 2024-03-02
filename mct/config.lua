@@ -71,11 +71,17 @@ local combat_encounter_options = {
 }
 
 local on_click_options = {
-  { key = "none", text = "Nothing",  tt = "", is_default = true },
-  { key = "move",   text = "Move Caravan",   tt = "Move active caraven ot next trade node without any encounters", is_default = false },
-  { key = "award", text = "Get award", tt = "Get item or ritual resource from caravan destination", is_default = false },
-  { key = "banditry",   text = "Log Banditry level",   tt = "", is_default = false },
-  { key = "position",   text = "Log City Position",   tt = "", is_default = false },
+  { key = "none",     text = "owc_mct_on_settlement_click_none_text",     tt = "",                                     is_default = true },
+  { key = "move",     text = "owc_mct_on_settlement_click_move_text",     tt = "owc_mct_on_settlement_click_move_tt",  is_default = false },
+  { key = "award",    text = "owc_mct_on_settlement_click_award_text",    tt = "owc_mct_on_settlement_click_award_tt", is_default = false },
+  { key = "banditry", text = "owc_mct_on_settlement_click_banditry_text", tt = "",                                     is_default = false },
+  { key = "position", text = "owc_mct_on_settlement_click_position_text", tt = "",                                     is_default = false },
+}
+
+local award_options = {
+  { key = "all",    text = "owc_mct_allow_item_awards_all_text",    tt = "owc_mct_allow_item_awards_all_tt",    is_default = true },
+  { key = "cathay", text = "owc_mct_allow_item_awards_cathay_text", tt = "owc_mct_allow_item_awards_cathay_tt", is_default = false },
+  { key = "none",   text = "owc_mct_allow_item_awards_none_text",   tt = "owc_mct_allow_item_awards_none_tt",   is_default = false },
 }
 
 
@@ -165,21 +171,23 @@ peasant_economy:set_tooltip_text(
   "owc_mct_peasant_economy_tooltip", true)
 
 local replace_units = old_world_caravans:add_new_option("replace_units", "checkbox")
-replace_units:set_text("Caravans not affects unit caps")
-replace_units:set_tooltip_text(
-  "Caravan units will be replaced by copies that do not affect unit caps mods but also not affected by unit upgrades mods. This only works for new caravans. Doesn't work for Cathayan caravans. Bretonnia peasants have their own option")
+replace_units:set_text("owc_mct_avoid_unit_caps", true)
+replace_units:set_tooltip_text("owc_mct_avoid_unit_caps_tt", true)
 
 local random_enemies = old_world_caravans:add_new_option("random_enemies", "checkbox")
 random_enemies:set_text("owc_mct_random_enemies", true)
-random_enemies:set_tooltip_text(
-  "owc_mct_random_enemies_tooltip", true)
+random_enemies:set_tooltip_text("owc_mct_random_enemies_tooltip", true)
 
 local cargo_value = old_world_caravans:add_new_option("cargo_value", "slider");
-cargo_value:set_text("Base Cargo Value")
+cargo_value:set_text("owc_mct_avoid_cargo_value")
 cargo_value:slider_set_min_max(0, 200)
 cargo_value:set_default_value(100)
 cargo_value:slider_set_step_size(10)
-cargo_value:set_tooltip_text("Defines the profit from caravans, in %", false)
+cargo_value:set_tooltip_text("owc_mct_avoid_cargo_value_tt", false)
+
+local allow_item_awards = old_world_caravans:add_new_option("allow_item_awards", "dropdown")
+allow_item_awards:set_text("owc_mct_allow_item_awards", true)
+allow_item_awards:add_dropdown_values(award_options)
 
 
 local debug_section = old_world_caravans:add_new_section("o_debug")
@@ -236,6 +244,7 @@ if encounter_budget_1.set_is_global then
   ai_ksl_caravans:set_is_global(true);
   cargo_value:set_is_global(true);
   replace_units:set_is_global(true);
+  allow_item_awards:set_is_global(true);
 else
   debug_section:set_visibility(false)
 end

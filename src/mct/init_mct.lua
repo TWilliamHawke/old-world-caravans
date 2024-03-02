@@ -11,6 +11,7 @@ function Old_world_caravans:mct_init(context)
   self.scale_difficulty_cargo = settings.scale_difficulty_cargo
   self.scale_difficulty_strenght = settings.scale_difficulty_strenght
   self.default_difficult = settings.default_difficult
+  self.allow_item_awards = settings.allow_item_awards
   self.encounter_budgets[1] = tonumber(settings.encounter_budget_1)
   self.encounter_budgets[2] = tonumber(settings.encounter_budget_2)
   self.encounter_budgets[3] = tonumber(settings.encounter_budget_3)
@@ -31,6 +32,10 @@ function Old_world_caravans:mct_init(context)
 
   if settings.peasant_economy then
     self:replace_units(self.brt_replacers)
+  end
+
+  if settings.allow_item_awards == "none" then
+    caravans.item_data.wh3_main_cth_cathay = {};
   end
 
   if settings.replace_units then

@@ -14,6 +14,7 @@
 ---@field default_enemy string
 ---@field default_encounter string
 ---@field on_settlement_click string
+---@field allow_item_awards string
 ---@field override_enemy boolean
 ---@field override_encounters boolean
 ---@field scale_difficulty_cargo boolean

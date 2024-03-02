@@ -13,6 +13,8 @@ function Old_world_caravans:give_caravan_award(faction, region_name)
   if not award then return end
 
   if self.award_types[faction_sc] == "item" then
+    if self.allow_item_awards == "none" then return end
+    if self.allow_item_awards == "cathay" and faction_sc ~= "wh3_main_sc_cth_cathay" then return end
     self:log("get item ")
 
     if faction:ancillary_exists(award) then return end
