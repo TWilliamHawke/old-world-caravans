@@ -38,13 +38,14 @@ local enemy_forces_options = {
   { key = "wh3_main_sc_nur_nurgle",         text = "nurgle",          tt = "", default = false },
   { key = "wh3_main_sc_cth_cathay",         text = "cathay",          tt = "", default = false },
   { key = "wh3_dlc23_sc_chd_chaos_dwarfs",  text = "chaos dwarfs",    tt = "", default = false },
+  { key = "wh_main_sc_chs_chaos",           text = "chaos warriors",  tt = "", default = false },
 }
 
 local encounters = {
-  { key = "nothing",          text = "nothing",          tt = "", default = false },
+  { key = "nothing",          text = "nothing",          tt = "", default = true },
   { key = "ambush",           text = "ambush",           tt = "", default = false },
   { key = "cargo_replenish",  text = "cargo_replenish",  tt = "", default = false },
-  { key = "enemy_attack",     text = "enemy_attack",     tt = "", default = true },
+  { key = "enemy_attack",     text = "enemy_attack",     tt = "", default = false },
   { key = "local_trouble",    text = "local_trouble",    tt = "", default = false },
   { key = "new_agent",        text = "new_agent",        tt = "", default = false },
   { key = "new_units",        text = "new_units",        tt = "", default = false },

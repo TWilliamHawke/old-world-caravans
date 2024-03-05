@@ -16,6 +16,10 @@ function Old_world_caravans:create_enemy_army(context, enemy_culture, target_reg
 
   local enemy_faction = self.culture_to_enemy_faction[enemy_culture] or "wh_main_grn_greenskins_qb1";
 
+  if enemy_culture == "wh_dlc08_sc_nor_norsca" and not cm:get_faction(enemy_faction) then
+    enemy_faction = "wh3_dlc20_chs_chaos_qb4"
+  end
+
   local army_string, general = self:generate_army(enemy_culture, encounter_dif, additional_budget);
   local x, y = self:find_position_for_spawn(caravan_faction_key, target_region)
   cm:disable_event_feed_events(true, "wh_event_category_diplomacy", "", "");

@@ -284,6 +284,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_dlc08_sc_nor_norsca_1 = {
+    general = "wh_main_nor_marauder_chieftain",
     filler_units = {
       wh_main_nor_inf_chaos_marauders_0 = 1,
     },
@@ -300,6 +301,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_dlc08_sc_nor_norsca_2 = {
+    general = "wh_main_nor_marauder_chieftain",
     filler_units = {
       wh_dlc08_nor_inf_marauder_berserkers_0 = 1,
       wh_main_nor_inf_chaos_marauders_1 = 1,
@@ -319,6 +321,7 @@ Old_world_caravans.enemy_forces = {
     },
   },
   wh_dlc08_sc_nor_norsca_3 = {
+    general = "wh_main_nor_marauder_chieftain",
     filler_units = {
       wh_dlc08_nor_inf_marauder_berserkers_0 = 1,
       wh_main_nor_inf_chaos_marauders_1 = 1,
@@ -772,7 +775,7 @@ Old_world_caravans.enemy_forces = {
     },
     {
       wh3_dlc20_chs_cav_chaos_chariot_mkho = 2,
-      wh3_dlc20_chs_cav_marauder_horsemen_mkho_throwing_axes = 3,
+      wh3_dlc20_chs_cav_marauder_horsemen_mkho_throwing_axes = 2,
       wh3_main_pro_kho_inf_flesh_hounds_of_khorne_0 = 1,
       wh3_main_kho_inf_chaos_furies_0 = 1,
       wh3_main_kho_inf_chaos_warhounds_0 = 1,
@@ -1216,6 +1219,10 @@ Old_world_caravans.enemy_forces = {
     {
       wh3_main_ksl_cav_horse_raiders_0 = 1,
       wh3_main_ksl_cav_horse_archers_0 = 1,
+      wh3_main_ksl_mon_snow_leopard_0 = 1,
+      wh3_dlc24_ksl_inf_kislevite_warriors = 2,
+    },
+    {
       wh3_main_ksl_inf_armoured_kossars_0 = 1,
       wh3_main_ksl_inf_armoured_kossars_1 = 1,
       wh3_main_ksl_inf_streltsi_0 = 1,
@@ -1226,6 +1233,7 @@ Old_world_caravans.enemy_forces = {
     filler_units = {
       wh3_main_ksl_inf_kossars_0 = 1,
       wh3_main_ksl_inf_kossars_1 = 1,
+      wh3_dlc24_ksl_inf_kislevite_warriors = 1,
     },
     {
       wh3_main_ksl_cav_horse_raiders_0 = 1,
@@ -1610,5 +1618,79 @@ Old_world_caravans.enemy_forces = {
       wh3_dlc23_chd_mon_lammasu = 1,
     }
   },
-
+  wh_main_sc_chs_chaos_1 = {
+    filler_units = {
+      general = "wh_main_chs_lord",
+      wh_main_nor_inf_chaos_marauders_0 = 1,
+      wh_main_nor_inf_chaos_marauders_1 = 1,
+    },
+    {
+      wh_main_chs_cav_chaos_chariot = 1,
+      wh_main_chs_mon_chaos_warhounds_1 = 1,
+      wh_main_chs_cav_marauder_horsemen_1 = 2,
+      wh_main_chs_mon_trolls = 2,
+      wh3_main_dae_inf_chaos_furies_0 = 1,
+    },
+    {
+      wh_main_chs_inf_chaos_warriors_0 = 1,
+      wh_main_chs_inf_chaos_warriors_1 = 1,
+      wh_dlc01_chs_inf_chaos_warriors_2 = 1,
+    },
+  },
+  wh_main_sc_chs_chaos_2 = {
+    filler_units_mult = 0.9,
+    general = "wh_main_chs_lord",
+    filler_units = {
+      wh_main_nor_inf_chaos_marauders_0 = 1,
+      wh_main_nor_inf_chaos_marauders_1 = 1,
+    },
+    {
+      wh_dlc01_chs_cav_gorebeast_chariot = 1,
+      wh_dlc06_chs_cav_marauder_horsemasters_0 = 2,
+      wh_main_chs_cav_chaos_knights_0 = 1,
+      wh_main_chs_cav_chaos_knights_1 = 1,
+    },
+    {
+      wh_main_chs_inf_chaos_warriors_0 = 1,
+      wh_main_chs_inf_chaos_warriors_1 = 1,
+      wh_dlc01_chs_inf_chaos_warriors_2 = 1,
+    },
+    {
+      wh_dlc01_chs_mon_trolls_1 = 1,
+      wh_main_chs_mon_chaos_spawn = 1,
+      wh_dlc01_chs_inf_forsaken_0 = 1,
+    },
+  },
+  wh_main_sc_chs_chaos_3 = {
+    filler_units_mult = 0.8,
+    general = "wh_main_chs_lord",
+    filler_units = {
+      wh_main_nor_inf_chaos_marauders_0 = 1,
+      wh_main_nor_inf_chaos_marauders_1 = 1,
+    },
+    {
+      wh_main_chs_inf_chaos_warriors_0 = 1,
+      wh_main_chs_inf_chaos_warriors_1 = 1,
+      wh_dlc01_chs_inf_chaos_warriors_2 = 1,
+    },
+    {
+      wh_dlc01_chs_inf_chosen_2 = 1,
+      wh_main_chs_inf_chosen_0 = 1,
+      wh_main_chs_inf_chosen_1 = 1,
+      wh_dlc06_chs_inf_aspiring_champions_0 = 1,
+    },
+    {
+      wh_dlc01_chs_inf_forsaken_0 = 1,
+      wh_dlc01_chs_mon_trolls_1 = 1,
+      wh_main_chs_mon_chaos_spawn = 1,
+      wh_dlc01_chs_mon_dragon_ogre_shaggoth = 1,
+      wh_main_chs_mon_giant = 1,
+    },
+    {
+      wh_dlc01_chs_cav_gorebeast_chariot = 1,
+      wh_main_chs_cav_chaos_knights_0 = 1,
+      wh_main_chs_cav_chaos_knights_1 = 1,
+      wh_dlc01_chs_mon_dragon_ogre = 1,
+    },
+  },
 }

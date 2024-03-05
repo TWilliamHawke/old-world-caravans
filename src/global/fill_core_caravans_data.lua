@@ -7,9 +7,7 @@ function Old_world_caravans:fill_core_caravans_data()
     self:create_empty_event(culture)
   end
 
-  if self.supported_campaigns[cm:get_campaign_name()] then
-    self:create_empty_event("wh3_main_cth_cathay")
-  end
+  self:create_empty_event("wh3_main_cth_cathay")
 
   --increase some cathay caravans
   table.insert(caravans.traits_to_units.wh3_main_skill_innate_cth_caravan_master_gunner,
