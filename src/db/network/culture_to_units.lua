@@ -79,11 +79,12 @@ Old_world_caravans.culture_to_units = {
   },
   wh3_main_sc_ksl_kislev = {
     weakA = {
-      ["wh3_main_ksl_inf_armoured_kossars_0"] = { 3, 2, 3 },
-      ["wh3_main_ksl_cav_horse_raiders_0"] = { 1, 2, 2 },
-      ["wh3_main_ksl_veh_light_war_sled_0"] = { 1, 2, 2 },
+      ["wh3_main_ksl_inf_armoured_kossars_0"] = { 2, 2, 3 },
+      ["wh3_main_ksl_cav_horse_raiders_0"] = { 2, 2, 2 },
+      ["wh3_dlc24_ksl_inf_kislevite_warriors"] = { 2, 2, 2 },
     },
     weakB = {
+      ["wh3_main_ksl_veh_light_war_sled_0"] = { 1, 2, 2 },
       ["wh3_main_ksl_inf_kossars_0"] = { 2, 2, 3 },
       ["wh3_main_ksl_inf_kossars_1"] = { 1, 2, 3 },
       ["wh3_main_ksl_inf_streltsi_0"] = { 1, 2, 2 },

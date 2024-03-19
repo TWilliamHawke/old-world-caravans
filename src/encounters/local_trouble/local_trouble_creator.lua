@@ -32,7 +32,7 @@ function Old_world_caravans:local_trouble_creator(context)
     return 0;
   end
 
-  local probability = math.ceil(context.bandit_threat / 5) + cargo_factor;
+  local probability = math.ceil(context.bandit_threat / 8) + cargo_factor;
 
   if character:trait_points("owc_trait_grail_vow_caravan_cargo") == 1 then
     probability = 20

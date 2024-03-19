@@ -3,7 +3,10 @@ function Old_world_caravans:giftFromInd_handler(context)
   local dilemma_name = "wh3_main_dilemma_cth_caravan_5";
   local caravan = context:caravan();
 
-  self:bind_callback_to_dilemma(dilemma_name, caravan);
+  self:bind_callback_to_dilemma(dilemma_name, caravan, 0,
+  function()
+    self:increase_caravan_cargo(caravan, 500)
+  end);
 
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
@@ -13,7 +16,7 @@ function Old_world_caravans:giftFromInd_handler(context)
     "wh3_main_trait_blessed_by_ind_riches", false)
 
   local cargo_bundle = cm:create_new_custom_effect_bundle("wh3_main_dilemma_cth_caravan_2_b");
-  cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", 1000);
+  cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", 500);
   cargo_bundle:set_duration(0);
   payload_builder:effect_bundle_to_force(caravan:caravan_force(), cargo_bundle);
 

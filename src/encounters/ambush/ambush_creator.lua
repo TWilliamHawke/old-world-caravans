@@ -8,7 +8,7 @@ function Old_world_caravans:ambush_creator(context)
   if units_count - agents_count < 1 then return 0 end
 
   local cargo_factor = math.floor(context.caravan:cargo() * self.cargo_threat_mult);
-  local probability = math.ceil((context.bandit_threat + cargo_factor) / 10) + 3;
+  local probability = math.ceil((context.bandit_threat / 2 + cargo_factor) / 10) + 3;
   local max_probability = math.floor(12 * context.ownership_mult);
 
   if context.caravan:caravan_master():character():has_skill("wh3_main_skill_cth_caravan_master_scouts") then

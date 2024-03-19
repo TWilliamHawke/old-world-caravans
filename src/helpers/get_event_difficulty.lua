@@ -17,9 +17,7 @@ function Old_world_caravans:get_event_difficulty(context)
   local banditary_dif = 1; ---@type encounter_diff
   local cost_dif = 1; ---@type encounter_diff
 
-  if bandit_threat > 70 then
-    banditary_dif = 3;
-  elseif bandit_threat > 40 then
+  if bandit_threat > 60 then
     banditary_dif = 2;
   end
 
