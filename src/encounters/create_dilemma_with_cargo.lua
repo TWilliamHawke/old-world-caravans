@@ -8,10 +8,18 @@ function Old_world_caravans:create_dilemma_with_cargo(context, prebattle_data)
   local caravan_force = caravan:caravan_force();
   local character = context:caravan_master():character()
   local enemy_cqi = prebattle_data.enemy_force_cqi
+  local cargo_lose = -200;
+
+  local cargo_save_mod = cm:get_characters_bonus_value(character, "caravan_lower_toll");
+
+  if cargo_save_mod ~= 0 then
+    cargo_save_mod = math.max(100 + cargo_save_mod) / 100
+    cargo_lose = math.floor(cargo_lose * cargo_save_mod)
+  end
 
   self:spy_on_dilemmas(caravan, enemy_cqi, function()
     self:bind_battle_to_dilemma(prebattle_data, 1, function()
-      cm:set_caravan_cargo(caravan, cargo_amount - 200);
+      cm:set_caravan_cargo(caravan, cargo_amount + cargo_lose);
       core:trigger_custom_event("ScriptEventOwcLoseCargo", {
         character = character});
     end);
@@ -26,7 +34,7 @@ function Old_world_caravans:create_dilemma_with_cargo(context, prebattle_data)
     payload_builder:clear();
 
     local cargo_bundle = cm:create_new_custom_effect_bundle("wh3_main_dilemma_cth_caravan_2_b");
-    cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", -200);
+    cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", cargo_lose);
     cargo_bundle:set_duration(0);
     payload_builder:effect_bundle_to_force(caravan_force, cargo_bundle);
 

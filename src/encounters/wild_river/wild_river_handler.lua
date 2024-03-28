@@ -1,11 +1,12 @@
+---@diagnostic disable: undefined-field
 ---@param context CaravanWaylaid
 function Old_world_caravans:wild_river_handler(context)
   local dilemma_name = "owc_main_dilemma_caravan_wild_river";
   local caravan = context:caravan();
   local caravan_force = caravan:caravan_force();
   local faction = context:faction()
-  local cargo_amount = caravan:cargo();
-  local character = context:caravan_master():character()
+  local character = context:caravan_master():character();
+  local cargo_lose = -200;
 
   local random_unit = self:get_random_unit(caravan);
 
@@ -15,13 +16,19 @@ function Old_world_caravans:wild_river_handler(context)
     return
   end
 
+  local cargo_save_mod = cm:get_characters_bonus_value(character, "caravan_lower_toll");
+
+  if cargo_save_mod ~= 0 then
+    cargo_save_mod = math.max(100 + cargo_save_mod) / 100
+    cargo_lose = math.floor(cargo_lose * cargo_save_mod)
+  end
 
   self:bind_callback_to_dilemma(
     dilemma_name,
     caravan, 1,
     function()
       ---@diagnostic disable-next-line: undefined-field
-      cm:set_caravan_cargo(caravan, cargo_amount - 200);
+      self:increase_caravan_cargo(caravan, cargo_lose);
       core:trigger_custom_event("ScriptEventOwcLoseCargo", {
         character = character });
     end);
@@ -34,7 +41,7 @@ function Old_world_caravans:wild_river_handler(context)
   payload_builder:clear();
 
   local cargo_bundle = cm:create_new_custom_effect_bundle("wh3_main_dilemma_cth_caravan_2_b");
-  cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", -200);
+  cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", cargo_lose);
   cargo_bundle:set_duration(0);
   payload_builder:effect_bundle_to_force(caravan_force, cargo_bundle);
 
