@@ -588,8 +588,7 @@ Old_world_caravans.enemy_forces = {
     },
     {
       wh3_main_ogr_inf_ironguts_0 = 1,
-      wh3_main_ogr_inf_leadbelchers_0 = 1,
-      NONE = 2,
+      wh3_main_ogr_inf_maneaters_0 = 1,
     },
   },
   wh3_main_sc_ogr_ogre_kingdoms_3 = {
@@ -599,26 +598,25 @@ Old_world_caravans.enemy_forces = {
       wh3_main_ogr_inf_ogres_2 = 1,
     },
     {
-      wh3_main_ogr_inf_gnoblars_0 = 1,
-      wh3_main_ogr_inf_gnoblars_1 = 1,
-    },
-    {
       wh3_main_ogr_inf_ironguts_0 = 1,
       wh3_main_ogr_inf_maneaters_0 = 1,
       wh3_main_ogr_inf_maneaters_1 = 1,
     },
     {
       wh3_main_ogr_mon_gorgers_0 = 1,
-      wh3_main_ogr_cav_mournfang_cavalry_1 = 1,
-      wh3_main_ogr_cav_mournfang_cavalry_2 = 1,
-      wh3_main_ogr_cav_crushers_1 = 1,
+      wh3_main_ogr_mon_sabretusk_pack_0 = 1,
     },
     {
       wh3_main_ogr_veh_ironblaster_0 = 1,
       wh3_main_ogr_veh_gnoblar_scraplauncher_0 = 1,
       wh3_main_ogr_inf_leadbelchers_0 = 2,
       wh3_main_ogr_mon_stonehorn_0 = 2,
-      NONE = 5,
+      wh3_main_ogr_mon_giant_0 = 3,
+    },
+    {
+      wh3_main_ogr_cav_mournfang_cavalry_1 = 1,
+      wh3_main_ogr_cav_mournfang_cavalry_2 = 1,
+      wh3_main_ogr_cav_crushers_1 = 1,
     },
   },
   wh2_main_sc_skv_skaven_1 = {
