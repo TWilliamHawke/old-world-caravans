@@ -8,8 +8,8 @@ Old_world_caravans.unit_awards = {
       wh_main_emp_cav_empire_knights = 1,
     },
     late = {
+      wh_main_emp_cav_outriders_1 = 2,
       wh_main_emp_inf_greatswords = 4,
-      wh_main_emp_cav_reiksguard = 2,
       wh_main_emp_cav_demigryph_knights_0 = 1,
       wh_main_emp_cav_demigryph_knights_1 = 1,
       wh_main_emp_art_helstorm_rocket_battery = 2,
@@ -52,8 +52,7 @@ Old_world_caravans.unit_awards = {
       wh3_main_ksl_cav_winged_lancers_0 = 1,
     },
     late = {
-      wh3_main_ksl_cav_winged_lancers_0 = 1,
-      wh3_main_ksl_cav_gryphon_legion_0 = 1,
+      wh3_main_ksl_cav_gryphon_legion_0 = 2,
       wh3_main_ksl_inf_tzar_guard_1 = 1,
       wh3_main_ksl_inf_tzar_guard_0 = 1,
       wh3_main_ksl_inf_ice_guard_0 = 1,

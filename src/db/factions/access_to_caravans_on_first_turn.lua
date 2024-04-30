@@ -29,6 +29,7 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   cr_teb_trantio = true,
   cr_teb_verezzo = true,
   cr_teb_vizeaya = true,
+  mixer_teb_cataph_luccini = true,
   --dwarfs
   wh_main_dwf_dwarfs = true,
   wh_main_dwf_karak_azul = true,

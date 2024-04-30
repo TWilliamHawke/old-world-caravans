@@ -5,21 +5,22 @@ Old_world_caravans.minor_without_caravans = {
   wh2_main_dwf_spine_of_sotek_dwarfs = true,
   wh_main_dwf_karak_norn = true,
   wh3_main_dwf_karak_azorn = true,
+  wh_main_dwf_karak_ziflin = true,
   wh2_main_brt_thegans_crusaders = true,
   wh2_main_brt_knights_of_the_flame = true,
   wh2_main_brt_knights_of_origo = true,
+  mixer_teb_gashnag = true,
+  --old world
   cr_brt_leofrics_fellowship = true,
   cr_emp_cult_of_ulric = true,
   cr_ksl_heldegrad = true,
   cr_ksl_order_of_the_winter_sun = true,
-  wh_main_dwf_karak_ziflin = true,
   cr_dwf_clan_durazgrund = true,
   cr_emp_carroburg = true,
   wh3_dlc20_brt_march_of_couronne = true,
-  mixer_teb_gashnag = true,
   cr_emp_guests_of_the_raja = true,
   cr_emp_sigmarsheim = true,
-
+  --ow teb
   cr_teb_almagora = true,
   cr_teb_bilbali = true,
   cr_teb_gualcazar = true,
@@ -35,4 +36,5 @@ Old_world_caravans.minor_without_caravans = {
   cr_teb_trantio = true,
   cr_teb_verezzo = true,
   cr_teb_vizeaya = true,
+  mixer_teb_cataph_luccini = true,
 }
