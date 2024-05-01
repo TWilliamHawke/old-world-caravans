@@ -18,7 +18,7 @@ function Old_world_caravans:finalize_mct(context)
       local faction = cm:get_faction(faction_name)
 
       if faction and self:faction_has_caravans(faction)
-          and not self:caravan_button_should_be_visible(faction)
+          and not self:caravan_button_visible_mct(faction)
       then
         self:logCore("show caravans for " .. faction_name)
         if cm:get_local_faction(true):name() == faction_name then

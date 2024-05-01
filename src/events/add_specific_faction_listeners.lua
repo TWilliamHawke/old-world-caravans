@@ -129,6 +129,43 @@ function Old_world_caravans:add_specific_faction_listeners()
   )
 
   core:add_listener(
+    "owc_gelt_return_to_empire",
+    "RegionFactionChangeEvent",
+    ---@param context RegionFactionChangeEvent
+    function(context)
+      local faction = context:region():owning_faction();
+
+      return self.access_to_caravans_on_first_turn[faction:name()] == false and faction:subculture() == "wh_main_sc_emp_empire";
+    end,
+    ---@param context RegionFactionChangeEvent
+    function(context)
+      local faction = context:region():owning_faction();
+      local region_key = context:region():name();
+
+      if not self:faction_has_caravans(faction) then return end
+      if self:caravan_button_should_be_visible(faction) then return end
+
+      local is_empire_region = false;
+
+      ---@diagnostic disable-next-line: undefined-global
+			for _, empire_region_key in ipairs(imperial_authority.empire_regions) do
+				if(region_key == empire_region_key) then
+					is_empire_region = true;
+          break
+				end
+      end
+
+      if not is_empire_region then return end
+      cm:callback(function()
+        self:show_caravan_button();
+        cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
+      end, 0.5)
+    end,
+    false
+  );
+
+
+  core:add_listener(
     "owc_brt_caravan_new_units",
     "ScriptEventOwcNewUnitsDilemma",
     ---@param context CharacterRankUp

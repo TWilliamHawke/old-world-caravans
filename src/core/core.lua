@@ -52,4 +52,8 @@ Old_world_caravans = {
     mixer_teb_southern_realms = false,
     wh3_main_sc_ksl_kislev = false,
   },
+  gelt_dilemmas = {
+    wh3_dlc25_emp_gelt_cathay_enemy_defeated = true,
+    wh3_dlc25_emp_gelt_cathay_enemy_defeated_alt = true,
+  }
 }

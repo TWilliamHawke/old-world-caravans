@@ -1,6 +1,6 @@
 Old_world_caravans.db.elite_guards = {
   wh_main_sc_emp_empire  = {
-    technology = "wh2_dlc13_tech_emp_economy_3",
+    technology = "wh2_dlc13_tech_emp_academia_2_a",
     unit = "wh_main_emp_inf_greatswords"
   },
   wh_main_sc_brt_bretonnia  = {

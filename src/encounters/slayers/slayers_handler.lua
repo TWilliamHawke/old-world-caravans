@@ -25,7 +25,7 @@ function Old_world_caravans:slayers_handler(context)
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
 
   local payload_builder = cm:create_payload();
-  payload_builder:faction_pooled_resource_transaction("dwf_oathgold", "grudges", 100, false)
+  payload_builder:faction_pooled_resource_transaction("dwf_oathgold", "grudges", 300, false)
   local cargo_bundle = cm:create_new_custom_effect_bundle("wh3_main_dilemma_cth_caravan_2_b");
   cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", -200);
   cargo_bundle:set_duration(0);

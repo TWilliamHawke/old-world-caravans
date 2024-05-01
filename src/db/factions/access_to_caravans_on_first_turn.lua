@@ -51,9 +51,10 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   cr_dwf_firebeards_excavators = false,
   cr_dwf_bugmans_brewery = true,
   cr_dwf_clan_durazgrund = true,
+  wh3_dlc25_dwf_malakai = true,
   --empire
   wh_main_emp_averland = true,
-  wh2_dlc13_emp_golden_order = true,
+  wh2_dlc13_emp_golden_order = false,
   wh_main_emp_marienburg = true,
   wh_main_emp_hochland = true,
   wh_main_emp_middenland = true,
