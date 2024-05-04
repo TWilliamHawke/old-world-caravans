@@ -18,7 +18,7 @@ function Old_world_caravans:select_random_key_by_weight(table, weight_selector, 
     self:log("total weight is "..total_weight)
   end;
 
-  local random_number = cm:random_number(total_weight, 1);
+  local random_number = cm:random_number(total_weight);
   total_weight = 0;
   local random_key = "";
 

@@ -15,11 +15,5 @@ function Old_world_caravans:friendly_caravan_creator(context)
   local weight_from = self.cathay_caravans_probability[culture_from] or 0
   local weight_to = self.cathay_caravans_probability[culture_to] or 0
 
-  local probability = math.min(weight_from, weight_to);
-
-  if not context.faction:ancillary_exists("owc_main_anc_enchanted_item_jar_of_all_souls") then
-    probability = probability * 2
-  end
-
-  return probability;
+  return weight_from + weight_to;
 end

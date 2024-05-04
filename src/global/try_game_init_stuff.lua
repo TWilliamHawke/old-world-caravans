@@ -9,5 +9,4 @@ function Old_world_caravans:try_game_init_stuff()
   self:apply_cargo_value_effect(self.cargo_value)
 
   self.core_data_was_added = true;
-
 end

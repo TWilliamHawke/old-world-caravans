@@ -4,7 +4,7 @@ function Old_world_caravans:new_units_creator(context)
   local army_size = context.caravan:caravan_force():unit_list():num_items();
   local probability = 20 - army_size;
 
-  if army_size < 11 then
+  if army_size < 15 and context.bandit_threat > 50 or army_size < 11 then
     probability = math.ceil(probability * 1.5)
   end
 

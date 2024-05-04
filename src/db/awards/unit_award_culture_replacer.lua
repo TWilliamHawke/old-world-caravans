@@ -1,4 +1,4 @@
-Old_world_caravans.award_culture_replacer = {
+Old_world_caravans.unit_award_culture_replacer = {
   wh3_main_combi_region_monument_of_the_moon = "wh2_main_sc_lzd_lizardmen",
   wh3_main_combi_region_temple_of_kara = "wh2_main_sc_lzd_lizardmen",
   wh3_main_combi_region_khemri = "wh2_dlc09_sc_tmb_tomb_kings",

@@ -2,11 +2,7 @@
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@param region_name string
 function Old_world_caravans:give_caravan_award(faction, region_name)
-  local faction_sc = faction:subculture();
-
-  if faction:name() == "mixer_teb_catrazza" then
-    faction_sc = "owc_teb_cathay"
-  end
+  local faction_sc = self.item_award_culture_replacer[faction:name()] or faction:subculture();
 
   local award = self.awards[faction_sc] and self.awards[faction_sc][region_name];
 

@@ -12,11 +12,16 @@ function Old_world_caravans:friendly_caravan_handler(context)
   local dilemma_builder = cm:create_dilemma_builder(dilemma_name);
   local payload_builder = cm:create_payload();
 
+  local random_index = cm:random_number(#self.cathay_rare_items)
+  local random_item = self.cathay_rare_items[random_index];
+
+  self:log("selected item is "..random_item)
+
   local cargo_bundle = cm:create_new_custom_effect_bundle("wh3_main_dilemma_cth_caravan_2_b");
   cargo_bundle:add_effect("wh3_main_effect_caravan_cargo_DUMMY", "force_to_force_own", -200);
   cargo_bundle:set_duration(0);
 
-  payload_builder:faction_ancillary_gain(caravan_faction, "owc_main_anc_enchanted_item_jar_of_all_souls")
+  payload_builder:faction_ancillary_gain(caravan_faction, random_item)
   payload_builder:effect_bundle_to_force(caravan:caravan_force(), cargo_bundle);
   dilemma_builder:add_choice_payload("FIRST", payload_builder);
 

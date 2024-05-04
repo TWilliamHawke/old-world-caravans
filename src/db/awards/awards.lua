@@ -206,7 +206,7 @@ Old_world_caravans.awards = {
     ["wh3_main_chaos_region_estalia"] = "wh3_main_anc_caravan_spy_in_court"
   },
   owc_teb_cathay = {
-    ["wh3_main_combi_region_frozen_landing"] = "owc_main_anc_caravan_frost_wyrm_skull",
+    ["wh3_main_combi_region_frozen_landing"] = "owc_anc_enchanted_item_ancient_frost_wyrm_scale",
     ["wh3_main_combi_region_altdorf"] = "owc_main_anc_caravan_luminark_lens",
     ["wh3_main_combi_region_marienburg"] = "owc_main_anc_caravan_warrant_of_trade",
     ["wh3_main_combi_region_erengrad"] = "owc_main_anc_caravan_gryphon_legion_lance",

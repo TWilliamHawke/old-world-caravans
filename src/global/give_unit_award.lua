@@ -2,7 +2,7 @@
 ---@param caravan CARAVAN_SCRIPT_INTERFACE
 ---@param region_name string
 function Old_world_caravans:give_unit_award(caravan, region_name)
-  local region_sc = self.award_culture_replacer[region_name]
+  local region_sc = self.unit_award_culture_replacer[region_name]
       or self.trade_nodes_to_culture[region_name];
   if not region_sc then return end
 
@@ -25,7 +25,7 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
 
   local unit_key = self:select_random_key_by_weight(units, function(val)
     return val
-  end)
+  end, true)
 
   if not unit_key then return end
 

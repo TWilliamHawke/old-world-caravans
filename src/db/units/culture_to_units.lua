@@ -28,7 +28,7 @@ Old_world_caravans.culture_to_units = {
       ["wh_dlc04_emp_inf_flagellants_0"] = { 2, 2, 3 },
       ["wh_main_emp_inf_spearmen_1"] = { 2, 2, 3 },
       ["wh_main_emp_inf_halberdiers"] = { 2, 2, 2 },
-      ["wh_main_emp_cav_empire_knights"] = { 2, 2, 2 },
+      ["wh_main_emp_cav_pistoliers_1"] = { 2, 2, 2 },
     },
     weakB = {
       ["wh_dlc04_emp_inf_free_company_militia_0"] = { 2, 2, 3 },
@@ -44,7 +44,7 @@ Old_world_caravans.culture_to_units = {
     },
     strongB = {
       ["wh_main_emp_cav_reiksguard"] = { 2, 2, 2 },
-      ["wh_main_emp_cav_empire_knights"] = { 3, 2, 2 },
+      ["wh3_dlc25_emp_cav_knights_of_the_black_rose"] = { 2, 2, 2 },
       ["wh2_dlc13_emp_veh_war_wagon_0"] = { 3, 2, 2 },
       ["wh_main_emp_cav_demigryph_knights_0"] = { 1, 1, 1 },
       ["wh_main_emp_cav_demigryph_knights_1"] = { 1, 1, 1 },
@@ -77,7 +77,7 @@ Old_world_caravans.culture_to_units = {
   wh3_main_sc_ksl_kislev = {
     weakA = {
       ["wh3_main_ksl_inf_armoured_kossars_0"] = { 2, 2, 3 },
-      ["wh3_main_ksl_cav_horse_raiders_0"] = { 2, 2, 2 },
+      ["wh3_main_ksl_inf_armoured_kossars_1"] = { 2, 2, 2 },
       ["wh3_dlc24_ksl_inf_kislevite_warriors"] = { 2, 2, 2 },
     },
     weakB = {

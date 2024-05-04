@@ -40,8 +40,8 @@ Old_world_caravans.unit_awards = {
     late = {
       wh3_main_cth_cav_jade_lancers_0 = 1,
       wh3_main_cth_cav_jade_longma_riders_0 = 1,
-      wh3_main_cth_art_fire_rain_rocket_battery_0 = 1,
-      wh3_main_cth_inf_dragon_guard_0 = 1,
+      wh3_main_cth_art_fire_rain_rocket_battery_0 = 2,
+      wh3_main_cth_inf_dragon_guard_0 = 2,
     }
   },
   wh3_main_sc_ksl_kislev = {
