@@ -37,6 +37,7 @@
 ---@field peasant_economy boolean
 ---@field random_enemies boolean
 ---@field replace_units boolean
+---@field disable_player_caravans boolean
 
 ---@class Prebattle_caravan_data
 ---@field caravan CARAVAN_SCRIPT_INTERFACE

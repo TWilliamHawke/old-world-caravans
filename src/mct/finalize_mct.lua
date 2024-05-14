@@ -8,7 +8,7 @@ function Old_world_caravans:finalize_mct(context)
 
     self:apply_cargo_value_effect(settings.cargo_value)
 
-    if not settings.force_enable then return end
+    if cm:is_multiplayer() then return end
 
     local human_factions = cm:get_human_factions()
     if not human_factions or type(human_factions) ~= "table" then return end
@@ -17,14 +17,16 @@ function Old_world_caravans:finalize_mct(context)
       local faction_name = human_factions[i]
       local faction = cm:get_faction(faction_name)
 
-      if faction and self:faction_has_caravans(faction)
-          and not self:caravan_button_visible_mct(faction)
-      then
-        self:logCore("show caravans for " .. faction_name)
-        if cm:get_local_faction(true):name() == faction_name then
-          self:show_caravan_button();
+      if faction and self:faction_has_caravans(faction) then
+        if self.disable_player_caravans then
+          self:hide_caravan_button_without_access()
+        elseif settings.force_enable and not self:caravan_button_visible_mct(faction) then
+          self:logCore("show caravans for " .. faction_name)
+          if cm:get_local_faction(true):name() == faction_name then
+            self:show_caravan_button();
+          end
+          cm:set_saved_value(self.is_init_save_key .. faction_name, true)
         end
-        cm:set_saved_value(self.is_init_save_key .. faction_name, true)
       end
     end
   end);

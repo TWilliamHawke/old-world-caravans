@@ -23,6 +23,7 @@ function Old_world_caravans:mct_init(context)
   self.random_enemies = settings.random_enemies;
   self.cargo_value = settings.cargo_value;
   self.combat_encounter_chance = tonumber(settings.combat_probability);
+  self.disable_player_caravans = settings.disable_player_caravans;
 
   self.ai_caravans.wh_main_sc_brt_bretonnia = settings.ai_bretonnia_caravans;
   self.ai_caravans.wh_main_sc_emp_empire = settings.ai_empire_caravans;

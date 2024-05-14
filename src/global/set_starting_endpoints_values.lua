@@ -3,6 +3,12 @@ function Old_world_caravans:set_starting_endpoints_values()
   if not targets then return end
   local effect_name = "wh3_main_ivory_road_end_node_value";
   local ivory_road_demand = cm:get_saved_value("ivory_road_demand");
+
+  if not ivory_road_demand then
+    caravans:initalise_end_node_values();
+    ivory_road_demand = cm:get_saved_value("ivory_road_demand");
+  end
+
   local values_is_touched = false;
 
   for i = 1, #targets do

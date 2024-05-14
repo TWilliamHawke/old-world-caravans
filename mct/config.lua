@@ -138,6 +138,10 @@ local force_enable = old_world_caravans:add_new_option("force_enable", "checkbox
 force_enable:set_text("owc_mct_force_enable", true)
 force_enable:set_tooltip_text("owc_mct_force_enable_tooltip", true)
 
+local disable_player_caravans = old_world_caravans:add_new_option("disable_player_caravans", "checkbox")
+disable_player_caravans:set_text("owc_mct_disable_player_caravans", true)
+disable_player_caravans:set_default_value(true)
+
 local ai_empire_caravans = old_world_caravans:add_new_option("ai_empire_caravans", "checkbox")
 ai_empire_caravans:set_text("owc_mct_ai_empire_caravans", true)
 ai_empire_caravans:set_default_value(true)
