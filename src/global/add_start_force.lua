@@ -20,6 +20,8 @@ function Old_world_caravans:add_start_force(caravan)
       for i = 1, #force_list do
         cm:grant_unit_to_character(lord_str, force_list[i]);
       end
+      ---@diagnostic disable-next-line: undefined-field
+      cm:set_character_excluded_from_trespassing(caravan_master, true)
     end
 
     cm:grant_unit_to_character(lord_str, elite_guards_data.unit);

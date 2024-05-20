@@ -4,6 +4,7 @@ function Old_world_caravans:add_specific_faction_listeners()
   core:remove_listener("owc_belegar_joins_confederation")
   core:remove_listener("owc_CaravanTargetClick")
   core:remove_listener("owc_brt_caravan_new_units")
+  core:remove_listener("owc_toggle_caravan_button")
 
   core:add_listener(
     "owc_karak_eight_peaks_occupied",
@@ -15,14 +16,14 @@ function Old_world_caravans:add_specific_faction_listeners()
     ---@param context GarrisonOccupiedEvent
     function(context)
       local character = context:character();
+      local faction = character:faction();
       if character:is_null_interface() then return end
-      local faction_name = character:faction():name();
+      if not faction:is_human() then return end
+      local faction_name = faction:name();
 
       if faction_name == self.belegar_faction then
         cm:set_saved_value(self.is_init_save_key .. faction_name, true)
-        if cm:get_local_faction(true):name() == faction_name then
-          self:show_caravan_button();
-        end
+        self:trigger_toggle_button_event(character:faction(), true);
       end
     end,
     true
@@ -39,6 +40,7 @@ function Old_world_caravans:add_specific_faction_listeners()
     end,
     ---@param context FactionTurnStart
     function(context)
+      if self.disable_player_caravans then return end
       local faction = context:faction()
       if not faction:is_human() then return end
       local region = cm:get_region(self.k8p_region_name)
@@ -47,9 +49,7 @@ function Old_world_caravans:add_specific_faction_listeners()
       local region_owner = region:owning_faction():name();
 
       if region_owner == self.belegar_faction then
-        if cm:get_local_faction(true):name() == region_owner then
-          self:show_caravan_button();
-        end
+        self:trigger_toggle_button_event(faction, true);
         if not cm:get_saved_value(self.is_init_save_key .. region_owner) then
           cm:set_saved_value(self.is_init_save_key .. region_owner, true)
         end
@@ -72,7 +72,6 @@ function Old_world_caravans:add_specific_faction_listeners()
       local belegar_faction = cm:get_faction(self.belegar_faction)
       if not belegar_faction or not belegar_faction:is_human() then return end
       if self:caravan_button_should_be_visible(belegar_faction) then return end
-      --wh3_main_combi_region_karak_hirn
       local region = cm:get_region(self.k8p_region_name)
       if not region or region:is_null_interface() then return end
 
@@ -83,8 +82,6 @@ function Old_world_caravans:add_specific_faction_listeners()
           self:show_caravan_button();
         end
         cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
-      else
-        self:disband_all_caravans(faction)
       end
     end,
     true);
@@ -99,7 +96,7 @@ function Old_world_caravans:add_specific_faction_listeners()
     ---@param context FactionJoinsConfederation
     function(context)
       local faction = context:confederation();
-      local other_faction = context:faction()
+      local other_faction = context:faction();
       self:unlock_caravans_by_confederation(faction, other_faction)
     end,
     true);
@@ -135,7 +132,7 @@ function Old_world_caravans:add_specific_faction_listeners()
     function(context)
       local faction = context:region():owning_faction();
 
-      return self.access_to_caravans_on_first_turn[faction:name()] == false and faction:subculture() == "wh_main_sc_emp_empire";
+      return faction:is_human() and self.access_to_caravans_on_first_turn[faction:name()] == false and faction:subculture() == "wh_main_sc_emp_empire";
     end,
     ---@param context RegionFactionChangeEvent
     function(context)
@@ -143,7 +140,7 @@ function Old_world_caravans:add_specific_faction_listeners()
       local region_key = context:region():name();
 
       if not self:faction_has_caravans(faction) then return end
-      if self:caravan_button_should_be_visible(faction) then return end
+      if not self:caravan_button_should_be_hidden(faction) then return end
 
       local is_empire_region = false;
 
@@ -156,12 +153,13 @@ function Old_world_caravans:add_specific_faction_listeners()
       end
 
       if not is_empire_region then return end
+
       cm:callback(function()
-        self:show_caravan_button();
+        self:trigger_toggle_button_event(faction, true);
         cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
       end, 0.5)
     end,
-    false
+    true
   );
 
 
@@ -191,5 +189,19 @@ function Old_world_caravans:add_specific_faction_listeners()
       );
     end,
     true
-  )
+  );
+
+  core:add_listener(
+    "owc_toggle_caravan_button",
+    "ScriptEventOwcToggleCaravanButton",
+    function(context)
+      return true
+    end,
+    function(context)
+      local faction = context:faction();
+      local state = context:state();
+      self:try_toggle_caravan_button(faction, state);
+    end,
+    true
+  );
 end

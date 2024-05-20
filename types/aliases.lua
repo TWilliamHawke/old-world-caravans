@@ -25,7 +25,6 @@
 ---@field encounter_budget_1 integer
 ---@field encounter_budget_2 integer
 ---@field encounter_budget_3 integer
----@field filler_unit_weight integer
 ---@field no_encounter_weight integer
 ---@field cargo_value integer
 ---@field combat_probability number
@@ -37,7 +36,7 @@
 ---@field peasant_economy boolean
 ---@field random_enemies boolean
 ---@field replace_units boolean
----@field disable_player_caravans boolean
+---@field player_caravans "default" | "enable_all" | "disable"
 
 ---@class Prebattle_caravan_data
 ---@field caravan CARAVAN_SCRIPT_INTERFACE

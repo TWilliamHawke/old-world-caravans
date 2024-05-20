@@ -17,8 +17,8 @@
     "random_army_manager",
     "uim",
     "kill_faction",
-        "Calculate_Economy_Penalty",
-        "get_random_ancillary_key_for_faction"
+    "Calculate_Economy_Penalty",
+    "get_random_ancillary_key_for_faction"
   ],
   "hint.semicolon": "All",
   "diagnostics.disable": [
@@ -36,7 +36,9 @@
   "workspace.library": [
     "lib",
     "${3rd}/love2d/library",
-        "c:/Users/TWilliam/.vscode/extensions/sumneko.lua-3.6.20-win32-x64/server/meta/5623849f"
+    "c:/Users/TWilliam/.vscode/extensions/sumneko.lua-3.6.20-win32-x64/server/meta/5623849f",
+    "f:/SteamLibrary/steamapps/common/Total War WARHAMMER III/wh3 extra/mct/script/",
+    "types"
   ],
   "workspace.useGitIgnore": true,
   "runtime.version": "LuaJIT",

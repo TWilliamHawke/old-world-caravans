@@ -15,7 +15,6 @@ function Old_world_caravans:mct_init(context)
   self.encounter_budgets[1] = tonumber(settings.encounter_budget_1)
   self.encounter_budgets[2] = tonumber(settings.encounter_budget_2)
   self.encounter_budgets[3] = tonumber(settings.encounter_budget_3)
-  --self.filler_unit_weight = tonumber(settings.filler_unit_weight) / 10
   self.no_encounter_weight = settings.no_encounter_weight;
   self.debug_mode = settings.enable_log;
   self.force_enable = settings.force_enable;
@@ -23,7 +22,16 @@ function Old_world_caravans:mct_init(context)
   self.random_enemies = settings.random_enemies;
   self.cargo_value = settings.cargo_value;
   self.combat_encounter_chance = tonumber(settings.combat_probability);
-  self.disable_player_caravans = settings.disable_player_caravans;
+
+  if not settings.force_enable then
+    self.disable_player_caravans = settings.player_caravans == "disable";
+    self.force_enable = settings.player_caravans == "enable_all";
+
+    --for case when player will change option to default during game
+    if settings.player_caravans == "disable" then
+      self.player_caravans_was_disabled = true;
+    end
+  end
 
   self.ai_caravans.wh_main_sc_brt_bretonnia = settings.ai_bretonnia_caravans;
   self.ai_caravans.wh_main_sc_emp_empire = settings.ai_empire_caravans;

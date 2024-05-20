@@ -8,7 +8,7 @@ function Old_world_caravans:recruit_start_caravan(faction_name)
   local caravans_list = cm:model():world():caravans_system():faction_caravans(faction);
   if not caravans_list then return end
   if caravans_list:is_null_interface() then return end
-  if not self:caravan_button_should_be_visible(faction) then return end
+  if self:caravan_button_should_be_hidden(faction) then return end
   local available_caravans = caravans_list:available_caravan_recruitment_items();
 
   if available_caravans:is_empty() then return end

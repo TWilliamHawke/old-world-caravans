@@ -7,6 +7,7 @@ function Old_world_caravans:add_caravan_listeners()
   core:remove_listener("owc_CaravanCompleted")
   core:remove_listener("owc_caravan_moved")
   core:remove_listener("owc_kill_ai_caravans")
+  core:remove_listener("owc_kill_karak_hirn_caravans")
   core:remove_listener("OWC_add_ai_effect")
   core:remove_listener("OWC_caravan_finished")
 
@@ -180,6 +181,29 @@ function Old_world_caravans:add_caravan_listeners()
     end,
     true
   );
+
+  core:add_listener(
+    "owc_kill_karak_hirn_caravans",
+    "FactionTurnEnd",
+    ---@param context FactionTurnEnd
+    ---@return boolean
+    function(context)
+      local faction = context:faction();
+      local faction_name = faction:name();
+      return not faction:is_human() and faction_name == "wh_main_dwf_karak_hirn";
+    end,
+    ---@param context FactionTurnEnd
+    function(context)
+      local belegar = cm:get_faction(self.belegar_faction);
+
+      if belegar and belegar:is_human() then
+        self:disband_all_caravans(context:faction());
+      end
+    end,
+    true
+  );
+
+
 
   -- core:add_listener(
   --   "owc_kill_mar_caravans",

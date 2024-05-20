@@ -13,20 +13,37 @@ function Old_world_caravans:finalize_mct(context)
     local human_factions = cm:get_human_factions()
     if not human_factions or type(human_factions) ~= "table" then return end
 
+    local access, check_access_foreach;
+
+    if self.disable_player_caravans then
+      access = false;
+    elseif self.force_enable then
+      access = true;
+    elseif self.player_caravans_was_disabled then
+      access = false;
+      check_access_foreach = true;
+      self.player_caravans_was_disabled = false;
+    end
+
+    if access == nil then return end
+
     for i = 1, #human_factions do
       local faction_name = human_factions[i]
       local faction = cm:get_faction(faction_name)
 
-      if faction and self:faction_has_caravans(faction) then
-        if self.disable_player_caravans then
-          self:hide_caravan_button_without_access()
-        elseif settings.force_enable and not self:caravan_button_visible_mct(faction) then
-          self:logCore("show caravans for " .. faction_name)
-          if cm:get_local_faction(true):name() == faction_name then
-            self:show_caravan_button();
-          end
-          cm:set_saved_value(self.is_init_save_key .. faction_name, true)
+      if faction and self:faction_has_caravans(faction) and self:faction_is_supported(faction) then
+        local save_key = self.is_init_save_key .. faction_name;
+
+        if check_access_foreach then
+          access = not self:caravan_button_should_be_hidden(faction);
         end
+
+        if access == false then
+          self:disband_all_caravans(faction);
+        elseif not cm:get_saved_value(save_key) then
+          cm:set_saved_value(save_key, true);
+        end
+        self:trigger_toggle_button_event(faction, access);
       end
     end
   end);
