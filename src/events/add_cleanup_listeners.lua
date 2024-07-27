@@ -43,11 +43,6 @@ function Old_world_caravans:add_cleanup_listeners()
       if self.culture_to_trait[defender_sc] == nil then return end
 
       self:cleanup_encounter_for_faction(defender:name());
-
-      --obsolete
-      if cm:get_saved_value(self.encounter_faction_save_key) then
-        self:cleanup_encounter();
-      end
     end,
     true
   );

@@ -65,18 +65,19 @@ local encounters = {
 }
 
 local combat_encounter_options = {
-  { key = "0.5", text = "0.5x",  tt = "", is_default = false },
+  { key = "0.5", text = "0.5x", tt = "", is_default = false },
   { key = "1",   text = "1x",   tt = "", is_default = true },
   { key = "1.5", text = "1.5x", tt = "", is_default = false },
   { key = "2",   text = "2x",   tt = "", is_default = false },
 }
 
 local on_click_options = {
-  { key = "none",     text = "owc_mct_on_settlement_click_none_text",     tt = "",                                     is_default = true },
-  { key = "move",     text = "owc_mct_on_settlement_click_move_text",     tt = "owc_mct_on_settlement_click_move_tt",  is_default = false },
-  { key = "award",    text = "owc_mct_on_settlement_click_award_text",    tt = "owc_mct_on_settlement_click_award_tt", is_default = false },
-  { key = "banditry", text = "owc_mct_on_settlement_click_banditry_text", tt = "",                                     is_default = false },
-  { key = "position", text = "owc_mct_on_settlement_click_position_text", tt = "",                                     is_default = false },
+  { key = "none",          text = "owc_mct_on_settlement_click_none_text",     tt = "",                                     is_default = true },
+  { key = "move",          text = "owc_mct_on_settlement_click_move_text",     tt = "owc_mct_on_settlement_click_move_tt",  is_default = false },
+  { key = "award",         text = "owc_mct_on_settlement_click_award_text",    tt = "owc_mct_on_settlement_click_award_tt", is_default = false },
+  { key = "banditry",      text = "owc_mct_on_settlement_click_banditry_text", tt = "",                                     is_default = false },
+  { key = "position",      text = "owc_mct_on_settlement_click_position_text", tt = "",                                     is_default = false },
+  { key = "confederation", text = "confederation",                             tt = "",                                     is_default = false },
 }
 
 local award_options = {
@@ -88,7 +89,7 @@ local award_options = {
 local player_caravans_options = {
   { key = "default",    text = "owc_mct_player_caravans_default_text",    tt = "owc_mct_player_caravans_default_tt",    is_default = true },
   { key = "enable_all", text = "owc_mct_player_caravans_enable_all_text", tt = "owc_mct_player_caravans_enable_all_tt", is_default = false },
-  { key = "disable",   text = "owc_mct_player_caravans_disable_text",   tt = "owc_mct_player_caravans_disable_tt",   is_default = false },
+  { key = "disable",    text = "owc_mct_player_caravans_disable_text",    tt = "owc_mct_player_caravans_disable_tt",    is_default = false },
 }
 
 
@@ -148,7 +149,8 @@ accessibility_section:set_localised_text("owc_mct_section_accessibility")
 local force_enable = old_world_caravans:add_new_option("force_enable", "checkbox")
 ---@cast force_enable MCT.Option.Checkbox
 force_enable:set_text("owc_mct_force_enable")
-force_enable:set_tooltip_text("owc_mct_force_enable_tooltip")force_enable:set_uic_visibility(false, false)
+force_enable:set_tooltip_text("owc_mct_force_enable_tooltip")
+force_enable:set_uic_visibility(false, false)
 
 local player_caravans = old_world_caravans:add_new_option("player_caravans", "dropdown")
 ---@cast player_caravans MCT.Option.Dropdown

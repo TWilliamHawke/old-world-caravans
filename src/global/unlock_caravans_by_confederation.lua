@@ -3,14 +3,13 @@
 function Old_world_caravans:unlock_caravans_by_confederation(faction, other_faction)
   if not self:faction_has_caravans(faction) then return end
   if not self:caravan_button_should_be_hidden(faction) then return end
-  if faction:name() == self.belegar_faction then return end
-
   local other_name = other_faction:name();
+  local faction_name = faction:name();
+  if faction_name == self.belegar_faction
+    and self.belegar_confederation_skip[other_name] then return end
 
   if self.access_to_caravans_on_first_turn[other_name] then
-    if cm:get_local_faction(true):name() == faction:name() then
-      self:trigger_toggle_button_event(faction, true);
-    end
+    self:trigger_toggle_button_event(faction, true);
     cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
 
     local caravans_list = cm:model():world():caravans_system():faction_caravans(faction);

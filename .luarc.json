@@ -18,7 +18,8 @@
     "uim",
     "kill_faction",
     "Calculate_Economy_Penalty",
-    "get_random_ancillary_key_for_faction"
+    "get_random_ancillary_key_for_faction",
+        "Convoys_of_new_world"
   ],
   "hint.semicolon": "All",
   "diagnostics.disable": [

@@ -15,6 +15,23 @@ function Old_world_caravans:new_units_handler(context)
     [start_region_culture] = self:get_region_weight(start_region_culture, caravan_master),
   }
 
+  local caravan_culture = caravan_faction:subculture();
+  local event_weight_table = self.node_culture_to_event_weight[caravan_culture];
+
+  if not regions_weight[caravan_culture] and self.culture_to_units[caravan_culture] and event_weight_table then
+
+    --reverse chance to meet units from other caravans of same culture
+    local chance_start = event_weight_table[start_region_culture] or 200;
+    local chance_end = event_weight_table[end_region_culture] or 200;
+
+    local start_weight = regions_weight[start_region_culture] or 0;
+    local end_weight = regions_weight[end_region_culture] or 0;
+
+    if chance_end < 200 and chance_start < 200 then
+      regions_weight[caravan_culture] = math.min(start_weight, end_weight);
+    end
+  end
+
   local selected_cultureA = self:select_random_key_by_weight(regions_weight, function(val)
         return val;
       end) or end_region_culture;

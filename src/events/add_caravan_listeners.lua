@@ -95,7 +95,7 @@ function Old_world_caravans:add_caravan_listeners()
     "owc_SettlementSelected_caravan_test",
     "SettlementSelected",
     function()
-      return true;
+      return self.debug_mode and not cm:is_multiplayer();
     end,
     ---@param context SettlementSelected
     function(context)
@@ -110,15 +110,24 @@ function Old_world_caravans:add_caravan_listeners()
         local log_y = context:garrison_residence():region():settlement():logical_position_y();
         self:log("owc-" .. settlement_name .. "\t" .. tostring(log_x) .. "\t" .. tostring(log_y));
       elseif self.on_settlement_click == "award" then
-        self:give_caravan_award(faction, settlement_name)
+        self:give_caravan_award(faction, settlement_name);
+
+        if Convoys_of_new_world then
+          Convoys_of_new_world:get_item_award_test(faction, settlement_name)
+        end
       elseif self.on_settlement_click == "move" then
         local caravans_list = cm:model():world():caravans_system():faction_caravans(faction);
         if not caravans_list or caravans_list:is_null_interface() then return end
         local caravan = caravans_list:active_caravans():item_at(0)
         if not caravan or caravan:is_null_interface() then return end
-
         ---@diagnostic disable-next-line: undefined-field
         cm:move_caravan(caravan)
+      elseif self.on_settlement_click == "confederation" then
+        local player = faction:name();
+        local target = context:garrison_residence():faction():name();
+        if player ~= target then
+          cm:force_confederation(faction:name(), context:garrison_residence():faction():name());
+        end
       end
     end,
     true
@@ -190,7 +199,8 @@ function Old_world_caravans:add_caravan_listeners()
     function(context)
       local faction = context:faction();
       local faction_name = faction:name();
-      return not faction:is_human() and faction_name == "wh_main_dwf_karak_hirn";
+      return not faction:is_human()
+        and self.belegar_confederation_skip[faction_name];
     end,
     ---@param context FactionTurnEnd
     function(context)
