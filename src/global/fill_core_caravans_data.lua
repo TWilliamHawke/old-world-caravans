@@ -7,13 +7,17 @@ function Old_world_caravans:fill_core_caravans_data()
     self:create_empty_event(culture)
   end
 
-  self:create_empty_event("wh3_main_cth_cathay")
+  if self:murranji_mod_is_active() then
+    self:logCore("murranji caravans found")
+  else
+    self:create_empty_event("wh3_main_cth_cathay")
+    --increase some cathay caravans
+    table.insert(caravans.traits_to_units.wh3_main_skill_innate_cth_caravan_master_gunner,
+      "wh3_main_cth_inf_crane_gunners_0")
+    local army = caravans.traits_to_units["wh3_main_skill_innate_cth_caravan_master_Former-Artillery-Officer"]
+    table.insert(army, "wh3_main_cth_inf_jade_warriors_1")
+  end
 
-  --increase some cathay caravans
-  table.insert(caravans.traits_to_units.wh3_main_skill_innate_cth_caravan_master_gunner,
-    "wh3_main_cth_inf_crane_gunners_0")
-  local army = caravans.traits_to_units["wh3_main_skill_innate_cth_caravan_master_Former-Artillery-Officer"]
-  table.insert(army, "wh3_main_cth_inf_jade_warriors_1")
 
   --update trade nodes values on turn start
   for i = 1, #self.new_caravan_targets.main_warhammer do

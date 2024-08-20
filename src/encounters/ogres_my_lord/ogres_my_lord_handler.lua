@@ -7,7 +7,6 @@ function Old_world_caravans:ogres_my_lord_handler(context)
 
   self:bind_callback_to_dilemma(dilemma_name, caravan, 0, function()
     ---@diagnostic disable-next-line: undefined-field
-    cm:move_caravan(caravan);
     core:trigger_custom_event("ScriptEventOwcNewUnitsDilemma", {
       character = caravan:caravan_master():character() });
   end)

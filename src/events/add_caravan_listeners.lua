@@ -158,6 +158,27 @@ function Old_world_caravans:add_caravan_listeners()
   )
 
   core:add_listener(
+    "owc_CaravanCompleted_cathay_modded",
+    "CaravanCompleted",
+    ---@param context CaravanCompleted
+    function(context)
+      local faction = context:faction();
+      local faction_sc = faction:subculture();
+      return faction:is_human() and self:murranji_mod_is_active() and faction_sc == "wh3_main_sc_cth_cathay";
+    end,
+    ---@param context CaravanCompleted
+    function(context)
+      local faction = context:faction()
+
+      ---@diagnostic disable-next-line: undefined-field
+      local node = context:complete_position():node();
+      local region_name = node:region_key()
+      self:give_caravan_award(faction, region_name);
+    end,
+    true
+  )
+
+  core:add_listener(
     "owc_caravan_moved",
     "CaravanMoved",
     function(context)
