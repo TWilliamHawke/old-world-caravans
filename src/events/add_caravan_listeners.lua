@@ -57,6 +57,8 @@ function Old_world_caravans:add_caravan_listeners()
     ---comment
     ---@param context QueryShouldWaylayCaravan
     function(context)
+      local faction_key = context:faction():name()
+      if self.events_fired[faction_key] then return end
       self:log("My handler for QueryShouldWaylayCaravan")
 
       local has_handler, selected_encounter = self:generate_caravan_encounter(context)
@@ -65,6 +67,7 @@ function Old_world_caravans:add_caravan_listeners()
       if has_handler then
         ---@diagnostic disable-next-line: redundant-parameter
         context:flag_for_waylay("owc?" .. selected_encounter)
+        self.events_fired[faction_key] = true;
       end
     end,
     true

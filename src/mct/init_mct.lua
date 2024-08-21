@@ -44,7 +44,7 @@ function Old_world_caravans:mct_init(context)
   end
 
   if settings.allow_item_awards == "none" then
-    caravans.item_data.wh3_main_cth_cathay = {};
+    caravans.reward_list.wh3_main_cth_cathay = nil;
   end
 
   if settings.replace_units then

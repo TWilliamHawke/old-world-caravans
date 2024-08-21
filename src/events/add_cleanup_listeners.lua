@@ -97,4 +97,46 @@ function Old_world_caravans:add_cleanup_listeners()
       self.encounter_should_be_canceled = true
     end,
     true);
+
+  core:add_listener(
+    "owc_caravan_event_update",
+    "WorldStartRound",
+    true,
+    function(context)
+      self.events_fired = {};
+    end,
+    true
+  );
+
+  core:add_listener(
+    "owc_caravan_complete_battle",
+    "CharacterCompletedBattle",
+    ---@param context CharacterCompletedBattle
+    function(context)
+      local character = context:character();
+      local force_type = character:military_force():force_type():key();
+
+      return character:faction():is_human() and character:has_military_force() and
+      force_type == "CARAVAN" or force_type == "EMP_CARAVAN";
+    end,
+    function(context)
+      local character = context:character();
+      if not self:faction_is_supported(character:faction()) then return end
+      local caravan_system = cm:model():world():caravans_system():faction_caravans(character:faction());
+
+      if caravan_system:is_null_interface() then return end
+      local active_caravans = caravan_system:active_caravans();
+      if active_caravans:is_empty() then return end
+
+      for i = 0, active_caravans:num_items() - 1 do
+        if character:command_queue_index() == active_caravans:item_at(i):caravan_master():character():command_queue_index() then
+          ---@diagnostic disable-next-line: undefined-field
+          cm:move_caravan(active_caravans:item_at(i));
+          uim:override("retreat"):unlock();
+        end
+      end
+    end,
+    true
+  );
+
 end;

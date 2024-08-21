@@ -46,6 +46,7 @@ Old_world_caravans = {
   cathay_caravans = {},
   disable_player_caravans = false,
   player_caravans_was_disabled = false,
+  events_fired = {},
   ai_caravans = {
     wh_main_sc_emp_empire = true,
     wh_main_sc_dwf_dwarfs = true,

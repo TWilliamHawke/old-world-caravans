@@ -12,11 +12,11 @@ Old_world_caravans.db.elite_guards = {
     unit = "teb_republican_guard"
   },
   wh_main_sc_dwf_dwarfs = {
-    technology = "wh_main_tech_dwf_civ_3_2",
+    technology = "wh_main_tech_dwf_mil_6_0",
     unit = "wh_main_dwf_inf_longbeards"
   },
   wh3_main_sc_ksl_kislev = {
-    technology = "wh3_main_tech_ksl_3_07",
+    technology = "wh3_main_tech_ksl_2_08",
     unit = "wh3_main_ksl_inf_tzar_guard_0"
   },
   wh3_main_sc_cth_cathay = {

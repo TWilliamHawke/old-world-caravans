@@ -3,7 +3,6 @@ function Old_world_caravans:fill_core_caravans_data()
   for _, culture in ipairs(self.new_caravan_cultures) do
     --set cathay node values when caravan completed
     caravans.culture_to_faction[culture] = "cathay";
-    caravans.item_data[culture] = {};
     self:create_empty_event(culture)
   end
 

@@ -7,7 +7,11 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   if not region_sc then return end
 
   local caravan_faction = caravan:caravan_force():faction();
+  local culture = caravan_faction:culture();
 
+  local vanila_award = caravans.reward_list[culture] and caravans.reward_list[culture][region_name];
+
+  if vanila_award then return end;
   if not caravan_faction:is_human() then return end
   if not self:faction_is_supported(caravan_faction) then return end
 
@@ -33,7 +37,7 @@ function Old_world_caravans:give_unit_award(caravan, region_name)
   local cqi = caravan_faction:command_queue_index();
 
   local payload_builder = cm:create_payload();
-  self:log("award unit is "..tostring(unit_key));
+  self:log("award unit is " .. tostring(unit_key));
 
   local unit_count = self:caravan_master_has_cultural_trait(caravan_master, region_sc) and 2 or 1;
   payload_builder:add_unit(caravan_force, unit_key, unit_count, 0);

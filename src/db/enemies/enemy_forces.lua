@@ -84,6 +84,8 @@ Old_world_caravans.enemy_forces = {
       wh_main_grn_inf_goblin_spearmen = 1,
       wh_dlc06_grn_inf_nasty_skulkers_0 = 1,
       wh_main_grn_inf_night_goblins = 1,
+      wh3_main_grn_inf_orc_boyz_spear_shield = 1,
+      wh3_main_grn_inf_goblins_sword_shield = 1,
     },
     {
       wh_main_grn_mon_trolls = 6,
@@ -105,6 +107,8 @@ Old_world_caravans.enemy_forces = {
       wh_main_grn_inf_goblin_spearmen = 1,
       wh_dlc06_grn_inf_nasty_skulkers_0 = 1,
       wh_main_grn_inf_night_goblins = 1,
+      wh3_main_grn_inf_orc_boyz_spear_shield = 1,
+      wh3_main_grn_inf_goblins_sword_shield = 1,
     },
     {
       wh_main_grn_cav_orc_boar_chariot = 2,

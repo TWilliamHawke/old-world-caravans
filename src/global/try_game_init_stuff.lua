@@ -18,5 +18,16 @@ function Old_world_caravans:try_game_init_stuff()
     end
   end
 
+  --wrapper for reward_item_check
+  self.reward_item_check = caravans.reward_item_check;
+
+  ---@diagnostic disable-next-line: duplicate-set-field
+  caravans.reward_item_check = function(_, faction, region_key, caravan_master)
+    local culture = faction:culture()
+    local reward_list = caravans.reward_list[culture]
+    if not reward_list or not reward_list[region_key] then return end
+    self.reward_item_check(caravans, faction, region_key, caravan_master)
+  end
+
   self.core_data_was_added = true;
 end
