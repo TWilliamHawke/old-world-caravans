@@ -72,7 +72,7 @@ Old_world_caravans.awards = {
     ["cr_oldworld_region_magritta"] = "dwf_caravan_magritta_ow",
     ["cr_oldworld_region_miragliano"] = "dwf_caravan_miragliano_ow",
     ["cr_oldworld_region_altdorf"] = "dwf_caravan_reikland_ow",
-    ["cr_oldworld_region_marienburg"] = "dwf_caravan_marienburg_ow",
+    ["cr_oldworld_region_suiddock"] = "dwf_caravan_marienburg_ow",
     ["cr_oldworld_region_castle_bordeleaux"] = "dwf_caravan_bordeleaux_ow",
     ["cr_oldworld_region_kislev"] = "dwf_caravan_kislev_ow",
     ["cr_oldworld_region_erengrad"] = "dwf_caravan_erengrad_ow",
@@ -245,7 +245,7 @@ Old_world_caravans.awards = {
     ["cr_oldworld_region_karaz_a_karak"] = "owc_main_anc_caravan_statue_of_zharr",
     ["cr_oldworld_region_castle_drakenhof"] = "owc_main_anc_caravan_von_carstein_blade",
     ["cr_oldworld_region_altdorf"] = "owc_main_anc_caravan_luminark_lens",
-    ["cr_oldworld_region_marienburg"] = "owc_main_anc_caravan_warrant_of_trade",
+    ["cr_oldworld_region_suiddock"] = "owc_main_anc_caravan_warrant_of_trade",
 
   },
   wh3_main_sc_ksl_kislev = {
@@ -277,7 +277,7 @@ Old_world_caravans.awards = {
     ["cr_oldworld_region_forest_of_knives"] = "owc_anc_enchanted_item_ancient_frost_wyrm_scale",
     ["cr_oldworld_region_heldegrad"] = "owc_main_anc_follower_empire_estalian_diestro",
     ["cr_oldworld_region_altdorf"] = "owc_dlc13_anc_weapon_runefang_reikland",
-    ["cr_oldworld_region_marienburg"] = "owc_main_anc_talisman_diamond_guardian_phoenix",
+    ["cr_oldworld_region_suiddock"] = "owc_main_anc_talisman_diamond_guardian_phoenix",
     ["cr_oldworld_region_castle_carcassonne"] = "owc_anc_follower_strange_bretonnian_peasant",
     ["cr_oldworld_region_castle_bordeleaux"] = "owc_dlc07_anc_armour_gilded_cuirass",
     ["cr_oldworld_region_couronne"] = "owc_dlc07_anc_enchanted_item_mane_of_the_purebreed",

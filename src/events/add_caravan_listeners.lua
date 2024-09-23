@@ -52,7 +52,10 @@ function Old_world_caravans:add_caravan_listeners()
     "QueryShouldWaylayCaravan",
     function(context)
       local faction = context:faction()
-      return faction:is_human() and self:faction_is_supported(faction);
+      local chosen_caravan = cm:get_saved_value("chosen_caravan_master_" .. faction:name());
+      local current_caravan =  context:caravan():caravan_force():command_queue_index();
+      local current_caravan_is_chosen = not chosen_caravan or chosen_caravan == current_caravan;
+      return faction:is_human() and self:faction_is_supported(faction) and current_caravan_is_chosen
     end,
     ---comment
     ---@param context QueryShouldWaylayCaravan
