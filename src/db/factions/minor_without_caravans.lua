@@ -11,7 +11,6 @@ Old_world_caravans.minor_without_caravans = {
   wh2_main_brt_knights_of_origo = true,
   mixer_teb_gashnag = true,
   --old world
-  cr_brt_leofrics_fellowship = true,
   cr_emp_cult_of_ulric = true,
   cr_ksl_heldegrad = true,
   cr_ksl_order_of_the_winter_sun = true,
@@ -20,6 +19,14 @@ Old_world_caravans.minor_without_caravans = {
   wh3_dlc20_brt_march_of_couronne = true,
   cr_emp_guests_of_the_raja = true,
   cr_emp_sigmarsheim = true,
+  cr_brt_leofrics_fellowship = true,
+  cr_brt_holy_wardens = true,
+  cr_brt_knight_avengers_of_brionne = true,
+  cr_dwf_clan_barruk = true,
+  cr_dwf_kraka_ravensvake = true,
+  cr_emp_archaeological_expedition = true,
+  cr_emp_cult_of_morr = true,
+  cr_emp_altdorf = true,
   --ow teb
   cr_teb_almagora = true,
   cr_teb_bilbali = true,

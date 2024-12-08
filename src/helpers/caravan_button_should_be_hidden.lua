@@ -14,7 +14,8 @@ function Old_world_caravans:caravan_button_should_be_hidden(faction)
   local faction_name = faction:name();
 
   local access_on_first_turn = self.access_to_caravans_on_first_turn[faction_name] or
-      (cm:get_campaign_name() == "cr_oldworld" and self.access_to_caravans_old_world_override[faction_name]);
+      (cm:get_campaign_name() == "cr_oldworld" and self.access_to_caravans_old_world_override[faction_name]) or
+      (cm:get_campaign_name() == "cr_oldworldclassic" and self.access_to_caravans_old_world_override[faction_name]);
 
   if access_on_first_turn == true or self.force_enable then
     return false;

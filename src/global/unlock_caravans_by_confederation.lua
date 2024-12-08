@@ -5,6 +5,7 @@ function Old_world_caravans:unlock_caravans_by_confederation(faction, other_fact
   if not self:caravan_button_should_be_hidden(faction) then return end
   local other_name = other_faction:name();
   local faction_name = faction:name();
+  if faction_name == "wh3_dlc24_ksl_daughters_of_the_forest" then return end
   if faction_name == self.belegar_faction
     and self.belegar_confederation_skip[other_name] then return end
 

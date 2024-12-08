@@ -54,6 +54,8 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   cr_dwf_bugmans_brewery = true,
   cr_dwf_clan_durazgrund = true,
   wh3_dlc25_dwf_malakai = true,
+  cr_dwf_clan_barruk = false,
+  cr_dwf_kraka_ravensvake = false,
   --empire
   wh_main_emp_averland = true,
   wh2_dlc13_emp_golden_order = false,
@@ -73,6 +75,10 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   cr_emp_carroburg = true,
   cr_emp_cult_of_ulric = false,
   cr_emp_sigmarsheim = true,
+  cr_emp_archaeological_expedition = false,
+  cr_emp_cult_of_morr = false,
+  cr_emp_solland = true,
+  cr_emp_altdorf = true,
   --bretonnia
   wh3_main_brt_aquitaine = true,
   wh_main_brt_artois = true,
@@ -93,6 +99,8 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   mixer_brt_montfort = true,
   mixer_brt_quenelles = true,
   wh3_dlc20_brt_march_of_couronne = true,
+  cr_brt_holy_wardens = false,
+  cr_brt_knight_avengers_of_brionne = false,
   --kislev
   wh3_main_ksl_the_ice_court = true,
   wh3_main_ksl_brotherhood_of_the_bear = true,
@@ -106,4 +114,5 @@ Old_world_caravans.access_to_caravans_on_first_turn = {
   cr_ksl_peasant_council = true,
   cr_ksl_the_boyar_assembly = true,
   cr_ksl_tzaryovshchina = true,
+  wh3_dlc24_ksl_daughters_of_the_forest = false,
 }
