@@ -24,7 +24,7 @@ const write = () => {
   const sourceDir = path.join(process.cwd(), "src");
   const files = walkSync(sourceDir);
   let data = ''
-  for(file of files) {
+  for(const file of files) {
     const fileBody = fs.readFileSync(file, { encoding: 'utf8' });
     data = data.concat("\n\n" + fileBody);
   }

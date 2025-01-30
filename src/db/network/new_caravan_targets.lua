@@ -78,7 +78,7 @@ Old_world_caravans.new_caravan_targets = {
     "cr_oldworld_region_asaphs_quay",
     "cr_oldworld_region_karag_dum",
     "cr_oldworld_region_giants_rocks",
-
+    "cr_oldworld_region_suiddock"
   },
   cr_oldworldclassic = {
     "cr_oldworld_region_couronne",
@@ -120,9 +120,7 @@ Old_world_caravans.new_caravan_targets = {
     "cr_oldworld_region_castle_mousillon",
     "cr_oldworld_region_middenheim",
     "cr_oldworld_region_bilbali",
-    "cr_oldworld_region_karag_dum",
-    "cr_oldworld_region_giants_rocks",
-
+    "cr_oldworld_region_suiddock"
   },
 
 
