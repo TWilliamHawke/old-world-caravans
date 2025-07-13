@@ -128,7 +128,8 @@ function Old_world_caravans:add_specific_faction_listeners()
     function(context)
       local faction = context:region():owning_faction();
 
-      return faction:is_human() and self.access_to_caravans_on_first_turn[faction:name()] == false and faction:subculture() == "wh_main_sc_emp_empire";
+      return faction:is_human() and self.access_to_caravans_on_first_turn[faction:name()] == false and
+      faction:subculture() == "wh_main_sc_emp_empire";
     end,
     ---@param context RegionFactionChangeEvent
     function(context)
@@ -141,11 +142,11 @@ function Old_world_caravans:add_specific_faction_listeners()
       local is_empire_region = false;
 
       ---@diagnostic disable-next-line: undefined-global
-			for _, empire_region_key in ipairs(imperial_authority.empire_regions) do
-				if(region_key == empire_region_key) then
-					is_empire_region = true;
+      for _, empire_region_key in ipairs(imperial_authority.empire_regions) do
+        if (region_key == empire_region_key) then
+          is_empire_region = true;
           break
-				end
+        end
       end
 
       if not is_empire_region then return end
@@ -197,6 +198,26 @@ function Old_world_caravans:add_specific_faction_listeners()
       local faction = context:faction();
       local state = context:state();
       self:try_toggle_caravan_button(faction, state);
+    end,
+    true
+  );
+
+  core:add_listener(
+    "OWC_OstankyaStartDilemmaChoiceMadeEvent",
+    "DilemmaChoiceMadeEvent",
+    function(context)
+      return context:dilemma() == mother_ostankya_features.start_dilemma_key;
+    end,
+    ---@param context DilemmaChoiceMadeEvent
+    function(context)
+      -- First option is to stay in Naggaroth
+      if context:choice() ~= 1 then return end
+      local faction = context:faction();
+      self:trigger_toggle_button_event(faction, true);
+      if not cm:get_saved_value(self.is_init_save_key .. faction:name()) then
+        cm:set_saved_value(self.is_init_save_key .. faction:name(), true)
+      end
+
     end,
     true
   );

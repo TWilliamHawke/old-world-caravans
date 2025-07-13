@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field, param-type-mismatch, redundant-parameter, duplicate-set-field
 
 out.design("*** Caravans script loaded ***");
 
